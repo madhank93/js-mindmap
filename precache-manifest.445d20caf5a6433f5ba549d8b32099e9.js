@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8692ee1936599dc224ca2a8dc97fdee1",
+    "revision": "6f3ba0711aaca95785c45c3248f56ae9",
     "url": "/js-mindmap/index.html"
   },
   {
