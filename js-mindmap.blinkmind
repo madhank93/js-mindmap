@@ -1,7 +1,7 @@
 {
   "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
   "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-  "focusKey": "69e69b35-9400-4fb3-aa5e-e9315b4a6eba",
+  "focusKey": "e153daae-cd39-4033-bd24-8fcf1a6f9f84",
   "extData": {
     "TOPIC_REFERENCE": {
       "reference": {}
@@ -23,7 +23,7 @@
         },
         {
           "type": "DESC",
-          "data": "The boolean type has only two values: **true** and **false**\n\n```\nconsole.log(typeof(true)); // \"boolean\"\n\n```\n\n```\nlet nameFieldChecked = true; // yes, name field is checked\nlet ageFieldChecked = false; // no, age field is not checked\n\n```\n"
+          "data": "The boolean type has only two values: **true** and **false**\n\n```\nconsole.log(typeof(true)); // \"boolean\"\nconsole.log(typeof(false)); // \"boolean\"\n\n```\n\n```\nlet nameFieldChecked = true;\nlet ageFieldChecked = false;\n\nconsole.log(\"Name field checked: \", nameFieldChecked, \" and \" , \"Age field checked: \", ageFieldChecked);\n// Name field checked:  true  and  Age field checked:  false\n\n```\n"
         }
       ]
     },
@@ -42,7 +42,7 @@
         },
         {
           "type": "DESC",
-          "data": "A **function expression** is determined by a function keyword, followed by an optional function name \\(anonymous\\), a list of parameters in a pair of parenthesis \\(para1, ..., paramN\\) and a pair of curly braces \\{ ... \\} that delimits the body code.\n\n**example 1: named function**\n* Naming a function is always a good idea, it can be seen in stack traces, call stacks. Useful when debugging.\n\n```\nconst count = function arrayLength(array) {\n  return array.length;\n}\n\ncount([5, 7, 8]); // output: \"3\"\n\n```\n\n**example 2: anonymous function**\n* anonymous functions are harder to debug as it does not have the name, so finding the function that causes problem will be difficult.\n\n```\nconst count = function(array) {\n  return array.length;\n}\n\ncount([5, 7, 8]); // output: \"3\"\n\n```\n"
+          "data": "A **function expression** is determined by a function keyword, followed by an optional function name \\(anonymous\\), a list of parameters in a pair of parenthesis \\(para1, ..., paramN\\) and a pair of curly braces \\{ ... \\} that delimits the body code.\n\n**example 1: named function**\n```\nconst count = function arrayLength(array) {\n  return array.length;\n}\n\ncount([5, 7, 8]); // output: \"3\"\narrayLength([5, 7, 8]); // ReferenceError: arrayLength is not defined\n\n```\n\n**example 2: anonymous function**\n```\nconst count = function(array) {\n  return array.length;\n}\n\ncount([5, 7, 8]); // output: \"3\"\n\n```\n\n**example 3: Error stack trace**\n```\n// Ex 1:\nconst count = function arrayLength(array) {\n    throw new Error(\"Custom error\")\n}\n\ncount([5, 7, 8]);\n\nError: Custom error\n    at arrayLength (/Users/git/other/js-season-2/programming-basics/test.js:2:11)\n    at Object.<anonymous> (/Users/git/other/js-season-2/programming-basics/test.js:5:1)\n    at Module._compile (node:internal/modules/cjs/loader:1101:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n    at node:internal/main/run_main_module:17:47\n\n// Ex 2:    \nconst count = function (array) {\n    throw new Error(\"Custom error\")\n}\n\ncount([5, 7, 8]);\n\nError: Custom error\n    at count (/Users/git/other/js-season-2/programming-basics/test.js:2:11)\n    at Object.<anonymous> (/Users/git/other/js-season-2/programming-basics/test.js:5:1)\n    at Module._compile (node:internal/modules/cjs/loader:1101:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n    at node:internal/main/run_main_module:17:47\n\n```\n"
         }
       ]
     },
@@ -59,7 +59,7 @@
         },
         {
           "type": "DESC",
-          "data": "**if** statement can be extended with an **else if** statement, which adds another conditional with its own block, it is a way to chain on extra choices/outcomes.\n\n**Syntax:**\n\n```\nif (condition) {\n     // condition is true this block will be executed\n     // no futher conditions will be checked\n} else if (condition) {\n      // when a previous block condition has been failed\n      // this(else if) block condition is evaluted\n      // when a condition passed this block will be executed\n} else {\n      //when all condition has been failed this block will be executed\n}\n\n```\n\n**example:**\n\n```\nif (false) {\n      console.log(\"if blocked executed\");\n} else if (2 < 5 && 3 < 5 ) {\n      console.log(\"else if blocked executed\");\n} else {\n      console.log(\"else blocked executed\");\n}\n\n```\n"
+          "data": "**if** statement can be extended with an **else if** statement, which adds another conditional with its own block, it is a way to chain on extra choices/outcomes.\n\n**Syntax:**\n```\nif (condition) {\n     // condition is true this block will be executed\n     // no futher conditions will be checked\n} else if (condition) {\n      // when a previous block condition has been failed\n      // this(else if) block condition is evaluted\n      // when a condition passed this block will be executed\n} else {\n      //when all condition has been failed this block will be executed\n}\n\n```\n\n**example:**\n```\nif (false) {\n      console.log(\"if blocked executed\");\n} else if (2 < 5 && 3 < 5 ) {\n      console.log(\"else if blocked executed\");\n} else {\n      console.log(\"else blocked executed\");\n}\n\n```\n"
         }
       ]
     },
@@ -78,7 +78,7 @@
         },
         {
           "type": "DESC",
-          "data": "A function in JavaScript defines a scope for variables declared using **var**, **let** and **const**.\n\n```\nExample 1:\n\nfunction run() {\n  // \"run\" function scope\n  var message = 'Run, Forrest, Run!';\n  console.log(message); // 'Run, Forrest, Run!'\n}\n\nrun();\nconsole.log(message); // throws ReferenceError\n\n```\n\n**run\\(\\)** function body creates a scope. The variable message is accessible inside of the function scope, but inaccessible outside.\n\n```\nfunction run() {\n  // \"run\" function scope\n  const two = 2;\n  let count = 0;\n  function run2() {}\n\n  console.log(two);   // 2\n  console.log(count); // 0\n  console.log(run2);  // function\n}\n\nrun();\nconsole.log(two);   // throws ReferenceError\nconsole.log(count); // throws ReferenceError\nconsole.log(run2);  // throws ReferenceError\n\n```\n"
+          "data": "A function in JavaScript defines a scope for variables declared using **var**, **let** and **const**.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  var message = 'Run, Forrest, Run!';\n  console.log(message); // 'Run, Forrest, Run!'\n}\n\nrun();\nconsole.log(message); // throws ReferenceError\n\n```\n\n**run\\(\\)** function body creates a scope. The variable message is accessible inside of the function scope, but inaccessible outside.\n\n**Exmaple 2:**\n```\nfunction run() {\n  // \"run\" function scope\n  const two = 2;\n  let count = 0;\n  function run2() {}\n\n  console.log(two);   // 2\n  console.log(count); // 0\n  console.log(run2);  // function\n}\n\nrun();\nconsole.log(two);   // throws ReferenceError\nconsole.log(count); // throws ReferenceError\nconsole.log(run2);  // throws ReferenceError\n\n```\n\n**Exmaple 3**:\n\nVar is **functional\\-scoped**\n\n```\nvar fullMoon = true;\n\n// Use var to initialize a variable\nvar species = \"human\";\n\nif (fullMoon) {\n  // Attempt to create a new variable in a block\n  var species = \"werewolf\";\n  console.log(`${species}.`); // werewolf\n}\n\nconsole.log(`${species}.`); // werewolf\n\n```\n\nBoth the **global variable** and the **block\\-scoped variable** end up with the same value, **werewolf**. This is because instead of creating a new local variable with var, it is reassigning the same variable in the same scope."
         }
       ]
     },
@@ -136,19 +136,15 @@
       ]
     },
     {
-      "key": "220e873a-0a0b-4820-9434-42d0727eead5",
-      "parentKey": "f8750599-32db-4fb3-829e-0673887df2c2",
+      "key": "277f12bf-6cef-4676-92bb-ee233886e4cb",
+      "parentKey": "5df46409-6d87-4099-85c8-664e7e703c8e",
       "subKeys": [],
       "collapse": false,
       "style": null,
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "Shorthand\nfunction"
-        },
-        {
-          "type": "DESC",
-          "data": "_**Shorthand**_ method definition can be used in a method declaration on object literals and ES2015 classes. You can define them using a function name, followed by a list of parameters in a pair of parenthesis \\(para1, ..., paramN\\) and a pair of curly braces \\{ ... \\} that delimits the body statements.\n\n```\nconst collection = {\n  items: [],\n  add(...items) {\n    this.items.push(...items);\n  },\n  get(index) {\n    return this.items[index];\n  }\n};\ncollection.add('C', 'Js', 'PHP', 'Java');\ncollection.get(1) //output: \"Js\"\n\n```\n\n_**add\\(\\)**_ and _**get\\(\\)**_ methods in _**collection**_ object are defined using short method definition. These methods are called as usual: _**collection\\.add\\(...\\)**_ and _**collection\\.get\\(...\\)**_."
+          "data": "Class"
         }
       ]
     },
@@ -195,7 +191,8 @@
         "08aaf5bf-5222-4d4c-bd8d-2267d2f81433",
         "3854fdd8-7de4-429c-b73d-2519cbf63781",
         "d40f6cf0-dcae-4162-8b2f-d89edd7e3212",
-        "f8750599-32db-4fb3-829e-0673887df2c2"
+        "f8750599-32db-4fb3-829e-0673887df2c2",
+        "5df46409-6d87-4099-85c8-664e7e703c8e"
       ],
       "collapse": false,
       "style": "{\"contentStyle\":{\"background\":\"#f8e71c\"}}",
@@ -203,6 +200,10 @@
         {
           "type": "CONTENT",
           "data": "Js"
+        },
+        {
+          "type": "DESC",
+          "data": "JavaScript is a **prototype\\-based**, multi\\-paradigm, single\\-threaded, dynamic language, supporting object\\-oriented, imperative, and declarative \\(e.g. functional programming\\) styles.\n\nIt is a lightweight, interpreted, or just\\-in\\-time compiled programming language. Which involves two phases  \n* Parsing/Compilation, and\n* Execution\\.\n\n"
         }
       ]
     },
@@ -221,7 +222,7 @@
         },
         {
           "type": "DESC",
-          "data": "A _**generator**_ is a function that can stop midway and then continue from where it stopped. In short, a generator appears to be a function but it behaves like an iterator.\n\n**example 1:** function declaration form _**function\\* <name\\>\\(\\)**_\n\n```\nfunction * generatorFunction() {\n  console.log('This will be executed first.');\n  yield 'Hello, ';\n  console.log('I will be printed after the pause');  \n  yield 'World!';\n}\nconst generatorObject = generatorFunction();\n\nconsole.log(generatorObject.next().value);\n// output:\n// This will be executed first.\n// Hello, \nconsole.log(generatorObject.next().value);\n// output:\n// I will be printed after the pause\n// World!\nconsole.log(generatorObject.next().value);\n// output:\n// undefined\n\n```\n\n**example 2: **function expression form _**function\\* \\(\\)**_\n\n```\nconst indexGenerator = function* () {\n  let index = 0;\n  while(true) {\n    yield index++;\n  }\n};\nconst g = indexGenerator();\nconsole.log(g.next().value); // => 0\nconsole.log(g.next().value); // => 1\n\n```\n\n**example 3: **Shorthand method definition form _**\\*<name\\>\\(\\)**_\n\n```\nconst obj = {\n  *indexGenerator() {\n    var index = 0;\n    while(true) {\n      yield index++;\n    }\n  }\n}\nconst g = obj.indexGenerator();\nconsole.log(g.next().value); // => 0\nconsole.log(g.next().value); // => 1\n\n```\n"
+          "data": "A **generator** is a function that can stop midway and then continue from where it stopped. In short, a generator appears to be a function but it behaves like an iterator.\n\n**example 1:** function declaration form **function\\* <name\\>\\(\\)**\n\n```\nfunction * generatorFunction() {\n  console.log('This will be executed first.');\n  yield 'Hello, ';\n  console.log('I will be printed after the pause');  \n  yield 'World!';\n}\nconst generatorObject = generatorFunction();\n\nconsole.log(generatorObject.next().value);\n// output:\n// This will be executed first.\n// Hello, \nconsole.log(generatorObject.next().value);\n// output:\n// I will be printed after the pause\n// World!\nconsole.log(generatorObject.next().value);\n// output:\n// undefined\n\n```\n\n**example 2: **function expression form **function\\* \\(\\)**\n\n```\nconst indexGenerator = function* () {\n  let index = 0;\n  while(true) {\n    yield index++;\n  }\n};\nconst g = indexGenerator();\nconsole.log(g.next().value); // => 0\nconsole.log(g.next().value); // => 1\n\n```\n\n**example 3: **Shorthand method definition form **\\*<name\\>\\(\\)**\n\n```\nconst obj = {\n  *indexGenerator() {\n    var index = 0;\n    while(true) {\n      yield index++;\n    }\n  }\n}\nconst g = obj.indexGenerator();\nconsole.log(g.next().value); // => 0\nconsole.log(g.next().value); // => 1\n\n```\n"
         }
       ]
     },
@@ -281,7 +282,7 @@
         },
         {
           "type": "DESC",
-          "data": "The special **null** value does not belong to any of the types described above.\n\n```\nconsole.log(typeof(null)); // \"object\"\n// This is a bug and one that unfortunately can’t be fixed, because it would break existing code.\n// https://2ality.com/2013/10/typeof-null.html\n\n```\n\nIt forms a separate type of its own which contains only the null value:\n\n```\nlet age = null;\n\n```\n\nIn JavaScript, null is **not** a “reference to a non\\-existing object” or a “null pointer” like in some other languages.\n\nIt’s just a special value which represents “**nothing**”, “**empty**” or “**value unknown**”.\n\nThe code above states that age is unknown\n"
+          "data": "In JavaScript, null is **not** a “reference to a non\\-existing object” or a “null pointer” like in some other languages. It’s just a special value which represents “**nothing**”, “**empty**” or “**value unknown**”.\n\nThe special **null** value does not belong to any of the types described above.\n```\nconsole.log(typeof(null)); // \"object\"\n\n// This is a bug and one that unfortunately can’t be fixed, \n// because it would break existing code.\n// https://2ality.com/2013/10/typeof-null.html\n\n```\n\nIt forms a separate type of its own which contains only the null value:\n```\nlet age = null;\nconsole.log(age); // null\n\n```\n\n"
         }
       ]
     },
@@ -307,11 +308,11 @@
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "Var"
+          "data": "var"
         },
         {
           "type": "DESC",
-          "data": "It it’s functional\\-scoped, and value stored in it can be reassigned.\n\nTo declare or create a varaible\n\n```\nvar message;\n\n```\n\nAssign a data into it by using the assignment operator =:\n\n```\nmessage = 'Hello';\n\n```\n\nCombine the variable _declaration_ and _assignment_ into a single line\n\n```\nvar message = 'Hello!';\n\n```\n\nDeclare multiple variables in one line\n\n```\nvar user = 'John', age = 25, message = 'Hello';\n\n```\n\nReassigning a value\n\n```\nvar userName = \"Bruce\"\nuserName = \"Wayne\"\n\n```\n\nVar is **functional\\-scoped**\n\n```\nvar fullMoon = true;\n\n// Use var to initialize a variable\nvar species = \"human\";\n\nif (fullMoon) {\n  // Attempt to create a new variable in a block\n  var species = \"werewolf\";\n  console.log(`${species}.`); // werewolf\n}\n\nconsole.log(`${species}.`); // werewolf\n\n```\n\nBoth the **global variable** and the **block\\-scoped variable** end up with the same value, **werewolf**. This is because instead of creating a new local variable with var, it is reassigning the same variable in the same scope."
+          "data": "Var is **function** scope \\(will see more of that in **Scopes & Closures**\\). Value stored in it can be reassigned.\n\nTo declare or create a varaible\n```\nvar message;\n\n```\n\nAssign a data into it by using the assignment operator =:\n```\nmessage = 'Hello';\n\n```\n\nCombine the variable _declaration_ and _assignment_ into a single line\n```\nvar message = 'Hello!';\n\n```\n\nDeclare multiple variables in one line\n```\nvar user = 'John', age = 25, message = 'Hello';\n\n```\n\nReassigning a value\n```\nvar userName = \"Bruce\"\nuserName = \"Wayne\"\n\nconsole.log(userName) // \"Wayne\"\n\n```\n"
         }
       ]
     },
@@ -328,7 +329,7 @@
         },
         {
           "type": "DESC",
-          "data": "A module is just a file. One script is one module. Modules can load each other and use special directives export and import to interchange functionality, call functions of one module from another one:\n\n* **export** keyword labels variables and functions that should be accessible from outside the current module.\n* **import** allows the import of functionality from other modules.\n\n\nBefore modules, a variable declared outside any function was a global variable. In modules, a variable declared outside any function is hidden and not available to other modules unless it is explicitly exported.\n\n**Example 1:**\n\nFor instance, if we have a file** sayHi\\.js** exporting a function:\n\n```\n// 📁 sayHi.js\nexport function sayHi(user) {\n  alert(`Hello, ${user}!`);\n}\n\n```\n\n…Then another file may import and use it:\n\n```\n// 📁 main.js\nimport {sayHi} from './sayHi.js';\n\nalert(sayHi); // function...\nsayHi('John'); // Hello, John!\n\n```\n\n**Example 2:**\n\n**circle\\.js**\n\n```\n// \"circle\" module scope\nconst pi = 3.14159;\n\nconsole.log(pi); // 3.14159\n\n// Usage of pi\n\n```\n\n**main\\.js**\n\n```\nimport './circle';\n\nconsole.log(pi); // throws ReferenceError\n\n```\n\nThe variable pi is **not accessible** outside of circle module \\(unless explicitly exported using export\\)."
+          "data": "A module is just a file. One script is one module. Modules can load each other and use special directives export and import to interchange functionality, call functions of one module from another one:\n\n* **export** keyword labels variables and functions that should be accessible from outside the current module.\n* **import** allows the import of functionality from other modules.\n\n\nBefore modules, a variable declared outside any function was a global variable. In modules, a variable declared outside any function is hidden and not available to other modules unless it is explicitly exported.\n\nTo make import/export work, browsers need **<script type=\"module\"\\> **and for NodeJS \\- set **\"type\": \"module\"** in the **package\\.json** or use the **.mjs** extension\\.\n\n**Example 1:**\nFor instance, if we have a file** sayHi\\.js** exporting a function:\n```\n// 📁 sayHi.mjs\nexport function sayHi(user) {\n  console.log(`Hello, ${user}!`);\n}\n\n```\n\n…Then another file may import and use it:\n```\n// 📁 main.mjs\nimport {sayHi} from './sayHi.js';\n\nconsole.log(sayHi); // function...\nsayHi('John'); // Hello, John!\n\n```\n\n**Example 2:**\n\n**circle\\.mjs**\n```\n// \"circle\" module scope\nconst pi = 3.14159;\n\nconsole.log(pi); // 3.14159\n\n// Usage of pi\n\n```\n\n**main\\.mjs**\n```\nimport './circle';\n\nconsole.log(pi); // ReferenceError: pi is not defined\n\n```\n\nThe variable pi is **not accessible** outside of circle module \\(unless explicitly exported using export\\).\n\n**Refference**:\n* [https://hacks.mozilla.org/2018/03/es\\-modules\\-a\\-cartoon\\-deep\\-dive/](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)\n\n"
         }
       ]
     },
@@ -350,6 +351,19 @@
       ]
     },
     {
+      "key": "3993010c-2552-4c4e-ad7e-195cb2bbc7e5",
+      "parentKey": "5df46409-6d87-4099-85c8-664e7e703c8e",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Constructor\nfunction"
+        }
+      ]
+    },
+    {
       "key": "a9f8d9be-7d66-4b3e-941d-429c02913ec5",
       "parentKey": "f8750599-32db-4fb3-829e-0673887df2c2",
       "subKeys": [],
@@ -362,7 +376,7 @@
         },
         {
           "type": "DESC",
-          "data": "An _**arrow function**_ is defined using a pair of parenthesis that contains the list of parameters \\(param1, param2, ..., paramN\\), followed by a fat arrow =\\> and a pair of curly braces \\{...\\} that delimits the body statements.\n\n**example 1:**\n\n```\nconst square = (value) => {\n  return value * value\n}\nsquare(10); // output: \"100\"\n\n```\n\n**example 2:**\n* When the arrow function has only one parameter, the pair of parentheses can be omitted. When it contains a single statement, the curly braces can be omitted too.\n\n```\nconst square = value => value * value;\nsquare(10); // output: \"100\"\n\n```\n\n**example 3:**\n* when it takes no parameters\n\n```\nconst currentDate = () => console.log(new Date().toString().slice(0,15));\ncurrentDate(); // output: \"Wed Jul 21 2021\"\n\nconst currentTime = _ => console.log(new Date().toTimeString().slice(0, 8));\ncurrentTime(); // output: \"19:08:58\"\n\n```\n"
+          "data": "An **arrow function** is defined using a pair of parenthesis that contains the list of parameters \\(param1, param2, ..., paramN\\), followed by a fat arrow =\\> and a pair of curly braces \\{...\\} that delimits the body statements.\n\n**example 1:**\n```\nconst square = (value) => {\n  return value * value\n}\nsquare(10); // output: \"100\"\n\n```\n\n**example 2:**\n* When the arrow function has only one parameter, the pair of parentheses can be omitted. When it contains a single statement, the curly braces and return can be omitted too.\n\n```\nconst square = value => value * value;\nsquare(10); // output: \"100\"\n\n```\n\n**example 3:**\n* when it takes no parameters\n\n```\nconst currentDate = () => console.log(new Date().toString().slice(0,15));\ncurrentDate(); // output: \"Wed Jul 21 2021\"\n\nconst currentTime = _ => console.log(new Date().toTimeString().slice(0, 8));\ncurrentTime(); // output: \"19:08:58\"\n\n```\n"
         }
       ]
     },
@@ -379,7 +393,7 @@
         },
         {
           "type": "DESC",
-          "data": "It it’s block\\-scoped, and value stored in it can be reassigned.\n\nTo declare or create a varaible\n\n```\nlet message;\n\n```\n\nAssign a data into it by using the assignment operator =:\n\n```\nmessage = 'Hello';\n\n```\n\nCombine the variable _declaration_ and _assignment_ into a single line\n\n```\nlet message = 'Hello!';\n\n```\n\nDeclare multiple variables in one line\n\n```\nlet user = 'John', age = 25, message = 'Hello';\n\n```\n\nReassigning a value\n\n```\nlet userName = \"Bruce\"\nuserName = \"Wayne\"\n\n```\n\nLet is **block\\-scoped**\n\n```\nlet fullMoon = true;\n\n// Initialize a global variable\nlet species = \"human\";\n\nif (fullMoon) {\n  // Initialize a block-scoped variable\n  let species = \"werewolf\";\n  console.log(`${species}`); // \"werewolf\"\n}\n\nconsole.log(`${species}`); // \"human\"\n\n```\n"
+          "data": "Let is **blocked** scope \\(will see more of that in **Scopes & Closures**\\). Value stored in it can be reassigned.\n\nTo declare or create a varaible\n\n```\nlet message;\n\n```\n\nAssign a data into it by using the assignment operator =:\n\n```\nmessage = 'Hello';\n\n```\n\nCombine the variable _declaration_ and _assignment_ into a single line\n\n```\nlet message = 'Hello!';\n\n```\n\nDeclare multiple variables in one line\n\n```\nlet user = 'John', age = 25, message = 'Hello';\n\n```\n\nReassigning a value\n\n```\nlet userName = \"Bruce\"\nuserName = \"Wayne\"\n\n```\n"
         }
       ]
     },
@@ -404,7 +418,7 @@
         },
         {
           "type": "DESC",
-          "data": "All primitive values are immutable, means “**unchangeable**”. Read\\-only. \n\n```\nExample 1:\n\nlet str = 'hello';\nconsole.log(str[0]); // \"h\"\nstr[0] = 'j';\nconsole.log(str); // \"hello\"\n\n```\n\n```\nExample 2: https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/apA.md\n\nlet myName = \"Kyle\";\nlet yourName = myName;\nmyName = \"Frank\";\nconsole.log(myName); // \"Frank\"\nconsole.log(yourName); // \"Kyle\"\n\n```\n\n**yourName** wasn't affected by the re\\-assignment of **myName** to \"Frank\"? That's because each variable holds its own copy of the value."
+          "data": "All primitive values are immutable, means “**unchangeable**”. Read\\-only. \n\n**Example 1:**\n```\nExample 1:\nlet str = 'hello';\nconsole.log(str[0]); // \"h\"\nstr[0] = 'j';\nconsole.log(str); // \"hello\"\n\n```\n\n**Example 2:** \\- https://github.com/getify/You\\-Dont\\-Know\\-JS/blob/2nd\\-ed/get\\-started/apA.md\n```\nlet myName = \"Kyle\";\nlet yourName = myName;\nmyName = \"Frank\";\nconsole.log(myName); // \"Frank\"\nconsole.log(yourName); // \"Kyle\"\n\n```\n\n**yourName** wasn't affected by the re\\-assignment of **myName** to \"Frank\"? That's because each variable holds its own copy of the value."
         }
       ]
     },
@@ -421,7 +435,7 @@
         },
         {
           "type": "DESC",
-          "data": "In JavaScript, the “number” type cannot represent integer values larger than \\(253\\-1\\) \\(that’s 9007199254740991\\), or less than \\-\\(253\\-1\\) for negatives. It’s a technical limitation caused by their internal representation.\n\n```\nconsole.log(typeof(22234234n)); // \"bigint\"\n\n```\n\nA BigInt value is created by appending n to the end of an integer:\n\n// the \"n\" at the end means it's a BigInt\n```\nconst bigInt = 1234567890123456789012345678901234567890n;\n\n```\n\nBigInt numbers are rarely needed"
+          "data": "In JavaScript, the “**number**” type cannot represent integer values larger than \\(253\\-1\\) \\(that’s 9007199254740991\\), or less than \\-\\(253\\-1\\) for negatives. It’s a technical limitation caused by their internal representation.\n\n```\nconsole.log(typeof(22234234n)); // \"bigint\"\n\n```\n\nA BigInt value is created by appending n to the end of an integer\n```\nconst bigInt = 1234567890123456789012345678901234567890n; // the \"n\" at the end means it's a BigInt\n\n```\n\nBigInt numbers are rarely needed"
         }
       ]
     },
@@ -498,7 +512,7 @@
         },
         {
           "type": "DESC",
-          "data": "A string in JavaScript must be surrounded by quotes.\n\n```\nconsole.log(typeof(\"hello\")); // \"string\"\n\n```\n\n```\nlet str = \"Hello\";\nlet str2 = 'Single quotes are ok too';\nlet phrase = `can embed another ${str}`;\n\n```\n\nIn JavaScript, there are 3 types of quotes.\n```\nDouble quotes: \"Hello\".\nSingle quotes: 'Hello'.\nBackticks: `Hello`.\n\n```\n"
+          "data": "A string in JavaScript must be surrounded by quotes.\n\n```\nconsole.log(typeof(\"hello\")); // \"string\"\nconsole.log(typeof('hello')); // \"string\"\nconsole.log(typeof(`hello`)); // \"string\"\n\n```\n\n```\nlet str = \"Hello\";\nlet str2 = 'Single quotes are ok too';\nlet phrase = `can embed another ${str}`;\n\nconsole.log(\"Str:\", str, \"+\", \"Str2:\", str2, \"+\", \"Phrase:\", phrase);\n// Str: Hello + Str2: Single quotes are ok too + Phrase: can embed another Hello\n\n```\n\nIn JavaScript, there are 3 types of quotes.\n```\nDouble quotes: \"Hello\".\nSingle quotes: 'Hello'.\nBackticks: `Hello`.\n\n```\n"
         }
       ]
     },
@@ -515,7 +529,7 @@
         },
         {
           "type": "DESC",
-          "data": "The number type represents both integer and floating point numbers.\n\n```\nconsole.log(typeof(2)); // \"number\"\nconsole.log(typeof(100.554)); // \"number\"\n\n```\n\n```\nlet age = 35\nconst gravity = 9.81  // const for non-changing values\nlet mass = 72         // mass in Kilogram\nconst PI = 3.14       // pi a geometrical constant\n\n```\n\n\n// More Examples\n```\nconst boilingPoint = 100 // temperature in oC, boiling point of water which is a constant\nconst bodyTemp = 37      // oC average human body temperature, which is a constant\n\n```\n\n// finally printing the values\n```\nconsole.log(age, gravity, mass, PI, boilingPoint, bodyTemp)\n\n```\n"
+          "data": "The number type represents both **integer** and **floating point** numbers\\.\n\n**Example 1: **Checking the type\n```\nconsole.log(typeof(2)); // \"number\"\nconsole.log(typeof(-200)); // \"number\"\nconsole.log(typeof(100.554)); // \"number\"\nconsole.log(typeof(-99.99)); // \"number\"\n\n```\n\n```\nlet age = 35\nconst gravity = 9.81  // const for non-changing values\nlet mass = 72         // mass in Kilogram\nconst PI = 3.14       // pi a geometrical constant\nconst boilingPoint = 100 // temperature in oC, boiling point of water which is a constant\nconst bodyTemp = 37      // oC average human body temperature, which is a constant\n\nconsole.log(age, gravity, mass, PI, boilingPoint, bodyTemp) // 35 9.81 72 3.14 100 37\n\n```\n"
         }
       ]
     },
@@ -554,6 +568,19 @@
       ]
     },
     {
+      "key": "13cdb552-c033-4f78-b575-3359b30422a3",
+      "parentKey": "f8750599-32db-4fb3-829e-0673887df2c2",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Constructor\nFunction"
+        }
+      ]
+    },
+    {
       "key": "50256453-3cf5-4adf-85c0-562970b46468",
       "parentKey": "08aaf5bf-5222-4d4c-bd8d-2267d2f81433",
       "subKeys": [
@@ -568,7 +595,7 @@
         },
         {
           "type": "DESC",
-          "data": "A code block in JavaScript defines a scope for variables declared using **let** and **const **within a curly brace **\\{\\}. **it can be accessed only within that curly brace.\n\n```\nif (true) {\n  // \"if\" block scope\n  const message = 'Hello';\n  console.log(message); // 'Hello'\n}\nconsole.log(message); // throws ReferenceError\n\n```\n\n\n### var is not block scoped\n\n```\nif (true) {\n  // \"if\" block scope\n  var count = 0;\n  console.log(count); // 0\n}\nconsole.log(count); // 0\n\n```\n\nA code block does not create a scope for var variables, but a function body does."
+          "data": "A code block in JavaScript defines a scope for variables declared using **let** and **const **within a curly brace **\\{\\}. **it can be accessed only within that curly brace.\n\n**Example 1:**\n```\nif (true) {\n  // \"if\" block scope\n  const message = 'Hello';\n  let name = \"Chris\"\n  console.log(message); // 'Hello'\n  console.log(name); // 'Chris'\n}\nconsole.log(message); // throws ReferenceError\nconsole.log(name); // throws ReferenceError\n\n```\n\n**Example 2:**\n```\nlet fullMoon = true;\n\n// Initialize a global variable\nlet species = \"human\";\n\nif (fullMoon) {\n  // Initialize a block-scoped variable\n  let species = \"werewolf\";\n  console.log(`${species}`); // \"werewolf\"\n}\n\nconsole.log(`${species}`); // \"human\"\n\n```\n\n**Example 3: var is not block scoped**\n```\nif (true) {\n  // \"if\" block scope\n  var count = 0;\n  console.log(count); // 0\n}\nconsole.log(count); // 0\n\n```\n\nA code block does not create a scope for var variables, but a function body does."
         }
       ]
     },
@@ -594,7 +621,7 @@
         },
         {
           "type": "DESC",
-          "data": "Scope in JavaScript refers to the current context of code, which determines the **accessibility of variables**.\n\n**Reference** \n* [https://dmitripavlutin.com/javascript\\-scope/](https://dmitripavlutin.com/javascript-scope/)\n* [https://www.freecodecamp.org/news/an\\-introduction\\-to\\-scope\\-in\\-javascript\\-cbd957022652/](https://www.freecodecamp.org/news/an-introduction-to-scope-in-javascript-cbd957022652/)\n* [https://blog.bitsrc.io/understanding\\-scope\\-and\\-scope\\-chain\\-in\\-javascript\\-f6637978cf53](https://blog.bitsrc.io/understanding-scope-and-scope-chain-in-javascript-f6637978cf53)\n\n"
+          "data": "Scope in JavaScript refers to the current context of code, which determines the **accessibility of variables and functions**.\n\nDifference Between **var**, **let**, and **const**\n\n```\n| Keyword |     Scope      | Hoisting | Can Be Reassigned | Can Be Redeclared |\n| :-----: | :------------: | :------: | :---------------: | :---------------: |\n|   var   | Function scope |   Yes    |        Yes        |        Yes        |\n|   let   |  Block scope   |    No    |        Yes        |        No         |\n|  const  |  Block scope   |    No    |        No         |        No         |\n\n```\n\n\n## Var VS let\n\n* [https://www.javascripttutorial.net/es6/difference\\-between\\-var\\-and\\-let/](https://www.javascripttutorial.net/es6/difference-between-var-and-let/)\n\n\n**Reference** \n* [https://dmitripavlutin.com/javascript\\-scope/](https://dmitripavlutin.com/javascript-scope/)\n* [https://www.freecodecamp.org/news/an\\-introduction\\-to\\-scope\\-in\\-javascript\\-cbd957022652/](https://www.freecodecamp.org/news/an-introduction-to-scope-in-javascript-cbd957022652/)\n* [https://blog.bitsrc.io/understanding\\-scope\\-and\\-scope\\-chain\\-in\\-javascript\\-f6637978cf53](https://blog.bitsrc.io/understanding-scope-and-scope-chain-in-javascript-f6637978cf53)\n\n"
         }
       ]
     },
@@ -613,7 +640,7 @@
         },
         {
           "type": "DESC",
-          "data": "**if** statement can be extended with an **else** statement, which adds another block to run when the **if** condition doesn’t pass.\n\n**Syntax:**\n\n```\nif (condition) {\n      //condition is true this block will be executed\n      // no futher conditions will be checked\n} else {\n      //when a condition is false/failed this block will be executed\n}\n\n```\n\n**example:**\n\n```\nif (\"cat\" === \"dog\") {\n      console.log(\"if block executed\");\n} else {\n      console.log(\"else block executed\");\n}\n\n```\n"
+          "data": "**if** statement can be extended with an **else** statement, which adds another block to run when the **if** condition doesn’t pass.\n\n**Syntax:**\n```\nif (condition) {\n      //condition is true this block will be executed\n      // no futher conditions will be checked\n} else {\n      //when a condition is false/failed this block will be executed\n}\n\n```\n\n**example:**\n```\nif (\"cat\" === \"dog\") {\n      console.log(\"if block executed\");\n} else {\n      console.log(\"else block executed\");\n}\n\n```\n"
         }
       ]
     },
@@ -635,7 +662,7 @@
         },
         {
           "type": "DESC",
-          "data": "Conditional statements controls behavior in JavaScript and determine whether or not a piece of code can run.\n\n\n## Truthy\n\nIn JavaScript, a truthy value is a value that is considered true when encountered in a Boolean context. All values are truthy unless they are defined as falsy \\(i.e., except for false, 0, \\-0, 0n, \"\", null, undefined, and NaN\\).\n\n**Examples of truthy values** in JavaScript \\(which will be coerced to true in boolean contexts, and thus execute the if block\\)\n\n```\nif (true)\nif ({})\nif ([])\nif (42)\nif (\"0\")\nif (\"false\")\nif (new Date())\nif (-42)\nif (12n)\nif (3.14)\nif (-3.14)\nif (Infinity)\nif (-Infinity)\n\n```\n\n\n## Falsy\n\nA falsy \\(sometimes written falsey\\) value is a value that is considered false when encountered in a Boolean context.\n\n**Complete list of JavaScript falsy values**\n| false | The keyword false. |\n|:--- |:--- |\n| 0 | The Number zero \\(so, also 0.0, etc., and 0x0\\). |\n| \\-0 | The Number negative zero \\(so, also \\-0.0, etc., and \\-0x0\\). |\n| 0n | The BigInt zero \\(so, also 0x0n\\). Note that there is no BigInt negative zero — the negation of 0n is 0n. |\n| \"\", | '', \\`\\` Empty string value. |\n| null | null — the absence of any value. |\n| undefined | undefined — the primitive value. |\n| NaN | NaN — not a number. |\n| document\\.all | Objects are falsy if and only if they have the \\[\\[IsHTMLDDA\\]\\] internal slot.That slot only exists in document.all and cannot be set using JavaScript. |\n"
+          "data": "Conditional statements controls behavior in JavaScript and determine whether or not a piece of code can run.\n\n## Truthy\n\nIn JavaScript, a truthy value is a value that is considered true when encountered in a Boolean context. All values are truthy unless they are defined as falsy \\(i.e., except for false, 0, \\-0, 0n, \"\", null, undefined, and NaN\\).\n\n**Examples of truthy values** in JavaScript \\(which will be coerced to true in boolean contexts, and thus execute the if block\\)\n\n```\nif (true)\nif ({})\nif ([])\nif (42)\nif (\"0\")\nif (\"false\")\nif (new Date())\nif (-42)\nif (12n)\nif (3.14)\nif (-3.14)\nif (Infinity)\nif (-Infinity)\n\n```\n\n\n## Falsy\n\nA falsy \\(sometimes written falsey\\) value is a value that is considered false when encountered in a Boolean context.\n\n**Complete list of JavaScript falsy values**\n| false | The keyword false. |\n|:--- |:--- |\n| 0 | The Number zero \\(so, also 0.0, etc., and 0x0\\). |\n| \\-0 | The Number negative zero \\(so, also \\-0.0, etc., and \\-0x0\\). |\n| 0n | The BigInt zero \\(so, also 0x0n\\). Note that there is no BigInt negative zero — the negation of 0n is 0n. |\n| \"\", | '', \\`\\` Empty string value. |\n| null | null — the absence of any value. |\n| undefined | undefined — the primitive value. |\n| NaN | NaN — not a number. |\n| document\\.all | Objects are falsy if and only if they have the \\[\\[IsHTMLDDA\\]\\] internal slot.That slot only exists in document.all and cannot be set using JavaScript. |\n"
         }
       ]
     },
@@ -654,7 +681,7 @@
         },
         {
           "type": "DESC",
-          "data": "When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.\n\nIf it’s still could not find the variable, it will either implicitly declare the variable in the global scope \\(if not in strict mode\\) or return an error.\n\nExample 1:\n\n```\nfunction run() {\n  // \"run\" function scope\n  const message = 'Run, Forrest, Run!';\n\n  if (true) {\n    // \"if\" code block scope\n    const friend = 'Bubba';\n    console.log(message); // 'Run, Forrest, Run!'\n  }\n\n  console.log(friend); // throws ReferenceError\n}\n\nrun();\n\n```\n\nThe scope contained within another scope is named **_inner scope_**. In the example, if code block scope is an inner scope of run\\(\\) function scope.\nThe scope that wraps another scope is named **_outer scope_**. In the example, run\\(\\) function scope is an outer scope to if code block scope."
+          "data": "When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.\n\nIf it’s still could not find the variable, it will either implicitly declare the variable in the global scope \\(if not in strict mode\\) or return an error.\n\nExample 1:\n\n```\nfunction run() {\n  // \"run\" function scope\n  const message = 'Run, Forrest, Run!';\n\n  if (true) {\n    // \"if\" code block scope\n    const friend = 'Bubba';\n    console.log(message); // 'Run, Forrest, Run!'\n  }\n\n  console.log(friend); // throws ReferenceError\n}\n\nrun();\n\n```\n\nThe scope contained within another scope is named **_inner scope_**. In the example, if code block scope is an inner scope of run\\(\\) function scope. The scope that wraps another scope is named **_outer scope_**. In the example, run\\(\\) function scope is an outer scope to if code block scope."
         }
       ]
     },
@@ -688,7 +715,7 @@
         },
         {
           "type": "DESC",
-          "data": "The keyword const is an abbreviation for constant. Similar to let, it’s block\\-scoped, however, you can’t reassigned it."
+          "data": "The keyword **const** is an abbreviation for **constant**. Similar to let, it’s **block\\-scoped**, however, you can’t reassigned it and value must be provided when declaring it.\n\n**Example 1:**\n```\nconst pi = 3.14\nconsole.log(\"Pi :\", pi); // 3.14\n\n```\n\n**Example 2:**\n```\nconst gravity; // SyntaxError: Missing initializer in const declaration\n\n```\n\n**Example 3:**\n```\nconst name = \"Chris\"\nname = \"Jordan\" // TypeError: Assignment to constant variable.\n\n```\n"
         }
       ]
     },
@@ -705,7 +732,7 @@
         },
         {
           "type": "DESC",
-          "data": "The **switch** statement evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case, as well as statements in cases that follow the matching case.\n\n**Example 1:** expression matches a case\n\nThe **break** statement terminates the current flow of execution\n\n```\nconst expr = 'Papayas';\nswitch (expr) {\n  case 'Oranges':\n    console.log('Oranges are $0.59 a pound.');\n    break;\n  case 'Mangoes':\n  case 'Papayas':\n    console.log('Mangoes and papayas are $2.79 a pound.');\n    break;\n  default:\n    console.log(`Sorry, we are out of ${expr}.`);\n}\n\n// output: \"Mangoes and papayas are $2.79 a pound.\"\n\n```\n\n**Example 2:** expression did not match any cases\n\n```\nconst expr = 'Onion';\nswitch (expr) {\n  case 'Oranges':\n    console.log('Oranges are $0.59 a pound.');\n    break;\n  case 'Mangoes':\n  case 'Papayas':\n    console.log('Mangoes and papayas are $2.79 a pound.');\n    break;\n  default:\n    console.log(`Sorry, we are out of ${expr}.`);\n}\n\n// output: \"Sorry, we are out of Onion.\"\n\n```\n\n**Example 3:** expression matches a case but break statement is not specified\n\nIf you forget a **_break_** then the script will run from the case where the criterion is met and will run the cases after that **_regardless if a criterion was met_**.\n\n```\nconst expr = 'Oranges';\nswitch (expr) {\n  case 'Oranges':\n    console.log('Oranges are $0.59 a pound.');\n  case 'Mangoes':\n  case 'Papayas':\n    console.log('Mangoes and papayas are $2.79 a pound.');\n  default:\n    console.log(`Sorry, we are out of ${expr}.`);\n}\n\n// Output:\n// Oranges are $0.59 a pound.\n// Mangoes and papayas are $2.79 a pound.\n// Sorry, we are out of Oranges.\n\n```\n"
+          "data": "The **switch** statement evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case, as well as statements in cases that follow the matching case.\n\n**Example 1:** expression matches a case\nThe **break** statement terminates the current flow of execution\n```\nconst expr = 'Papayas';\nswitch (expr) {\n  case 'Oranges':\n    console.log('Oranges are $0.59 a pound.');\n    break;\n  case 'Mangoes':\n  case 'Papayas':\n    console.log('Mangoes and papayas are $2.79 a pound.');\n    break;\n  default:\n    console.log(`Sorry, we are out of ${expr}.`);\n}\n\n// output: \"Mangoes and papayas are $2.79 a pound.\"\n\n```\n\n**Example 2:** expression did not match any cases\n```\nconst expr = 'Onion';\nswitch (expr) {\n  case 'Oranges':\n    console.log('Oranges are $0.59 a pound.');\n    break;\n  case 'Mangoes':\n  case 'Papayas':\n    console.log('Mangoes and papayas are $2.79 a pound.');\n    break;\n  default:\n    console.log(`Sorry, we are out of ${expr}.`);\n}\n\n// output: \"Sorry, we are out of Onion.\"\n\n```\n\n**Example 3:** expression matches a case but break statement is not specified\nIf you forget a _break_ then the script will run from the case where the criterion is met and will run the cases after that _regardless if a criterion was met_.\n```\nconst expr = 'Oranges';\nswitch (expr) {\n  case 'Oranges':\n    console.log('Oranges are $0.59 a pound.');\n  case 'Mangoes':\n  case 'Papayas':\n    console.log('Mangoes and papayas are $2.79 a pound.');\n  default:\n    console.log(`Sorry, we are out of ${expr}.`);\n}\n\n// Output:\n// Oranges are $0.59 a pound.\n// Mangoes and papayas are $2.79 a pound.\n// Sorry, we are out of Oranges.\n\n```\n"
         }
       ]
     },
@@ -725,7 +752,39 @@
         },
         {
           "type": "DESC",
-          "data": "Non\\-primitive are mutuable means '**changeable**'.  Only object values \\(arrays, objects, functions, etc.\\) are treated as references\n\n```\nExmaple 1:\n\nlet arr = [212, 8, 506];\nconsole.log(arr[0]); // 212\narr[0] = 420;\nconsole.log(arr); // [420, 8, 506]\n\n```\n\n```\nExample 2: https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/apA.md\n\nlet myAddress = {\n    street: \"123 JS Blvd\",\n    city: \"Austin\",\n    state: \"TX\"\n};\n\nlet yourAddress = myAddress;\n\nmyAddress.street = \"456 TS Ave\";\n\nconsole.log(yourAddress.street); // 456 TS Ave\nconsole.log(myAddress.street) // 456 TS Ave\n\n```\n\nValue assigned to **myAddress** is an object, it's held/assigned by reference, and thus the assignment to the **yourAddress** variable is a copy of the reference, not the object value itself. That's why the updated value assigned to the myAddress.street is reflected when we access yourAddress.street. myAddress and yourAddress have copies of the **reference to the single shared object**, so an update to one is an update to both.\n"
+          "data": "Non\\-primitive are mutuable means '**changeable**'.  Only object values \\(arrays, objects, functions, etc.\\) are treated as references\n\n**Example 1:**\n```\nlet arr = [212, 8, 506];\nconsole.log(arr[0]); // 212\narr[0] = 420;\nconsole.log(arr); // [420, 8, 506]\n\n```\n\n**Example 2 \\- **https://github.com/getify/You\\-Dont\\-Know\\-JS/blob/2nd\\-ed/get\\-started/apA.m\n```\nlet myAddress = {\n    street: \"123 JS Blvd\",\n    city: \"Austin\",\n    state: \"TX\"\n};\n\nlet yourAddress = myAddress;\n\nmyAddress.street = \"456 TS Ave\";\n\nconsole.log(yourAddress.street); // 456 TS Ave\nconsole.log(myAddress.street) // 456 TS Ave\n\n```\n\nValue assigned to **myAddress** is an object, it's held/assigned by reference, and thus the assignment to the **yourAddress** variable is a copy of the reference, not the object value itself. That's why the updated value assigned to the myAddress.street is reflected when we access yourAddress.street. myAddress and yourAddress have copies of the **reference to the single shared object**, so an update to one is an update to both."
+        }
+      ]
+    },
+    {
+      "key": "5df46409-6d87-4099-85c8-664e7e703c8e",
+      "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+      "subKeys": [
+        "89f35d77-be58-421f-96f1-c53ebf79d892",
+        "79a87fe8-34ea-45e0-90b4-ee2399074191",
+        "3993010c-2552-4c4e-ad7e-195cb2bbc7e5",
+        "277f12bf-6cef-4676-92bb-ee233886e4cb",
+        "e153daae-cd39-4033-bd24-8fcf1a6f9f84"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Objects"
+        }
+      ]
+    },
+    {
+      "key": "e153daae-cd39-4033-bd24-8fcf1a6f9f84",
+      "parentKey": "5df46409-6d87-4099-85c8-664e7e703c8e",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Object.create()"
         }
       ]
     },
@@ -762,7 +821,7 @@
         },
         {
           "type": "DESC",
-          "data": "**If** statement only runs if the condition enclosed in parentheses \\(\\) is truthy\n\n**Syntax:**\n\n```\nif (condition) {\n    //condition is true this block will be executed\n}\n\n```\n\n**example**:\n\n```\nif (10 > 5) {\n    console.log(\"if blocked executed\");\n}\n\n```\n"
+          "data": "**If** statement only runs if the condition enclosed in parentheses \\(\\) is truthy\n\n**Syntax:**\n```\nif (condition) {\n    //condition is true this block will be executed\n}\n\n```\n\n**example**:\n```\nif (10 > 5) {\n    console.log(\"if blocked executed\");\n}\n\n```\n"
         }
       ]
     },
@@ -796,7 +855,24 @@
         },
         {
           "type": "DESC",
-          "data": "A variable is a “named storage” for data. We can use variables to store goodies, visitors, and other data.\n\n* **Global variables** are those declared outside of a block\n* **Local variables** are those declared inside of a block\n\n\n```\nlet species = \"human\"; // global variable\n\nif(fullmoon){\n   let species = \"werewolf\"; // local variable\n}\n\n```\n\nDifference Between **var**, **let**, and **const**\n\n```\n| Keyword |     Scope      | Hoisting | Can Be Reassigned | Can Be Redeclared |\n| :-----: | :------------: | :------: | :---------------: | :---------------: |\n|   var   | Function scope |   Yes    |        Yes        |        Yes        |\n|   let   |  Block scope   |    No    |        Yes        |        No         |\n|  const  |  Block scope   |    No    |        No         |        No         |\n\n\n```\n\n\n## Var VS let\n\n* [https://www.javascripttutorial.net/es6/difference\\-between\\-var\\-and\\-let/](https://www.javascripttutorial.net/es6/difference-between-var-and-let/)\n\n"
+          "data": "A variable is a **container** for a value or **named storage** for data. We can use variables to store goodies, visitors, and other data."
+        }
+      ]
+    },
+    {
+      "key": "89f35d77-be58-421f-96f1-c53ebf79d892",
+      "parentKey": "5df46409-6d87-4099-85c8-664e7e703c8e",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Object\nliterals"
+        },
+        {
+          "type": "DESC",
+          "data": "**Shorthand** method definition can be used in a method declaration on object literals and ES2015 classes. You can define them using a function name, followed by a list of parameters in a pair of parenthesis \\(para1, ..., paramN\\) and a pair of curly braces \\{ ... \\} that delimits the body statements.\n\n```\nconst collection = {\n  items: [],\n  add(...items) {\n    this.items.push(...items);\n  },\n  get(index) {\n    return this.items[index];\n  }\n};\ncollection.add('C', 'Js', 'PHP', 'Java');\nconsole.log(collection.get(1)) //output: \"Js\"\n\n```\n\n**add\\(\\)** and **get\\(\\)** methods in **collection** object are defined using short method definition. These methods are called as usual: **collection\\.add\\(...\\)** and **collection\\.get\\(...\\)**."
         }
       ]
     },
@@ -809,11 +885,11 @@
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "Function\ndeclarations"
+          "data": "Function\ndeclaration"
         },
         {
           "type": "DESC",
-          "data": "A **function** definition \\(also called a function declaration, or function statement\\) consists of the function keyword, followed by:\n* The name of the function.\n* A list of parameters to the function, enclosed in parentheses and separated by commas.\n* The JavaScript statements that define the function, enclosed in curly brackets, \\{...\\}.\n\n\n**Syntax:**\n\n```\nfunction validFunctionName(parameter1, parameter2) {\n  return statement;\n}\n\n```\n\n**example 1: which takes no parameters and returns nothing \\(void\\)**\n\n```\nfunction currentTime() {\n  console.log(new Date().toTimeString().slice(0, 8));\n}\n\ncurrentTime() // output: \"18:35:36\"\n\n```\n\n**example 2: which takes parameters and returns a value**\n\nThe **return** statement ends function execution and specifies a value to be returned to the function caller.\n```\nfunction sum(a, b) {\n  return a + b;\n}\nconst result = sum(5, 6);\n\nconsole.log(result); // output: \"11\"\n\n```\n\n**example 3**: **default parameters** \n\n```\nfunction showMessage(from, text = \"no text given\") {\n  console.log( from + \": \" + text );\n}\n\nshowMessage(\"Ann\"); // output: \"Ann: no text given\"\nshowMessage(\"Ann\", \"Hello, world!\"); // output: \"Ann: Hello, world!\"\n\n```\n"
+          "data": "A **function** declaration \\(also called a function statement\\) consists of the function keyword, followed by:\n* The name of the function.\n* A list of parameters to the function, enclosed in parentheses and separated by commas.\n* The JavaScript statements that define the function, enclosed in curly brackets, \\{...\\}.\n\n\n**Syntax:**\n\n```\nfunction validFunctionName(parameter1, parameter2) {\n  return statement;\n}\n\n```\n\n**example 1: which takes no parameters and returns nothing \\(void\\)**\n\n```\nfunction currentTime() {\n  console.log(new Date().toTimeString().slice(0, 8));\n}\n\ncurrentTime() // output: \"18:35:36\"\n\n```\n\n**example 2: which takes parameters and returns a value**\n\nThe **return** statement ends function execution and specifies a value to be returned to the function caller.\n```\nfunction sum(a, b) {\n  return a + b;\n}\nconst result = sum(5, 6);\n\nconsole.log(result); // output: \"11\"\n\n```\n\n**example 3**: **default parameters** \n\n```\nfunction showMessage(from, text = \"no text given\") {\n  console.log( from + \": \" + text );\n}\n\nshowMessage(\"Ann\"); // output: \"Ann: no text given\"\nshowMessage(\"Ann\", \"Hello, world!\"); // output: \"Ann: Hello, world!\"\n\n```\n"
         }
       ]
     },
@@ -830,7 +906,7 @@
         },
         {
           "type": "DESC",
-          "data": "The special value undefined also stands apart. It makes a type of its own, just like null.\n\n```\nconsole.log(typeof(undefined)); // \"undefined\"\n\n```\n\nThe meaning of undefined is “**value is not assigned**”.\n\nIf a **variable is declared, but not assigned**, then its value is undefined:\n\n```\nlet age;\nconsole.log(age); // shows \"undefined\"\n\n```\n\nTechnically, it is possible to explicitly assign undefined to a variable:\n\n```\nlet age = 100;\n\n// change the value to undefined\nage = undefined;\n\nconsole.log(age); // shows \"undefined\"\n\n```\n"
+          "data": "The special value undefined also stands apart. It makes a type of its own, just like null.\n\n```\nconsole.log(typeof(undefined)); // \"undefined\"\n\n```\n\nThe meaning of undefined is “**value is not assigned**”. If a **variable is declared, but not assigned**, then its value is undefined:\n```\nlet age;\nconsole.log(age); // shows \"undefined\"\n\n```\n\nTechnically, it is possible to explicitly assign undefined to a variable:\n```\nlet age = 100;\n\n// change the value to undefined\nage = undefined;\n\nconsole.log(age); // shows \"undefined\"\n\n```\n"
         }
       ]
     },
@@ -867,6 +943,23 @@
       ]
     },
     {
+      "key": "840a8fff-1b5b-48bd-9aae-6214c599c5ab",
+      "parentKey": "f8750599-32db-4fb3-829e-0673887df2c2",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Immediately invoked \nfunction expression"
+        },
+        {
+          "type": "DESC",
+          "data": "An **IIFE** \\(Immediately Invoked Function Expression\\) is a JavaScript function that runs as soon as it is defined or as soon as it starts to executes.\n\n**Example 1:**\n```\n\n\n```\n"
+        }
+      ]
+    },
+    {
       "key": "c007d461-f421-48fd-9566-ac88d298bbb8",
       "parentKey": "50256453-3cf5-4adf-85c0-562970b46468",
       "subKeys": [],
@@ -899,14 +992,28 @@
       ]
     },
     {
+      "key": "79a87fe8-34ea-45e0-90b4-ee2399074191",
+      "parentKey": "5df46409-6d87-4099-85c8-664e7e703c8e",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "new Object()"
+        }
+      ]
+    },
+    {
       "key": "f8750599-32db-4fb3-829e-0673887df2c2",
       "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
       "subKeys": [
         "0341d846-c3f3-4915-a4b3-0c11b3643a9d",
         "a1649782-ec29-4030-bb2d-d6044103cf10",
+        "13cdb552-c033-4f78-b575-3359b30422a3",
         "a9f8d9be-7d66-4b3e-941d-429c02913ec5",
-        "220e873a-0a0b-4820-9434-42d0727eead5",
-        "a37aef6c-b62c-423c-8124-c18edc14142b"
+        "a37aef6c-b62c-423c-8124-c18edc14142b",
+        "840a8fff-1b5b-48bd-9aae-6214c599c5ab"
       ],
       "collapse": false,
       "style": "{\"contentStyle\":{\"background\":\"#9eff88\"}}",
@@ -917,7 +1024,7 @@
         },
         {
           "type": "DESC",
-          "data": "Functions are the main “building blocks” of the program. They allow the code to be called many times without repetition. A function is executed when “something” invokes it \\(calls it\\).\n\n**Referrence:**\n* [https://dmitripavlutin.com/6\\-ways\\-to\\-declare\\-javascript\\-functions/](https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/)\n* [https://codeburst.io/understanding\\-generators\\-in\\-es6\\-javascript\\-with\\-examples\\-6728834016d5](https://codeburst.io/understanding-generators-in-es6-javascript-with-examples-6728834016d5)\n\n"
+          "data": "Functions are the main “building blocks” of the program. They allow the code to be called many times without repetition. A function is executed when “something” invokes it \\(calls it\\).\n\n**Referrence:**\n* [https://codeburst.io/understanding\\-generators\\-in\\-es6\\-javascript\\-with\\-examples\\-6728834016d5](https://codeburst.io/understanding-generators-in-es6-javascript-with-examples-6728834016d5)\n\n"
         }
       ]
     }
