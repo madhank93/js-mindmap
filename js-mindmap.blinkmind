@@ -1,7 +1,7 @@
 {
   "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
   "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-  "focusKey": "e153daae-cd39-4033-bd24-8fcf1a6f9f84",
+  "focusKey": "0341d846-c3f3-4915-a4b3-0c11b3643a9d",
   "extData": {
     "TOPIC_REFERENCE": {
       "reference": {}
@@ -78,7 +78,33 @@
         },
         {
           "type": "DESC",
-          "data": "A function in JavaScript defines a scope for variables declared using **var**, **let** and **const**.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  var message = 'Run, Forrest, Run!';\n  console.log(message); // 'Run, Forrest, Run!'\n}\n\nrun();\nconsole.log(message); // throws ReferenceError\n\n```\n\n**run\\(\\)** function body creates a scope. The variable message is accessible inside of the function scope, but inaccessible outside.\n\n**Exmaple 2:**\n```\nfunction run() {\n  // \"run\" function scope\n  const two = 2;\n  let count = 0;\n  function run2() {}\n\n  console.log(two);   // 2\n  console.log(count); // 0\n  console.log(run2);  // function\n}\n\nrun();\nconsole.log(two);   // throws ReferenceError\nconsole.log(count); // throws ReferenceError\nconsole.log(run2);  // throws ReferenceError\n\n```\n\n**Exmaple 3**:\n\nVar is **functional\\-scoped**\n\n```\nvar fullMoon = true;\n\n// Use var to initialize a variable\nvar species = \"human\";\n\nif (fullMoon) {\n  // Attempt to create a new variable in a block\n  var species = \"werewolf\";\n  console.log(`${species}.`); // werewolf\n}\n\nconsole.log(`${species}.`); // werewolf\n\n```\n\nBoth the **global variable** and the **block\\-scoped variable** end up with the same value, **werewolf**. This is because instead of creating a new local variable with var, it is reassigning the same variable in the same scope."
+          "data": "A function in JavaScript defines a scope for variables declared using **var**, **let** and **const**.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  var message = 'Run, Forrest, Run!';\n  console.log(message); // 'Run, Forrest, Run!'\n}\n\nrun();\nconsole.log(message); // throws ReferenceError\n\n```\n\n**run\\(\\)** function body creates a scope. The variable message is accessible inside of the function scope, but inaccessible outside.\n\n**Exmaple 2:**\n```\nfunction run() {\n  // \"run\" function scope\n  const two = 2;\n  let count = 0;\n  function run2() {}\n\n  console.log(two);   // 2\n  console.log(count); // 0\n  console.log(run2);  // function\n}\n\nrun();\nconsole.log(two);   // throws ReferenceError\nconsole.log(count); // throws ReferenceError\nconsole.log(run2);  // throws ReferenceError\n\n```\n\n**Exmaple 3**: Var is **functional\\-scoped**\n```\nvar fullMoon = true;\n\n// Use var to initialize a variable\nvar species = \"human\";\n\nif (fullMoon) {\n  // Attempt to create a new variable in a block\n  var species = \"werewolf\";\n  console.log(`${species}.`); // werewolf\n}\n\nconsole.log(`${species}.`); // werewolf\n\n```\n\nBoth the **global variable** and the **block\\-scoped variable** end up with the same value, **werewolf**. This is because instead of creating a new local variable with var, it is reassigning the same variable in the same scope."
+        }
+      ]
+    },
+    {
+      "key": "91f27dd0-5185-4daa-8501-15ba8727dc06",
+      "parentKey": "d40f6cf0-dcae-4162-8b2f-d89edd7e3212",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "for .. each"
+        }
+      ]
+    },
+    {
+      "key": "7cef3c50-823e-48a6-9314-563851dbc959",
+      "parentKey": "d40f6cf0-dcae-4162-8b2f-d89edd7e3212",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "comparing for\nloops"
         }
       ]
     },
@@ -102,6 +128,8 @@
         "d4cb9863-ba6c-4ea6-903e-44accf4a5b7b",
         "29f23365-fcf6-4f8f-8060-811df84e4770",
         "a3055667-8217-484e-aae8-728cab93135c",
+        "91f27dd0-5185-4daa-8501-15ba8727dc06",
+        "7cef3c50-823e-48a6-9314-563851dbc959",
         "65199906-ca55-4ae8-bd9f-a4a08cbc2432",
         "a70b7d9d-ea0f-49c3-a488-ddbceebe85d8"
       ],
@@ -131,7 +159,7 @@
         },
         {
           "type": "DESC",
-          "data": "**Object** : typeof instance === \"object\". It is used to store collections of data and more complex entities.\n\n```\nconsole.log(typeof({})); // \"object\"\nconsole.log(typeof([])); // \"object\" Arrays aren’t primitive, they are objects\nconsole.log(typeof(new Map())); // \"object\"\nconsole.log(typeof(new Date())); // \"object\"\n\n```\n\nSpecial non\\-data but Structural type for any constructed object instance also used as data structures: \n\n1. new Object, \n1. new Array, \n1. new Map, \n1. new Set, \n1. new WeakMap, \n1. new WeakSet, \n1. new Date and almost everything made with **new** keyword;\n\n\n**Indexed collections**: Arrays and typed Arrays\n\n**Keyed collections**: Maps, Sets, WeakMaps, WeakSets"
+          "data": "**Object** : typeof instance === \"object\". It is used to store collections of data and more complex entities.\n\n```\nconsole.log(typeof({})); // \"object\"\nconsole.log(typeof([])); // \"object\" - Arrays aren’t primitive, they are objects\nconsole.log(typeof(new Map())); // \"object\"\nconsole.log(typeof(new Date())); // \"object\"\n\n```\n\nSpecial non\\-data but Structural type for any constructed object instance also used as data structures: \n\n1. new Object, \n1. new Array, \n1. new Map, \n1. new Set, \n1. new WeakMap, \n1. new WeakSet, \n1. new Date and almost everything made with **new** keyword;\n\n\n**Indexed collections**: Arrays and typed Arrays\n\n**Keyed collections**: Maps, Sets, WeakMaps, WeakSets"
         }
       ]
     },
@@ -222,7 +250,7 @@
         },
         {
           "type": "DESC",
-          "data": "A **generator** is a function that can stop midway and then continue from where it stopped. In short, a generator appears to be a function but it behaves like an iterator.\n\n**example 1:** function declaration form **function\\* <name\\>\\(\\)**\n\n```\nfunction * generatorFunction() {\n  console.log('This will be executed first.');\n  yield 'Hello, ';\n  console.log('I will be printed after the pause');  \n  yield 'World!';\n}\nconst generatorObject = generatorFunction();\n\nconsole.log(generatorObject.next().value);\n// output:\n// This will be executed first.\n// Hello, \nconsole.log(generatorObject.next().value);\n// output:\n// I will be printed after the pause\n// World!\nconsole.log(generatorObject.next().value);\n// output:\n// undefined\n\n```\n\n**example 2: **function expression form **function\\* \\(\\)**\n\n```\nconst indexGenerator = function* () {\n  let index = 0;\n  while(true) {\n    yield index++;\n  }\n};\nconst g = indexGenerator();\nconsole.log(g.next().value); // => 0\nconsole.log(g.next().value); // => 1\n\n```\n\n**example 3: **Shorthand method definition form **\\*<name\\>\\(\\)**\n\n```\nconst obj = {\n  *indexGenerator() {\n    var index = 0;\n    while(true) {\n      yield index++;\n    }\n  }\n}\nconst g = obj.indexGenerator();\nconsole.log(g.next().value); // => 0\nconsole.log(g.next().value); // => 1\n\n```\n"
+          "data": "A **generator** is a function that can stop midway and then continue from where it stopped. In short, a generator appears to be a function but it behaves like an iterator.\n\n**example 1:** function declaration form **function\\* <name\\>\\(\\)**\n```\nfunction * generatorFunction() {\n  console.log('This will be executed first.');\n  yield 'Hello, ';\n  console.log('I will be printed after the pause');  \n  yield 'World!';\n}\nconst generatorObject = generatorFunction();\n\nconsole.log(generatorObject.next().value);\n// output:\n// This will be executed first.\n// Hello, \nconsole.log(generatorObject.next().value);\n// output:\n// I will be printed after the pause\n// World!\nconsole.log(generatorObject.next().value);\n// output:\n// undefined\n\n```\n\n**example 2: **function expression form **function\\* \\(\\)**\n```\nconst indexGenerator = function* () {\n  let index = 0;\n  while(true) {\n    yield index++;\n  }\n};\nconst g = indexGenerator();\nconsole.log(g.next().value); // => 0\nconsole.log(g.next().value); // => 1\n\n```\n\n**example 3: **Shorthand method definition form **\\*<name\\>\\(\\)**\n```\nconst obj = {\n  *indexGenerator() {\n    var index = 0;\n    while(true) {\n      yield index++;\n    }\n  }\n}\nconst g = obj.indexGenerator();\nconsole.log(g.next().value); // => 0\nconsole.log(g.next().value); // => 1\n\n```\n"
         }
       ]
     },
@@ -329,7 +357,7 @@
         },
         {
           "type": "DESC",
-          "data": "A module is just a file. One script is one module. Modules can load each other and use special directives export and import to interchange functionality, call functions of one module from another one:\n\n* **export** keyword labels variables and functions that should be accessible from outside the current module.\n* **import** allows the import of functionality from other modules.\n\n\nBefore modules, a variable declared outside any function was a global variable. In modules, a variable declared outside any function is hidden and not available to other modules unless it is explicitly exported.\n\nTo make import/export work, browsers need **<script type=\"module\"\\> **and for NodeJS \\- set **\"type\": \"module\"** in the **package\\.json** or use the **.mjs** extension\\.\n\n**Example 1:**\nFor instance, if we have a file** sayHi\\.js** exporting a function:\n```\n// 📁 sayHi.mjs\nexport function sayHi(user) {\n  console.log(`Hello, ${user}!`);\n}\n\n```\n\n…Then another file may import and use it:\n```\n// 📁 main.mjs\nimport {sayHi} from './sayHi.js';\n\nconsole.log(sayHi); // function...\nsayHi('John'); // Hello, John!\n\n```\n\n**Example 2:**\n\n**circle\\.mjs**\n```\n// \"circle\" module scope\nconst pi = 3.14159;\n\nconsole.log(pi); // 3.14159\n\n// Usage of pi\n\n```\n\n**main\\.mjs**\n```\nimport './circle';\n\nconsole.log(pi); // ReferenceError: pi is not defined\n\n```\n\nThe variable pi is **not accessible** outside of circle module \\(unless explicitly exported using export\\).\n\n**Refference**:\n* [https://hacks.mozilla.org/2018/03/es\\-modules\\-a\\-cartoon\\-deep\\-dive/](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)\n\n"
+          "data": "A module is just a file. One script is one module. Modules can load each other and use special directives export and import to interchange functionality, call functions of one module from another one:\n\n* **export** keyword labels variables and functions that should be accessible from outside the current module.\n* **import** allows the import of functionality from other modules.\n\n\nBefore modules, a variable declared outside any function was a global variable. In modules, a variable declared outside any function is hidden and not available to other modules unless it is explicitly exported.\n\nTo make import/export work, browsers need **<script type=\"module\"\\> **and for NodeJS \\- set **\"type\": \"module\"** in the **package\\.json** or use the **.mjs** extension\\.\n\n**Example 1:**\nFor instance, if we have a file** sayHi\\.js** exporting a function:\n```\n// 📁 sayHi.mjs\nexport function sayHi(user) {\n  console.log(`Hello, ${user}!`);\n}\n\n```\n\n…Then another file may import and use it:\n```\n// 📁 main.mjs\nimport {sayHi} from './sayHi.js';\n\nconsole.log(sayHi); // function...\nsayHi('John'); // Hello, John!\n\n```\n\n**Example 2:**\n**circle\\.mjs**\n```\n// \"circle\" module scope\nconst pi = 3.14159;\n\nconsole.log(pi); // 3.14159\n\n// Usage of pi\n\n```\n\n**main\\.mjs**\n```\nimport './circle';\n\nconsole.log(pi); // ReferenceError: pi is not defined\n\n```\n\nThe variable pi is **not accessible** outside of circle module \\(unless explicitly exported using export\\).\n\n**Refference**:\n* [https://hacks.mozilla.org/2018/03/es\\-modules\\-a\\-cartoon\\-deep\\-dive/](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)\n\n"
         }
       ]
     },
@@ -568,19 +596,6 @@
       ]
     },
     {
-      "key": "13cdb552-c033-4f78-b575-3359b30422a3",
-      "parentKey": "f8750599-32db-4fb3-829e-0673887df2c2",
-      "subKeys": [],
-      "collapse": false,
-      "style": null,
-      "blocks": [
-        {
-          "type": "CONTENT",
-          "data": "Constructor\nFunction"
-        }
-      ]
-    },
-    {
       "key": "50256453-3cf5-4adf-85c0-562970b46468",
       "parentKey": "08aaf5bf-5222-4d4c-bd8d-2267d2f81433",
       "subKeys": [
@@ -681,7 +696,7 @@
         },
         {
           "type": "DESC",
-          "data": "When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.\n\nIf it’s still could not find the variable, it will either implicitly declare the variable in the global scope \\(if not in strict mode\\) or return an error.\n\nExample 1:\n\n```\nfunction run() {\n  // \"run\" function scope\n  const message = 'Run, Forrest, Run!';\n\n  if (true) {\n    // \"if\" code block scope\n    const friend = 'Bubba';\n    console.log(message); // 'Run, Forrest, Run!'\n  }\n\n  console.log(friend); // throws ReferenceError\n}\n\nrun();\n\n```\n\nThe scope contained within another scope is named **_inner scope_**. In the example, if code block scope is an inner scope of run\\(\\) function scope. The scope that wraps another scope is named **_outer scope_**. In the example, run\\(\\) function scope is an outer scope to if code block scope."
+          "data": "When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.\n\nIf it’s still could not find the variable, it will either implicitly declare the variable in the global scope \\(if not in strict mode\\) or return an error.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  const message = 'Run, Forrest, Run!';\n\n  if (true) {\n    // \"if\" code block scope\n    const friend = 'Bubba';\n    console.log(message); // 'Run, Forrest, Run!'\n  }\n\n  console.log(friend); // throws ReferenceError\n}\n\nrun();\n\n```\n\nThe scope contained within another scope is named _inner scope_. In the example, if code block scope is an inner scope of run\\(\\) function scope. The scope that wraps another scope is named _outer scope_. In the example, run\\(\\) function scope is an outer scope to if code block scope."
         }
       ]
     },
@@ -889,7 +904,7 @@
         },
         {
           "type": "DESC",
-          "data": "A **function** declaration \\(also called a function statement\\) consists of the function keyword, followed by:\n* The name of the function.\n* A list of parameters to the function, enclosed in parentheses and separated by commas.\n* The JavaScript statements that define the function, enclosed in curly brackets, \\{...\\}.\n\n\n**Syntax:**\n\n```\nfunction validFunctionName(parameter1, parameter2) {\n  return statement;\n}\n\n```\n\n**example 1: which takes no parameters and returns nothing \\(void\\)**\n\n```\nfunction currentTime() {\n  console.log(new Date().toTimeString().slice(0, 8));\n}\n\ncurrentTime() // output: \"18:35:36\"\n\n```\n\n**example 2: which takes parameters and returns a value**\n\nThe **return** statement ends function execution and specifies a value to be returned to the function caller.\n```\nfunction sum(a, b) {\n  return a + b;\n}\nconst result = sum(5, 6);\n\nconsole.log(result); // output: \"11\"\n\n```\n\n**example 3**: **default parameters** \n\n```\nfunction showMessage(from, text = \"no text given\") {\n  console.log( from + \": \" + text );\n}\n\nshowMessage(\"Ann\"); // output: \"Ann: no text given\"\nshowMessage(\"Ann\", \"Hello, world!\"); // output: \"Ann: Hello, world!\"\n\n```\n"
+          "data": "A **function** declaration \\(also called a function statement\\) consists of the function keyword, followed by:\n* The name of the function.\n* A list of parameters to the function, enclosed in parentheses and separated by commas.\n* The JavaScript statements that define the function, enclosed in braces, **\\{**...**\\}**.\n\n\n**Syntax:**\n```\nfunction validFunctionName(parameter1, parameter2) {\n  return statement;\n}\n\n```\n\n**example 1: which takes no parameters and returns nothing \\(void\\)**\n```\nfunction currentTime() {\n  console.log(new Date().toTimeString().slice(0, 8));\n}\n\ncurrentTime() // output: \"18:35:36\"\n\n```\n\n**example 2: which takes parameters and returns a value**\nThe **return** statement ends function execution and specifies a value to be returned to the function caller.\n```\nfunction sum(a, b) {\n  return a + b;\n}\nconst result = sum(5, 6);\n\nconsole.log(result); // output: \"11\"\n\n```\n\n**example 3**: **default parameters** \n```\nfunction showMessage(from, text = \"no text given\") {\n  console.log( from + \": \" + text );\n}\n\nshowMessage(\"Ann\"); // output: \"Ann: no text given\"\nshowMessage(\"Ann\", \"Hello, world!\"); // output: \"Ann: Hello, world!\"\n\n```\n\n**example 4: constructor function **\\(will see more this in detail when it comes to **objects**\\)\n```\nfunction Emp(id, name) {\n    this.id = id;\n    this.name = name;\n}\n\nEmp.count = 999999; // this refers to __proto__\nEmp.prototype.baseSalary = 50000; // this refers to prototype\n\nlet emp1 = new Emp(1, \"John\");\n\nconsole.log(emp1.id);\nconsole.log(emp1.name);\n\n```\n"
         }
       ]
     },
@@ -955,7 +970,7 @@
         },
         {
           "type": "DESC",
-          "data": "An **IIFE** \\(Immediately Invoked Function Expression\\) is a JavaScript function that runs as soon as it is defined or as soon as it starts to executes.\n\n**Example 1:**\n```\n\n\n```\n"
+          "data": "An **IIFE** \\(Immediately Invoked Function Expression\\) is a JavaScript function that runs as soon as it is defined or as soon as it starts to executes.\n\n**Example 1:**\n```\n\n\n\n```\n"
         }
       ]
     },
@@ -1010,7 +1025,6 @@
       "subKeys": [
         "0341d846-c3f3-4915-a4b3-0c11b3643a9d",
         "a1649782-ec29-4030-bb2d-d6044103cf10",
-        "13cdb552-c033-4f78-b575-3359b30422a3",
         "a9f8d9be-7d66-4b3e-941d-429c02913ec5",
         "a37aef6c-b62c-423c-8124-c18edc14142b",
         "840a8fff-1b5b-48bd-9aae-6214c599c5ab"
