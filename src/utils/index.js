@@ -12,13 +12,69 @@ export function generateSimpleModel() {
     return Model.create({
         "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
         "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-        "focusKey": "a9f8d9be-7d66-4b3e-941d-429c02913ec5",
+        "focusKey": "1340cde2-dcef-48de-a00e-1ce996ecf377",
         "extData": {
             "TOPIC_REFERENCE": {
                 "reference": {}
             }
         },
         "topics": [
+            {
+                "key": "1f66701b-72a2-45be-abad-d14ba71a78e0",
+                "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Functional\nProgramming"
+                    }
+                ]
+            },
+            {
+                "key": "1c417f10-9197-42eb-a724-a2c99a488847",
+                "parentKey": "dc0c93cb-0c05-40a0-9bd6-e6c1870c5613",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "forEach"
+                    }
+                ]
+            },
+            {
+                "key": "9b52509a-42df-4ba8-9200-29ec192e314a",
+                "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+                "subKeys": [
+                    "dc0c93cb-0c05-40a0-9bd6-e6c1870c5613",
+                    "3dc1c815-02b4-4097-ae29-578920b3a065",
+                    "5c0d4a18-5da2-4f3f-9752-4912ae3df225"
+                ],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Data\nStructures"
+                    }
+                ]
+            },
+            {
+                "key": "af8c79c0-2a79-40e8-a7ff-5edf08399e5b",
+                "parentKey": "3dc1c815-02b4-4097-ae29-578920b3a065",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "get"
+                    }
+                ]
+            },
             {
                 "key": "4567082c-b57b-45f4-8c04-168f9a2f123f",
                 "parentKey": "06067a6c-cfd1-4faf-8aa6-5eb827f3d020",
@@ -58,6 +114,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "c0743415-e5c5-48da-a6ec-a2d0571da863",
+                "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Errors"
+                    }
+                ]
+            },
+            {
                 "key": "9677e53a-05a4-4bd6-9010-f10826426bb6",
                 "parentKey": "3854fdd8-7de4-429c-b73d-2519cbf63781",
                 "subKeys": [],
@@ -70,7 +139,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**if** statement can be extended with an **else if** statement, which adds another conditional with its own block, it is a way to chain on extra choices/outcomes.\n\n**Syntax:**\n\n```\nif (condition) {\n     // condition is true this block will be executed\n     // no futher conditions will be checked\n} else if (condition) {\n      // when a previous block condition has been failed\n      // this(else if) block condition is evaluted\n      // when a condition passed this block will be executed\n} else {\n      //when all condition has been failed this block will be executed\n}\n\n```\n\n**example:**\n\n```\nif (false) {\n      console.log(\"if blocked executed\");\n} else if (2 < 5 && 3 < 5 ) {\n      console.log(\"else if blocked executed\");\n} else {\n      console.log(\"else blocked executed\");\n}\n\n```\n"
+                        "data": "**if** statement can be extended with an **else if** statement, which adds another conditional with its own block, it is a way to chain on extra choices/outcomes.\n\n**Syntax:**\n```\nif (condition) {\n     // condition is true this block will be executed\n     // no futher conditions will be checked\n} else if (condition) {\n      // when a previous block condition has been failed\n      // this(else if) block condition is evaluted\n      // when a condition passed this block will be executed\n} else {\n      //when all condition has been failed this block will be executed\n}\n\n```\n\n**example:**\n```\nif (false) {\n      console.log(\"if blocked executed\");\n} else if (2 < 5 && 3 < 5 ) {\n      console.log(\"else if blocked executed\");\n} else {\n      console.log(\"else blocked executed\");\n}\n\n```\n"
                     }
                 ]
             },
@@ -89,7 +158,46 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "A function in JavaScript defines a scope for variables declared using **var**, **let** and **const**.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  var message = 'Run, Forrest, Run!';\n  console.log(message); // 'Run, Forrest, Run!'\n}\n\nrun();\nconsole.log(message); // throws ReferenceError\n\n```\n\n**run\\(\\)** function body creates a scope. The variable message is accessible inside of the function scope, but inaccessible outside.\n\n**Exmaple 2:**\n```\nfunction run() {\n  // \"run\" function scope\n  const two = 2;\n  let count = 0;\n  function run2() {}\n\n  console.log(two);   // 2\n  console.log(count); // 0\n  console.log(run2);  // function\n}\n\nrun();\nconsole.log(two);   // throws ReferenceError\nconsole.log(count); // throws ReferenceError\nconsole.log(run2);  // throws ReferenceError\n\n```\n\n**Exmaple 3**:\n\nVar is **functional\\-scoped**\n\n```\nvar fullMoon = true;\n\n// Use var to initialize a variable\nvar species = \"human\";\n\nif (fullMoon) {\n  // Attempt to create a new variable in a block\n  var species = \"werewolf\";\n  console.log(`${species}.`); // werewolf\n}\n\nconsole.log(`${species}.`); // werewolf\n\n```\n\nBoth the **global variable** and the **block\\-scoped variable** end up with the same value, **werewolf**. This is because instead of creating a new local variable with var, it is reassigning the same variable in the same scope."
+                        "data": "A function in JavaScript defines a scope for variables declared using **var**, **let** and **const**.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  var message = 'Run, Forrest, Run!';\n  console.log(message); // 'Run, Forrest, Run!'\n}\n\nrun();\nconsole.log(message); // throws ReferenceError\n\n```\n\n**run\\(\\)** function body creates a scope. The variable message is accessible inside of the function scope, but inaccessible outside.\n\n**Exmaple 2:**\n```\nfunction run() {\n  // \"run\" function scope\n  const two = 2;\n  let count = 0;\n  function run2() {}\n\n  console.log(two);   // 2\n  console.log(count); // 0\n  console.log(run2);  // function\n}\n\nrun();\nconsole.log(two);   // throws ReferenceError\nconsole.log(count); // throws ReferenceError\nconsole.log(run2);  // throws ReferenceError\n\n```\n\n**Exmaple 3**: Var is **functional\\-scoped**\n```\nvar fullMoon = true;\n\n// Use var to initialize a variable\nvar species = \"human\";\n\nif (fullMoon) {\n  // Attempt to create a new variable in a block\n  var species = \"werewolf\";\n  console.log(`${species}.`); // werewolf\n}\n\nconsole.log(`${species}.`); // werewolf\n\n```\n\nBoth the **global variable** and the **block\\-scoped variable** end up with the same value, **werewolf**. This is because instead of creating a new local variable with var, it is reassigning the same variable in the same scope."
+                    }
+                ]
+            },
+            {
+                "key": "91f27dd0-5185-4daa-8501-15ba8727dc06",
+                "parentKey": "d40f6cf0-dcae-4162-8b2f-d89edd7e3212",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "for .. each"
+                    }
+                ]
+            },
+            {
+                "key": "7cef3c50-823e-48a6-9314-563851dbc959",
+                "parentKey": "d40f6cf0-dcae-4162-8b2f-d89edd7e3212",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "comparing for\nloops"
+                    }
+                ]
+            },
+            {
+                "key": "8d03fe66-9d8f-4ae3-96c1-d18220788b3a",
+                "parentKey": "dc0c93cb-0c05-40a0-9bd6-e6c1870c5613",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "pop"
                     }
                 ]
             },
@@ -113,6 +221,8 @@ export function generateSimpleModel() {
                     "d4cb9863-ba6c-4ea6-903e-44accf4a5b7b",
                     "29f23365-fcf6-4f8f-8060-811df84e4770",
                     "a3055667-8217-484e-aae8-728cab93135c",
+                    "91f27dd0-5185-4daa-8501-15ba8727dc06",
+                    "7cef3c50-823e-48a6-9314-563851dbc959",
                     "65199906-ca55-4ae8-bd9f-a4a08cbc2432",
                     "a70b7d9d-ea0f-49c3-a488-ddbceebe85d8"
                 ],
@@ -142,24 +252,20 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**Object** : typeof instance === \"object\". It is used to store collections of data and more complex entities.\n\n```\nconsole.log(typeof({})); // \"object\"\nconsole.log(typeof([])); // \"object\" Arrays aren’t primitive, they are objects\nconsole.log(typeof(new Map())); // \"object\"\nconsole.log(typeof(new Date())); // \"object\"\n\n```\n\nSpecial non\\-data but Structural type for any constructed object instance also used as data structures: \n\n1. new Object, \n1. new Array, \n1. new Map, \n1. new Set, \n1. new WeakMap, \n1. new WeakSet, \n1. new Date and almost everything made with **new** keyword;\n\n\n**Indexed collections**: Arrays and typed Arrays\n\n**Keyed collections**: Maps, Sets, WeakMaps, WeakSets"
+                        "data": "**Object** : typeof instance === \"object\". It is used to store collections of data and more complex entities.\n\n```\nconsole.log(typeof({})); // \"object\"\nconsole.log(typeof([])); // \"object\" - Arrays aren’t primitive, they are objects\nconsole.log(typeof(new Map())); // \"object\"\nconsole.log(typeof(new Date())); // \"object\"\n\n```\n\nSpecial non\\-data but Structural type for any constructed object instance also used as data structures: \n\n1. new Object, \n1. new Array, \n1. new Map, \n1. new Set, \n1. new WeakMap, \n1. new WeakSet, \n1. new Date and almost everything made with **new** keyword;\n\n\n**Indexed collections**: Arrays and typed Arrays\n\n**Keyed collections**: Maps, Sets, WeakMaps, WeakSets"
                     }
                 ]
             },
             {
-                "key": "220e873a-0a0b-4820-9434-42d0727eead5",
-                "parentKey": "f8750599-32db-4fb3-829e-0673887df2c2",
+                "key": "277f12bf-6cef-4676-92bb-ee233886e4cb",
+                "parentKey": "5df46409-6d87-4099-85c8-664e7e703c8e",
                 "subKeys": [],
                 "collapse": false,
                 "style": null,
                 "blocks": [
                     {
                         "type": "CONTENT",
-                        "data": "Shorthand\nfunction"
-                    },
-                    {
-                        "type": "DESC",
-                        "data": "**Shorthand** method definition can be used in a method declaration on object literals and ES2015 classes. You can define them using a function name, followed by a list of parameters in a pair of parenthesis \\(para1, ..., paramN\\) and a pair of curly braces \\{ ... \\} that delimits the body statements.\n\n```\nconst collection = {\n  items: [],\n  add(...items) {\n    this.items.push(...items);\n  },\n  get(index) {\n    return this.items[index];\n  }\n};\ncollection.add('C', 'Js', 'PHP', 'Java');\nconsole.log(collection.get(1)) //output: \"Js\"\n\n```\n\n**add\\(\\)** and **get\\(\\)** methods in **collection** object are defined using short method definition. These methods are called as usual: **collection\\.add\\(...\\)** and **collection\\.get\\(...\\)**."
+                        "data": "Class"
                     }
                 ]
             },
@@ -177,6 +283,45 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "**do\\-while** loop will always be executed at least once, even if the condition is false, because the code block is executed before the condition is checked.\n\n```\nlet i = 10;\ndo {\n  console.log(\"The number is \" + i);\n  i++;\n}\nwhile (i < 5);\n\n// output: \"The number is 10\"\n\n```\n"
+                    }
+                ]
+            },
+            {
+                "key": "88317110-d644-4ca9-84bf-01ae778571da",
+                "parentKey": "5c0d4a18-5da2-4f3f-9752-4912ae3df225",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "entries"
+                    }
+                ]
+            },
+            {
+                "key": "fa03906c-9682-4352-98eb-3a4525a5780c",
+                "parentKey": "dc0c93cb-0c05-40a0-9bd6-e6c1870c5613",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "filter"
+                    }
+                ]
+            },
+            {
+                "key": "f9aad4c2-5205-49ec-a74c-ed04c3bb6813",
+                "parentKey": "dc0c93cb-0c05-40a0-9bd6-e6c1870c5613",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "push"
                     }
                 ]
             },
@@ -206,7 +351,13 @@ export function generateSimpleModel() {
                     "08aaf5bf-5222-4d4c-bd8d-2267d2f81433",
                     "3854fdd8-7de4-429c-b73d-2519cbf63781",
                     "d40f6cf0-dcae-4162-8b2f-d89edd7e3212",
-                    "f8750599-32db-4fb3-829e-0673887df2c2"
+                    "f8750599-32db-4fb3-829e-0673887df2c2",
+                    "5df46409-6d87-4099-85c8-664e7e703c8e",
+                    "9b52509a-42df-4ba8-9200-29ec192e314a",
+                    "1f66701b-72a2-45be-abad-d14ba71a78e0",
+                    "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
+                    "c0743415-e5c5-48da-a6ec-a2d0571da863",
+                    "1340cde2-dcef-48de-a00e-1ce996ecf377"
                 ],
                 "collapse": false,
                 "style": "{\"contentStyle\":{\"background\":\"#f8e71c\"}}",
@@ -236,7 +387,20 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "A _**generator**_ is a function that can stop midway and then continue from where it stopped. In short, a generator appears to be a function but it behaves like an iterator.\n\n**example 1:** function declaration form _**function\\* <name\\>\\(\\)**_\n\n```\nfunction * generatorFunction() {\n  console.log('This will be executed first.');\n  yield 'Hello, ';\n  console.log('I will be printed after the pause');  \n  yield 'World!';\n}\nconst generatorObject = generatorFunction();\n\nconsole.log(generatorObject.next().value);\n// output:\n// This will be executed first.\n// Hello, \nconsole.log(generatorObject.next().value);\n// output:\n// I will be printed after the pause\n// World!\nconsole.log(generatorObject.next().value);\n// output:\n// undefined\n\n```\n\n**example 2: **function expression form _**function\\* \\(\\)**_\n\n```\nconst indexGenerator = function* () {\n  let index = 0;\n  while(true) {\n    yield index++;\n  }\n};\nconst g = indexGenerator();\nconsole.log(g.next().value); // => 0\nconsole.log(g.next().value); // => 1\n\n```\n\n**example 3: **Shorthand method definition form _**\\*<name\\>\\(\\)**_\n\n```\nconst obj = {\n  *indexGenerator() {\n    var index = 0;\n    while(true) {\n      yield index++;\n    }\n  }\n}\nconst g = obj.indexGenerator();\nconsole.log(g.next().value); // => 0\nconsole.log(g.next().value); // => 1\n\n```\n"
+                        "data": "A **generator** is a function that can stop midway and then continue from where it stopped. In short, a generator appears to be a function but it behaves like an iterator.\n\n**example 1:** function declaration form **function\\* <name\\>\\(\\)**\n```\nfunction * generatorFunction() {\n  console.log('This will be executed first.');\n  yield 'Hello, ';\n  console.log('I will be printed after the pause');  \n  yield 'World!';\n}\nconst generatorObject = generatorFunction();\n\nconsole.log(generatorObject.next().value);\n// output:\n// This will be executed first.\n// Hello, \nconsole.log(generatorObject.next().value);\n// output:\n// I will be printed after the pause\n// World!\nconsole.log(generatorObject.next().value);\n// output:\n// undefined\n\n```\n\n**example 2: **function expression form **function\\* \\(\\)**\n```\nconst indexGenerator = function* () {\n  let index = 0;\n  while(true) {\n    yield index++;\n  }\n};\nconst g = indexGenerator();\nconsole.log(g.next().value); // => 0\nconsole.log(g.next().value); // => 1\n\n```\n\n**example 3: **Shorthand method definition form **\\*<name\\>\\(\\)**\n```\nconst obj = {\n  *indexGenerator() {\n    var index = 0;\n    while(true) {\n      yield index++;\n    }\n  }\n}\nconst g = obj.indexGenerator();\nconsole.log(g.next().value); // => 0\nconsole.log(g.next().value); // => 1\n\n```\n"
+                    }
+                ]
+            },
+            {
+                "key": "62774116-bea5-49c3-a72c-6371f1cde7cb",
+                "parentKey": "dc0c93cb-0c05-40a0-9bd6-e6c1870c5613",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "find"
                     }
                 ]
             },
@@ -263,6 +427,25 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": ""
+                    }
+                ]
+            },
+            {
+                "key": "5c0d4a18-5da2-4f3f-9752-4912ae3df225",
+                "parentKey": "9b52509a-42df-4ba8-9200-29ec192e314a",
+                "subKeys": [
+                    "6608af00-8cd4-4fe1-bd0b-e18e12f4a684",
+                    "bb6f8cdb-b6ee-4040-9195-170825342ded",
+                    "12256f82-0a50-4408-8a76-525865cbad4b",
+                    "88317110-d644-4ca9-84bf-01ae778571da",
+                    "af72cd3d-9be6-4420-9c07-1a80e2c62e2d"
+                ],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Set"
                     }
                 ]
             },
@@ -331,6 +514,32 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "28bcdae2-e48d-47e3-bc28-5f6afecfef7d",
+                "parentKey": "3dc1c815-02b4-4097-ae29-578920b3a065",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "delete"
+                    }
+                ]
+            },
+            {
+                "key": "bb6f8cdb-b6ee-4040-9195-170825342ded",
+                "parentKey": "5c0d4a18-5da2-4f3f-9752-4912ae3df225",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "clear"
+                    }
+                ]
+            },
+            {
                 "key": "a44085f3-06c0-4910-9787-af5b20c0709b",
                 "parentKey": "08aaf5bf-5222-4d4c-bd8d-2267d2f81433",
                 "subKeys": [],
@@ -343,7 +552,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "A module is just a file. One script is one module. Modules can load each other and use special directives export and import to interchange functionality, call functions of one module from another one:\n\n* **export** keyword labels variables and functions that should be accessible from outside the current module.\n* **import** allows the import of functionality from other modules.\n\n\nBefore modules, a variable declared outside any function was a global variable. In modules, a variable declared outside any function is hidden and not available to other modules unless it is explicitly exported.\n\nTo make import/export work, browsers need **<script type=\"module\"\\> **and for NodeJS \\- set **\"type\": \"module\"** in the **package\\.json** or use the **.mjs** extension\\.\n\n**Example 1:**\nFor instance, if we have a file** sayHi\\.js** exporting a function:\n```\n// 📁 sayHi.mjs\nexport function sayHi(user) {\n  console.log(`Hello, ${user}!`);\n}\n\n```\n\n…Then another file may import and use it:\n```\n// 📁 main.mjs\nimport {sayHi} from './sayHi.js';\n\nconsole.log(sayHi); // function...\nsayHi('John'); // Hello, John!\n\n```\n\n**Example 2:**\n\n**circle\\.mjs**\n```\n// \"circle\" module scope\nconst pi = 3.14159;\n\nconsole.log(pi); // 3.14159\n\n// Usage of pi\n\n```\n\n**main\\.mjs**\n```\nimport './circle';\n\nconsole.log(pi); // ReferenceError: pi is not defined\n\n```\n\nThe variable pi is **not accessible** outside of circle module \\(unless explicitly exported using export\\).\n\n**Refference**:\n* [https://hacks.mozilla.org/2018/03/es\\-modules\\-a\\-cartoon\\-deep\\-dive/](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)\n\n"
+                        "data": "A module is just a file. One script is one module. Modules can load each other and use special directives export and import to interchange functionality, call functions of one module from another one:\n\n* **export** keyword labels variables and functions that should be accessible from outside the current module.\n* **import** allows the import of functionality from other modules.\n\n\nBefore modules, a variable declared outside any function was a global variable. In modules, a variable declared outside any function is hidden and not available to other modules unless it is explicitly exported.\n\nTo make import/export work, browsers need **<script type=\"module\"\\> **and for NodeJS \\- set **\"type\": \"module\"** in the **package\\.json** or use the **.mjs** extension\\.\n\n**Example 1:**\nFor instance, if we have a file** sayHi\\.js** exporting a function:\n```\n// 📁 sayHi.mjs\nexport function sayHi(user) {\n  console.log(`Hello, ${user}!`);\n}\n\n```\n\n…Then another file may import and use it:\n```\n// 📁 main.mjs\nimport {sayHi} from './sayHi.js';\n\nconsole.log(sayHi); // function...\nsayHi('John'); // Hello, John!\n\n```\n\n**Example 2:**\n**circle\\.mjs**\n```\n// \"circle\" module scope\nconst pi = 3.14159;\n\nconsole.log(pi); // 3.14159\n\n// Usage of pi\n\n```\n\n**main\\.mjs**\n```\nimport './circle';\n\nconsole.log(pi); // ReferenceError: pi is not defined\n\n```\n\nThe variable pi is **not accessible** outside of circle module \\(unless explicitly exported using export\\).\n\n**Refference**:\n* [https://hacks.mozilla.org/2018/03/es\\-modules\\-a\\-cartoon\\-deep\\-dive/](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)\n\n"
                     }
                 ]
             },
@@ -365,6 +574,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "3993010c-2552-4c4e-ad7e-195cb2bbc7e5",
+                "parentKey": "5df46409-6d87-4099-85c8-664e7e703c8e",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Constructor\nfunction"
+                    }
+                ]
+            },
+            {
                 "key": "a9f8d9be-7d66-4b3e-941d-429c02913ec5",
                 "parentKey": "f8750599-32db-4fb3-829e-0673887df2c2",
                 "subKeys": [],
@@ -377,7 +599,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "An **arrow function** is defined using a pair of parenthesis that contains the list of parameters \\(param1, param2, ..., paramN\\), followed by a fat arrow =\\> and a pair of curly braces \\{...\\} that delimits the body statements.\n\n**example 1:**\n```\nconst square = (value) => {\n  return value * value\n}\nsquare(10); // output: \"100\"\n\n```\n\n**example 2:**\n* When the arrow function has only one parameter, the pair of parentheses can be omitted. When it contains a single statement, the curly braces can be omitted too.\n\n```\nconst square = value => value * value;\nsquare(10); // output: \"100\"\n\n```\n\n**example 3:**\n* when it takes no parameters\n\n```\nconst currentDate = () => console.log(new Date().toString().slice(0,15));\ncurrentDate(); // output: \"Wed Jul 21 2021\"\n\nconst currentTime = _ => console.log(new Date().toTimeString().slice(0, 8));\ncurrentTime(); // output: \"19:08:58\"\n\n```\n"
+                        "data": "An **arrow function** is defined using a pair of parenthesis that contains the list of parameters \\(param1, param2, ..., paramN\\), followed by a fat arrow =\\> and a pair of curly braces \\{...\\} that delimits the body statements.\n\n**example 1:**\n```\nconst square = (value) => {\n  return value * value\n}\nsquare(10); // output: \"100\"\n\n```\n\n**example 2:**\n* When the arrow function has only one parameter, the pair of parentheses can be omitted. When it contains a single statement, the curly braces and return can be omitted too.\n\n```\nconst square = value => value * value;\nsquare(10); // output: \"100\"\n\n```\n\n**example 3:**\n* when it takes no parameters\n\n```\nconst currentDate = () => console.log(new Date().toString().slice(0,15));\ncurrentDate(); // output: \"Wed Jul 21 2021\"\n\nconst currentTime = _ => console.log(new Date().toTimeString().slice(0, 8));\ncurrentTime(); // output: \"19:08:58\"\n\n```\n"
                     }
                 ]
             },
@@ -395,6 +617,19 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "Let is **blocked** scope \\(will see more of that in **Scopes & Closures**\\). Value stored in it can be reassigned.\n\nTo declare or create a varaible\n\n```\nlet message;\n\n```\n\nAssign a data into it by using the assignment operator =:\n\n```\nmessage = 'Hello';\n\n```\n\nCombine the variable _declaration_ and _assignment_ into a single line\n\n```\nlet message = 'Hello!';\n\n```\n\nDeclare multiple variables in one line\n\n```\nlet user = 'John', age = 25, message = 'Hello';\n\n```\n\nReassigning a value\n\n```\nlet userName = \"Bruce\"\nuserName = \"Wayne\"\n\n```\n"
+                    }
+                ]
+            },
+            {
+                "key": "c1f96a01-5d07-4fd0-99fb-210490cb6f5a",
+                "parentKey": "dc0c93cb-0c05-40a0-9bd6-e6c1870c5613",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "concat"
                     }
                 ]
             },
@@ -535,6 +770,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "12256f82-0a50-4408-8a76-525865cbad4b",
+                "parentKey": "5c0d4a18-5da2-4f3f-9752-4912ae3df225",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "delete"
+                    }
+                ]
+            },
+            {
                 "key": "69e69b35-9400-4fb3-aa5e-e9315b4a6eba",
                 "parentKey": "08aaf5bf-5222-4d4c-bd8d-2267d2f81433",
                 "subKeys": [],
@@ -569,6 +817,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "af72cd3d-9be6-4420-9c07-1a80e2c62e2d",
+                "parentKey": "5c0d4a18-5da2-4f3f-9752-4912ae3df225",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "forEach"
+                    }
+                ]
+            },
+            {
                 "key": "50256453-3cf5-4adf-85c0-562970b46468",
                 "parentKey": "08aaf5bf-5222-4d4c-bd8d-2267d2f81433",
                 "subKeys": [
@@ -584,6 +845,25 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "A code block in JavaScript defines a scope for variables declared using **let** and **const **within a curly brace **\\{\\}. **it can be accessed only within that curly brace.\n\n**Example 1:**\n```\nif (true) {\n  // \"if\" block scope\n  const message = 'Hello';\n  let name = \"Chris\"\n  console.log(message); // 'Hello'\n  console.log(name); // 'Chris'\n}\nconsole.log(message); // throws ReferenceError\nconsole.log(name); // throws ReferenceError\n\n```\n\n**Example 2:**\n```\nlet fullMoon = true;\n\n// Initialize a global variable\nlet species = \"human\";\n\nif (fullMoon) {\n  // Initialize a block-scoped variable\n  let species = \"werewolf\";\n  console.log(`${species}`); // \"werewolf\"\n}\n\nconsole.log(`${species}`); // \"human\"\n\n```\n\n**Example 3: var is not block scoped**\n```\nif (true) {\n  // \"if\" block scope\n  var count = 0;\n  console.log(count); // 0\n}\nconsole.log(count); // 0\n\n```\n\nA code block does not create a scope for var variables, but a function body does."
+                    }
+                ]
+            },
+            {
+                "key": "3dc1c815-02b4-4097-ae29-578920b3a065",
+                "parentKey": "9b52509a-42df-4ba8-9200-29ec192e314a",
+                "subKeys": [
+                    "c261d5f7-915b-4abd-b3d1-47ef335bc8ff",
+                    "28bcdae2-e48d-47e3-bc28-5f6afecfef7d",
+                    "ed43d880-a946-4d1f-8a16-fc59a0662188",
+                    "a6c4854c-be38-4f7f-9866-a0025b236e65",
+                    "af8c79c0-2a79-40e8-a7ff-5edf08399e5b"
+                ],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Map &\nmethods"
                     }
                 ]
             },
@@ -614,6 +894,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "45b02b6a-06f9-4bad-80bb-14c97acb3b80",
+                "parentKey": "dc0c93cb-0c05-40a0-9bd6-e6c1870c5613",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "unshift"
+                    }
+                ]
+            },
+            {
                 "key": "10d9744a-f521-4bdf-8933-9c3fb1cfb2c8",
                 "parentKey": "3854fdd8-7de4-429c-b73d-2519cbf63781",
                 "subKeys": [
@@ -628,7 +921,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**if** statement can be extended with an **else** statement, which adds another block to run when the **if** condition doesn’t pass.\n\n**Syntax:**\n\n```\nif (condition) {\n      //condition is true this block will be executed\n      // no futher conditions will be checked\n} else {\n      //when a condition is false/failed this block will be executed\n}\n\n```\n\n**example:**\n\n```\nif (\"cat\" === \"dog\") {\n      console.log(\"if block executed\");\n} else {\n      console.log(\"else block executed\");\n}\n\n```\n"
+                        "data": "**if** statement can be extended with an **else** statement, which adds another block to run when the **if** condition doesn’t pass.\n\n**Syntax:**\n```\nif (condition) {\n      //condition is true this block will be executed\n      // no futher conditions will be checked\n} else {\n      //when a condition is false/failed this block will be executed\n}\n\n```\n\n**example:**\n```\nif (\"cat\" === \"dog\") {\n      console.log(\"if block executed\");\n} else {\n      console.log(\"else block executed\");\n}\n\n```\n"
                     }
                 ]
             },
@@ -650,7 +943,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "Conditional statements controls behavior in JavaScript and determine whether or not a piece of code can run.\n\n\n## Truthy\n\nIn JavaScript, a truthy value is a value that is considered true when encountered in a Boolean context. All values are truthy unless they are defined as falsy \\(i.e., except for false, 0, \\-0, 0n, \"\", null, undefined, and NaN\\).\n\n**Examples of truthy values** in JavaScript \\(which will be coerced to true in boolean contexts, and thus execute the if block\\)\n\n```\nif (true)\nif ({})\nif ([])\nif (42)\nif (\"0\")\nif (\"false\")\nif (new Date())\nif (-42)\nif (12n)\nif (3.14)\nif (-3.14)\nif (Infinity)\nif (-Infinity)\n\n```\n\n\n## Falsy\n\nA falsy \\(sometimes written falsey\\) value is a value that is considered false when encountered in a Boolean context.\n\n**Complete list of JavaScript falsy values**\n| false | The keyword false. |\n|:--- |:--- |\n| 0 | The Number zero \\(so, also 0.0, etc., and 0x0\\). |\n| \\-0 | The Number negative zero \\(so, also \\-0.0, etc., and \\-0x0\\). |\n| 0n | The BigInt zero \\(so, also 0x0n\\). Note that there is no BigInt negative zero — the negation of 0n is 0n. |\n| \"\", | '', \\`\\` Empty string value. |\n| null | null — the absence of any value. |\n| undefined | undefined — the primitive value. |\n| NaN | NaN — not a number. |\n| document\\.all | Objects are falsy if and only if they have the \\[\\[IsHTMLDDA\\]\\] internal slot.That slot only exists in document.all and cannot be set using JavaScript. |\n"
+                        "data": "Conditional statements controls behavior in JavaScript and determine whether or not a piece of code can run.\n\n## Truthy\n\nIn JavaScript, a truthy value is a value that is considered true when encountered in a Boolean context. All values are truthy unless they are defined as falsy \\(i.e., except for false, 0, \\-0, 0n, \"\", null, undefined, and NaN\\).\n\n**Examples of truthy values** in JavaScript \\(which will be coerced to true in boolean contexts, and thus execute the if block\\)\n\n```\nif (true)\nif ({})\nif ([])\nif (42)\nif (\"0\")\nif (\"false\")\nif (new Date())\nif (-42)\nif (12n)\nif (3.14)\nif (-3.14)\nif (Infinity)\nif (-Infinity)\n\n```\n\n\n## Falsy\n\nA falsy \\(sometimes written falsey\\) value is a value that is considered false when encountered in a Boolean context.\n\n**Complete list of JavaScript falsy values**\n| false | The keyword false. |\n|:--- |:--- |\n| 0 | The Number zero \\(so, also 0.0, etc., and 0x0\\). |\n| \\-0 | The Number negative zero \\(so, also \\-0.0, etc., and \\-0x0\\). |\n| 0n | The BigInt zero \\(so, also 0x0n\\). Note that there is no BigInt negative zero — the negation of 0n is 0n. |\n| \"\", | '', \\`\\` Empty string value. |\n| null | null — the absence of any value. |\n| undefined | undefined — the primitive value. |\n| NaN | NaN — not a number. |\n| document\\.all | Objects are falsy if and only if they have the \\[\\[IsHTMLDDA\\]\\] internal slot.That slot only exists in document.all and cannot be set using JavaScript. |\n"
                     }
                 ]
             },
@@ -669,7 +962,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.\n\nIf it’s still could not find the variable, it will either implicitly declare the variable in the global scope \\(if not in strict mode\\) or return an error.\n\nExample 1:\n\n```\nfunction run() {\n  // \"run\" function scope\n  const message = 'Run, Forrest, Run!';\n\n  if (true) {\n    // \"if\" code block scope\n    const friend = 'Bubba';\n    console.log(message); // 'Run, Forrest, Run!'\n  }\n\n  console.log(friend); // throws ReferenceError\n}\n\nrun();\n\n```\n\nThe scope contained within another scope is named **_inner scope_**. In the example, if code block scope is an inner scope of run\\(\\) function scope. The scope that wraps another scope is named **_outer scope_**. In the example, run\\(\\) function scope is an outer scope to if code block scope."
+                        "data": "When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.\n\nIf it’s still could not find the variable, it will either implicitly declare the variable in the global scope \\(if not in strict mode\\) or return an error.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  const message = 'Run, Forrest, Run!';\n\n  if (true) {\n    // \"if\" code block scope\n    const friend = 'Bubba';\n    console.log(message); // 'Run, Forrest, Run!'\n  }\n\n  console.log(friend); // throws ReferenceError\n}\n\nrun();\n\n```\n\nThe scope contained within another scope is named _inner scope_. In the example, if code block scope is an inner scope of run\\(\\) function scope. The scope that wraps another scope is named _outer scope_. In the example, run\\(\\) function scope is an outer scope to if code block scope."
                     }
                 ]
             },
@@ -687,6 +980,32 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "Hoisting is a JavaScript mechanism where variables and function declarations are **moved to the top of their scope** before code execution.\n\nWhen you execute a piece of JavaScript code, the JavaScript engine creates the **global execution context**. The global execution context has two phases: _creation_ and **execution**. During the creation phase, the JavaScript engine moves the variable and function declarations to the top of your code. This feature is known as hoisting in JavaScript.\n\nRefference \n* [https://www.javascripttutorial.net/javascript\\-hoisting/](https://www.javascripttutorial.net/javascript-hoisting/)\n* [https://www.youtube.com/watch?v=Fnlnw8uY6jo](https://www.youtube.com/watch?v=Fnlnw8uY6jo)\n\n\n## Variable hoisting\n\n* using **var**\n\n\n```\nconsole.log(counter); // undefined\nvar counter = 1;\n\n```\n\n* using **let**\n\n\n```\nconsole.log(counter); // \"ReferenceError: Cannot access 'counter' before initialization\nlet counter = 1;\n\n```\n\n\n## Function hoisting\n\n```\nlet x = 20,\n    y = 10;\n\nlet result = add(x,y);\n\n// this prints actual copy of the whole function\nconsole.log(add) // ƒ add(a, b){\n                 //  return a + b;\n                 //  }\n\nconsole.log(result); // 30\n\nfunction add(a, b){\nreturn a + b;\n}\n\n```\n\n\n## Function expressions\n\n```\nlet x = 20,\n    y = 10;\n\nlet result = add(x,y);\nconsole.log(result); // \"TypeError: add is not a function\n\nvar add = function(x, y) {\nreturn x + y;\n}\n\n```\n\n```\nlet x = 20,\n    y = 10;\n\nlet result = add(x,y);\nconsole.log(result); // \"TypeError: add is not a function\n\nvar add = (x, y) => x + y;\n\n```\n\nDuring the creation phase of the **global execution context**, the JavaScript Engine creates the **add** variable in the memory and initializes its value to **undefined**. When executing the following code, the add is undefined, hence, it isn’t a function."
+                    }
+                ]
+            },
+            {
+                "key": "6608af00-8cd4-4fe1-bd0b-e18e12f4a684",
+                "parentKey": "5c0d4a18-5da2-4f3f-9752-4912ae3df225",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "add"
+                    }
+                ]
+            },
+            {
+                "key": "ebc9a270-2a40-4a5c-bf55-79f90cd5f8ce",
+                "parentKey": "dc0c93cb-0c05-40a0-9bd6-e6c1870c5613",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "shift"
                     }
                 ]
             },
@@ -720,7 +1039,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "The **switch** statement evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case, as well as statements in cases that follow the matching case.\n\n**Example 1:** expression matches a case\n\nThe **break** statement terminates the current flow of execution\n\n```\nconst expr = 'Papayas';\nswitch (expr) {\n  case 'Oranges':\n    console.log('Oranges are $0.59 a pound.');\n    break;\n  case 'Mangoes':\n  case 'Papayas':\n    console.log('Mangoes and papayas are $2.79 a pound.');\n    break;\n  default:\n    console.log(`Sorry, we are out of ${expr}.`);\n}\n\n// output: \"Mangoes and papayas are $2.79 a pound.\"\n\n```\n\n**Example 2:** expression did not match any cases\n\n```\nconst expr = 'Onion';\nswitch (expr) {\n  case 'Oranges':\n    console.log('Oranges are $0.59 a pound.');\n    break;\n  case 'Mangoes':\n  case 'Papayas':\n    console.log('Mangoes and papayas are $2.79 a pound.');\n    break;\n  default:\n    console.log(`Sorry, we are out of ${expr}.`);\n}\n\n// output: \"Sorry, we are out of Onion.\"\n\n```\n\n**Example 3:** expression matches a case but break statement is not specified\n\nIf you forget a **_break_** then the script will run from the case where the criterion is met and will run the cases after that **_regardless if a criterion was met_**.\n\n```\nconst expr = 'Oranges';\nswitch (expr) {\n  case 'Oranges':\n    console.log('Oranges are $0.59 a pound.');\n  case 'Mangoes':\n  case 'Papayas':\n    console.log('Mangoes and papayas are $2.79 a pound.');\n  default:\n    console.log(`Sorry, we are out of ${expr}.`);\n}\n\n// Output:\n// Oranges are $0.59 a pound.\n// Mangoes and papayas are $2.79 a pound.\n// Sorry, we are out of Oranges.\n\n```\n"
+                        "data": "The **switch** statement evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case, as well as statements in cases that follow the matching case.\n\n**Example 1:** expression matches a case\nThe **break** statement terminates the current flow of execution\n```\nconst expr = 'Papayas';\nswitch (expr) {\n  case 'Oranges':\n    console.log('Oranges are $0.59 a pound.');\n    break;\n  case 'Mangoes':\n  case 'Papayas':\n    console.log('Mangoes and papayas are $2.79 a pound.');\n    break;\n  default:\n    console.log(`Sorry, we are out of ${expr}.`);\n}\n\n// output: \"Mangoes and papayas are $2.79 a pound.\"\n\n```\n\n**Example 2:** expression did not match any cases\n```\nconst expr = 'Onion';\nswitch (expr) {\n  case 'Oranges':\n    console.log('Oranges are $0.59 a pound.');\n    break;\n  case 'Mangoes':\n  case 'Papayas':\n    console.log('Mangoes and papayas are $2.79 a pound.');\n    break;\n  default:\n    console.log(`Sorry, we are out of ${expr}.`);\n}\n\n// output: \"Sorry, we are out of Onion.\"\n\n```\n\n**Example 3:** expression matches a case but break statement is not specified\nIf you forget a _break_ then the script will run from the case where the criterion is met and will run the cases after that _regardless if a criterion was met_.\n```\nconst expr = 'Oranges';\nswitch (expr) {\n  case 'Oranges':\n    console.log('Oranges are $0.59 a pound.');\n  case 'Mangoes':\n  case 'Papayas':\n    console.log('Mangoes and papayas are $2.79 a pound.');\n  default:\n    console.log(`Sorry, we are out of ${expr}.`);\n}\n\n// Output:\n// Oranges are $0.59 a pound.\n// Mangoes and papayas are $2.79 a pound.\n// Sorry, we are out of Oranges.\n\n```\n"
                     }
                 ]
             },
@@ -745,6 +1064,38 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "5df46409-6d87-4099-85c8-664e7e703c8e",
+                "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+                "subKeys": [
+                    "89f35d77-be58-421f-96f1-c53ebf79d892",
+                    "79a87fe8-34ea-45e0-90b4-ee2399074191",
+                    "3993010c-2552-4c4e-ad7e-195cb2bbc7e5",
+                    "277f12bf-6cef-4676-92bb-ee233886e4cb",
+                    "e153daae-cd39-4033-bd24-8fcf1a6f9f84"
+                ],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Objects"
+                    }
+                ]
+            },
+            {
+                "key": "e153daae-cd39-4033-bd24-8fcf1a6f9f84",
+                "parentKey": "5df46409-6d87-4099-85c8-664e7e703c8e",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Object.create()"
+                    }
+                ]
+            },
+            {
                 "key": "44213600-22aa-4972-aa99-eec27b840064",
                 "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
                 "subKeys": [
@@ -765,6 +1116,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "ed43d880-a946-4d1f-8a16-fc59a0662188",
+                "parentKey": "3dc1c815-02b4-4097-ae29-578920b3a065",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "entries"
+                    }
+                ]
+            },
+            {
                 "key": "ffcc44e2-dc44-4241-8c15-ee2ab8c71588",
                 "parentKey": "3854fdd8-7de4-429c-b73d-2519cbf63781",
                 "subKeys": [],
@@ -777,7 +1141,29 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**If** statement only runs if the condition enclosed in parentheses \\(\\) is truthy\n\n**Syntax:**\n\n```\nif (condition) {\n    //condition is true this block will be executed\n}\n\n```\n\n**example**:\n\n```\nif (10 > 5) {\n    console.log(\"if blocked executed\");\n}\n\n```\n"
+                        "data": "**If** statement only runs if the condition enclosed in parentheses \\(\\) is truthy\n\n**Syntax:**\n```\nif (condition) {\n    //condition is true this block will be executed\n}\n\n```\n\n**example**:\n```\nif (10 > 5) {\n    console.log(\"if blocked executed\");\n}\n\n```\n"
+                    }
+                ]
+            },
+            {
+                "key": "dc0c93cb-0c05-40a0-9bd6-e6c1870c5613",
+                "parentKey": "9b52509a-42df-4ba8-9200-29ec192e314a",
+                "subKeys": [
+                    "c1f96a01-5d07-4fd0-99fb-210490cb6f5a",
+                    "fa03906c-9682-4352-98eb-3a4525a5780c",
+                    "62774116-bea5-49c3-a72c-6371f1cde7cb",
+                    "1c417f10-9197-42eb-a724-a2c99a488847",
+                    "f9aad4c2-5205-49ec-a74c-ed04c3bb6813",
+                    "8d03fe66-9d8f-4ae3-96c1-d18220788b3a",
+                    "ebc9a270-2a40-4a5c-bf55-79f90cd5f8ce",
+                    "45b02b6a-06f9-4bad-80bb-14c97acb3b80"
+                ],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Array &\nmethods"
                     }
                 ]
             },
@@ -816,6 +1202,49 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
+                "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Classes"
+                    }
+                ]
+            },
+            {
+                "key": "a6c4854c-be38-4f7f-9866-a0025b236e65",
+                "parentKey": "3dc1c815-02b4-4097-ae29-578920b3a065",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "forEach"
+                    }
+                ]
+            },
+            {
+                "key": "89f35d77-be58-421f-96f1-c53ebf79d892",
+                "parentKey": "5df46409-6d87-4099-85c8-664e7e703c8e",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Object\nliterals"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "**Shorthand** method definition can be used in a method declaration on object literals and ES2015 classes. You can define them using a function name, followed by a list of parameters in a pair of parenthesis \\(para1, ..., paramN\\) and a pair of curly braces \\{ ... \\} that delimits the body statements.\n\n```\nconst collection = {\n  items: [],\n  add(...items) {\n    this.items.push(...items);\n  },\n  get(index) {\n    return this.items[index];\n  }\n};\ncollection.add('C', 'Js', 'PHP', 'Java');\nconsole.log(collection.get(1)) //output: \"Js\"\n\n```\n\n**add\\(\\)** and **get\\(\\)** methods in **collection** object are defined using short method definition. These methods are called as usual: **collection\\.add\\(...\\)** and **collection\\.get\\(...\\)**."
+                    }
+                ]
+            },
+            {
                 "key": "0341d846-c3f3-4915-a4b3-0c11b3643a9d",
                 "parentKey": "f8750599-32db-4fb3-829e-0673887df2c2",
                 "subKeys": [],
@@ -824,11 +1253,11 @@ export function generateSimpleModel() {
                 "blocks": [
                     {
                         "type": "CONTENT",
-                        "data": "Function\ndeclarations"
+                        "data": "Function\ndeclaration"
                     },
                     {
                         "type": "DESC",
-                        "data": "A **function** declaration \\(also called a function statement\\) consists of the function keyword, followed by:\n* The name of the function.\n* A list of parameters to the function, enclosed in parentheses and separated by commas.\n* The JavaScript statements that define the function, enclosed in curly brackets, \\{...\\}.\n\n\n**Syntax:**\n\n```\nfunction validFunctionName(parameter1, parameter2) {\n  return statement;\n}\n\n```\n\n**example 1: which takes no parameters and returns nothing \\(void\\)**\n\n```\nfunction currentTime() {\n  console.log(new Date().toTimeString().slice(0, 8));\n}\n\ncurrentTime() // output: \"18:35:36\"\n\n```\n\n**example 2: which takes parameters and returns a value**\n\nThe **return** statement ends function execution and specifies a value to be returned to the function caller.\n```\nfunction sum(a, b) {\n  return a + b;\n}\nconst result = sum(5, 6);\n\nconsole.log(result); // output: \"11\"\n\n```\n\n**example 3**: **default parameters** \n\n```\nfunction showMessage(from, text = \"no text given\") {\n  console.log( from + \": \" + text );\n}\n\nshowMessage(\"Ann\"); // output: \"Ann: no text given\"\nshowMessage(\"Ann\", \"Hello, world!\"); // output: \"Ann: Hello, world!\"\n\n```\n"
+                        "data": "A **function** declaration \\(also called a function statement\\) consists of the function keyword, followed by:\n* The name of the function.\n* A list of parameters to the function, enclosed in parentheses and separated by commas.\n* The JavaScript statements that define the function, enclosed in braces, **\\{**...**\\}**.\n\n\n**Syntax:**\n```\nfunction validFunctionName(parameter1, parameter2) {\n  return statement;\n}\n\n```\n\n**example 1: which takes no parameters and returns nothing \\(void\\)**\n```\nfunction currentTime() {\n  console.log(new Date().toTimeString().slice(0, 8));\n}\n\ncurrentTime() // output: \"18:35:36\"\n\n```\n\n**example 2: which takes parameters and returns a value**\nThe **return** statement ends function execution and specifies a value to be returned to the function caller.\n```\nfunction sum(a, b) {\n  return a + b;\n}\nconst result = sum(5, 6);\n\nconsole.log(result); // output: \"11\"\n\n```\n\n**example 3**: **default parameters** \n```\nfunction showMessage(from, text = \"no text given\") {\n  console.log( from + \": \" + text );\n}\n\nshowMessage(\"Ann\"); // output: \"Ann: no text given\"\nshowMessage(\"Ann\", \"Hello, world!\"); // output: \"Ann: Hello, world!\"\n\n```\n\n**example 4: constructor function **\\(will see more this in detail when it comes to **objects**\\)\n```\nfunction Emp(id, name) {\n    this.id = id;\n    this.name = name;\n}\n\nEmp.count = 999999; // this refers to __proto__\nEmp.prototype.baseSalary = 50000; // this refers to prototype\n\nlet emp1 = new Emp(1, \"John\");\n\nconsole.log(emp1.id);\nconsole.log(emp1.name);\n\n```\n"
                     }
                 ]
             },
@@ -882,6 +1311,36 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "1340cde2-dcef-48de-a00e-1ce996ecf377",
+                "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Operators"
+                    }
+                ]
+            },
+            {
+                "key": "840a8fff-1b5b-48bd-9aae-6214c599c5ab",
+                "parentKey": "f8750599-32db-4fb3-829e-0673887df2c2",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Immediately invoked \nfunction expression"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "An **IIFE** \\(Immediately Invoked Function Expression\\) is a JavaScript function that runs as soon as it is defined or as soon as it starts to executes.\n\n**Example 1:**\n```\n\n\n\n```\n"
+                    }
+                ]
+            },
+            {
                 "key": "c007d461-f421-48fd-9566-ac88d298bbb8",
                 "parentKey": "50256453-3cf5-4adf-85c0-562970b46468",
                 "subKeys": [],
@@ -914,14 +1373,40 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "79a87fe8-34ea-45e0-90b4-ee2399074191",
+                "parentKey": "5df46409-6d87-4099-85c8-664e7e703c8e",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "new Object()"
+                    }
+                ]
+            },
+            {
+                "key": "c261d5f7-915b-4abd-b3d1-47ef335bc8ff",
+                "parentKey": "3dc1c815-02b4-4097-ae29-578920b3a065",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "clear"
+                    }
+                ]
+            },
+            {
                 "key": "f8750599-32db-4fb3-829e-0673887df2c2",
                 "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
                 "subKeys": [
                     "0341d846-c3f3-4915-a4b3-0c11b3643a9d",
                     "a1649782-ec29-4030-bb2d-d6044103cf10",
                     "a9f8d9be-7d66-4b3e-941d-429c02913ec5",
-                    "220e873a-0a0b-4820-9434-42d0727eead5",
-                    "a37aef6c-b62c-423c-8124-c18edc14142b"
+                    "a37aef6c-b62c-423c-8124-c18edc14142b",
+                    "840a8fff-1b5b-48bd-9aae-6214c599c5ab"
                 ],
                 "collapse": false,
                 "style": "{\"contentStyle\":{\"background\":\"#9eff88\"}}",
@@ -932,7 +1417,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "Functions are the main “building blocks” of the program. They allow the code to be called many times without repetition. A function is executed when “something” invokes it \\(calls it\\).\n\n**Referrence:**\n* [https://dmitripavlutin.com/6\\-ways\\-to\\-declare\\-javascript\\-functions/](https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/)\n* [https://codeburst.io/understanding\\-generators\\-in\\-es6\\-javascript\\-with\\-examples\\-6728834016d5](https://codeburst.io/understanding-generators-in-es6-javascript-with-examples-6728834016d5)\n\n"
+                        "data": "Functions are the main “building blocks” of the program. They allow the code to be called many times without repetition. A function is executed when “something” invokes it \\(calls it\\).\n\n**Referrence:**\n* [https://codeburst.io/understanding\\-generators\\-in\\-es6\\-javascript\\-with\\-examples\\-6728834016d5](https://codeburst.io/understanding-generators-in-es6-javascript-with-examples-6728834016d5)\n\n"
                     }
                 ]
             }
