@@ -12,7 +12,7 @@ export function generateSimpleModel() {
     return Model.create({
         "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
         "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-        "focusKey": "1340cde2-dcef-48de-a00e-1ce996ecf377",
+        "focusKey": "29f23365-fcf6-4f8f-8060-811df84e4770",
         "extData": {
             "TOPIC_REFERENCE": {
                 "reference": {}
@@ -139,7 +139,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**if** statement can be extended with an **else if** statement, which adds another conditional with its own block, it is a way to chain on extra choices/outcomes.\n\n**Syntax:**\n```\nif (condition) {\n     // condition is true this block will be executed\n     // no futher conditions will be checked\n} else if (condition) {\n      // when a previous block condition has been failed\n      // this(else if) block condition is evaluted\n      // when a condition passed this block will be executed\n} else {\n      //when all condition has been failed this block will be executed\n}\n\n```\n\n**example:**\n```\nif (false) {\n      console.log(\"if blocked executed\");\n} else if (2 < 5 && 3 < 5 ) {\n      console.log(\"else if blocked executed\");\n} else {\n      console.log(\"else blocked executed\");\n}\n\n```\n"
+                        "data": "**if** statement can be extended with an **else if** statement, which adds another conditional with its own block, it is a way to chain on extra choices/outcomes.\n\n**Syntax:**\n```\nif (condition) {\n     // when condition is true this block will be executed\n     // no futher conditions will be checked\n} else if (condition) {\n      // when a previous block condition has been failed\n      // this(else if) block condition is evaluted\n      // when a condition passed this block will be executed\n} else {\n      //when all condition has been failed this block will be executed\n}\n\n```\n\n**example:**\n```\nif (false) {\n      console.log(\"if blocked executed\");\n} else if (2 < 5 && 3 < 5 ) {\n      console.log(\"else if blocked executed\");\n} else {\n      console.log(\"else blocked executed\");\n}\n\n// Output - \"else if blocked executed\"\n\n```\n"
                     }
                 ]
             },
@@ -235,7 +235,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": ""
+                        "data": "A loop is a sequence of instructions that is **continually repeated** until a certain condition is met. An example would be the process of getting an item of data and changing it, and then making sure some condition is checked such as, if a counter has reached a prescribed number."
                     }
                 ]
             },
@@ -252,7 +252,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**Object** : typeof instance === \"object\". It is used to store collections of data and more complex entities.\n\n```\nconsole.log(typeof({})); // \"object\"\nconsole.log(typeof([])); // \"object\" - Arrays aren’t primitive, they are objects\nconsole.log(typeof(new Map())); // \"object\"\nconsole.log(typeof(new Date())); // \"object\"\n\n```\n\nSpecial non\\-data but Structural type for any constructed object instance also used as data structures: \n\n1. new Object, \n1. new Array, \n1. new Map, \n1. new Set, \n1. new WeakMap, \n1. new WeakSet, \n1. new Date and almost everything made with **new** keyword;\n\n\n**Indexed collections**: Arrays and typed Arrays\n\n**Keyed collections**: Maps, Sets, WeakMaps, WeakSets"
+                        "data": "**Object** : typeof instance === \"object\". It is used to store collections of data and more complex entities.\n\n```\nconsole.log(typeof({})); // \"object\"\nconsole.log(typeof([])); // \"object\" - Arrays aren’t primitive, they are objects\nconsole.log(typeof(new Map())); // \"object\"\nconsole.log(typeof(new Date())); // \"object\"\n\n```\n\nSpecial non\\-data but Structural type for any constructed object instance also used as data structures: \n1. new Object, \n1. new Array, \n1. new Map, \n1. new Set, \n1. new WeakMap, \n1. new WeakSet, \n1. new Date and almost everything made with **new** keyword;\n\n\n**Indexed collections**: Arrays and typed Arrays\n**Keyed collections**: Maps, Sets, WeakMaps, WeakSets"
                     }
                 ]
             },
@@ -338,7 +338,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "The **for** loop repeats a block of code as long as a certain condition is met. It is typically used to execute a block of code for certain number of times.\n\n**Syntax:**\n\n```\nfor(initialization; condition; final-expression) {\n    // Code to be executed\n}\n\n```\n\n* **initialization** — it is used to initialize the counter variables, and evaluated once unconditionally before the first execution of the body of the loop.\n* **condition** — it is evaluated at the beginning of each iteration. If it evaluates to true, the loop statements execute. If it evaluates to false, the execution of the loop ends.\n* **final\\-expression** — this is always evaluated \\(or run\\) each time the loop has gone through a full iteration. It usually serves to increment \\(or in some cases decrement\\) the counter variable.\n\n\n**example 1**:\n\n```\nfor (let i = 0; i < 10; i++) {\n  console.log(\"The number is \" + i);\n}\n\n// Output:\n// \"The number is 0\"\n// \"The number is 1\"\n// \"The number is 2\"\n// \"The number is 3\"\n// \"The number is 4\"\n// \"The number is 5\"\n// \"The number is 6\"\n// \"The number is 7\"\n// \"The number is 8\"\n// \"The number is 9\"\n\n```\n\n**example 2: **skipping current execution of loop using **continue** statement\n\n```\nfor (let i = 0; i < 10; i++) {\n  if(i%2===0){\n    continue;\n  }\n  console.log(\"The number is \" + i);\n}\n\n// Output:\n// \"The number is 1\"\n// \"The number is 3\"\n// \"The number is 5\"\n// \"The number is 7\"\n// \"The number is 9\"\n\n```\n\n**example 3**: terminating current execution flow of the loop using **break** statement\n\n```\nfor (let i = 0; i < 10; i++) {\n  if(i===5){\n    break;\n  }\n  console.log(\"The number is \" + i);\n}\n\n// Output:\n// \"The number is 0\"\n// \"The number is 1\"\n// \"The number is 2\"\n// \"The number is 3\"\n// \"The number is 4\"\n\n```\n"
+                        "data": "The **for** loop repeats a block of code as long as a certain condition is met. It is typically used to execute a block of code for certain number of times.\n\n**Syntax:**\n```\nfor(initialization; condition; final-expression) {\n    // Code to be executed\n}\n\n```\n\n* **initialization** — it is used to initialize the counter variables, and evaluated once unconditionally before the first execution of the body of the loop.\n* **condition** — it is evaluated at the beginning of each iteration. If it evaluates to true, the loop statements execute. If it evaluates to false, the execution of the loop ends.\n* **final\\-expression** — this is always evaluated \\(or run\\) each time the loop has gone through a full iteration. It usually serves to increment \\(or in some cases decrement\\) the counter variable.\n\n\n**example 1**:\n```\nfor (let i = 0; i < 10; i++) {\n  console.log(\"The number is \" + i);\n}\n\n// Output:\n// \"The number is 0\"\n// \"The number is 1\"\n// \"The number is 2\"\n// \"The number is 3\"\n// \"The number is 4\"\n// \"The number is 5\"\n// \"The number is 6\"\n// \"The number is 7\"\n// \"The number is 8\"\n// \"The number is 9\"\n\n```\n\n**example 2: **skipping current execution of loop using **continue** statement\n```\nfor (let i = 0; i < 10; i++) {\n  if(i%2===0){\n    continue;\n  }\n  console.log(\"The number is \" + i);\n}\n\n// Output:\n// \"The number is 1\"\n// \"The number is 3\"\n// \"The number is 5\"\n// \"The number is 7\"\n// \"The number is 9\"\n\n```\n\n**example 3**: terminating current execution flow of the loop using **break** statement\n```\nfor (let i = 0; i < 10; i++) {\n  if(i===5){\n    break;\n  }\n  console.log(\"The number is \" + i);\n}\n\n// Output:\n// \"The number is 0\"\n// \"The number is 1\"\n// \"The number is 2\"\n// \"The number is 3\"\n// \"The number is 4\"\n\n```\n\n**example 4: **following example is valid js code\n```\nfor (; ;) {\n    console.log(\"Infinite loop - 'JavaScript heap out of memory' it is what you get when you run\");\n}\n\n```\n"
                     }
                 ]
             },
@@ -357,7 +357,8 @@ export function generateSimpleModel() {
                     "1f66701b-72a2-45be-abad-d14ba71a78e0",
                     "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
                     "c0743415-e5c5-48da-a6ec-a2d0571da863",
-                    "1340cde2-dcef-48de-a00e-1ce996ecf377"
+                    "1340cde2-dcef-48de-a00e-1ce996ecf377",
+                    "131c9433-90a2-40b8-9e02-b774761c2456"
                 ],
                 "collapse": false,
                 "style": "{\"contentStyle\":{\"background\":\"#f8e71c\"}}",
@@ -445,7 +446,7 @@ export function generateSimpleModel() {
                 "blocks": [
                     {
                         "type": "CONTENT",
-                        "data": "Set"
+                        "data": "Set &\nmethods"
                     }
                 ]
             },
@@ -462,7 +463,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "A function is a code snippet that can be called by other code or by itself, or a variable that refers to the function. When a function is called, arguments are passed to the function as input, and the function can optionally return a value. \n\nA function in JavaScript is also an **object**.\n\n```\nconsole.log(typeof(x => x * 2)); // \"function\"\nconsole.log(typeof(function(){})); // \"function\"\n\n```\n"
+                        "data": "A function is a code snippet that can be called by other code or by itself, or a variable that refers to the function. When a function is called, optionally arguments are passed to the function as input, and the function can return a value. \n\nA function in JavaScript is also an **object**.\n\n```\nconsole.log(typeof(x => x * 2)); // \"function\"\nconsole.log(typeof(function(){})); // \"function\"\n\n```\n"
                     }
                 ]
             },
@@ -509,7 +510,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "Var is **function** scope \\(will see more of that in **Scopes & Closures**\\). Value stored in it can be reassigned.\n\nTo declare or create a varaible\n```\nvar message;\n\n```\n\nAssign a data into it by using the assignment operator =:\n```\nmessage = 'Hello';\n\n```\n\nCombine the variable _declaration_ and _assignment_ into a single line\n```\nvar message = 'Hello!';\n\n```\n\nDeclare multiple variables in one line\n```\nvar user = 'John', age = 25, message = 'Hello';\n\n```\n\nReassigning a value\n```\nvar userName = \"Bruce\"\nuserName = \"Wayne\"\n\nconsole.log(userName) // \"Wayne\"\n\n```\n"
+                        "data": "Value stored in it can be **reassigned**.. Var is **function** scope \\(will see more of that in **Scopes & Closures**\\). \n\nTo declare or create a varaible\n```\nvar message;\n\n```\n\nAssign a data into it by using the assignment operator **=**\n```\nmessage = 'Hello';\n\n```\n\nCombine the variable _declaration_ and _assignment_ into a single line\n```\nvar message = 'Hello!';\n\n```\n\nDeclare multiple variables in one line\n```\nvar user = 'John', age = 25, message = 'Hello';\n\n```\n\nReassigning a value\n```\nvar userName = \"Bruce\"\nuserName = \"Wayne\"\n\nconsole.log(userName) // \"Wayne\"\n\n```\n"
                     }
                 ]
             },
@@ -569,7 +570,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "The for\\-of loop is similar to the for\\-in loop because it loops over an object’s elements one by one. Compared to the for\\-in loop, it is newer and automatically uses an iterator.\n\n```\nfor (let i of object) {\n    console.log(i);\n}\n\n```\n\nIf the object is an array, the for\\-of loop will **print out the values** of the array’s indexes in order.\n\n**example 1:**\n\n```\nlet arr = [3, 5, 7];\n    \nfor (let i of arr) {\n  console.log(i);\n}\n\n// output:\n// 3\n// 5\n// 7\n\n```\n\n**example 2:**\n\n```\nconst items = {\n  'first': new Date(),\n  'second': 2,\n  'third': 'test'\n}\n\nfor (let i of items) {\n  console.log(i);\n}\n\n// Output: TypeError: items is not iterable\n\n```\n"
+                        "data": "The **for\\-of** loop is similar to the for\\-in loop because it loops over iterable objects. It invokes a custom iteration hook with statements to be executed for the value of each distinct property of the object. Compared to the for\\-in loop, it is newer and automatically uses an iterator.\n\n**Syntax:**\n```\nfor (let i of object) {\n    console.log(i);\n}\n\n```\nIf the object is an array, the for\\-of loop will **print out the values** of the array’s indexes in order.\n\n**example 1:**\n```\nlet arr = [3, 5, 7];\n\nfor (let i of arr) {\n  console.log(i);\n}\n\n// output:\n// 3\n// 5\n// 7\n\n```\n\n**example 2:**\n```\nconst items = {\n  'first': new Date(),\n  'second': 2,\n  'third': 'test'\n}\n\nfor (let i of items) {\n  console.log(i);\n}\n\n// Output: TypeError: items is not iterable\n\n```\n"
                     }
                 ]
             },
@@ -616,7 +617,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "Let is **blocked** scope \\(will see more of that in **Scopes & Closures**\\). Value stored in it can be reassigned.\n\nTo declare or create a varaible\n\n```\nlet message;\n\n```\n\nAssign a data into it by using the assignment operator =:\n\n```\nmessage = 'Hello';\n\n```\n\nCombine the variable _declaration_ and _assignment_ into a single line\n\n```\nlet message = 'Hello!';\n\n```\n\nDeclare multiple variables in one line\n\n```\nlet user = 'John', age = 25, message = 'Hello';\n\n```\n\nReassigning a value\n\n```\nlet userName = \"Bruce\"\nuserName = \"Wayne\"\n\n```\n"
+                        "data": "Value stored in it can be reassigned. Let is **blocked** scope \\(will see more of that in **Scopes & Closures**\\).\n\nTo declare or create a varaible\n```\nlet message;\n\n```\n\nAssign a data into it by using the assignment operator =:\n```\nmessage = 'Hello';\n\n```\n\nCombine the variable _declaration_ and _assignment_ into a single line\n```\nlet message = 'Hello!';\n\n```\n\nDeclare multiple variables in one line\n```\nlet user = 'John', age = 25, message = 'Hello';\n\n```\n\nReassigning a value\n```\nlet userName = \"Bruce\"\nuserName = \"Wayne\"\n\n```\n"
                     }
                 ]
             },
@@ -654,7 +655,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "All primitive values are immutable, means “**unchangeable**”. Read\\-only. \n\n**Example 1:**\n```\nExample 1:\nlet str = 'hello';\nconsole.log(str[0]); // \"h\"\nstr[0] = 'j';\nconsole.log(str); // \"hello\"\n\n```\n\n**Example 2:** \\- https://github.com/getify/You\\-Dont\\-Know\\-JS/blob/2nd\\-ed/get\\-started/apA.md\n```\nlet myName = \"Kyle\";\nlet yourName = myName;\nmyName = \"Frank\";\nconsole.log(myName); // \"Frank\"\nconsole.log(yourName); // \"Kyle\"\n\n```\n\n**yourName** wasn't affected by the re\\-assignment of **myName** to \"Frank\"? That's because each variable holds its own copy of the value."
+                        "data": "All primitive values are **immutable**, means “**unchangeable**”. Read\\-only. The variable may be reassigned a new value, but the existing value can not be changed in the ways that objects, arrays, and functions can be altered.\n\n**Example 1:**\n```\nExample 1:\nlet str = 'hello';\nconsole.log(str[0]); // \"h\"\nstr[0] = 'j';\nconsole.log(str); // \"hello\"\n\n```\n\n**Example 2:**\nhttps://github.com/getify/You\\-Dont\\-Know\\-JS/blob/2nd\\-ed/get\\-started/apA.md\n```\nlet myName = \"Kyle\";\nlet yourName = myName;\nmyName = \"Frank\";\nconsole.log(myName); // \"Frank\"\nconsole.log(yourName); // \"Kyle\"\n\n```\n**yourName** wasn't affected by the re\\-assignment of **myName** to \"Frank\"? That's because each variable holds its own copy of the value.\n\n**Example 3:**\n```\n// Using a string method doesn't mutate the string\nvar bar = \"baz\";\nconsole.log(bar);               // baz\nbar.toUpperCase();\nconsole.log(bar);               // baz\n\n// Assignment gives the primitive a new (not a mutated) value\nbar = bar.toUpperCase();       // BAZ\n\n```\n\nFor more info \\- [https://developer.mozilla.org/en\\-US/docs/Glossary/Primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)"
                     }
                 ]
             },
@@ -800,6 +801,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "131c9433-90a2-40b8-9e02-b774761c2456",
+                "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+                "subKeys": [],
+                "collapse": false,
+                "style": "{\"contentStyle\":{\"background\":\"#f1919f\",\"borderStyle\":\"none\"},\"linkStyle\":{\"lineType\":\"curve\"}}",
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "OOP"
+                    }
+                ]
+            },
+            {
                 "key": "6a4344e6-1374-47f1-973b-74ea51bcc3b1",
                 "parentKey": "08aaf5bf-5222-4d4c-bd8d-2267d2f81433",
                 "subKeys": [],
@@ -921,7 +935,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**if** statement can be extended with an **else** statement, which adds another block to run when the **if** condition doesn’t pass.\n\n**Syntax:**\n```\nif (condition) {\n      //condition is true this block will be executed\n      // no futher conditions will be checked\n} else {\n      //when a condition is false/failed this block will be executed\n}\n\n```\n\n**example:**\n```\nif (\"cat\" === \"dog\") {\n      console.log(\"if block executed\");\n} else {\n      console.log(\"else block executed\");\n}\n\n```\n"
+                        "data": "**if** statement can be extended with an **else** statement, which adds another block to run when the **if** condition doesn’t pass.\n\n**Syntax:**\n```\nif (condition) {\n      //when condition is true this block will be executed\n      // no futher conditions will be checked\n} else {\n      //when a condition is false/failed this block will be executed\n}\n\n```\n\n**example:**\n```\nif (\"cat\" === \"dog\") {\n      console.log(\"if block executed\");\n} else {\n      console.log(\"else block executed\");\n}\n// Output: \"else block executed\"\n\n```\n"
                     }
                 ]
             },
@@ -943,7 +957,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "Conditional statements controls behavior in JavaScript and determine whether or not a piece of code can run.\n\n## Truthy\n\nIn JavaScript, a truthy value is a value that is considered true when encountered in a Boolean context. All values are truthy unless they are defined as falsy \\(i.e., except for false, 0, \\-0, 0n, \"\", null, undefined, and NaN\\).\n\n**Examples of truthy values** in JavaScript \\(which will be coerced to true in boolean contexts, and thus execute the if block\\)\n\n```\nif (true)\nif ({})\nif ([])\nif (42)\nif (\"0\")\nif (\"false\")\nif (new Date())\nif (-42)\nif (12n)\nif (3.14)\nif (-3.14)\nif (Infinity)\nif (-Infinity)\n\n```\n\n\n## Falsy\n\nA falsy \\(sometimes written falsey\\) value is a value that is considered false when encountered in a Boolean context.\n\n**Complete list of JavaScript falsy values**\n| false | The keyword false. |\n|:--- |:--- |\n| 0 | The Number zero \\(so, also 0.0, etc., and 0x0\\). |\n| \\-0 | The Number negative zero \\(so, also \\-0.0, etc., and \\-0x0\\). |\n| 0n | The BigInt zero \\(so, also 0x0n\\). Note that there is no BigInt negative zero — the negation of 0n is 0n. |\n| \"\", | '', \\`\\` Empty string value. |\n| null | null — the absence of any value. |\n| undefined | undefined — the primitive value. |\n| NaN | NaN — not a number. |\n| document\\.all | Objects are falsy if and only if they have the \\[\\[IsHTMLDDA\\]\\] internal slot.That slot only exists in document.all and cannot be set using JavaScript. |\n"
+                        "data": "Conditional statements controls behavior and determines whether or not a piece of code can run.\n\n## Truthy\n\nIn JavaScript, a truthy value is a value that is considered true when encountered in a Boolean context. All values are truthy unless they are defined as falsy \\(i.e., except for false, 0, \\-0, 0n, \"\", null, undefined, and NaN\\).\n\n**Examples of truthy values** in JavaScript \\(which will be coerced to true in boolean contexts, and thus execute the if block\\)\n```\nif (true)\n    if ({})\n        if ([])\n            if (42)\n                if (\"0\")\n                    if (\"false\")\n                        if (new Date())\n                            if (-42)\n                                if (12n)\n                                    if (3.14)\n                                        if (-3.14)\n                                            if (Infinity)\n                                                if (-Infinity)\n                                                    console.log(\"Yay!!! Success\")                                                    \n// Output - \"Yay!!! Success\"\n\n```\n\n\n## Falsy\n\nA falsy \\(sometimes written falsey\\) value is a value that is considered false when encountered in a Boolean context.\n\n**Complete list of JavaScript falsy values**\n| false | The keyword false. |\n|:--- |:--- |\n| 0 | The Number zero \\(so, also 0.0, etc., and 0x0\\). |\n| \\-0 | The Number negative zero \\(so, also \\-0.0, etc., and \\-0x0\\). |\n| 0n | The BigInt zero \\(so, also 0x0n\\). Note that there is no BigInt negative zero — the negation of 0n is 0n. |\n| \"\", | '', \\`\\` Empty string value. |\n| null | null — the absence of any value. |\n| undefined | undefined — the primitive value. |\n| NaN | NaN — not a number. |\n| document\\.all | Objects are falsy if and only if they have the \\[\\[IsHTMLDDA\\]\\] internal slot.That slot only exists in document.all and cannot be set using JavaScript. |\n"
                     }
                 ]
             },
@@ -1022,7 +1036,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "The keyword **const** is an abbreviation for **constant**. Similar to let, it’s **block\\-scoped**, however, you can’t reassigned it and value must be provided when declaring it.\n\n**Example 1:**\n```\nconst pi = 3.14\nconsole.log(\"Pi :\", pi); // 3.14\n\n```\n\n**Example 2:**\n```\nconst gravity; // SyntaxError: Missing initializer in const declaration\n\n```\n\n**Example 3:**\n```\nconst name = \"Chris\"\nname = \"Jordan\" // TypeError: Assignment to constant variable.\n\n```\n"
+                        "data": "The keyword **const** is an abbreviation for **constant**. Similar to **let**, it’s **block\\-scoped**, however, you can’t reassigned it and value must be provided when declaring it.\n\n**Example 1:**\n```\nconst pi = 3.14\nconsole.log(\"Pi :\", pi); // 3.14\n\n```\n\n**Example 2:**\n```\nconst gravity; // SyntaxError: Missing initializer in const declaration\n\n```\n\n**Example 3:**\n```\nconst name = \"Chris\"\nname = \"Jordan\" // TypeError: Assignment to constant variable.\n\n```\n"
                     }
                 ]
             },
@@ -1059,7 +1073,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "Non\\-primitive are mutuable means '**changeable**'.  Only object values \\(arrays, objects, functions, etc.\\) are treated as references\n\n**Example 1:**\n```\nlet arr = [212, 8, 506];\nconsole.log(arr[0]); // 212\narr[0] = 420;\nconsole.log(arr); // [420, 8, 506]\n\n```\n\n**Example 2 \\- **https://github.com/getify/You\\-Dont\\-Know\\-JS/blob/2nd\\-ed/get\\-started/apA.m\n```\nlet myAddress = {\n    street: \"123 JS Blvd\",\n    city: \"Austin\",\n    state: \"TX\"\n};\n\nlet yourAddress = myAddress;\n\nmyAddress.street = \"456 TS Ave\";\n\nconsole.log(yourAddress.street); // 456 TS Ave\nconsole.log(myAddress.street) // 456 TS Ave\n\n```\n\nValue assigned to **myAddress** is an object, it's held/assigned by reference, and thus the assignment to the **yourAddress** variable is a copy of the reference, not the object value itself. That's why the updated value assigned to the myAddress.street is reflected when we access yourAddress.street. myAddress and yourAddress have copies of the **reference to the single shared object**, so an update to one is an update to both."
+                        "data": "Non\\-primitive are mutuable means '**changeable**'.  Only object values \\(arrays, objects, functions, etc.\\) are treated as references\n\n**Example 1:**\n```\nlet arr = [212, 8, 506];\nconsole.log(arr[0]); // 212\narr[0] = 420;\nconsole.log(arr); // [420, 8, 506]\n\n```\n\n**Example 2 \\-**\n[https://github.com/getify/You\\-Dont\\-Know\\-JS/blob/2nd\\-ed/get\\-started/apA.md](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/apA.md)\n```\nlet myAddress = {\n    street: \"123 JS Blvd\",\n    city: \"Austin\",\n    state: \"TX\"\n};\n\nlet yourAddress = myAddress;\n\nmyAddress.street = \"456 TS Ave\";\n\nconsole.log(yourAddress.street); // 456 TS Ave\nconsole.log(myAddress.street) // 456 TS Ave\n\n```\n\nValue assigned to **myAddress** is an object, it's held/assigned by reference, and thus the assignment to the **yourAddress** variable is a copy of the reference, not the object value itself. That's why the updated value assigned to the myAddress.street is reflected when we access yourAddress.street. myAddress and yourAddress have copies of the **reference to the single shared object**, so an update to one is an update to both."
                     }
                 ]
             },
@@ -1141,7 +1155,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**If** statement only runs if the condition enclosed in parentheses \\(\\) is truthy\n\n**Syntax:**\n```\nif (condition) {\n    //condition is true this block will be executed\n}\n\n```\n\n**example**:\n```\nif (10 > 5) {\n    console.log(\"if blocked executed\");\n}\n\n```\n"
+                        "data": "**If** statement only runs if the condition enclosed in parentheses \\(\\) is truthy\n\n**Syntax:**\n```\nif (condition) {\n    //when condition is true this block will be executed\n}\n\n```\n\n**example**:\n```\nif (10 > 5) {\n    console.log(\"if blocked executed\");\n}\n\n// Output - \"if blocked executed\"\n\n```\n"
                     }
                 ]
             },
@@ -1197,7 +1211,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "A variable is a **container** for a value or **named storage** for data. We can use variables to store goodies, visitors, and other data."
+                        "data": "A variable is a **container** for a value or **named storage** for data. And it is a named reference to a value. That way an unpredictable value can be accessed through a predetermined name."
                     }
                 ]
             },
@@ -1368,7 +1382,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "The for\\-in loop always loops over an object’s elements one by one. These names can be array indexes or key\\-value pairs. \n_**Iterates over all enumerable property keys of an object.**_\n\n**Syntax:**\n\n```\nfor (let i in object) {\n    console.log(object[i]);\n}\n\n```\n\nIf the object is an array, the for\\-in loop will **print out the array indexes in order**. If the object contains key\\-value pairs, the for\\-in loop will **print out each key that exists**. The for\\-in loop does not guarantee that keys within key\\-value pairs will always be accessed in the same order.\n\n**example 1:**\n\n```\nlet arr = [3, 5, 7];\narr.foo = \"hello\";\n    \nfor (let i in arr) {\n  console.log(i); // by default it print outs the indexes and key\n}\n\n// output:\n// 0\n// 1\n// 2\n// foo\n\n```\n\n**example 2:**\n\n```\nlet arr = [3, 5, 7];\narr.foo = \"hello\";\n    \nfor (let i in arr) {\n  console.log(arr[i]);\n}\n\n// output:\n// 3\n// 5\n// 7\n// hello\n\n```\n"
+                        "data": "The **for\\-in** loop always loops over an object’s elements one by one. It can be **array indexes** or **key incase of objects**. Iterates over all **enumerable property** keys of an object.\n\n**Syntax:**\n```\nfor (let i in object) {\n    console.log(object[i]);\n}\n\n```\nIf the object is an array, the for\\-in loop will **print out the array indexes in order**. If the object contains key\\-value pairs, the for\\-in loop will **print out each key that exists**. A for...in loop iterates over the properties of an object in an **arbitrary** order\n\n**example 1:**\n```\nlet arr = [3, 5, 7];\narr.foo = \"hello\";\n\nfor (let i in arr) {\n  console.log(i); // by default it print outs the indexes and key\n}\n\n// output:\n// 0\n// 1\n// 2\n// foo\n\n```\n\n**example 2:**\n```\nconst object = { a: 1, b: 2, c: 3 };\n\nfor (const property in object) {\n  console.log(property);\n}\n\n// output:\n// \"a: 1\"\n// \"b: 2\"\n// \"c: 3\"\n\n```\n\n**example 3:**\n```\nconst object = { a: 1, b: 2, c: 3 };\n\nfor (const property in object) {\n  console.log(`${property}: ${object[property]}`);\n}\n\n// output:\n// \"a: 1\"\n// \"b: 2\"\n// \"c: 3\"\n\n```\n"
                     }
                 ]
             },
