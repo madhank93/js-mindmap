@@ -86,7 +86,7 @@
         "debug": "cross-env NODE_ENV=development node --inspect-brk scripts/build.js",
         "test": "node scripts/test.js",
         "predeploy": "yarn build",
-        "deploy": "gh-pages -d build -m $MESSAGE",
+        "deploy": "gh-pages -d build",
         "up-blink": "node scripts/blink.js -u",
         "link-blink": "node scripts/blink.js --link",
         "unlink-blink": "node scripts/blink.js --unlink"

@@ -1,7 +1,7 @@
 {
   "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
   "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-  "focusKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+  "focusKey": "c0743415-e5c5-48da-a6ec-a2d0571da863",
   "extData": {
     "TOPIC_REFERENCE": {
       "reference": {}
@@ -10,7 +10,7 @@
   "topics": [
     {
       "key": "1f66701b-72a2-45be-abad-d14ba71a78e0",
-      "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+      "parentKey": "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
       "subKeys": [],
       "collapse": false,
       "style": null,
@@ -18,6 +18,19 @@
         {
           "type": "CONTENT",
           "data": "Functional\nProgramming"
+        }
+      ]
+    },
+    {
+      "key": "f8959855-b412-49cf-b308-d4b014a6fc59",
+      "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Abstraction"
         }
       ]
     },
@@ -111,7 +124,20 @@
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "Errors"
+          "data": "Error handling"
+        }
+      ]
+    },
+    {
+      "key": "31aa7d3d-f836-4d0f-8704-6606fb0a1577",
+      "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Polymorphism"
         }
       ]
     },
@@ -333,11 +359,9 @@
         "f8750599-32db-4fb3-829e-0673887df2c2",
         "5df46409-6d87-4099-85c8-664e7e703c8e",
         "9b52509a-42df-4ba8-9200-29ec192e314a",
-        "1f66701b-72a2-45be-abad-d14ba71a78e0",
-        "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
         "c0743415-e5c5-48da-a6ec-a2d0571da863",
         "1340cde2-dcef-48de-a00e-1ce996ecf377",
-        "131c9433-90a2-40b8-9e02-b774761c2456"
+        "ccf815c4-e6ad-4cbb-9427-cca701828c6c"
       ],
       "collapse": false,
       "style": "{\"contentStyle\":{\"background\":\"#f8e71c\"}}",
@@ -477,6 +501,22 @@
       ]
     },
     {
+      "key": "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
+      "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+      "subKeys": [
+        "1f66701b-72a2-45be-abad-d14ba71a78e0",
+        "131c9433-90a2-40b8-9e02-b774761c2456"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Programming\nparadigms"
+        }
+      ]
+    },
+    {
       "key": "05c8bbd0-fe13-4906-92cf-8507b33954da",
       "parentKey": "252c6937-bd93-4233-90cb-333938667c72",
       "subKeys": [],
@@ -580,6 +620,19 @@
         {
           "type": "DESC",
           "data": "An **arrow function** is defined using a pair of parenthesis that contains the list of parameters \\(param1, param2, ..., paramN\\), followed by a fat arrow =\\> and a pair of curly braces \\{...\\} that delimits the body statements.\n\n**example 1:**\n```\nconst square = (value) => {\n  return value * value\n}\nsquare(10); // output: \"100\"\n\n```\n\n**example 2:**\n* When the arrow function has only one parameter, the pair of parentheses can be omitted. When it contains a single statement, the curly braces and return can be omitted too.\n\n```\nconst square = value => value * value;\nsquare(10); // output: \"100\"\n\n```\n\n**example 3:**\n* when it takes no parameters\n\n```\nconst currentDate = () => console.log(new Date().toString().slice(0,15));\ncurrentDate(); // output: \"Wed Jul 21 2021\"\n\nconst currentTime = _ => console.log(new Date().toTimeString().slice(0, 8));\ncurrentTime(); // output: \"19:08:58\"\n\n```\n\n**example 4:**\n```\nlet add = (a, b) => a + b;\n\nconst result = add(2, 2);\nconsole.log(result); // output: \"4\"\n\n```\n"
+        }
+      ]
+    },
+    {
+      "key": "092ca5f2-7268-4e31-b7bd-d9aa2c3fd8d0",
+      "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Encapsulation"
         }
       ]
     },
@@ -781,14 +834,19 @@
     },
     {
       "key": "131c9433-90a2-40b8-9e02-b774761c2456",
-      "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-      "subKeys": [],
+      "parentKey": "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
+      "subKeys": [
+        "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
+        "092ca5f2-7268-4e31-b7bd-d9aa2c3fd8d0",
+        "31aa7d3d-f836-4d0f-8704-6606fb0a1577",
+        "f8959855-b412-49cf-b308-d4b014a6fc59"
+      ],
       "collapse": false,
       "style": "{\"contentStyle\":{\"background\":\"#f1919f\",\"borderStyle\":\"none\"},\"linkStyle\":{\"lineType\":\"curve\"}}",
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "OOP"
+          "data": "Object Oriented\nProgramming"
         }
       ]
     },
@@ -1178,14 +1236,14 @@
     },
     {
       "key": "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
-      "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+      "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
       "subKeys": [],
       "collapse": false,
       "style": null,
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "Classes"
+          "data": "Inheritance"
         }
       ]
     },
