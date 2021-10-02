@@ -12,7 +12,7 @@ export function generateSimpleModel() {
     return Model.create({
         "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
         "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-        "focusKey": null,
+        "focusKey": "e153daae-cd39-4033-bd24-8fcf1a6f9f84",
         "extData": {
             "TOPIC_REFERENCE": {
                 "reference": {}
@@ -21,7 +21,7 @@ export function generateSimpleModel() {
         "topics": [
             {
                 "key": "1f66701b-72a2-45be-abad-d14ba71a78e0",
-                "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+                "parentKey": "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
                 "subKeys": [],
                 "collapse": false,
                 "style": null,
@@ -29,6 +29,19 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "Functional\nProgramming"
+                    }
+                ]
+            },
+            {
+                "key": "f8959855-b412-49cf-b308-d4b014a6fc59",
+                "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Abstraction"
                     }
                 ]
             },
@@ -90,7 +103,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "The boolean type has only two values: **true** and **false**\n\n```\nconsole.log(typeof(true)); // \"boolean\"\nconsole.log(typeof(false)); // \"boolean\"\n\n```\n\n```\nlet nameFieldChecked = true;\nlet ageFieldChecked = false;\n\nconsole.log(\"Name field checked: \", nameFieldChecked, \" and \" , \"Age field checked: \", ageFieldChecked);\n// Name field checked:  true  and  Age field checked:  false\n\n```\n"
+                        "data": "The boolean type has only two values: **true** and **false**\n\n```\nconsole.log(typeof(true)); //=> \"boolean\"\nconsole.log(typeof(false)); //=> \"boolean\"\n\n```\n\n```\nlet nameFieldChecked = true;\nlet ageFieldChecked = false;\n\nconsole.log(\"Name field checked: \", nameFieldChecked, \" and \" , \"Age field checked: \", ageFieldChecked);\n//=> Name field checked:  true  and  Age field checked:  false\n\n```\n"
                     }
                 ]
             },
@@ -122,7 +135,37 @@ export function generateSimpleModel() {
                 "blocks": [
                     {
                         "type": "CONTENT",
-                        "data": "Errors"
+                        "data": "Error handling"
+                    }
+                ]
+            },
+            {
+                "key": "31aa7d3d-f836-4d0f-8704-6606fb0a1577",
+                "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Polymorphism"
+                    }
+                ]
+            },
+            {
+                "key": "d1972f4f-fd4a-43b1-8575-480a88d66898",
+                "parentKey": "08aaf5bf-5222-4d4c-bd8d-2267d2f81433",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Shadowing"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "**Variable shadowing** occurs when a variable declared within a certain scope \\(decision block, or method\\) has the same name as a variable declared in an outer scope. This _outer variable_ is said to be shadowed by the inner variable, while the inner identifier is said to mask the outer identifier.\n\n**Example 1:**\n```\nlet number = 10; //variable declared in outer scope\n\nfunction displayDouble() {\n  let number = 3; //same variable declared in inner scope\n\n  number = number * 2;\n  console.log(number); //=> 6\n}\n\ndisplayDouble();\nconsole.log(number); //=> 10\n\n```\n\n**Example 2:**\n```\nlet employee = 'Kenny'; //variable declared in outer scope\n\n['Alice', 'Bob', 'Cathy'].forEach(employee => { //same variable declared in inner scope\n  console.log(employee); //=> Alice Bob Cathy\n});\n\nconsole.log(employee); //=> Kenny\n\n```\n\n**Example 3:**\n```\nlet name = 'Jenny'; //variable declared in outer scope\n\nfor (let name = 0; name < 3; name++) { //same variable declared in inner scope\n  console.log(name); //=> 0 1 2\n}\n\nconsole.log(name); //=> Jenny\n\n```\n"
                     }
                 ]
             },
@@ -158,7 +201,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**Function Scope** \\- A function in JavaScript defines a scope for variables declared using **var**, **let** and **const**.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  var message = 'Run, Forrest, Run!';\n  console.log(message); // 'Run, Forrest, Run!'\n}\n\nrun();\nconsole.log(message); // throws ReferenceError\n\n```\n**run\\(\\)** function body creates a scope. The variable message is accessible inside of the function scope, but inaccessible outside.\n\n**Exmaple 2:**\n```\nfunction run() {\n  // \"run\" function scope\n  const two = 2;\n  let count = 0;\n  function run2() {}\n\n  console.log(two);   // 2\n  console.log(count); // 0\n  console.log(run2);  // function\n}\n\nrun();\nconsole.log(two);   // throws ReferenceError\nconsole.log(count); // throws ReferenceError\nconsole.log(run2);  // throws ReferenceError\n\n```\n\n**Exmaple 3**: Var is **functional\\-scoped**\n```\nvar fullMoon = true;\n\n// Use var to initialize a variable\nvar species = \"human\";\n\nif (fullMoon) {\n  // Attempt to create a new variable in a block\n  var species = \"werewolf\";\n  console.log(`${species}.`); // werewolf\n}\n\nconsole.log(`${species}.`); // werewolf\n\n```\nBoth the **global variable** and the **block\\-scoped variable** end up with the same value, **werewolf**. This is because instead of creating a new local variable with var, it is reassigning the same variable in the same scope."
+                        "data": "**Function Scope** \\- A function in JavaScript defines a scope for variables declared using **var**, **let** and **const**.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  var message = 'Run, Forrest, Run!';\n  console.log(message); //=> 'Run, Forrest, Run!'\n}\n\nrun();\nconsole.log(message); //=> throws ReferenceError\n\n```\n**run\\(\\)** function body creates a scope. The variable message is accessible inside of the function scope, but inaccessible outside.\n\n**Exmaple 2:**\n```\nfunction run() {\n  // \"run\" function scope\n  const two = 2;\n  let count = 0;\n  function run2() {}\n\n  console.log(two);   //=> 2\n  console.log(count); //=> 0\n  console.log(run2);  //=> function\n}\n\nrun();\nconsole.log(two);   //=> throws ReferenceError\nconsole.log(count); //=> throws ReferenceError\nconsole.log(run2);  //=> throws ReferenceError\n\n```\n\n**Exmaple 3**: Var is **functional\\-scoped**\n```\nvar fullMoon = true;\n\n// Use var to initialize a variable\nvar species = \"human\";\n\nif (fullMoon) {\n  // Attempt to create a new variable in a block\n  var species = \"werewolf\";\n  console.log(`${species}.`); //=> werewolf\n}\n\nconsole.log(`${species}.`); //=> werewolf\n\n```\nBoth the **global variable** and the **block\\-scoped variable** end up with the same value, **werewolf**. This is because instead of creating a new local variable with var, it is reassigning the same variable in the same scope."
                     }
                 ]
             },
@@ -176,6 +219,19 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "The **forEach\\(\\)** method executes a provided function once for each array element \\(will see more of this in detail in Array & methods\\)\n\n**example 1:**\n```\nconst array = [1, 2, 3, { id: 254, name: \"Chris\" }]\n\narray[5] = 5\narray[-6] = 6;\narray[\"name\"] = \"Lars\"\n\narray.forEach(value => console.log(`Value: ${value}`));\n\n// Output:\n// Value: 1\n// Value: 2\n// Value: 3\n// Value: [object Object]\n// Value: 5\n\n```\n"
+                    }
+                ]
+            },
+            {
+                "key": "66e79181-e275-41de-94c5-eac1802afc6b",
+                "parentKey": "277f12bf-6cef-4676-92bb-ee233886e4cb",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": ""
                     }
                 ]
             },
@@ -242,20 +298,26 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**Object** : typeof instance === \"object\". It is used to store collections of data and more complex entities.\n\n```\nconsole.log(typeof({})); // \"object\"\nconsole.log(typeof([])); // \"object\" - Arrays aren’t primitive, they are objects\nconsole.log(typeof(new Map())); // \"object\"\nconsole.log(typeof(new Date())); // \"object\"\n\n```\n\nSpecial non\\-data but Structural type for any constructed object instance also used as data structures: \n1. new Object, \n1. new Array, \n1. new Map, \n1. new Set, \n1. new WeakMap, \n1. new WeakSet, \n1. new Date and almost everything made with **new** keyword;\n\n\n**Indexed collections**: Arrays and typed Arrays\n**Keyed collections**: Maps, Sets, WeakMaps, WeakSets"
+                        "data": "**Object** : typeof instance === \"object\". It is used to store collections of data and more complex entities.\n\n```\nconsole.log(typeof({})); //=> \"object\"\nconsole.log(typeof([])); //=> \"object\" - Arrays aren’t primitive, they are objects\nconsole.log(typeof(new Map())); //=> \"object\"\nconsole.log(typeof(new Date())); //=> \"object\"\n\n```\n\nSpecial non\\-data but Structural type for any constructed object instance also used as data structures: \n1. new Object, \n1. new Array, \n1. new Map, \n1. new Set, \n1. new WeakMap, \n1. new WeakSet, \n1. new Date and almost everything made with **new** keyword;\n\n\n**Indexed collections**: Arrays and typed Arrays\n**Keyed collections**: Maps, Sets, WeakMaps, WeakSets"
                     }
                 ]
             },
             {
                 "key": "277f12bf-6cef-4676-92bb-ee233886e4cb",
                 "parentKey": "5df46409-6d87-4099-85c8-664e7e703c8e",
-                "subKeys": [],
-                "collapse": false,
+                "subKeys": [
+                    "66e79181-e275-41de-94c5-eac1802afc6b"
+                ],
+                "collapse": true,
                 "style": null,
                 "blocks": [
                     {
                         "type": "CONTENT",
                         "data": "Class"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "**Classes** are a template for creating objects. Classes in JS are built on prototypes. It is useful for creating multiple objects. And it is a new ES style convention and recommended one.\n\n```\nclass Employee {\n    constructor(firstName, lastName) {\n        this.firstName = firstName;\n        this.lastName = lastName;\n    }\n    print() {\n        console.log(`${this.firstName} ${this.lastName}`)\n    }\n}\n\nlet user1 = new Employee(\"Jack\", \"Ryan\");\nuser1.print(); //=> Jack Ryan\n\nlet user2 = new Employee(\"Alice\", \"Martin\");\nuser2.print(); //=> Alice Martin\n\n```\n"
                     }
                 ]
             },
@@ -344,11 +406,9 @@ export function generateSimpleModel() {
                     "f8750599-32db-4fb3-829e-0673887df2c2",
                     "5df46409-6d87-4099-85c8-664e7e703c8e",
                     "9b52509a-42df-4ba8-9200-29ec192e314a",
-                    "1f66701b-72a2-45be-abad-d14ba71a78e0",
-                    "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
                     "c0743415-e5c5-48da-a6ec-a2d0571da863",
                     "1340cde2-dcef-48de-a00e-1ce996ecf377",
-                    "131c9433-90a2-40b8-9e02-b774761c2456"
+                    "ccf815c4-e6ad-4cbb-9427-cca701828c6c"
                 ],
                 "collapse": false,
                 "style": "{\"contentStyle\":{\"background\":\"#f8e71c\"}}",
@@ -378,7 +438,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "A **generator** is a function that can stop midway and then continue from where it stopped. In short, a generator appears to be a function but it behaves like an iterator.\n\n**example 1:** function declaration form **function\\* <name\\>\\(\\)**\n```\nfunction* generatorFunction() {\n  console.log('This will be executed first.');\n  yield 'Hello, ';\n  console.log('I will be printed after the pause');  \n  yield 'World!';\n}\nconst generatorObject = generatorFunction();\n\nconsole.log(generatorObject.next().value);\n// output:\n// This will be executed first.\n// Hello, \nconsole.log(generatorObject.next().value);\n// output:\n// I will be printed after the pause\n// World!\nconsole.log(generatorObject.next().value);\n// output:\n// undefined\n\n```\n\n**example 2: **function expression form **function\\* \\(\\)**\n```\nconst indexGenerator = function* () {\n  let index = 0;\n  while(true) {\n    yield index++;\n  }\n};\nconst g = indexGenerator();\nconsole.log(g.next().value); // => 0\nconsole.log(g.next().value); // => 1\n\n```\n\n**example 3: **Shorthand method definition form **\\*<name\\>\\(\\)**\n```\nconst obj = {\n  *indexGenerator() {\n    var index = 0;\n    while(true) {\n      yield index++;\n    }\n  }\n}\nconst g = obj.indexGenerator();\nconsole.log(g.next().value); // => 0\nconsole.log(g.next().value); // => 1\n\n```\n"
+                        "data": "A **generator** is a function that can stop midway and then continue from where it stopped. In short, a generator appears to be a function but it behaves like an iterator.\n\n**example 1:** function declaration \\- **function\\* <function\\-name\\>\\(\\)**\n```\nfunction* generatorFunction() {\n  console.log('This will be executed first.');\n  yield 'Hello, ';\n  console.log('I will be printed after the pause');  \n  yield 'World!';\n}\nconst generatorObject = generatorFunction();\n\nconsole.log(generatorObject.next().value);\n// This will be executed first.\n// Hello, \nconsole.log(generatorObject.next().value);\n// I will be printed after the pause\n// World!\nconsole.log(generatorObject.next().value);\n// undefined\n\n```\n\n**example 2: **function expression \\- **function\\* \\(\\)**\n```\nconst indexGenerator = function* () {\n  let index = 0;\n  while(true) {\n    yield index++;\n  }\n};\nconst g = indexGenerator();\nconsole.log(g.next().value); //=> 0\nconsole.log(g.next().value); //=> 1\n\n```\n\n**example 3: **Shorthand method definition \\- **\\*<function\\-name\\>\\(\\)**\n```\nconst obj = {\n  *indexGenerator() {\n    var index = 0;\n    while(true) {\n      yield index++;\n    }\n  }\n}\nconst g = obj.indexGenerator();\nconsole.log(g.next().value); //=> 0\nconsole.log(g.next().value); //=> 1\n\n```\n"
                     }
                 ]
             },
@@ -453,7 +513,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "A function is a code snippet that can be called by other code or by itself, or a variable that refers to the function. When a function is called, optionally arguments are passed to the function as input, and the function can return a value. \n\nA function in JavaScript is also an **object**.\n\n```\nconsole.log(typeof(x => x * 2)); // \"function\"\nconsole.log(typeof(function(){})); // \"function\"\n\n```\n"
+                        "data": "A function is a code snippet that can be called by other code or by itself, or a variable that refers to the function. When a function is called, optionally arguments are passed to the function as input, and the function can return a value. \n\nA function in JavaScript is also an **object**.\n\n```\nconsole.log(typeof(x => x * 2)); //=> \"function\"\nconsole.log(typeof(function(){})); //=> \"function\"\n\n```\n"
                     }
                 ]
             },
@@ -470,7 +530,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "In JavaScript, null is **not** a “reference to a non\\-existing object” or a “null pointer” like in some other languages. It’s just a special value which represents “**nothing**”, “**empty**” or “**value unknown**”.\n\nThe special **null** value does not belong to any of the types described above.\n```\nconsole.log(typeof(null)); // \"object\"\n\n// This is a bug and one that unfortunately can’t be fixed, \n// because it would break existing code.\n// https://2ality.com/2013/10/typeof-null.html\n\n```\n\nIt forms a separate type of its own which contains only the null value:\n```\nlet age = null;\nconsole.log(age); // null\n\n```\n\n"
+                        "data": "In JavaScript, null is **not** a “reference to a non\\-existing object” or a “null pointer” like in some other languages. It’s just a special value which represents “**nothing**”, “**empty**” or “**value unknown**”.\n\nThe special **null** value does not belong to any of the types described above.\n```\nconsole.log(typeof(null)); //=> \"object\"\n\n// This is a bug and one that unfortunately can’t be fixed, \n// because it would break existing code.\n// https://2ality.com/2013/10/typeof-null.html\n\n```\n\nIt forms a separate type of its own which contains only the null value:\n```\nlet age = null;\nconsole.log(age); //=> null\n\n```\n"
                     }
                 ]
             },
@@ -488,6 +548,26 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
+                "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+                "subKeys": [
+                    "1f66701b-72a2-45be-abad-d14ba71a78e0",
+                    "131c9433-90a2-40b8-9e02-b774761c2456"
+                ],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Programming\nparadigms"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "A _programming paradigm_ is a _**style**_, or _**way**_, of programming.\n\n### Some common programming paradigms\n\n* **Imperative** in which the programmer instructs the machine how to change its state,\n   * _**Procedural**_ which groups instructions into procedures,\n   * _**Object\\-oriented**_ which groups instructions with the part of the state they operate on,\n* **Declarative** in which the programmer merely declares properties of the desired result, but not how to compute it\n   * _**Functional**_ in which the desired result is declared as the value of a series of function applications,\n   * _**Logical**_ in which the desired result is declared as the answer to a question about a system of facts and rules,\n   * _**Reactive**_ in which the desired result is declared with data streams and the propagation of change\n\n"
+                    }
+                ]
+            },
+            {
                 "key": "05c8bbd0-fe13-4906-92cf-8507b33954da",
                 "parentKey": "252c6937-bd93-4233-90cb-333938667c72",
                 "subKeys": [],
@@ -500,7 +580,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "Value stored in it can be **reassigned**. Variables, declared with var, are either function\\-scoped or global\\-scoped. \\(will see more of that in **Scopes & Closures**\\). Their visibility is scoped to current function, or global, if declared outside function.\n\nTo declare or create a varaible\n```\nvar message;\n\n```\n\nAssign a data into it by using the assignment operator **=**\n```\nmessage = 'Hello';\n\n```\n\nCombine the variable _declaration_ and _assignment_ into a single line\n```\nvar message = 'Hello!';\n\n```\n\nDeclare multiple variables in one line\n```\nvar user = 'John', age = 25, message = 'Hello';\n\n```\n\nReassigning a value\n```\nvar userName = \"Bruce\"\nuserName = \"Wayne\"\n\nconsole.log(userName) // \"Wayne\"\n\n```\n"
+                        "data": "Value stored in it can be **reassigned**. Variables, declared with var, are either function\\-scoped or global\\-scoped. \\(will see more of that in **Scopes & Closures**\\). Their visibility is scoped to current function, or global, if declared outside function.\n\nTo declare or create a varaible\n```\nvar message;\n\n```\n\nAssign a data into it by using the assignment operator **=**\n```\nmessage = 'Hello';\n\n```\n\nCombine the variable _declaration_ and _assignment_ into a single line\n```\nvar message = 'Hello!';\n\n```\n\nDeclare multiple variables in one line\n```\nvar user = 'John', age = 25, message = 'Hello';\n\n```\n\nReassigning a value\n```\nvar userName = \"Bruce\"\nuserName = \"Wayne\"\n\nconsole.log(userName) //=> \"Wayne\"\n\n```\n"
                     }
                 ]
             },
@@ -543,7 +623,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**Module Scope **\\- A module is just a file. One script is one module. Modules can load each other and use special directives export and import to interchange functionality, call functions of one module from another one:\n\n* **export** keyword labels variables and functions that should be accessible from outside the current module.\n* **import** allows the import of functionality from other modules.\n\n\nBefore modules, a variable declared outside any function was a global variable. In modules, a variable declared outside any function is hidden and not available to other modules unless it is explicitly exported.\n\nTo make import/export work, browsers need **<script type=\"module\"\\> **and for NodeJS \\- set **\"type\": \"module\"** in the **package\\.json** or use the **.mjs** extension\\.\n\n**Example 1:**\nFor instance, if we have a file** sayHi\\.mjs** exporting a function:\n```\n// 📁 sayHi.mjs\nexport function sayHi(user) {\n  console.log(`Hello, ${user}!`);\n}\n\n```\n\n…Then another file may import and use it:\n```\n// 📁 main.mjs\nimport {sayHi} from './sayHi.mjs';\n\nconsole.log(sayHi); // function...\nsayHi('John'); // Hello, John!\n\n```\n\n**Example 2:**\n**circle\\.mjs**\n```\n// \"circle\" module scope\nconst pi = 3.14159;\n\nconsole.log(pi); // 3.14159\n\n// Usage of pi\n\n```\n\n**main\\.mjs**\n```\nimport './circle';\n\nconsole.log(pi); // ReferenceError: pi is not defined\n\n```\n\nThe variable pi is **not accessible** outside of circle module \\(unless explicitly exported using export\\).\n\n**Refference**:\n* [https://hacks.mozilla.org/2018/03/es\\-modules\\-a\\-cartoon\\-deep\\-dive/](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Guide/Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)\n* [https://javascript.info/modules\\-intro](https://javascript.info/modules-intro)\n\n"
+                        "data": "**Module Scope **\\- A module is just a file. One script is one module. Modules can load each other and use special directives export and import to interchange functionality, call functions of one module from another one:\n\n* **export** keyword labels variables and functions that should be accessible from outside the current module.\n* **import** allows the import of functionality from other modules.\n\n\nBefore modules, a variable declared outside any function was a global variable. In modules, a variable declared outside any function is hidden and not available to other modules unless it is explicitly exported.\n\nTo make import/export work, browsers need **<script type=\"module\"\\> **and for NodeJS \\- set **\"type\": \"module\"** in the **package\\.json** or use the **.mjs** extension\\.\n\n**Example 1:**\nFor instance, if we have a file** sayHi\\.mjs** exporting a function:\n```\n// 📁 sayHi.mjs\nexport function sayHi(user) {\n  console.log(`Hello, ${user}!`);\n}\n\n```\n\n…Then another file may import and use it:\n```\n// 📁 main.mjs\nimport {sayHi} from './sayHi.mjs';\n\nconsole.log(sayHi); //=> function...\nsayHi('John'); //=> Hello, John!\n\n```\n\n**Example 2:**\n**circle\\.mjs**\n```\n// \"circle\" module scope\nconst pi = 3.14159;\n\nconsole.log(pi); //=> 3.14159\n\n// Usage of pi\n\n```\n\n**main\\.mjs**\n```\nimport './circle';\n\nconsole.log(pi); //=> ReferenceError: pi is not defined\n\n```\n\nThe variable pi is **not accessible** outside of circle module \\(unless explicitly exported using export\\).\n\n**Refference**:\n* [https://hacks.mozilla.org/2018/03/es\\-modules\\-a\\-cartoon\\-deep\\-dive/](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Guide/Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)\n* [https://javascript.info/modules\\-intro](https://javascript.info/modules-intro)\n\n"
                     }
                 ]
             },
@@ -574,6 +654,10 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "Constructor\nfunction"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "**Constructor function** can also be used to create objects in JS. It is useful for creating multiple objects. And it is an old ES style convention not recommended anymore.\n\n```\nfunction Person(firstName, lastName) {\n    this.firstName = firstName;\n    this.lastName = lastName;\n}\n\nPerson.prototype.print = function () {\n    console.log(`${this.firstName} ${this.lastName}`)\n}\n\nlet user1 = new Person(\"Jack\", \"Ryan\")\nuser1.print(); //=> Jack Ryan\n\nlet user2 = new Person(\"Alice\", \"Martin\")\nuser2.print(); //=> Alice Martin\n\n```\n"
                     }
                 ]
             },
@@ -591,6 +675,19 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "An **arrow function** is defined using a pair of parenthesis that contains the list of parameters \\(param1, param2, ..., paramN\\), followed by a fat arrow =\\> and a pair of curly braces \\{...\\} that delimits the body statements.\n\n**example 1:**\n```\nconst square = (value) => {\n  return value * value\n}\nsquare(10); // output: \"100\"\n\n```\n\n**example 2:**\n* When the arrow function has only one parameter, the pair of parentheses can be omitted. When it contains a single statement, the curly braces and return can be omitted too.\n\n```\nconst square = value => value * value;\nsquare(10); // output: \"100\"\n\n```\n\n**example 3:**\n* when it takes no parameters\n\n```\nconst currentDate = () => console.log(new Date().toString().slice(0,15));\ncurrentDate(); // output: \"Wed Jul 21 2021\"\n\nconst currentTime = _ => console.log(new Date().toTimeString().slice(0, 8));\ncurrentTime(); // output: \"19:08:58\"\n\n```\n\n**example 4:**\n```\nlet add = (a, b) => a + b;\n\nconst result = add(2, 2);\nconsole.log(result); // output: \"4\"\n\n```\n"
+                    }
+                ]
+            },
+            {
+                "key": "092ca5f2-7268-4e31-b7bd-d9aa2c3fd8d0",
+                "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Encapsulation"
                     }
                 ]
             },
@@ -662,7 +759,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "In JavaScript, the “**number**” type cannot represent integer values larger than \\(253\\-1\\) \\(that’s 9007199254740991\\), or less than \\-\\(253\\-1\\) for negatives. It’s a technical limitation caused by their internal representation.\n\n```\nconsole.log(typeof(22234234n)); // \"bigint\"\n\n```\n\nA BigInt value is created by appending n to the end of an integer\n```\nconst bigInt = 1234567890123456789012345678901234567890n; // the \"n\" at the end means it's a BigInt\n\n```\n\nBigInt numbers are rarely needed"
+                        "data": "In JavaScript, the “**number**” type cannot represent integer values larger than \\(253\\-1\\) \\(that’s 9007199254740991\\), or less than \\-\\(253\\-1\\) for negatives. It’s a technical limitation caused by their internal representation.\n\n```\nconsole.log(typeof(22234234n)); //=> \"bigint\"\n\n```\n\nA BigInt value is created by appending n to the end of an integer\n```\nconst bigInt = 1234567890123456789012345678901234567890n; // the \"n\" at the end means it's a BigInt\n\n```\n\nBigInt numbers are rarely needed"
                     }
                 ]
             },
@@ -709,7 +806,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "The scope of a variable declared with **var** is its current execution context and closures thereof, which is either the enclosing function and functions declared within it, or, for variables declared outside any function, global. \n\nYou can also assign a value to a variable For example, **x = 42**. This form creates an **undeclared global variable**. \n\n```\nvar x = 0; // Declares x within file scope, then assigns it a value of 0.\n\nconsole.log(typeof z); // \"undefined\", since z doesn't exist yet\n\nfunction a() {\n    var y = 2; // Declares y within scope of function a, then assigns it a value of 2.\n\n    console.log(x, y); // 0 2\n\n    function b() {\n        x = 3; // Assigns 3 to existing file scoped x.\n        y = 4; // Assigns 4 to existing outer y.\n        z = 5; // Creates a new global variable z, and assigns it a value of 5.\n        // (Throws a ReferenceError in strict mode.)\n    }\n\n    b(); // Creates z as a global variable.\n    console.log(x, y, z); // 3 4 5\n}\n\na(); // Also calls b.\nconsole.log(x, z);     // 3 5\nconsole.log(typeof y); // \"undefined\", as y is local to function a\n\n```\n\n**Note: window** and **document**, for example, are global variables supplied by the **browser**. In a **Node** environment, you can access **global** object as a global variable.\n\n**Refference:**\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Statements/var](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)\n* https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Guide/Grammar\\_and\\_types#variable\\_scope\n\n"
+                        "data": "The scope of a variable declared with **var** is its current execution context and closures thereof, which is either the enclosing function and functions declared within it, or, for variables declared outside any function, global. \n\nYou can also assign a value to a variable For example, **x = 42**. This form creates an **undeclared global variable**. \n\n```\nvar x = 0; // Declares x within file scope, then assigns it a value of 0.\n\nconsole.log(typeof z); // \"undefined\", since z doesn't exist yet\n\nfunction a() {\n    var y = 2; // Declares y within scope of function a, then assigns it a value of 2.\n\n    console.log(x, y); // 0 2\n\n    function b() {\n        x = 3; // Assigns 3 to existing file scoped x.\n        y = 4; // Assigns 4 to existing outer y.\n        z = 5; // Creates a new global variable z, and assigns it a value of 5.\n        // (Throws a ReferenceError in strict mode.)\n    }\n\n    b(); // Creates z as a global variable.\n    console.log(x, y, z); // 3 4 5\n}\n\na(); // Also calls b.\nconsole.log(x, z);     //=> 3 5\nconsole.log(typeof y); //=> \"undefined\", as y is local to function a\n\n```\n\n**Note: window** and **document**, for example, are global variables supplied by the **browser**. In a **Node** environment, you can access **global** object as a global variable.\n\n**Refference:**\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Statements/var](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)\n* https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Guide/Grammar\\_and\\_types#variable\\_scope\n\n"
                     }
                 ]
             },
@@ -739,7 +836,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "A string in JavaScript must be surrounded by quotes.\n\n```\nconsole.log(typeof(\"hello\")); // \"string\"\nconsole.log(typeof('hello')); // \"string\"\nconsole.log(typeof(`hello`)); // \"string\"\n\n```\n\n```\nlet str = \"Hello\";\nlet str2 = 'Single quotes are ok too';\nlet phrase = `can embed another ${str}`;\n\nconsole.log(\"Str:\", str, \"+\", \"Str2:\", str2, \"+\", \"Phrase:\", phrase);\n// Str: Hello + Str2: Single quotes are ok too + Phrase: can embed another Hello\n\n```\n\nIn JavaScript, there are 3 types of quotes.\n```\nDouble quotes: \"Hello\".\nSingle quotes: 'Hello'.\nBackticks: `Hello`.\n\n```\n"
+                        "data": "A string in JavaScript must be surrounded by quotes.\n\n```\nconsole.log(typeof(\"hello\")); //=> \"string\"\nconsole.log(typeof('hello')); //=> \"string\"\nconsole.log(typeof(`hello`)); //=> \"string\"\n\n```\n\n```\nlet str = \"Hello\";\nlet str2 = 'Single quotes are ok too';\nlet phrase = `can embed another ${str}`;\n\nconsole.log(\"Str:\", str, \"+\", \"Str2:\", str2, \"+\", \"Phrase:\", phrase);\n//=> Str: Hello + Str2: Single quotes are ok too + Phrase: can embed another Hello\n\n```\n\nIn JavaScript, there are 3 types of quotes.\n```\nDouble quotes: \"Hello\".\nSingle quotes: 'Hello'.\nBackticks: `Hello`.\n\n```\n"
                     }
                 ]
             },
@@ -756,7 +853,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "The number type represents both **integer** and **floating point** numbers\\.\n\n**Example 1: **Checking the type\n```\nconsole.log(typeof(2)); // \"number\"\nconsole.log(typeof(-200)); // \"number\"\nconsole.log(typeof(100.554)); // \"number\"\nconsole.log(typeof(-99.99)); // \"number\"\n\n```\n\n```\nlet age = 35\nconst gravity = 9.81  // const for non-changing values\nlet mass = 72         // mass in Kilogram\nconst PI = 3.14       // pi a geometrical constant\nconst boilingPoint = 100 // temperature in oC, boiling point of water which is a constant\nconst bodyTemp = 37      // oC average human body temperature, which is a constant\n\nconsole.log(age, gravity, mass, PI, boilingPoint, bodyTemp) // 35 9.81 72 3.14 100 37\n\n```\n"
+                        "data": "The number type represents both **integer** and **floating point** numbers\\.\n\n**Example 1: **Checking the type\n```\nconsole.log(typeof(2)); // \"number\"\nconsole.log(typeof(-200)); // \"number\"\nconsole.log(typeof(100.554)); // \"number\"\nconsole.log(typeof(-99.99)); // \"number\"\n\n```\n\n```\nlet age = 35\nconst gravity = 9.81  // const for non-changing values\nlet mass = 72         // mass in Kilogram\nconst PI = 3.14       // pi a geometrical constant\nconst boilingPoint = 100 // temperature in oC, boiling point of water which is a constant\nconst bodyTemp = 37      // oC average human body temperature, which is a constant\n\nconsole.log(age, gravity, mass, PI, boilingPoint, bodyTemp) //=> 35 9.81 72 3.14 100 37\n\n```\n"
                     }
                 ]
             },
@@ -792,14 +889,19 @@ export function generateSimpleModel() {
             },
             {
                 "key": "131c9433-90a2-40b8-9e02-b774761c2456",
-                "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-                "subKeys": [],
+                "parentKey": "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
+                "subKeys": [
+                    "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
+                    "092ca5f2-7268-4e31-b7bd-d9aa2c3fd8d0",
+                    "31aa7d3d-f836-4d0f-8704-6606fb0a1577",
+                    "f8959855-b412-49cf-b308-d4b014a6fc59"
+                ],
                 "collapse": false,
                 "style": "{\"contentStyle\":{\"background\":\"#f1919f\",\"borderStyle\":\"none\"},\"linkStyle\":{\"lineType\":\"curve\"}}",
                 "blocks": [
                     {
                         "type": "CONTENT",
-                        "data": "OOP"
+                        "data": "Object Oriented\nProgramming"
                     }
                 ]
             },
@@ -831,7 +933,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**Block scope** \\- A code block in JavaScript defines a scope for variables declared using **let** and **const **within a curly brace **\\{\\}. **it can be accessed only within that curly brace.\n\n**Example 1:**\n```\nif (true) {\n  // \"if\" block scope\n  const message = 'Hello';\n  let name = \"Chris\"\n  console.log(message); // 'Hello'\n  console.log(name); // 'Chris'\n}\nconsole.log(message); // throws ReferenceError\nconsole.log(name); // throws ReferenceError\n\n```\n\n**Example 2:**\n```\nlet fullMoon = true;\n\n// Initialize a global variable\nlet species = \"human\";\n\nif (fullMoon) {\n  // Initialize a block-scoped variable\n  let species = \"werewolf\";\n  console.log(`${species}`); // \"werewolf\"\n}\n\nconsole.log(`${species}`); // \"human\"\n\n```\n\n**Example 3: var is not block scoped**\n```\nif (true) {\n  // \"if\" block scope\n  var count = 0;\n  console.log(count); // 0\n}\nconsole.log(count); // 0\n\n```\n\nA code block does not create a scope for var variables, but a function body does.\n\n**Refference:**\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Statements/block](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block)\n\n"
+                        "data": "**Block scope** \\- A code block in JavaScript defines a scope for variables declared using **let** and **const **within a curly brace **\\{\\}. **it can be accessed only within that curly brace.\n\n**Example 1:**\n```\nif (true) {\n  // \"if\" block scope\n  const message = 'Hello';\n  let name = \"Chris\"\n  console.log(message); // 'Hello'\n  console.log(name); // 'Chris'\n}\nconsole.log(message); //=> throws ReferenceError\nconsole.log(name); //=> throws ReferenceError\n\n```\n\n**Example 2:**\n```\nlet fullMoon = true;\n\n// Initialize a global variable\nlet species = \"human\";\n\nif (fullMoon) {\n  // Initialize a block-scoped variable\n  let species = \"werewolf\";\n  console.log(`${species}`); //=> \"werewolf\"\n}\n\nconsole.log(`${species}`); //=> \"human\"\n\n```\n\n**Example 3: var is not block scoped**\n```\nif (true) {\n  // \"if\" block scope\n  var count = 0;\n  console.log(count); //=> 0\n}\nconsole.log(count); //=> 0\n\n```\n\nA code block does not create a scope for var variables, but a function body does.\n\n**Refference:**\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Statements/block](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block)\n\n"
                     }
                 ]
             },
@@ -864,7 +966,8 @@ export function generateSimpleModel() {
                     "4c35fca7-ac9c-4475-99ab-d77f97120360",
                     "35cf3ece-a21e-4a8e-a8f8-d2b24a2b742d",
                     "84650864-61f6-4e20-b87d-ed779ffa7d20",
-                    "69e69b35-9400-4fb3-aa5e-e9315b4a6eba"
+                    "69e69b35-9400-4fb3-aa5e-e9315b4a6eba",
+                    "d1972f4f-fd4a-43b1-8575-480a88d66898"
                 ],
                 "collapse": false,
                 "style": null,
@@ -948,7 +1051,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**Scope chain** \\- When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.\n\nIf it’s still could not find the variable, it will either implicitly declare the variable in the global scope \\(if not in strict mode\\) or return an error.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  const message = 'Run, Forrest, Run!';\n\n  if (true) {\n    // \"if\" code block scope\n    const friend = 'Bubba';\n    console.log(message); // 'Run, Forrest, Run!'\n  }\n\n  console.log(friend); // throws ReferenceError\n}\n\nrun();\n\n```\n\nThe scope contained within another scope is named **_inner scope_**. In the example, if code block scope is an inner scope of run\\(\\) function scope. The scope that wraps another scope is named **_outer scope_**. In the example, run\\(\\) function scope is an outer scope to if code block scope.\n\n**example 2:**\n```\n// global scope\nvar e = 10;\nfunction sum(a){\n  return function sum2(b){\n    return function sum3(c){\n      // outer functions scope\n      return function sum4(d){\n        // local scope\n        return a + b + c + d + e;\n      }\n    }\n  }\n}\n\nvar sum2 = sum(1);\nvar sum3 = sum2(2);\nvar sum4 = sum3(3);\nvar result = sum4(4);\nconsole.log(result) //log 20\n\n```\n"
+                        "data": "**Scope chain** \\- When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.\n\nIf it’s still could not find the variable, it will either implicitly declare the variable in the global scope \\(if not in strict mode\\) or return an error.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  const message = 'Run, Forrest, Run!';\n\n  if (true) {\n    // \"if\" code block scope\n    const friend = 'Bubba';\n    console.log(message); //=> 'Run, Forrest, Run!'\n  }\n\n  console.log(friend); //=> throws ReferenceError\n}\n\nrun();\n\n```\n\nThe scope contained within another scope is named _inner scope_. In the example, if code block scope is an inner scope of run\\(\\) function scope. The scope that wraps another scope is named _outer scope_. In the example, run\\(\\) function scope is an outer scope to if code block scope.\n\n**example 2:**\n```\n// global scope\nvar e = 10;\nfunction sum(a){\n  return function sum2(b){\n    return function sum3(c){\n      // outer functions scope\n      return function sum4(d){\n        // local scope\n        return a + b + c + d + e;\n      }\n    }\n  }\n}\n\nvar sum2 = sum(1);\nvar sum3 = sum2(2);\nvar sum4 = sum3(3);\nvar result = sum4(4);\nconsole.log(result) //=> 20\n\n```\n"
                     }
                 ]
             },
@@ -1008,7 +1111,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "The keyword **const** is an abbreviation for **constant**. Similar to **let**, it’s **block\\-scoped**, however, you can’t reassigned it and value must be provided when declaring it.\n\n**Example 1:**\n```\nconst pi = 3.14\nconsole.log(\"Pi :\", pi); // 3.14\n\n```\n\n**Example 2:**\n```\nconst gravity; // SyntaxError: Missing initializer in const declaration\n\n```\n\n**Example 3:**\n```\nconst name = \"Chris\"\nname = \"Jordan\" // TypeError: Assignment to constant variable.\n\n```\n"
+                        "data": "The keyword **const** is an abbreviation for **constant**. Similar to **let**, it’s **block\\-scoped**, however, you can’t reassigned it and value must be provided when declaring it.\n\n**Example 1:**\n```\nconst pi = 3.14\nconsole.log(\"Pi :\", pi); //=> 3.14\n\n```\n\n**Example 2:**\n```\nconst gravity; // SyntaxError: Missing initializer in const declaration\n\n```\n\n**Example 3:**\n```\nconst name = \"Chris\"\nname = \"Jordan\" // TypeError: Assignment to constant variable.\n\n```\n"
                     }
                 ]
             },
@@ -1065,6 +1168,10 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "Objects"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "**Object** is a collection of properties, and a property is an association between a name \\(or key\\) and a value. It is used to store keyed collections of various data and more complex entities.\n\nAn object can be created with figure brackets **\\{…\\}** with an optional list of properties. A property is a “key: value” pair, where _**key**_ is a string \\(also called a “property name”\\), and _**value**_ can be anything.\n\n**example**\n```\nlet user = {     // an object\n  name: \"John\",  // by key \"name\" store value \"John\"\n  age: 30        // by key \"age\" store value 30\n};\n\n```\n"
                     }
                 ]
             },
@@ -1078,6 +1185,10 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "Object.create()"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "**Object\\.create\\(\\)** method creates a new object, using an existing object as the prototype of the newly created object.\n\n```\nconst person = {\n    isHuman: false,\n    printIntroduction: function () {\n        console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);\n    }\n};\n\nconst me = Object.create(person);\n\nme.name = 'Matthew'; // \"name\" is a property set on \"me\", but not on \"person\"\nme.isHuman = true; // inherited properties can be overwritten\n\nme.printIntroduction(); //=> My name is Matthew. Am I human? true\n\n```\n"
                     }
                 ]
             },
@@ -1189,14 +1300,14 @@ export function generateSimpleModel() {
             },
             {
                 "key": "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
-                "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+                "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
                 "subKeys": [],
                 "collapse": false,
                 "style": null,
                 "blocks": [
                     {
                         "type": "CONTENT",
-                        "data": "Classes"
+                        "data": "Inheritance"
                     }
                 ]
             },
@@ -1226,7 +1337,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**Shorthand** method definition can be used in a method declaration on object literals and ES2015 classes. You can define them using a function name, followed by a list of parameters in a pair of parenthesis \\(para1, ..., paramN\\) and a pair of curly braces \\{ ... \\} that delimits the body statements.\n\n```\nconst collection = {\n  items: [],\n  add(...items) {\n    this.items.push(...items);\n  },\n  get(index) {\n    return this.items[index];\n  }\n};\ncollection.add('C', 'Js', 'PHP', 'Java');\nconsole.log(collection.get(1)) //output: \"Js\"\n\n```\n\n**add\\(\\)** and **get\\(\\)** methods in **collection** object are defined using short method definition. These methods are called as usual: **collection\\.add\\(...\\)** and **collection\\.get\\(...\\)**."
+                        "data": "**Object Literal** is generally used to create a single object.\n\n* An object literal is a comma\\-separated list of name\\-value pairs inside of curly braces **\\{\\}**.\n\n```\nconst greeting = {\n    greet: (message, name) => {\n        console.log(message + \" \" + name + \"!!\");\n    }\n};\n\ngreeting.greet(\"Hi\", \"Jack\"); //=> Hi Jack!!\n\n```\n\n* Accessing values from object using square brackets\n\n```\nlet user = {}; // object literal\n\n// set\nuser[\"likes birds\"] = true;\n\n// get\nconsole.log(user[\"likes birds\"]); //=> true\n\n```\n\n* Accessing values from object using dot operator\n\n```\nconst user = {\n    \"name\": \"Jack\",\n    age: 25\n}\nconsole.log(user.name); //=> Jack\nconsole.log(user.age); //=> 25\n\n```\n\n* **Shorthand** method definition can be used in a method declaration on object literals and ES2015 classes. You can define them using a function name, followed by a list of parameters in a pair of parenthesis \\(para1, ..., paramN\\) and a pair of curly braces \\{ ... \\} that delimits the body statements.\n\n```\nconst collection = {\n  items: [],\n  add(...items) {\n    this.items.push(...items);\n  },\n  get(index) {\n    return this.items[index];\n  }\n};\ncollection.add('C', 'Js', 'PHP', 'Java');\nconsole.log(collection.get(1)) //=> \"Js\"\n\n```\n\n**add\\(\\)** and **get\\(\\)** methods in **collection** object are defined using short method definition. These methods are called as usual: **collection\\.add\\(...\\)** and **collection\\.get\\(...\\)**."
                     }
                 ]
             },
@@ -1260,7 +1371,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "The special value undefined also stands apart. It makes a type of its own, just like null.\n\n```\nconsole.log(typeof(undefined)); // \"undefined\"\n\n```\n\nThe meaning of undefined is “**value is not assigned**”. If a **variable is declared, but not assigned**, then its value is undefined:\n```\nlet age;\nconsole.log(age); // shows \"undefined\"\n\n```\n\nTechnically, it is possible to explicitly assign undefined to a variable:\n```\nlet age = 100;\n\n// change the value to undefined\nage = undefined;\n\nconsole.log(age); // shows \"undefined\"\n\n```\n"
+                        "data": "The special value undefined also stands apart. It makes a type of its own, just like null.\n\n```\nconsole.log(typeof(undefined)); //=> \"undefined\"\n\n```\n\nThe meaning of undefined is “**value is not assigned**”. If a **variable is declared, but not assigned**, then its value is undefined:\n```\nlet age;\nconsole.log(age); //=> shows \"undefined\"\n\n```\n\nTechnically, it is possible to explicitly assign undefined to a variable:\n```\nlet age = 100;\n\n// change the value to undefined\nage = undefined;\n\nconsole.log(age); //=> shows \"undefined\"\n\n```\n"
                     }
                 ]
             },
@@ -1292,7 +1403,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "The JavaScript **ES6** introduced a new primitive data type called Symbol. A Symbol is a unique and immutable primitive value and may be used as the key of an Object property.\n\n```\nconsole.log(typeof(Symbol())); // \"symbol\"\n\n```\n\n```\n// two symbols with the same description\n\nconst value1 = Symbol('hello');\nconst value2 = Symbol('hello');\n\nconsole.log(value1 === value2); // false\n\n```\n"
+                        "data": "The JavaScript **ES6** introduced a new primitive data type called Symbol. A Symbol is a unique and immutable primitive value and may be used as the key of an Object property.\n\n```\nconsole.log(typeof(Symbol())); //=> \"symbol\"\n\n```\n\n```\n// two symbols with the same description\n\nconst value1 = Symbol('hello');\nconst value2 = Symbol('hello');\n\nconsole.log(value1 === value2); //=> false\n\n```\n"
                     }
                 ]
             },
@@ -1322,7 +1433,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "An **IIFE** \\(Immediately Invoked Function Expression\\) is a JavaScript function that runs as soon as it is defined or as soon as it starts to executes.\n\n**Syntax:**\n```\n(function () {\n  statements\n})();\n\n```\n* The first is the anonymous function with lexical scope enclosed within the Grouping Operator \\(\\). This prevents accessing variables within the IIFE idiom as well as polluting the global scope.\n* The second part creates the immediately invoked function expression \\(\\) through which the JavaScript engine will directly interpret the function.\n\n\n**example 1:**\n```\n(function () {\n    console.log(\"Immediately invoked\")\n})();\n\n```\n\n**example 2: **Avoid polluting the global namespace\n* If we have some initiation code that we don't need to use again, we could use the IIFE pattern.\n\n```\n(function () {\n  // some initiation code\n  let firstVariable;\n  let secondVariable;\n})();\n\n// firstVariable and secondVariable will be discarded after the function is executed.\n\n```\n\n**example 3: **stack trace\n```\n// Ex 1:\n(function () {\n    throw new Error(\"Exception has occurred\");\n})();\n\n// Error: Exception has occurred\n//     at /Users/git/other/js/test.js:2:11\n//     at Object.<anonymous> (/Users/git/other/js/test.js:3:3)\n//     at Module._compile (node:internal/modules/cjs/loader:1101:14)\n//     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n//     at Module.load (node:internal/modules/cjs/loader:981:32)\n//     at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n//     at node:internal/main/run_main_module:17:47\n\n// Ex 2:\n(function deposit() {\n    throw new Error(\"Exception has occurred\");\n})();\n\n// Error: Exception has occurred\n//     at deposit (/Users/git/other/js/test.js:6:11)\n//     at Object.<anonymous> (/Users/git/other/js/test.js:7:3)\n//     at Module._compile (node:internal/modules/cjs/loader:1101:14)\n//     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n//     at Module.load (node:internal/modules/cjs/loader:981:32)\n//     at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n//     at node:internal/main/run_main_module:17:47\n\n```\nOne of the benefits of creating a named function expression is that in case we encountered an error, the stack trace will contain the name of the function, making it easier to find the origin of the error."
+                        "data": "An **IIFE** \\(Immediately Invoked Function Expression\\) is a JavaScript function that runs as soon as it is defined or as soon as it starts to executes.\n\n**Syntax:**\n```\n(function () {\n  statements\n})();\n\n```\n* The first is the anonymous function with lexical scope enclosed within the Grouping Operator \\(\\). This prevents accessing variables within the IIFE idiom as well as polluting the global scope.\n* The second part creates the immediately invoked function expression \\(\\) through which the JavaScript engine will directly interpret the function.\n\n\n**example 1:**\n```\n(function () {\n    console.log(\"Immediately invoked\") //=> Immediately invoked\n})();\n\n```\n\n**example 2: **Avoid polluting the global namespace\n* If we have some initiation code that we don't need to use again, we could use the IIFE pattern.\n\n```\n(function () {\n  // some initiation code\n  let firstVariable;\n  let secondVariable;\n})();\n\n// firstVariable and secondVariable will be discarded after the function is executed.\n\n```\n\n**example 3: **stack trace\n```\n// Ex 1:\n(function () {\n    throw new Error(\"Exception has occurred\");\n})();\n\n// Error: Exception has occurred\n//     at /Users/git/other/js/test.js:2:11\n//     at Object.<anonymous> (/Users/git/other/js/test.js:3:3)\n//     at Module._compile (node:internal/modules/cjs/loader:1101:14)\n//     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n//     at Module.load (node:internal/modules/cjs/loader:981:32)\n//     at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n//     at node:internal/main/run_main_module:17:47\n\n// Ex 2:\n(function deposit() {\n    throw new Error(\"Exception has occurred\");\n})();\n\n// Error: Exception has occurred\n//     at deposit (/Users/git/other/js/test.js:6:11)\n//     at Object.<anonymous> (/Users/git/other/js/test.js:7:3)\n//     at Module._compile (node:internal/modules/cjs/loader:1101:14)\n//     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n//     at Module.load (node:internal/modules/cjs/loader:981:32)\n//     at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n//     at node:internal/main/run_main_module:17:47\n\n```\nOne of the benefits of creating a named function expression is that in case we encountered an error, the stack trace will contain the name of the function, making it easier to find the origin of the error."
                     }
                 ]
             },
@@ -1368,6 +1479,10 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "new Object()"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "**Object** can be crated using object constructor. And it is generally used to create a single object.\n\n**example 1:**\n```\nlet user = new Object(); // empty 'user` object has been created\n\nuser.id = 1001;\nuser[\"name\"] = \"Nick\";\nuser[\"age\"] = 28;\n\nconsole.log(\"User object: \", user); //=> User object:  { id: 1001, name: 'Nick', age: 28 }\n\n```\n\n**example 2:**\n```\n// equivalent to obj1 = new Boolean(true)\nlet obj1 = new Object(true)\n\n// equivalent to obj2 = new Boolean(false)\nlet obj2 = new Object(Boolean())\n\nconsole.log(obj1); //=> [Boolean: true]\nconsole.log(obj2); //=> [Boolean: false]\n\n```\n"
                     }
                 ]
             },
@@ -1403,7 +1518,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "Function is a \"subprogram\" that can be called by code external \\(or internal in the case of recursion\\) to the function. Like the program itself, a function is composed of a sequence of statements called the function body. Values can be passed to a function, and the function will return a value.\n\n**Referrence**:\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)\n\n"
+                        "data": "**Function** is a \"subprogram\" that can be called by code external \\(or internal in the case of recursion\\) to the function. Like the program itself, a function is composed of a sequence of statements called the function body. Values can be passed to a function, and the function will return a value.\n\n### Parameters vs Arguments\n\n**_Parameters_** are these variables which you specify between parentheses when defining a function.\n```\nfunction sayHi(name) { ... } \n\n```\n_**Arguments**_ then are the concrete values you pass to a function when calling that function.\n```\nsayHi('June');\n\n```\n\n**Referrence**:\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)\n\n"
                     }
                 ]
             }
