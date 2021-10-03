@@ -12,7 +12,7 @@ export function generateSimpleModel() {
     return Model.create({
         "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
         "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-        "focusKey": "e153daae-cd39-4033-bd24-8fcf1a6f9f84",
+        "focusKey": "97c73d77-1496-431f-93e6-5aebcfbf8020",
         "extData": {
             "TOPIC_REFERENCE": {
                 "reference": {}
@@ -22,7 +22,14 @@ export function generateSimpleModel() {
             {
                 "key": "1f66701b-72a2-45be-abad-d14ba71a78e0",
                 "parentKey": "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
-                "subKeys": [],
+                "subKeys": [
+                    "a2462a85-2447-4110-b244-6d399bcdcd36",
+                    "16bb2549-ee9b-4d13-bf1f-ee0ba86872b5",
+                    "ea213084-3b9f-4c99-8f2b-903c00394708",
+                    "e6406abc-7710-4f4d-9b0d-3b40d9b2d0a7",
+                    "6a995fff-008c-4e66-a127-590b13b99ffd",
+                    "97c73d77-1496-431f-93e6-5aebcfbf8020"
+                ],
                 "collapse": false,
                 "style": null,
                 "blocks": [
@@ -108,6 +115,21 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "0c75d436-726a-4103-94ee-9f8fc326c243",
+                "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+                "subKeys": [
+                    "49780f87-17f7-4f90-a761-6ddf6ce8e1ca"
+                ],
+                "collapse": true,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Callback &\nPromises"
+                    }
+                ]
+            },
+            {
                 "key": "a1649782-ec29-4030-bb2d-d6044103cf10",
                 "parentKey": "f8750599-32db-4fb3-829e-0673887df2c2",
                 "subKeys": [
@@ -149,6 +171,19 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "Polymorphism"
+                    }
+                ]
+            },
+            {
+                "key": "ea213084-3b9f-4c99-8f2b-903c00394708",
+                "parentKey": "1f66701b-72a2-45be-abad-d14ba71a78e0",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "First-class \nfunctions"
                     }
                 ]
             },
@@ -408,7 +443,9 @@ export function generateSimpleModel() {
                     "9b52509a-42df-4ba8-9200-29ec192e314a",
                     "c0743415-e5c5-48da-a6ec-a2d0571da863",
                     "1340cde2-dcef-48de-a00e-1ce996ecf377",
-                    "ccf815c4-e6ad-4cbb-9427-cca701828c6c"
+                    "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
+                    "e1994f06-f679-4c5f-9197-90f6f2a551e7",
+                    "0c75d436-726a-4103-94ee-9f8fc326c243"
                 ],
                 "collapse": false,
                 "style": "{\"contentStyle\":{\"background\":\"#f8e71c\"}}",
@@ -420,6 +457,32 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "JavaScript is a **prototype\\-based**, multi\\-paradigm, single\\-threaded, dynamic language, supporting object\\-oriented, imperative, and declarative \\(e.g. functional programming\\) styles.\n\nIt is a lightweight, interpreted, or just\\-in\\-time compiled programming language. Which involves two phases  \n* Parsing/Compilation, and\n* Execution\\.\n\n"
+                    }
+                ]
+            },
+            {
+                "key": "6a995fff-008c-4e66-a127-590b13b99ffd",
+                "parentKey": "1f66701b-72a2-45be-abad-d14ba71a78e0",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Immutability"
+                    }
+                ]
+            },
+            {
+                "key": "a2462a85-2447-4110-b244-6d399bcdcd36",
+                "parentKey": "1f66701b-72a2-45be-abad-d14ba71a78e0",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Higher-order\nfunction"
                     }
                 ]
             },
@@ -581,6 +644,23 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "Value stored in it can be **reassigned**. Variables, declared with var, are either function\\-scoped or global\\-scoped. \\(will see more of that in **Scopes & Closures**\\). Their visibility is scoped to current function, or global, if declared outside function.\n\nTo declare or create a varaible\n```\nvar message;\n\n```\n\nAssign a data into it by using the assignment operator **=**\n```\nmessage = 'Hello';\n\n```\n\nCombine the variable _declaration_ and _assignment_ into a single line\n```\nvar message = 'Hello!';\n\n```\n\nDeclare multiple variables in one line\n```\nvar user = 'John', age = 25, message = 'Hello';\n\n```\n\nReassigning a value\n```\nvar userName = \"Bruce\"\nuserName = \"Wayne\"\n\nconsole.log(userName) //=> \"Wayne\"\n\n```\n"
+                    }
+                ]
+            },
+            {
+                "key": "33b684a7-f2aa-41a1-93fb-f5e1e621511d",
+                "parentKey": "f8750599-32db-4fb3-829e-0673887df2c2",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "_proto_ &\nprototype"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "In JavaScript, objects have a special hidden property **\\[\\[Prototype\\]\\]**, that is either null or references another object. That object is called “a prototype”.\n\nThe property \\[\\[Prototype\\]\\] is internal and hidden, but there are many ways to set it. One of them is to use the special name \\_\\_proto\\_\\_\n```\nlet animal = {\n  eats: true\n};\nlet rabbit = {\n  jumps: true\n};\n\nrabbit.__proto__ = animal; // sets rabbit.[[Prototype]] = animal\n\n```\n\n* **\\_\\_proto\\_\\_** is an internal property of an object, pointing to its prototype. And it is used in the lookup chain to resolve methods \\(usage of \\_\\_proto\\_\\_ is deprecated**\\)**\n* **prototype** is a property of a Function object. It is the prototype of objects constructed by that function.\n\n\n**example:**\n```\nfunction Person(name) {\n    this.name = name;\n}\n\nPerson.prototype.age = 25;\n\nlet william = new Person('William');\nwilliam.age = 35;\n\n// the __proto__ property on the instance refers to the prototype of the constructor\nconsole.log(william.__proto__ === Person.prototype); //=> true\n\nconsole.log(william.age); //=> 35\n\n// now we are directly accessing the prototype of the Person function\nconsole.log(william.__proto__.age); //=> 25\n\n// william.__proto points to \"Person\" prototype \n// william.__proto.__proto__ points to \"Object\" prototype\nwilliam.__proto__.__proto__.toString = function () {\n    console.log(\"built-in object modified\");\n}\n\nconst obj = {};\nobj.toString(); //=> built-in object modified\n\n```\n\nFor more refference,\n* [https://javascript.info/prototypes](https://javascript.info/prototypes)\n\n"
                     }
                 ]
             },
@@ -888,6 +968,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "e6406abc-7710-4f4d-9b0d-3b40d9b2d0a7",
+                "parentKey": "1f66701b-72a2-45be-abad-d14ba71a78e0",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Recursion"
+                    }
+                ]
+            },
+            {
                 "key": "131c9433-90a2-40b8-9e02-b774761c2456",
                 "parentKey": "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
                 "subKeys": [
@@ -902,6 +995,32 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "Object Oriented\nProgramming"
+                    }
+                ]
+            },
+            {
+                "key": "e1994f06-f679-4c5f-9197-90f6f2a551e7",
+                "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Asynchronous\nprogramming"
+                    }
+                ]
+            },
+            {
+                "key": "97c73d77-1496-431f-93e6-5aebcfbf8020",
+                "parentKey": "1f66701b-72a2-45be-abad-d14ba71a78e0",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Referential\nTransparency"
                     }
                 ]
             },
@@ -1099,6 +1218,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "16bb2549-ee9b-4d13-bf1f-ee0ba86872b5",
+                "parentKey": "1f66701b-72a2-45be-abad-d14ba71a78e0",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Pure functions"
+                    }
+                ]
+            },
+            {
                 "key": "85ee6b37-5053-4f78-b25d-53d1bf11d87b",
                 "parentKey": "252c6937-bd93-4233-90cb-333938667c72",
                 "subKeys": [],
@@ -1112,6 +1244,19 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "The keyword **const** is an abbreviation for **constant**. Similar to **let**, it’s **block\\-scoped**, however, you can’t reassigned it and value must be provided when declaring it.\n\n**Example 1:**\n```\nconst pi = 3.14\nconsole.log(\"Pi :\", pi); //=> 3.14\n\n```\n\n**Example 2:**\n```\nconst gravity; // SyntaxError: Missing initializer in const declaration\n\n```\n\n**Example 3:**\n```\nconst name = \"Chris\"\nname = \"Jordan\" // TypeError: Assignment to constant variable.\n\n```\n"
+                    }
+                ]
+            },
+            {
+                "key": "49780f87-17f7-4f90-a761-6ddf6ce8e1ca",
+                "parentKey": "0c75d436-726a-4103-94ee-9f8fc326c243",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": ""
                     }
                 ]
             },
@@ -1507,7 +1652,8 @@ export function generateSimpleModel() {
                     "a1649782-ec29-4030-bb2d-d6044103cf10",
                     "a9f8d9be-7d66-4b3e-941d-429c02913ec5",
                     "a37aef6c-b62c-423c-8124-c18edc14142b",
-                    "840a8fff-1b5b-48bd-9aae-6214c599c5ab"
+                    "840a8fff-1b5b-48bd-9aae-6214c599c5ab",
+                    "33b684a7-f2aa-41a1-93fb-f5e1e621511d"
                 ],
                 "collapse": false,
                 "style": "{\"contentStyle\":{\"background\":\"#9eff88\"}}",
