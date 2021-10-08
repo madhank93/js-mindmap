@@ -12,7 +12,7 @@ export function generateSimpleModel() {
     return Model.create({
         "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
         "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-        "focusKey": "97c73d77-1496-431f-93e6-5aebcfbf8020",
+        "focusKey": "956d1f1d-c3c0-4538-b40c-e1d868bb2653",
         "extData": {
             "TOPIC_REFERENCE": {
                 "reference": {}
@@ -151,13 +151,19 @@ export function generateSimpleModel() {
             {
                 "key": "c0743415-e5c5-48da-a6ec-a2d0571da863",
                 "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-                "subKeys": [],
+                "subKeys": [
+                    "d48e8af6-6e14-4a4c-967b-15cf3d58036c",
+                    "4f5d1410-3bae-4047-8d55-36ebab01b496",
+                    "a45a6708-da40-4346-8070-78b884ebf116",
+                    "245b9e77-ccdc-49b6-8a0a-838244d1de2e",
+                    "6dcc4f73-135b-40f1-b64a-86f2bdac7518"
+                ],
                 "collapse": false,
                 "style": null,
                 "blocks": [
                     {
                         "type": "CONTENT",
-                        "data": "Error handling"
+                        "data": "Exceptions &\nError handling"
                     }
                 ]
             },
@@ -284,6 +290,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "f319a1ab-dd84-45fa-b56f-023f85f0e1a9",
+                "parentKey": "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "objects"
+                    }
+                ]
+            },
+            {
                 "key": "c1e621c4-ae65-40d0-ad48-650368d181d0",
                 "parentKey": "29f23365-fcf6-4f8f-8060-811df84e4770",
                 "subKeys": [],
@@ -321,6 +340,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "ef12f21d-9fc6-4b69-9034-dfe4162cf6e7",
+                "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Inheritance"
+                    }
+                ]
+            },
+            {
                 "key": "dbc9a664-bff0-4263-811c-cb91470ce277",
                 "parentKey": "2c6ddd66-98a5-4410-b7f2-dbd42aaa7e01",
                 "subKeys": [],
@@ -334,6 +366,19 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "**Object** : typeof instance === \"object\". It is used to store collections of data and more complex entities.\n\n```\nconsole.log(typeof({})); //=> \"object\"\nconsole.log(typeof([])); //=> \"object\" - Arrays aren’t primitive, they are objects\nconsole.log(typeof(new Map())); //=> \"object\"\nconsole.log(typeof(new Date())); //=> \"object\"\n\n```\n\nSpecial non\\-data but Structural type for any constructed object instance also used as data structures: \n1. new Object, \n1. new Array, \n1. new Map, \n1. new Set, \n1. new WeakMap, \n1. new WeakSet, \n1. new Date and almost everything made with **new** keyword;\n\n\n**Indexed collections**: Arrays and typed Arrays\n**Keyed collections**: Maps, Sets, WeakMaps, WeakSets"
+                    }
+                ]
+            },
+            {
+                "key": "d48e8af6-6e14-4a4c-967b-15cf3d58036c",
+                "parentKey": "c0743415-e5c5-48da-a6ec-a2d0571da863",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "throw"
                     }
                 ]
             },
@@ -409,6 +454,19 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "push"
+                    }
+                ]
+            },
+            {
+                "key": "6dcc4f73-135b-40f1-b64a-86f2bdac7518",
+                "parentKey": "c0743415-e5c5-48da-a6ec-a2d0571da863",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Errors"
                     }
                 ]
             },
@@ -665,6 +723,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "5830091e-64ee-4015-aeff-f8779fa73582",
+                "parentKey": "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Attributes"
+                    }
+                ]
+            },
+            {
                 "key": "28bcdae2-e48d-47e3-bc28-5f6afecfef7d",
                 "parentKey": "3dc1c815-02b4-4097-ae29-578920b3a065",
                 "subKeys": [],
@@ -759,6 +830,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "5a194e70-b4a3-49f9-8e9a-64f0b9456ede",
+                "parentKey": "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Methods"
+                    }
+                ]
+            },
+            {
                 "key": "092ca5f2-7268-4e31-b7bd-d9aa2c3fd8d0",
                 "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
                 "subKeys": [],
@@ -840,6 +924,40 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "In JavaScript, the “**number**” type cannot represent integer values larger than \\(253\\-1\\) \\(that’s 9007199254740991\\), or less than \\-\\(253\\-1\\) for negatives. It’s a technical limitation caused by their internal representation.\n\n```\nconsole.log(typeof(22234234n)); //=> \"bigint\"\n\n```\n\nA BigInt value is created by appending n to the end of an integer\n```\nconst bigInt = 1234567890123456789012345678901234567890n; // the \"n\" at the end means it's a BigInt\n\n```\n\nBigInt numbers are rarely needed"
+                    }
+                ]
+            },
+            {
+                "key": "3cad2294-2687-43b8-bd7d-1ca3ebd67acd",
+                "parentKey": "1340cde2-dcef-48de-a00e-1ce996ecf377",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Logical\noperators"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "**Logical operators** are typically used with Boolean \\(logical\\) values; when they are, they return a Boolean value. There are four logical operators in JS\n* \\|\\| \\(OR\\)\n* && \\(AND\\)\n* \\! \\(NOT\\)\n* ?? \\(Nullish Coalescing\\)\n\n\n### \\|\\| \\(OR\\)\n\n* Returns true if **either** operand is true; if both are false, returns false.\n\n```\nconsole.log(true || true);   //=> true\nconsole.log(false || true);  //=> true\nconsole.log(true || false);  //=> true\nconsole.log(false || false); //=> false\n\n\nif (1 || 0) { // works just like if( true || false )\n    console.log('truthy!'); //=> truthy!\n}\n\nlet hour = 9;\nif (hour < 10 || hour > 18) {\n    console.log('The office is closed.'); //=> The office is closed.\n}\n\n```\n* OR \\|\\| operator is the called “**short\\-circuit**” evaluation \\- It means that \\|\\| processes its arguments until the first truthy value is reached, and then the value is returned immediately, without even touching the other argument.\n\n```\ntrue || console.log(\"not printed\");\nfalse || console.log(\"printed\"); //=> printed\n\n```\n\n\n### && \\(AND\\)\n\n* Returns true if **both** operands are true; otherwise, returns false.\n\n```\nconsole.log(true && true);   //=> true\nconsole.log(false && true);  //=> false\nconsole.log(true && false);  //=> false\nconsole.log(false && false); //=> false\n\nlet hour = 12;\nlet minute = 30;\nif (hour == 12 && minute == 30) {\n    console.log('The time is 12:30'); //=> The time is 12:30\n}\n\nif (1 && 0) { // evaluated as true && false\n    console.log(\"won't work, because the result is falsy\");\n}\n\n```\n\n\n### Short\\-circuit evaluation\n\nAs logical expressions are evaluated left to right, they are tested for possible \"short\\-circuit\" evaluation using the following rules:\n\n* false && anything is short\\-circuit evaluated to false.\n* true \\|\\| anything is short\\-circuit evaluated to true.\n\n\n### \\! \\(NOT\\)\n\n* Returns the inverse value.\n\n```\nconsole.log(!true); //=> false\nconsole.log(!0); //=> true\n\nconsole.log(!!\"non-empty string\"); //=> true\nconsole.log(!!null); //=> false\n\nconsole.log(Boolean(\"non-empty string\")); //=> true\nconsole.log(Boolean(null)); //=> false\n\n```\n"
+                    }
+                ]
+            },
+            {
+                "key": "9eaa4c3f-edb8-487d-b332-ad14665991f9",
+                "parentKey": "1340cde2-dcef-48de-a00e-1ce996ecf377",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Assignment\noperators"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "An **assignment operator** assigns a value to its left operand based on the value of its right operand. The simple assignment operator is equal \\(=\\), which assigns the value of its right operand to its left operand. That is, x = y assigns the value of y to x.\n\n| **Name** | **Shorthand operator** | **Meaning** |\n|:--- |:--- |:--- |\n| Assignment | x = y | x = y |\n| Addition assignment | x \\+= y | x = x \\+ y |\n| Subtraction assignment | x \\-= y | x = x \\- y |\n| Multiplication assignment | x \\*= y | x = x \\* y |\n| Division assignment | x /= y | x = x / y |\n| Remainder assignment | x %= y | x = x % y |\n| Exponentiation assignment | x \\*\\*= y | x = x \\*\\* y |\n| Left shift assignment | x <<= y | x = x << y |\n| Right shift assignment | x \\>\\>= y | x = x \\>\\> y |\n| Unsigned right shift assignment | x \\>\\>\\>= y | x = x \\>\\>\\> y |\n| Bitwise AND assignment | x &= y | x = x & y |\n| Bitwise XOR assignment | x ^= y | x = x ^ y |\n| Bitwise OR assignment | x \\| = y | x = x \\| y |\n| Logical AND assignment | x &&= y | x && \\(x = y\\) |\n| Logical OR assignment | x \\| \\| = y | x \\| \\| \\(x = y\\) |\n| Logical nullish assignment | x ??= y | x ?? \\(x = y\\) |\n**example**\n```\nconst x = 10;\nlet y = x;\nconsole.log(y); //=> 10\n\nlet a = null;\nlet b = 100;\nconsole.log(a) //=> null\na ??= b; // operator only assigns if a is nullish\nconsole.log(a) //=> 100\n\n```\n"
                     }
                 ]
             },
@@ -938,6 +1056,23 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "ea952fa5-a291-436e-85a1-8cda065a4432",
+                "parentKey": "1340cde2-dcef-48de-a00e-1ce996ecf377",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "String\noperators"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "The **concatenation operator** \\(\\+\\) concatenates two string values together, returning another string that is the union of the two operand strings.\n\n**example:**\n```\nconsole.log('my ' + 'string'); //=> console logs the string \"my string\".\n\nlet myString = 'alpha';\nmyString += 'bet';\nconsole.log(myString); //=> alphabet\n\n```\n"
+                    }
+                ]
+            },
+            {
                 "key": "12256f82-0a50-4408-8a76-525865cbad4b",
                 "parentKey": "5c0d4a18-5da2-4f3f-9752-4912ae3df225",
                 "subKeys": [],
@@ -985,6 +1120,7 @@ export function generateSimpleModel() {
                 "parentKey": "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
                 "subKeys": [
                     "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
+                    "ef12f21d-9fc6-4b69-9034-dfe4162cf6e7",
                     "092ca5f2-7268-4e31-b7bd-d9aa2c3fd8d0",
                     "31aa7d3d-f836-4d0f-8704-6606fb0a1577",
                     "f8959855-b412-49cf-b308-d4b014a6fc59"
@@ -995,6 +1131,10 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "Object Oriented\nProgramming"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "**Object\\-oriented programming** \\(OOP\\) is a programming paradigm based on the concept of \"**objects**\", which can contain **_data_** and _**code**_: \n* **data,** in the form of fields \\(often known as attributes or properties\\), and \n* **code**, in the form of procedures \\(often known as methods\\).\n\n"
                     }
                 ]
             },
@@ -1012,6 +1152,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "245b9e77-ccdc-49b6-8a0a-838244d1de2e",
+                "parentKey": "c0743415-e5c5-48da-a6ec-a2d0571da863",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "try/catch/finally"
+                    }
+                ]
+            },
+            {
                 "key": "97c73d77-1496-431f-93e6-5aebcfbf8020",
                 "parentKey": "1f66701b-72a2-45be-abad-d14ba71a78e0",
                 "subKeys": [],
@@ -1021,6 +1174,19 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "Referential\nTransparency"
+                    }
+                ]
+            },
+            {
+                "key": "d051afcf-8e00-4760-8d65-783421039068",
+                "parentKey": "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Classes"
                     }
                 ]
             },
@@ -1175,6 +1341,36 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "616b2d85-3831-4c1d-8582-a671725dcd94",
+                "parentKey": "1340cde2-dcef-48de-a00e-1ce996ecf377",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Comparison\noperators"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "A **comparison operator** compares its operands and returns a logical value based on whether the comparison is true.\n\n| **Operator** | **Description** |\n|:--- |:--- |\n| Equal \\(==\\) | Returns true if the operands are equal |\n| Not equal \\(\\!=\\) | Returns true if the operands are not equal |\n| Strict equal \\(===\\) | Returns true if the operands are equal and of the same type. |\n| Strict not equal \\(\\!==\\) | Returns true if the operands are of the same type but not equal, or are of different type. |\n| Greater than \\(\\>\\) | Returns true if the left operand is greater than the right operand. |\n| Greater than or equal \\(\\>=\\) | Returns true if the left operand is greater than or equal to the right operand. |\n| Less than \\(<\\) | Returns true if the left operand is less than the right operand |\n| Less than or equal \\(<=\\) | Returns true if the left operand is less than or equal to the right operand. |\n**examples:**\n```\n// Equal (==)\nconsole.log(3 == '3'); //=> true\n\n// Not equal (!=)\nconsole.log(3 != 4); //=> true\n\n// Strict equal (===)\nconsole.log(3 === 3); //=> true\n\n// Strict not equal (!==)\nconsole.log(3 !== '3'); //=> true\n\n// Greater than (>)\nconsole.log(\"12\" > 2); //=> true\n\n// Greater than or equal (>=)\nconsole.log(3 >= 3); //=> true\n\n// Less than (<)\nconsole.log(\"2\" < 12); //=> true\n\n// Less than or equal (<=)\nconsole.log(4 <= 5); //=> true\n\n```\n"
+                    }
+                ]
+            },
+            {
+                "key": "4f5d1410-3bae-4047-8d55-36ebab01b496",
+                "parentKey": "c0743415-e5c5-48da-a6ec-a2d0571da863",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "try/catch"
+                    }
+                ]
+            },
+            {
                 "key": "84650864-61f6-4e20-b87d-ed779ffa7d20",
                 "parentKey": "08aaf5bf-5222-4d4c-bd8d-2267d2f81433",
                 "subKeys": [],
@@ -1316,7 +1512,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**Object** is a collection of properties, and a property is an association between a name \\(or key\\) and a value. It is used to store keyed collections of various data and more complex entities.\n\nAn object can be created with figure brackets **\\{…\\}** with an optional list of properties. A property is a “key: value” pair, where _**key**_ is a string \\(also called a “property name”\\), and _**value**_ can be anything.\n\n**example**\n```\nlet user = {     // an object\n  name: \"John\",  // by key \"name\" store value \"John\"\n  age: 30        // by key \"age\" store value 30\n};\n\n```\n"
+                        "data": "**Object** is a collection of properties, and a property is an association between a name \\(or key\\) and a value. It is used to store keyed collections of various data and more complex entities.\n\nAn object can be created with figure brackets **\\{…\\}** with an optional list of properties. A property is a “key: value” pair, where **key** is a string \\(also called a “property name”\\), and **value** can be anything.\n\n**example**\n```\nlet user = {     // an object\n  name: \"John\",  // by key \"name\" store value \"John\"\n  age: 30        // by key \"age\" store value 30\n};\n\n```\n"
                     }
                 ]
             },
@@ -1367,6 +1563,19 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "entries"
+                    }
+                ]
+            },
+            {
+                "key": "99e87759-dcab-49a7-a8ef-504c4e2bf8cc",
+                "parentKey": "1340cde2-dcef-48de-a00e-1ce996ecf377",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Unary\noperators"
                     }
                 ]
             },
@@ -1446,13 +1655,18 @@ export function generateSimpleModel() {
             {
                 "key": "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
                 "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
-                "subKeys": [],
+                "subKeys": [
+                    "d051afcf-8e00-4760-8d65-783421039068",
+                    "f319a1ab-dd84-45fa-b56f-023f85f0e1a9",
+                    "5a194e70-b4a3-49f9-8e9a-64f0b9456ede",
+                    "5830091e-64ee-4015-aeff-f8779fa73582"
+                ],
                 "collapse": false,
                 "style": null,
                 "blocks": [
                     {
                         "type": "CONTENT",
-                        "data": "Inheritance"
+                        "data": "Building\nblocks"
                     }
                 ]
             },
@@ -1521,6 +1735,40 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "a941ee5a-a4a5-4964-a537-1513bfe7b814",
+                "parentKey": "1340cde2-dcef-48de-a00e-1ce996ecf377",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Arithmetic\noperators"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "An **arithmetic operator** takes numerical values \\(either literals or variables\\) as their operands and returns a single numerical value.\n\nThe standard arithmetic operators are addition \\(\\+\\), subtraction \\(\\-\\), multiplication \\(\\*\\), and division \\(/\\).\n| **Operator** | **Description** |\n|:--- |:--- |\n| Remainder \\(%\\) | Binary operator. Returns the integer remainder of dividing the two operands. |\n| Increment \\(\\+\\+\\) | Unary operator. Adds one to its operand. If used as a prefix operator \\(\\+\\+x\\), returns the value of its operand after adding one; if used as a postfix operator \\(x\\+\\+\\), returns the value of its operand before adding one. |\n| Decrement \\(\\-\\-\\) | Unary operator. Subtracts one from its operand. The return value is analogous to that for the increment operator. |\n| Unary negation \\(\\-\\) | Unary operator. Returns the negation of its operand. |\n| Unary plus \\(\\+\\) | Unary operator. Attempts to convert the operand to a number, if it is not already. |\n| Exponentiation operator \\(\\*\\*\\) | Calculates the base to the exponent power, that is, base^exponent |\n**examples**\n```\n// Addition (+)\nconsole.log(2 + 2); //=> 4\n// Subtraction (-)\nconsole.log(5 - 2); //=> 3\n// Multiplication (*)\nconsole.log(3 * 3); //=> 9\n// Division (/)\nconsole.log(10 / 3); //=> 3.3333333333333335\n// Remainder (%)\nconsole.log(14 / 3); //=> 4.666666666666667\n// Increment (++)\nlet x = 5\nconsole.log(x++); //=> 5\nconsole.log(++x); //=> 7\n// Decrement (--)\nlet y = 10\nconsole.log(y--); //=> 10\nconsole.log(--y); //=> 8\n// Unary negation (-)\nlet z = 3.14\nconsole.log(-z); //=> -3.14\n// Unary plus (+)\nlet i = '3';\nconsole.log(+i); //=> 3\nconsole.log(+true); //=> 1\n// Exponentiation operator (**)\nconsole.log(2 ** 3); //=> 8\n\n```\n"
+                    }
+                ]
+            },
+            {
+                "key": "95ac6039-3664-4d8d-8b2c-c9eb8c22e77c",
+                "parentKey": "1340cde2-dcef-48de-a00e-1ce996ecf377",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Conditional (ternary)\noperator"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "The **conditional operator** is the only JavaScript operator that takes three operands. The operator can have one of two values based on a condition. The syntax is:\n```\ncondition ? val1 : val2\n\n```\nIf condition is true, the operator has the value of val1. Otherwise it has the value of val2. You can use the conditional operator anywhere you would use a standard operator.\n\n**example:**\n```\nlet age = 18;\nlet status = (age >= 18) ? 'adult' : 'minor';\nconsole.log(status); //=> adult\n\nage = 10;\nstatus = (age >= 18) ? 'adult' : 'minor';\nconsole.log(status); //=> minor\n\n```\n"
+                    }
+                ]
+            },
+            {
                 "key": "dfb39c55-dfce-4d5a-88a7-5fd066288121",
                 "parentKey": "a1649782-ec29-4030-bb2d-d6044103cf10",
                 "subKeys": [],
@@ -1530,6 +1778,23 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": ""
+                    }
+                ]
+            },
+            {
+                "key": "956d1f1d-c3c0-4538-b40c-e1d868bb2653",
+                "parentKey": "1340cde2-dcef-48de-a00e-1ce996ecf377",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Relational\noperators"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "A **relational operator** compares its operands and returns a Boolean value based on whether the comparison is true.\n\n* **in**\n\nThe in operator returns true if the specified property is in the specified object. The syntax is:\n```\n// Arrays\nlet trees = ['redwood', 'bay', 'cedar', 'oak', 'maple'];\n0 in trees;        //=> true\n3 in trees;        //=> true\n6 in trees;        //=> false\n'bay' in trees;    //=> false (you must specify the index number, not the value at that index)\n'length' in trees; //=> true (length is an Array property)\n\n// built-in objects\n'PI' in Math;          //=> true\nlet myString = new String('coral');\n'length' in myString;  //=> true\n\n// Custom objects\nlet myCar = { make: 'Honda', model: 'Accord', year: 1998 };\n'make' in myCar;  //=> true\n'model' in myCar; //=> true\n\n```\n\n* **instanceof**\n\nThe instanceof operator returns true if the specified object is of the specified object type.\n```\nlet theDay = new Date(1995, 12, 17);\nif (theDay instanceof Date) {\n    console.log(\"yes it is\") //=> yes it is\n}\n\n```\n"
                     }
                 ]
             },
@@ -1555,13 +1820,26 @@ export function generateSimpleModel() {
             {
                 "key": "1340cde2-dcef-48de-a00e-1ce996ecf377",
                 "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-                "subKeys": [],
+                "subKeys": [
+                    "9eaa4c3f-edb8-487d-b332-ad14665991f9",
+                    "616b2d85-3831-4c1d-8582-a671725dcd94",
+                    "a941ee5a-a4a5-4964-a537-1513bfe7b814",
+                    "3cad2294-2687-43b8-bd7d-1ca3ebd67acd",
+                    "ea952fa5-a291-436e-85a1-8cda065a4432",
+                    "95ac6039-3664-4d8d-8b2c-c9eb8c22e77c",
+                    "99e87759-dcab-49a7-a8ef-504c4e2bf8cc",
+                    "956d1f1d-c3c0-4538-b40c-e1d868bb2653"
+                ],
                 "collapse": false,
                 "style": null,
                 "blocks": [
                     {
                         "type": "CONTENT",
                         "data": "Operators"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "**Operators **\\(eg: \\+, \\-, \\*, /\\) are symbols that are used to perform operations on operands.\n\n**example:**\n```\nlet sum = 10 + 20;\n\n```\n\nFor more info\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Guide/Expressions\\_and\\_Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)\n\n"
                     }
                 ]
             },
@@ -1665,6 +1943,19 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "**Function** is a \"subprogram\" that can be called by code external \\(or internal in the case of recursion\\) to the function. Like the program itself, a function is composed of a sequence of statements called the function body. Values can be passed to a function, and the function will return a value.\n\n### Parameters vs Arguments\n\n**_Parameters_** are these variables which you specify between parentheses when defining a function.\n```\nfunction sayHi(name) { ... } \n\n```\n_**Arguments**_ then are the concrete values you pass to a function when calling that function.\n```\nsayHi('June');\n\n```\n\n**Referrence**:\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)\n\n"
+                    }
+                ]
+            },
+            {
+                "key": "a45a6708-da40-4346-8070-78b884ebf116",
+                "parentKey": "c0743415-e5c5-48da-a6ec-a2d0571da863",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "try/finally"
                     }
                 ]
             }
