@@ -12,7 +12,7 @@ export function generateSimpleModel() {
     return Model.create({
         "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
         "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-        "focusKey": "956d1f1d-c3c0-4538-b40c-e1d868bb2653",
+        "focusKey": "d48e8af6-6e14-4a4c-967b-15cf3d58036c",
         "extData": {
             "TOPIC_REFERENCE": {
                 "reference": {}
@@ -153,10 +153,7 @@ export function generateSimpleModel() {
                 "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
                 "subKeys": [
                     "d48e8af6-6e14-4a4c-967b-15cf3d58036c",
-                    "4f5d1410-3bae-4047-8d55-36ebab01b496",
-                    "a45a6708-da40-4346-8070-78b884ebf116",
-                    "245b9e77-ccdc-49b6-8a0a-838244d1de2e",
-                    "6dcc4f73-135b-40f1-b64a-86f2bdac7518"
+                    "245b9e77-ccdc-49b6-8a0a-838244d1de2e"
                 ],
                 "collapse": false,
                 "style": null,
@@ -164,6 +161,10 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "Exceptions &\nError handling"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "* **Exceptions** are expected failures\n* **Errors** are unexpected failures\n   * Error objects are thrown when runtime errors occur. The Error object can also be used as a base object for user\\-defined exceptions.\n\n\n**example**\n```\ntry {\n  throw new Error('Whoops!')\n} catch (e) {\n  console.error(e.name + ': ' + e.message) //=> Error: Whoops!\n}\n\n```\n"
                     }
                 ]
             },
@@ -372,13 +373,19 @@ export function generateSimpleModel() {
             {
                 "key": "d48e8af6-6e14-4a4c-967b-15cf3d58036c",
                 "parentKey": "c0743415-e5c5-48da-a6ec-a2d0571da863",
-                "subKeys": [],
-                "collapse": false,
+                "subKeys": [
+                    "31322dda-20dd-46ac-846f-5a632516e9dd"
+                ],
+                "collapse": true,
                 "style": null,
                 "blocks": [
                     {
                         "type": "CONTENT",
-                        "data": "throw"
+                        "data": "throw /\nerror"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "## Throw\n\n* The **throw** statement throws a user\\-defined exception. Execution of the current function will stop \\(the statements after throw won't be executed\\), and control will be passed to the first catch block in the call stack. If no catch block exists among caller functions, the program will terminate.\n\n\n**Syntax:**\n```\nthrow expression;\n\n```\n\n**example 1:**\n```\nthrow 'Error2'; // generates an exception with a string value\nthrow 42;       // generates an exception with the value 42\nthrow true;     // generates an exception with the value true\n\n```\n\n**example 2:**\n```\nfunction getRectArea(width, height) {\n    if (isNaN(width) || isNaN(height)) {\n        throw 'Parameter is not a number!';\n    }\n}\n\ntry {\n    getRectArea(3, 'A');\n} catch (e) {\n    console.error(e); //=> Parameter is not a number!\n}\n\n```\n\n## Error\n\n* **Error** objects are thrown when runtime errors occur. The Error object can also be used as a base object for user\\-defined exceptions.\n\n\n**example**\n* Throwing a generic error\n\n```\ntry {\n  throw new Error('Whoops!')\n} catch (e) {\n  console.error(e.name + ': ' + e.message) //=> Error: Whoops!\n}\n\n```\n\n* Handling a specific error type\n\n```\ntry {\n    foo.bar()\n} catch (e) {\n    if (e instanceof EvalError) {\n        console.error(e.name + ': ' + e.message)\n    } else if (e instanceof RangeError) {\n        console.error(e.name + ': ' + e.message)\n    }\n    else {\n        // If none of our cases matched leave the Error unhandled\n        throw e;\n    }\n}\n\nResult:\n\nfile:///Users/execption.js:2\nfoo.bar()\n^\n\nReferenceError: foo is not defined\nat file:///Users/execption.js:2:5\nat ModuleJob.run (node:internal/modules/esm/module_job:183:25)\nat async Loader.import (node:internal/modules/esm/loader:178:24)\nat async Object.loadESM (node:internal/process/esm_loader:68:5)\nat async handleMainPromise (node:internal/modules/run_main:63:12)\n\n\n```\n\n* Custom Error Class\n\n```\nclass CustomError extends Error {\n    constructor(foo = 'bar', ...params) {\n        // Pass remaining arguments (including vendor specific ones) to parent constructor\n        super(...params)\n\n        // Maintains proper stack trace for where our error was thrown (only available on V8)\n        if (Error.captureStackTrace) {\n            Error.captureStackTrace(this, CustomError)\n        }\n\n        this.name = 'CustomError'\n        // Custom debugging information\n        this.foo = foo\n        this.date = new Date()\n    }\n}\n\ntry {\n    throw new CustomError('baz', 'bazMessage')\n} catch (e) {\n    console.error(e.name)    //=> CustomError\n    console.error(e.foo)     //=> baz\n    console.error(e.message) //=> bazMessage\n    console.error(e.stack)   //=> stacktrace\n}\n\n```\n\nFor more info,\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Global\\_Objects/Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)\n\n"
                     }
                 ]
             },
@@ -454,19 +461,6 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "push"
-                    }
-                ]
-            },
-            {
-                "key": "6dcc4f73-135b-40f1-b64a-86f2bdac7518",
-                "parentKey": "c0743415-e5c5-48da-a6ec-a2d0571da863",
-                "subKeys": [],
-                "collapse": false,
-                "style": null,
-                "blocks": [
-                    {
-                        "type": "CONTENT",
-                        "data": "Errors"
                     }
                 ]
             },
@@ -652,6 +646,19 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "In JavaScript, null is **not** a “reference to a non\\-existing object” or a “null pointer” like in some other languages. It’s just a special value which represents “**nothing**”, “**empty**” or “**value unknown**”.\n\nThe special **null** value does not belong to any of the types described above.\n```\nconsole.log(typeof(null)); //=> \"object\"\n\n// This is a bug and one that unfortunately can’t be fixed, \n// because it would break existing code.\n// https://2ality.com/2013/10/typeof-null.html\n\n```\n\nIt forms a separate type of its own which contains only the null value:\n```\nlet age = null;\nconsole.log(age); //=> null\n\n```\n"
+                    }
+                ]
+            },
+            {
+                "key": "31322dda-20dd-46ac-846f-5a632516e9dd",
+                "parentKey": "d48e8af6-6e14-4a4c-967b-15cf3d58036c",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": ""
                     }
                 ]
             },
@@ -1161,6 +1168,10 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "try/catch/finally"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "* The _**try**_ statement consists of a _**try\\-block**_, which contains one or more statements. _\\{\\} _must always be used, even for single statements. \n\n\n* A _**catch\\-block**_ contains statements that specify what to do if an exception is thrown in the try\\-block. If any statement within the try\\-block \\(or in a function called from within the try\\-block\\) throws an exception, control is immediately shifted to the catch\\-block. If no exception is thrown in the try\\-block, the catch\\-block is skipped.\n\n\n* The _**finally\\-block**_ will always execute after the try\\-block and catch\\-block\\(s\\) have finished executing. It always executes, regardless of whether an exception was thrown or caught.\n\n\nAt least one catch\\-block, or a finally\\-block, must be present. This gives us three forms for the try statement:\n* try\\...catch\n* try\\...finally\n* try\\...catch...finally\n\n\n\n### try\\...catch\n\n* When a catch\\-block is used, the catch\\-block is executed when any exception is thrown from within the try\\-block.\n\n```\ntry {\n    throw new Error('myException'); // generates an exception\n} catch (e) {\n    console.error(e);\n}\n\n```\n\n### try\\...finally\n\n* the finally\\-block executes regardless of whether an exception is thrown\n\n```\ntry {\n    console.log(\"Opening a file and doing some operations\");\n} finally {\n    console.log(\"Closing all the files and used resources\");\n}\n\n```\n\n\n### try\\...catch...finally\n\n```\ntry {\n    console.log('try');\n    BAD_CODE();\n} catch (err) {\n    console.error('catch');\n} finally {\n    console.log('finally');\n}\n\n```\n\nFor more info,\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Statements/try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)\n\n"
                     }
                 ]
             },
@@ -1354,19 +1365,6 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "A **comparison operator** compares its operands and returns a logical value based on whether the comparison is true.\n\n| **Operator** | **Description** |\n|:--- |:--- |\n| Equal \\(==\\) | Returns true if the operands are equal |\n| Not equal \\(\\!=\\) | Returns true if the operands are not equal |\n| Strict equal \\(===\\) | Returns true if the operands are equal and of the same type. |\n| Strict not equal \\(\\!==\\) | Returns true if the operands are of the same type but not equal, or are of different type. |\n| Greater than \\(\\>\\) | Returns true if the left operand is greater than the right operand. |\n| Greater than or equal \\(\\>=\\) | Returns true if the left operand is greater than or equal to the right operand. |\n| Less than \\(<\\) | Returns true if the left operand is less than the right operand |\n| Less than or equal \\(<=\\) | Returns true if the left operand is less than or equal to the right operand. |\n**examples:**\n```\n// Equal (==)\nconsole.log(3 == '3'); //=> true\n\n// Not equal (!=)\nconsole.log(3 != 4); //=> true\n\n// Strict equal (===)\nconsole.log(3 === 3); //=> true\n\n// Strict not equal (!==)\nconsole.log(3 !== '3'); //=> true\n\n// Greater than (>)\nconsole.log(\"12\" > 2); //=> true\n\n// Greater than or equal (>=)\nconsole.log(3 >= 3); //=> true\n\n// Less than (<)\nconsole.log(\"2\" < 12); //=> true\n\n// Less than or equal (<=)\nconsole.log(4 <= 5); //=> true\n\n```\n"
-                    }
-                ]
-            },
-            {
-                "key": "4f5d1410-3bae-4047-8d55-36ebab01b496",
-                "parentKey": "c0743415-e5c5-48da-a6ec-a2d0571da863",
-                "subKeys": [],
-                "collapse": false,
-                "style": null,
-                "blocks": [
-                    {
-                        "type": "CONTENT",
-                        "data": "try/catch"
                     }
                 ]
             },
@@ -1569,13 +1567,19 @@ export function generateSimpleModel() {
             {
                 "key": "99e87759-dcab-49a7-a8ef-504c4e2bf8cc",
                 "parentKey": "1340cde2-dcef-48de-a00e-1ce996ecf377",
-                "subKeys": [],
-                "collapse": false,
+                "subKeys": [
+                    "1b0b95ad-674e-4dcb-9903-b34c8252624b"
+                ],
+                "collapse": true,
                 "style": null,
                 "blocks": [
                     {
                         "type": "CONTENT",
                         "data": "Unary\noperators"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "A **unary** operation is an operation with only one operand.\n\n* **delete**\n\nThe delete operator deletes an object's property. The syntax is:\n```\ndelete object.property;\ndelete object[propertyKey];\ndelete objectName[index];\n\n```\n**example**\n```\ndelete Math.PI; // returns false (cannot delete non-configurable properties)\n\nconst myObj = {h: 4};\ndelete myobj.h; // returns true (can delete user-defined properties)\n\n```\n\n* **typeof**\n\nThe typeof operator returns a string indicating the type of the unevaluated operand. operand is the string, variable, keyword, or object for which the type is to be returned.\n\n```\nlet myFun = new Function('5 + 2');\nlet shape = 'round';\nlet size = 1;\nlet foo = ['Apple', 'Mango', 'Orange'];\nlet today = new Date();\n\ntypeof myFun;       // returns \"function\"\ntypeof shape;       // returns \"string\"\ntypeof size;        // returns \"number\"\ntypeof foo;         // returns \"object\"\ntypeof today;       // returns \"object\"\ntypeof doesntExist; // returns \"undefined\"\n\n```\n"
                     }
                 ]
             },
@@ -1861,6 +1865,19 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "1b0b95ad-674e-4dcb-9903-b34c8252624b",
+                "parentKey": "99e87759-dcab-49a7-a8ef-504c4e2bf8cc",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": ""
+                    }
+                ]
+            },
+            {
                 "key": "c007d461-f421-48fd-9566-ac88d298bbb8",
                 "parentKey": "50256453-3cf5-4adf-85c0-562970b46468",
                 "subKeys": [],
@@ -1943,19 +1960,6 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "**Function** is a \"subprogram\" that can be called by code external \\(or internal in the case of recursion\\) to the function. Like the program itself, a function is composed of a sequence of statements called the function body. Values can be passed to a function, and the function will return a value.\n\n### Parameters vs Arguments\n\n**_Parameters_** are these variables which you specify between parentheses when defining a function.\n```\nfunction sayHi(name) { ... } \n\n```\n_**Arguments**_ then are the concrete values you pass to a function when calling that function.\n```\nsayHi('June');\n\n```\n\n**Referrence**:\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)\n\n"
-                    }
-                ]
-            },
-            {
-                "key": "a45a6708-da40-4346-8070-78b884ebf116",
-                "parentKey": "c0743415-e5c5-48da-a6ec-a2d0571da863",
-                "subKeys": [],
-                "collapse": false,
-                "style": null,
-                "blocks": [
-                    {
-                        "type": "CONTENT",
-                        "data": "try/finally"
                     }
                 ]
             }
