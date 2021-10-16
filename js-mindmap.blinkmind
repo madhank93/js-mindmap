@@ -1,7 +1,7 @@
 {
   "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
   "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-  "focusKey": "d48e8af6-6e14-4a4c-967b-15cf3d58036c",
+  "focusKey": "89cf71a0-0ca8-45ff-b136-62ffbf6ff778",
   "extData": {
     "TOPIC_REFERENCE": {
       "reference": {}
@@ -104,6 +104,24 @@
       ]
     },
     {
+      "key": "82b04e80-8224-40b1-a5c2-a676d4269e7f",
+      "parentKey": "89cf71a0-0ca8-45ff-b136-62ffbf6ff778",
+      "subKeys": [
+        "ddfd37cf-11f2-4176-9d67-f494b6ea0263",
+        "48db7a4d-51df-43d6-bbdc-5ee3889f5eba",
+        "36a2fcb8-8f7a-4b25-adbc-3be25f6f534a",
+        "c18b4495-0355-48f2-ab94-741434d7409b"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Bindings"
+        }
+      ]
+    },
+    {
       "key": "0c75d436-726a-4103-94ee-9f8fc326c243",
       "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
       "subKeys": [
@@ -133,7 +151,20 @@
         },
         {
           "type": "DESC",
-          "data": "A **function expression** is determined by a function keyword, followed by an optional function name \\(anonymous\\), a list of parameters in a pair of parenthesis \\(para1, ..., paramN\\) and a pair of curly braces \\{ ... \\} that delimits the body code.\n\n**Syntax:**\n```\nconst exp = function functionName(params1, params2) {\n    statements;\n}\n\n```\n\n**example 1: named function**\n```\nconst count = function arrayLength(array) {\n  return array.length;\n}\n\ncount([5, 7, 8]); // output: \"3\"\narrayLength([5, 7, 8]); // ReferenceError: arrayLength is not defined\n\n```\n\n**example 2: anonymous function**\n```\nconst count = function(array) {\n  return array.length;\n}\n\ncount([5, 7, 8]); // output: \"3\"\n\n```\n\n**example 3: Error stack trace**\n```\n// Ex 1:\nconst count = function arrayLength(array) {\n    throw new Error(\"Custom error\")\n}\n\ncount([5, 7, 8]);\n\nError: Custom error\n    at arrayLength (/Users/git/other/js/programming-basics/test.js:2:11)\n    at Object.<anonymous> (/Users/git/other/js/programming-basics/test.js:5:1)\n    at Module._compile (node:internal/modules/cjs/loader:1101:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n    at node:internal/main/run_main_module:17:47\n\n// Ex 2:    \nconst count = function (array) {\n    throw new Error(\"Custom error\")\n}\n\ncount([5, 7, 8]);\n\nError: Custom error\n    at count (/Users/git/other/js/programming-basics/test.js:2:11)\n    at Object.<anonymous> (/Users/git/other/js/programming-basics/test.js:5:1)\n    at Module._compile (node:internal/modules/cjs/loader:1101:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n    at node:internal/main/run_main_module:17:47\n\n```\nOne of the benefits of creating a named function expression is that in case we encountered an error, the stack trace will contain the name of the function, making it easier to find the origin of the error."
+          "data": "A **function expression** is determined by a function keyword, followed by an optional function name \\(anonymous\\), a list of parameters in a pair of parenthesis \\(para1, ..., paramN\\) and a pair of curly braces \\{ ... \\} that delimits the body code.\n\n**Syntax:**\n```\nconst exp = function functionName(params1, params2) {\n    statements;\n}\n\n```\n\n**example 1: named function**\n* It provides the ability to write recursive function\n* Better stack strace and readability\n\n```\nconst count = function arrayLength(array) {\n  return array.length;\n}\n\ncount([5, 7, 8]); // output: \"3\"\narrayLength([5, 7, 8]); // ReferenceError: arrayLength is not defined\n\n```\n\n**example 2: anonymous function**\n```\nconst count = function(array) {\n  return array.length;\n}\n\ncount([5, 7, 8]); // output: \"3\"\n\n```\n\n**example 3: Error stack trace**\n```\n// Ex 1:\nconst count = function arrayLength(array) {\n    throw new Error(\"Custom error\")\n}\n\ncount([5, 7, 8]);\n\nError: Custom error\n    at arrayLength (/Users/git/other/js/programming-basics/test.js:2:11)\n    at Object.<anonymous> (/Users/git/other/js/programming-basics/test.js:5:1)\n    at Module._compile (node:internal/modules/cjs/loader:1101:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n    at node:internal/main/run_main_module:17:47\n\n// Ex 2:    \nconst count = function (array) {\n    throw new Error(\"Custom error\")\n}\n\ncount([5, 7, 8]);\n\nError: Custom error\n    at count (/Users/git/other/js/programming-basics/test.js:2:11)\n    at Object.<anonymous> (/Users/git/other/js/programming-basics/test.js:5:1)\n    at Module._compile (node:internal/modules/cjs/loader:1101:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n    at node:internal/main/run_main_module:17:47\n\n```\nOne of the benefits of creating a named function expression is that in case we encountered an error, the stack trace will contain the name of the function, making it easier to find the origin of the error."
+        }
+      ]
+    },
+    {
+      "key": "ddfd37cf-11f2-4176-9d67-f494b6ea0263",
+      "parentKey": "82b04e80-8224-40b1-a5c2-a676d4269e7f",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Default Binding"
         }
       ]
     },
@@ -232,7 +263,7 @@
         },
         {
           "type": "DESC",
-          "data": "**Function Scope** \\- A function in JavaScript defines a scope for variables declared using **var**, **let** and **const**.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  var message = 'Run, Forrest, Run!';\n  console.log(message); //=> 'Run, Forrest, Run!'\n}\n\nrun();\nconsole.log(message); //=> throws ReferenceError\n\n```\n**run\\(\\)** function body creates a scope. The variable message is accessible inside of the function scope, but inaccessible outside.\n\n**Exmaple 2:**\n```\nfunction run() {\n  // \"run\" function scope\n  const two = 2;\n  let count = 0;\n  function run2() {}\n\n  console.log(two);   //=> 2\n  console.log(count); //=> 0\n  console.log(run2);  //=> function\n}\n\nrun();\nconsole.log(two);   //=> throws ReferenceError\nconsole.log(count); //=> throws ReferenceError\nconsole.log(run2);  //=> throws ReferenceError\n\n```\n\n**Exmaple 3**: Var is **functional\\-scoped**\n```\nvar fullMoon = true;\n\n// Use var to initialize a variable\nvar species = \"human\";\n\nif (fullMoon) {\n  // Attempt to create a new variable in a block\n  var species = \"werewolf\";\n  console.log(`${species}.`); //=> werewolf\n}\n\nconsole.log(`${species}.`); //=> werewolf\n\n```\nBoth the **global variable** and the **block\\-scoped variable** end up with the same value, **werewolf**. This is because instead of creating a new local variable with var, it is reassigning the same variable in the same scope."
+          "data": "**Function Scope** \\- A function in JavaScript defines a scope for variables declared using **var**, **let** and **const**.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  var message = 'Run, Forrest, Run!';\n  console.log(message); //=> 'Run, Forrest, Run!'\n}\n\nrun();\nconsole.log(message); //=> throws ReferenceError\n\n```\n**run\\(\\)** function body creates a scope. The variable message is accessible inside of the function scope, but inaccessible outside.\n\n**Exmaple 2:**\n```\nfunction run() {\n  // \"run\" function scope\n  const two = 2;\n  let count = 0;\n  function run2() {}\n\n  console.log(two);   //=> 2\n  console.log(count); //=> 0\n  console.log(run2);  //=> function\n}\n\nrun();\nconsole.log(two);   //=> throws ReferenceError\nconsole.log(count); //=> throws ReferenceError\nconsole.log(run2);  //=> throws ReferenceError\n\n```\n\n**Exmaple 3**: Var is **functional\\-scoped**\n```\nvar fullMoon = true;\n\n// Use var to initialize a variable\nvar species = \"human\";\n\nif (fullMoon) {\n  // Attempt to create a new variable in a block\n  var species = \"werewolf\";\n  console.log(`${species}.`); //=> werewolf\n}\n\nconsole.log(`${species}.`); //=> werewolf\n\n```\nBoth the **global variable** and the **block\\-scoped variable** end up with the same value, **werewolf**. This is because instead of creating a new local variable with var, it is reassigning the same variable in the same scope.\n\n**Example 4:**\n```\nvar foo = 'bar';\n\nfunction bar() {\n    var foo = 'baz';\n\n    function baz(foo) {\n        foo = 'bam';\n        bam = 'yay';\n    }\n    baz();\n}\n\nbar();\nconsole.log(foo); //=> bar\nconsole.log(bam); //=> yay\nbaz(); //=> ReferenceError: bam is not defined\n\n\n```\n"
         }
       ]
     },
@@ -375,6 +406,19 @@
         {
           "type": "DESC",
           "data": "## Throw\n\n* The **throw** statement throws a user\\-defined exception. Execution of the current function will stop \\(the statements after throw won't be executed\\), and control will be passed to the first catch block in the call stack. If no catch block exists among caller functions, the program will terminate.\n\n\n**Syntax:**\n```\nthrow expression;\n\n```\n\n**example 1:**\n```\nthrow 'Error2'; // generates an exception with a string value\nthrow 42;       // generates an exception with the value 42\nthrow true;     // generates an exception with the value true\n\n```\n\n**example 2:**\n```\nfunction getRectArea(width, height) {\n    if (isNaN(width) || isNaN(height)) {\n        throw 'Parameter is not a number!';\n    }\n}\n\ntry {\n    getRectArea(3, 'A');\n} catch (e) {\n    console.error(e); //=> Parameter is not a number!\n}\n\n```\n\n## Error\n\n* **Error** objects are thrown when runtime errors occur. The Error object can also be used as a base object for user\\-defined exceptions.\n\n\n**example**\n* Throwing a generic error\n\n```\ntry {\n  throw new Error('Whoops!')\n} catch (e) {\n  console.error(e.name + ': ' + e.message) //=> Error: Whoops!\n}\n\n```\n\n* Handling a specific error type\n\n```\ntry {\n    foo.bar()\n} catch (e) {\n    if (e instanceof EvalError) {\n        console.error(e.name + ': ' + e.message)\n    } else if (e instanceof RangeError) {\n        console.error(e.name + ': ' + e.message)\n    }\n    else {\n        // If none of our cases matched leave the Error unhandled\n        throw e;\n    }\n}\n\nResult:\n\nfile:///Users/execption.js:2\nfoo.bar()\n^\n\nReferenceError: foo is not defined\nat file:///Users/execption.js:2:5\nat ModuleJob.run (node:internal/modules/esm/module_job:183:25)\nat async Loader.import (node:internal/modules/esm/loader:178:24)\nat async Object.loadESM (node:internal/process/esm_loader:68:5)\nat async handleMainPromise (node:internal/modules/run_main:63:12)\n\n\n```\n\n* Custom Error Class\n\n```\nclass CustomError extends Error {\n    constructor(foo = 'bar', ...params) {\n        // Pass remaining arguments (including vendor specific ones) to parent constructor\n        super(...params)\n\n        // Maintains proper stack trace for where our error was thrown (only available on V8)\n        if (Error.captureStackTrace) {\n            Error.captureStackTrace(this, CustomError)\n        }\n\n        this.name = 'CustomError'\n        // Custom debugging information\n        this.foo = foo\n        this.date = new Date()\n    }\n}\n\ntry {\n    throw new CustomError('baz', 'bazMessage')\n} catch (e) {\n    console.error(e.name)    //=> CustomError\n    console.error(e.foo)     //=> baz\n    console.error(e.message) //=> bazMessage\n    console.error(e.stack)   //=> stacktrace\n}\n\n```\n\nFor more info,\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Global\\_Objects/Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)\n\n"
+        }
+      ]
+    },
+    {
+      "key": "36a2fcb8-8f7a-4b25-adbc-3be25f6f534a",
+      "parentKey": "82b04e80-8224-40b1-a5c2-a676d4269e7f",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Explicit Binding"
         }
       ]
     },
@@ -601,6 +645,19 @@
         {
           "type": "CONTENT",
           "data": "Set &\nmethods"
+        }
+      ]
+    },
+    {
+      "key": "48db7a4d-51df-43d6-bbdc-5ee3889f5eba",
+      "parentKey": "82b04e80-8224-40b1-a5c2-a676d4269e7f",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Implicit Binding"
         }
       ]
     },
@@ -1263,7 +1320,7 @@
         },
         {
           "type": "DESC",
-          "data": "The **current context of execution**. The context in which values and expressions are \"visible\" or can be referenced. If a variable or other expression is not \"in the current scope,\" then it is unavailable for use. Scopes can also be layered in a hierarchy, so that child scopes have access to parent scopes, but not vice versa.\n\nDifference Between **var**, **let**, and **const**\n```\n| Keyword |     Scope      | Hoisting | Can Be Reassigned | Can Be Redeclared |\n| :-----: | :------------: | :------: | :---------------: | :---------------: |\n|   var   | Function scope |   Yes    |        Yes        |        Yes        |\n|   let   |  Block scope   |    No    |        Yes        |        No         |\n|  const  |  Block scope   |    No    |        No         |        No         |\n\n```\n\n**Reference** \n* [https://javascript.info/var](https://javascript.info/var)\n* [https://javascript.info/closure](https://javascript.info/closure)\n* [https://developer.mozilla.org/en\\-US/docs/Glossary/Scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)\n\n"
+          "data": "**Scope** is **current context of execution**. The context in which values and expressions are \"visible\" or can be referenced. If a variable or other expression is not \"in the current scope,\" then it is unavailable for use. Scopes can also be layered in a hierarchy, so that child scopes have access to parent scopes, but not vice versa.\n\n### Difference Between var, let, and const\n\n| **Keyword** | **Scope** | **Hoisting** | **Can Be Reassigned** | **Can Be Redeclared** |\n|:---:|:---:|:---:|:---:|:---:|\n| var | Function scope | Yes | Yes | Yes |\n| let | Block scope | No | Yes | No |\n| const | Block scope | No | No | No |\n\n**Reference** \n* [https://javascript.info/var](https://javascript.info/var)\n* [https://javascript.info/closure](https://javascript.info/closure)\n* [https://developer.mozilla.org/en\\-US/docs/Glossary/Scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)\n\n"
         }
       ]
     },
@@ -1332,11 +1389,11 @@
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "Scope chain"
+          "data": "lexical scope /\nScope chain"
         },
         {
           "type": "DESC",
-          "data": "**Scope chain** \\- When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.\n\nIf it’s still could not find the variable, it will either implicitly declare the variable in the global scope \\(if not in strict mode\\) or return an error.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  const message = 'Run, Forrest, Run!';\n\n  if (true) {\n    // \"if\" code block scope\n    const friend = 'Bubba';\n    console.log(message); //=> 'Run, Forrest, Run!'\n  }\n\n  console.log(friend); //=> throws ReferenceError\n}\n\nrun();\n\n```\n\nThe scope contained within another scope is named _inner scope_. In the example, if code block scope is an inner scope of run\\(\\) function scope. The scope that wraps another scope is named _outer scope_. In the example, run\\(\\) function scope is an outer scope to if code block scope.\n\n**example 2:**\n```\n// global scope\nvar e = 10;\nfunction sum(a){\n  return function sum2(b){\n    return function sum3(c){\n      // outer functions scope\n      return function sum4(d){\n        // local scope\n        return a + b + c + d + e;\n      }\n    }\n  }\n}\n\nvar sum2 = sum(1);\nvar sum3 = sum2(2);\nvar sum4 = sum3(3);\nvar result = sum4(4);\nconsole.log(result) //=> 20\n\n```\n"
+          "data": "**Scope chain** \\- When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.\n\nIf it’s still could not find the variable, it will either implicitly declare the variable in the global scope \\(if not in strict mode\\) or return an error.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  const message = 'Run, Forrest, Run!';\n\n  if (true) {\n    // \"if\" code block scope\n    const friend = 'Bubba';\n    console.log(message); //=> 'Run, Forrest, Run!'\n  }\n\n  console.log(friend); //=> throws ReferenceError\n}\n\nrun();\n\n```\n\nThe scope contained within another scope is named _inner scope_. In the example, if code block scope is an inner scope of run\\(\\) function scope. The scope that wraps another scope is named _outer scope_. In the example, run\\(\\) function scope is an outer scope to if code block scope.\n\n**example 2:**\n```\n// global scope\nvar e = 10;\nfunction sum(a){\n  return function sum2(b){\n    return function sum3(c){\n      // outer functions scope\n      return function sum4(d){\n        // local scope\n        return a + b + c + d + e;\n      }\n    }\n  }\n}\n\nvar sum2 = sum(1);\nvar sum3 = sum2(2);\nvar sum4 = sum3(3);\nvar result = sum4(4);\nconsole.log(result) //=> 20\n\n```\n\n**example 3: \\(without strict mode\\)**\n* cheating lexical scope using _**eval**_ , usage of eval is not recommended as it tends to slow down the execution\n\n```\nvar bar = 'bar';\n\nfunction foo(str) {\n    eval(str);\n    console.log(bar); //=> 42\n}\n\nfoo(\"var bar=42;\");\n\n```\n"
         }
       ]
     },
@@ -1371,6 +1428,25 @@
         {
           "type": "DESC",
           "data": "Hoisting is a JavaScript mechanism where variables and function declarations are **moved to the top of their scope** before code execution.\n\nWhen you execute a piece of JavaScript code, the JavaScript engine creates the **global execution context**. The global execution context has two phases: **creation** and **execution**. During the creation phase, the JavaScript engine moves the variable and function declarations to the top of your code. This feature is known as **_hoisting_** in JavaScript.\n\n## Variable hoisting\n\n* using **var**\n\n```\nconsole.log(counter); // undefined\nvar counter = 1;\n\n```\n\n* using **let**\n\n```\nconsole.log(counter); // \"ReferenceError: Cannot access 'counter' before initialization\nlet counter = 1;\n\n```\n\n\n## Function hoisting\n\n```\nlet x = 20,\n    y = 10;\n\nlet result = add(x,y);\n\nconsole.log(add) // ƒ add(a, b){\n                 //  return a + b;\n                 //  }\n\nconsole.log(result); // 30\n\nfunction add(a, b){\nreturn a + b;\n}\n\n```\n\n\n## Function expressions\n\n```\nlet x = 20,\n    y = 10;\n\nlet result = add(x,y);\nconsole.log(result); // \"TypeError: add is not a function\n\nvar add = function(x, y) {\nreturn x + y;\n}\n\n```\n\n```\nlet x = 20,\n    y = 10;\n\nlet result = add(x,y);\nconsole.log(result); // \"TypeError: add is not a function\n\nvar add = (x, y) => x + y;\n\n```\n\nDuring the creation phase of the **global execution context**, the JavaScript Engine creates the **add** variable in the memory and initializes its value to **undefined**. When executing the following code, the add is undefined, hence, it isn’t a function."
+        }
+      ]
+    },
+    {
+      "key": "89cf71a0-0ca8-45ff-b136-62ffbf6ff778",
+      "parentKey": "f8750599-32db-4fb3-829e-0673887df2c2",
+      "subKeys": [
+        "82b04e80-8224-40b1-a5c2-a676d4269e7f"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "`this`"
+        },
+        {
+          "type": "DESC",
+          "data": "A function of _**this**_ keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between _strict mode_ and _non\\-strict mode_. '_**this' **__is a reference to the object for which the function was called._"
         }
       ]
     },
@@ -1845,11 +1921,11 @@
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "Immediately invoked \nfunction expression"
+          "data": "Immediately invoked \nfunction expression\n- IIFE"
         },
         {
           "type": "DESC",
-          "data": "An **IIFE** \\(Immediately Invoked Function Expression\\) is a JavaScript function that runs as soon as it is defined or as soon as it starts to executes.\n\n**Syntax:**\n```\n(function () {\n  statements\n})();\n\n```\n* The first is the anonymous function with lexical scope enclosed within the Grouping Operator \\(\\). This prevents accessing variables within the IIFE idiom as well as polluting the global scope.\n* The second part creates the immediately invoked function expression \\(\\) through which the JavaScript engine will directly interpret the function.\n\n\n**example 1:**\n```\n(function () {\n    console.log(\"Immediately invoked\") //=> Immediately invoked\n})();\n\n```\n\n**example 2: **Avoid polluting the global namespace\n* If we have some initiation code that we don't need to use again, we could use the IIFE pattern.\n\n```\n(function () {\n  // some initiation code\n  let firstVariable;\n  let secondVariable;\n})();\n\n// firstVariable and secondVariable will be discarded after the function is executed.\n\n```\n\n**example 3: **stack trace\n```\n// Ex 1:\n(function () {\n    throw new Error(\"Exception has occurred\");\n})();\n\n// Error: Exception has occurred\n//     at /Users/git/other/js/test.js:2:11\n//     at Object.<anonymous> (/Users/git/other/js/test.js:3:3)\n//     at Module._compile (node:internal/modules/cjs/loader:1101:14)\n//     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n//     at Module.load (node:internal/modules/cjs/loader:981:32)\n//     at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n//     at node:internal/main/run_main_module:17:47\n\n// Ex 2:\n(function deposit() {\n    throw new Error(\"Exception has occurred\");\n})();\n\n// Error: Exception has occurred\n//     at deposit (/Users/git/other/js/test.js:6:11)\n//     at Object.<anonymous> (/Users/git/other/js/test.js:7:3)\n//     at Module._compile (node:internal/modules/cjs/loader:1101:14)\n//     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n//     at Module.load (node:internal/modules/cjs/loader:981:32)\n//     at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n//     at node:internal/main/run_main_module:17:47\n\n```\nOne of the benefits of creating a named function expression is that in case we encountered an error, the stack trace will contain the name of the function, making it easier to find the origin of the error."
+          "data": "An **IIFE** \\(Immediately Invoked Function Expression\\) is a JavaScript function that runs as soon as it is defined or as soon as it starts to executes.\n\n**Syntax:**\n```\n(function () {\n  statements\n})();\n\n```\n* The first is the anonymous function with lexical scope enclosed within the Grouping Operator \\(\\). This prevents accessing variables within the IIFE idiom as well as polluting the global scope.\n* The second part creates the immediately invoked function expression \\(\\) through which the JavaScript engine will directly interpret the function.\n\n\n**example 1:**\n```\n(function () {\n    console.log(\"Immediately invoked\") //=> Immediately invoked\n})();\n\n```\n\n**example 2: **Avoid polluting the global namespace\n* If we have some initiation code that we don't need to use again, we could use the IIFE pattern.\n\n```\n(function () {\n  // some initiation code\n  let firstVariable;\n  let secondVariable;\n})();\n\n// firstVariable and secondVariable will be discarded after the function is executed.\n\n```\n\n```\nvar foo = 'foo';\n\n(function () {\n    var foo = 'foo2';\n    console.log(foo); //=> foo2\n})();\n\nconsole.log(foo); //=> foo\n\n```\n\n**example 3: **stack trace\n```\n// Ex 1:\n(function () {\n    throw new Error(\"Exception has occurred\");\n})();\n\n// Error: Exception has occurred\n//     at /Users/git/other/js/test.js:2:11\n//     at Object.<anonymous> (/Users/git/other/js/test.js:3:3)\n//     at Module._compile (node:internal/modules/cjs/loader:1101:14)\n//     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n//     at Module.load (node:internal/modules/cjs/loader:981:32)\n//     at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n//     at node:internal/main/run_main_module:17:47\n\n// Ex 2:\n(function deposit() {\n    throw new Error(\"Exception has occurred\");\n})();\n\n// Error: Exception has occurred\n//     at deposit (/Users/git/other/js/test.js:6:11)\n//     at Object.<anonymous> (/Users/git/other/js/test.js:7:3)\n//     at Module._compile (node:internal/modules/cjs/loader:1101:14)\n//     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n//     at Module.load (node:internal/modules/cjs/loader:981:32)\n//     at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n//     at node:internal/main/run_main_module:17:47\n\n```\nOne of the benefits of creating a named function expression is that in case we encountered an error, the stack trace will contain the name of the function, making it easier to find the origin of the error.\n\nFor more info,\n* [http://benalman.com/news/2010/11/immediately\\-invoked\\-function\\-expression/](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)\n\n"
         }
       ]
     },
@@ -1899,6 +1975,19 @@
       ]
     },
     {
+      "key": "c18b4495-0355-48f2-ab94-741434d7409b",
+      "parentKey": "82b04e80-8224-40b1-a5c2-a676d4269e7f",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "`new` Binding"
+        }
+      ]
+    },
+    {
       "key": "79a87fe8-34ea-45e0-90b4-ee2399074191",
       "parentKey": "5df46409-6d87-4099-85c8-664e7e703c8e",
       "subKeys": [],
@@ -1937,7 +2026,8 @@
         "a9f8d9be-7d66-4b3e-941d-429c02913ec5",
         "a37aef6c-b62c-423c-8124-c18edc14142b",
         "840a8fff-1b5b-48bd-9aae-6214c599c5ab",
-        "33b684a7-f2aa-41a1-93fb-f5e1e621511d"
+        "33b684a7-f2aa-41a1-93fb-f5e1e621511d",
+        "89cf71a0-0ca8-45ff-b136-62ffbf6ff778"
       ],
       "collapse": false,
       "style": "{\"contentStyle\":{\"background\":\"#9eff88\"}}",
