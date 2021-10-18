@@ -12,7 +12,7 @@ export function generateSimpleModel() {
     return Model.create({
         "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
         "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-        "focusKey": "89cf71a0-0ca8-45ff-b136-62ffbf6ff778",
+        "focusKey": "48db7a4d-51df-43d6-bbdc-5ee3889f5eba",
         "extData": {
             "TOPIC_REFERENCE": {
                 "reference": {}
@@ -115,24 +115,6 @@ export function generateSimpleModel() {
                 ]
             },
             {
-                "key": "82b04e80-8224-40b1-a5c2-a676d4269e7f",
-                "parentKey": "89cf71a0-0ca8-45ff-b136-62ffbf6ff778",
-                "subKeys": [
-                    "ddfd37cf-11f2-4176-9d67-f494b6ea0263",
-                    "48db7a4d-51df-43d6-bbdc-5ee3889f5eba",
-                    "36a2fcb8-8f7a-4b25-adbc-3be25f6f534a",
-                    "c18b4495-0355-48f2-ab94-741434d7409b"
-                ],
-                "collapse": false,
-                "style": null,
-                "blocks": [
-                    {
-                        "type": "CONTENT",
-                        "data": "Bindings"
-                    }
-                ]
-            },
-            {
                 "key": "0c75d436-726a-4103-94ee-9f8fc326c243",
                 "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
                 "subKeys": [
@@ -168,7 +150,7 @@ export function generateSimpleModel() {
             },
             {
                 "key": "ddfd37cf-11f2-4176-9d67-f494b6ea0263",
-                "parentKey": "82b04e80-8224-40b1-a5c2-a676d4269e7f",
+                "parentKey": "89cf71a0-0ca8-45ff-b136-62ffbf6ff778",
                 "subKeys": [],
                 "collapse": false,
                 "style": null,
@@ -176,6 +158,10 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "Default Binding"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "The first rule is that, if the function contains a **this** reference and it is a standalone function invocation, then it is bound to global object, the default binding rule applies and it is the default catch\\-all rule when none of the other rules apply. It behaves differently for strict\\-mode and non strict\\-mode.\n\n* Non strict mode\n\n```\nfunction foo() {\n  console.log(this.bar);\n}\nvar bar = \"bar\"\n\nfoo(); //=> bar\n\n```\n\n* Strict mode\n\n```\nfunction foo() {\n'use strict'\nconsole.log(this.bar);\n}\n\nvar bar = \"yay\"\n\nfoo(); //=> TypeError: this is undefined\n\n```\n"
                     }
                 ]
             },
@@ -422,7 +408,7 @@ export function generateSimpleModel() {
             },
             {
                 "key": "36a2fcb8-8f7a-4b25-adbc-3be25f6f534a",
-                "parentKey": "82b04e80-8224-40b1-a5c2-a676d4269e7f",
+                "parentKey": "89cf71a0-0ca8-45ff-b136-62ffbf6ff778",
                 "subKeys": [],
                 "collapse": false,
                 "style": null,
@@ -430,6 +416,10 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "Explicit Binding"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": ""
                     }
                 ]
             },
@@ -661,7 +651,7 @@ export function generateSimpleModel() {
             },
             {
                 "key": "48db7a4d-51df-43d6-bbdc-5ee3889f5eba",
-                "parentKey": "82b04e80-8224-40b1-a5c2-a676d4269e7f",
+                "parentKey": "89cf71a0-0ca8-45ff-b136-62ffbf6ff778",
                 "subKeys": [],
                 "collapse": false,
                 "style": null,
@@ -669,6 +659,10 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "Implicit Binding"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "Another rule to consider is, if the call\\-site have a context object, also referred to as an owning or containing object, in other wrords if the function is attached to an object \\(its context\\) at the call site. Then the implicit binding rule says that it's _that_ object which should be used for the function call's _**this**_ binding\\.\n\n* example 1\n\n```\nfunction foo() {\n    console.log(this.bar);\n}\n\nvar obj1 = { bar: 'bar 1', foo: foo };\nvar obj2 = { bar: 'bar 2', foo: foo };\n\nobj1.foo(); //=> bar 1\nobj2.foo(); //=> bar 2\n\n```\n\n* example 2\n\n```\nvar obj1 = {\n    bar: 'bar 1',\n    foo: function () {\n        console.log(this.bar);\n    }\n}\n\nvar obj2 = { bar: 'bar 2', foo: obj1.foo };\nvar obj3 = { bar: 'bar 3', foo: obj2.foo };\nvar obj4 = { bar: 'bar 3', obj2: obj2 };\n\nobj1.foo(); //=> bar 1\nobj2.foo(); //=> bar 2\nobj3.foo(); //=> bar 3\nobj4.obj2.foo(); //=> bar 2 `top/last level of an object property reference chain matters to the call-site`\n\n```\n\n**_Note_**_: _One way to figure out which object _**this**_ is bound to is to look at which object is to the **_left_** of the dot operator \\(**.**\\)"
                     }
                 ]
             },
@@ -1404,7 +1398,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**Scope chain** \\- When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.\n\nIf it’s still could not find the variable, it will either implicitly declare the variable in the global scope \\(if not in strict mode\\) or return an error.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  const message = 'Run, Forrest, Run!';\n\n  if (true) {\n    // \"if\" code block scope\n    const friend = 'Bubba';\n    console.log(message); //=> 'Run, Forrest, Run!'\n  }\n\n  console.log(friend); //=> throws ReferenceError\n}\n\nrun();\n\n```\n\nThe scope contained within another scope is named _inner scope_. In the example, if code block scope is an inner scope of run\\(\\) function scope. The scope that wraps another scope is named _outer scope_. In the example, run\\(\\) function scope is an outer scope to if code block scope.\n\n**example 2:**\n```\n// global scope\nvar e = 10;\nfunction sum(a){\n  return function sum2(b){\n    return function sum3(c){\n      // outer functions scope\n      return function sum4(d){\n        // local scope\n        return a + b + c + d + e;\n      }\n    }\n  }\n}\n\nvar sum2 = sum(1);\nvar sum3 = sum2(2);\nvar sum4 = sum3(3);\nvar result = sum4(4);\nconsole.log(result) //=> 20\n\n```\n\n**example 3: \\(without strict mode\\)**\n* cheating lexical scope using _**eval**_ , usage of eval is not recommended as it tends to slow down the execution\n\n```\nvar bar = 'bar';\n\nfunction foo(str) {\n    eval(str);\n    console.log(bar); //=> 42\n}\n\nfoo(\"var bar=42;\");\n\n```\n"
+                        "data": "* **Scope chain** \\- When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.\n\n\nIf it’s still could not find the variable, it will either implicitly declare the variable in the global scope \\(if not in strict mode\\) or return an error.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  const message = 'Run, Forrest, Run!';\n\n  if (true) {\n    // \"if\" code block scope\n    const friend = 'Bubba';\n    console.log(message); //=> 'Run, Forrest, Run!'\n  }\n\n  console.log(friend); //=> throws ReferenceError\n}\n\nrun();\n\n```\n\nThe scope contained within another scope is named _inner scope_. In the example, if code block scope is an inner scope of run\\(\\) function scope. The scope that wraps another scope is named _outer scope_. In the example, run\\(\\) function scope is an outer scope to if code block scope.\n\n**example 2:**\n```\n// global scope\nvar e = 10;\nfunction sum(a){\n  return function sum2(b){\n    return function sum3(c){\n      // outer functions scope\n      return function sum4(d){\n        // local scope\n        return a + b + c + d + e;\n      }\n    }\n  }\n}\n\nvar sum2 = sum(1);\nvar sum3 = sum2(2);\nvar sum4 = sum3(3);\nvar result = sum4(4);\nconsole.log(result) //=> 20\n\n```\n\n**example 3: \\(without strict mode\\)**\n* cheating lexical scope using **eval** , usage of eval is not recommended as it tends to slow down the execution\n\n```\nvar bar = 'bar';\n\nfunction foo(str) {\n    eval(str);\n    console.log(bar); //=> 42\n}\n\nfoo(\"var bar=42;\");\n\n```\n"
                     }
                 ]
             },
@@ -1446,7 +1440,10 @@ export function generateSimpleModel() {
                 "key": "89cf71a0-0ca8-45ff-b136-62ffbf6ff778",
                 "parentKey": "f8750599-32db-4fb3-829e-0673887df2c2",
                 "subKeys": [
-                    "82b04e80-8224-40b1-a5c2-a676d4269e7f"
+                    "ddfd37cf-11f2-4176-9d67-f494b6ea0263",
+                    "48db7a4d-51df-43d6-bbdc-5ee3889f5eba",
+                    "36a2fcb8-8f7a-4b25-adbc-3be25f6f534a",
+                    "c18b4495-0355-48f2-ab94-741434d7409b"
                 ],
                 "collapse": false,
                 "style": null,
@@ -1457,7 +1454,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "A function of _**this**_ keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between _strict mode_ and _non\\-strict mode_. '_**this' **__is a reference to the object for which the function was called._"
+                        "data": "A function of **this** keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between _strict mode_ and _non\\-strict mode_. _**this **__is a reference to the object for which the function was called._\n\nTo understand **this** binding, we have to understand the call\\-site: the location in code where a function is called \\(not where it's declared\\). We must inspect the call\\-site to answer the question: what's this **this** a reference to?\n\n```\nfunction baz() {\n    // call-stack is: `baz`\n    // so, our call-site is in the global scope\n\n    console.log( \"baz\" );\n    bar(); // <=== call-site for `bar`\n}\n\nfunction bar() {\n    // call-stack is: `baz` -> `bar`\n    // so, our call-site is in `baz`\n\n    console.log( \"bar\" );\n    foo(); // <=== call-site for `foo`\n}\n\nfunction foo() {\n    // call-stack is: `baz` -> `bar` -> `foo`\n    // so, our call-site is in `bar`\n\n    console.log( \"foo\" );\n}\n\nbaz(); // <=== call-site for `baz`\n\n```\n\nThe _call\\-site_ determines which of 4 rules applies. And the four types of bindings are,\n* Default Binding\n* Implicit Binding\n* Explicit Binding\n* new Binding\n\n"
                     }
                 ]
             },
@@ -1987,7 +1984,7 @@ export function generateSimpleModel() {
             },
             {
                 "key": "c18b4495-0355-48f2-ab94-741434d7409b",
-                "parentKey": "82b04e80-8224-40b1-a5c2-a676d4269e7f",
+                "parentKey": "89cf71a0-0ca8-45ff-b136-62ffbf6ff778",
                 "subKeys": [],
                 "collapse": false,
                 "style": null,
