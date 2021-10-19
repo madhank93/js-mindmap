@@ -1,7 +1,7 @@
 {
   "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
   "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-  "focusKey": "48db7a4d-51df-43d6-bbdc-5ee3889f5eba",
+  "focusKey": null,
   "extData": {
     "TOPIC_REFERENCE": {
       "reference": {}
@@ -398,8 +398,10 @@
     {
       "key": "36a2fcb8-8f7a-4b25-adbc-3be25f6f534a",
       "parentKey": "89cf71a0-0ca8-45ff-b136-62ffbf6ff778",
-      "subKeys": [],
-      "collapse": false,
+      "subKeys": [
+        "73667249-cfd7-438c-a8db-cb40b58d16fb"
+      ],
+      "collapse": true,
       "style": null,
       "blocks": [
         {
@@ -408,7 +410,7 @@
         },
         {
           "type": "DESC",
-          "data": ""
+          "data": "_**Explicit Binding**_ will force a function call to use a particular object for the _**this**_ binding\\. And it can be achieved using **call\\(\\)** and **apply\\(\\)**.\n\n* example 1\n\n```\nfunction foo() {\n    console.log(this.bar);\n}\n\nlet obj1 = { bar: 'bar 1' };\nlet obj2 = { bar: 'bar 2' };\n\nfoo.call(obj1); //=> bar 1\nfoo.apply(obj2) //=> bar 2\n\n```\n\n* example 2\n\n```\nfunction foo() {\n    console.log(this.bar);\n}\n\nlet obj1 = { bar: 'bar 1' };\nlet obj2 = { bar: 'bar 2' };\n\nlet orig = foo;\n\nfoo = function () { orig.call(obj1) };\n\nfoo(); //=> bar 1\nfoo.call(obj2); //=> bar 1 'it is explicitly bound to obj1'\n\n```\n"
         }
       ]
     },
@@ -1487,6 +1489,19 @@
       ]
     },
     {
+      "key": "73667249-cfd7-438c-a8db-cb40b58d16fb",
+      "parentKey": "36a2fcb8-8f7a-4b25-adbc-3be25f6f534a",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": ""
+        }
+      ]
+    },
+    {
       "key": "85ee6b37-5053-4f78-b25d-53d1bf11d87b",
       "parentKey": "252c6937-bd93-4233-90cb-333938667c72",
       "subKeys": [],
@@ -1981,6 +1996,10 @@
         {
           "type": "CONTENT",
           "data": "`new` Binding"
+        },
+        {
+          "type": "DESC",
+          "data": "When a function is invoked with _**new**_ in front of it, otherwise known as a constructor call, the following things are done automatically:\n* a brand new object is created \\(aka, constructed\\) out of thin air\n* the newly constructed object is \\[\\[Prototype\\]\\]\\-linked to the function that constructed it\n* the newly constructed object is set as the this binding for that function call\n* unless the function returns its own alternate object, the new\\-invoked function call will automatically return the newly constructed object.\n\n\n```\nfunction foo(a) {\n    this.a = a;\n}\n\nvar bar = new foo(2);\nconsole.log(bar) //=> foo { a: 2 }\nconsole.log(bar.a); // 2\n\n```\n"
         }
       ]
     },
