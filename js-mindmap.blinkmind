@@ -1,7 +1,7 @@
 {
   "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
   "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-  "focusKey": null,
+  "focusKey": "a44085f3-06c0-4910-9787-af5b20c0709b",
   "extData": {
     "TOPIC_REFERENCE": {
       "reference": {}
@@ -1088,6 +1088,23 @@
       ]
     },
     {
+      "key": "4e7eeab5-6321-43c0-9350-31a523a94d8d",
+      "parentKey": "89cf71a0-0ca8-45ff-b136-62ffbf6ff778",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "order of\nprecedence"
+        },
+        {
+          "type": "DESC",
+          "data": "1. Was the function called with 'new' ?\n1. Was the fucntion called with 'call' or 'apply' specifying an explicit this ?\n1. Was the function called via a containing/owing object \\(context\\) ?\n1. Default, global object \\(expect strict mode\\)\n\n"
+        }
+      ]
+    },
+    {
       "key": "c92fd58b-57a4-4c72-897a-d1c394f9a8aa",
       "parentKey": "06067a6c-cfd1-4faf-8aa6-5eb827f3d020",
       "subKeys": [],
@@ -1147,7 +1164,7 @@
         },
         {
           "type": "DESC",
-          "data": "A **closure** is the combination of a function bundled together \\(enclosed\\) with references to its surrounding state \\(the lexical environment\\). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time. In JavaScript, closures are created every time a function is created, at function creation time.\n\nThe closure **captures** variables from lexical environment.\n```\nfunction outerFunc() {\n  let outerVar = 'I am outside!';\n\n  function innerFunc() {\n    console.log(outerVar); // => logs \"I am outside!\"\n  }\n\n  return innerFunc; // Even though this function is being returned it still remembers lexical environment\n}\n\nconst myInnerFunc = outerFunc();\nmyInnerFunc();\n\n```\nNow **innerFunc\\(\\)** is executed outside of its lexical scope. And what’s important. **innerFunc\\(\\)** still has access to **outerVar** from its **lexical scope**, _even being executed outside of its lexical scope_.\n\nIn other words, **innerFunc\\(\\) **closes over \\(a.k.a. captures, remembers\\) the variable outerVar from its lexical scope.\n\n**Refference:**\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)\n* https://javascript.info/closure#lexical\\-environment\n\n"
+          "data": "A **closure** is the combination of a function bundled together \\(enclosed\\) with references to its surrounding state \\(the lexical environment\\). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time. In JavaScript, closures are created every time a function is created, at function creation time.\n\n_**Closure is when a function 'remembers' its lexical scope even when the function is executed outside that lexical scope.**_\n\nThe closure **captures** variables from lexical environment.\n```\nfunction outerFunc() {\n  let outerVar = 'I am outside!';\n\n  function innerFunc() {\n    console.log(outerVar);\n  }\n\n  return innerFunc; // Even though this function is being returned it still remembers lexical environment\n}\n\nconst myInnerFunc = outerFunc();\nmyInnerFunc(); //=> \"I am outside!\"\n\n```\nNow **innerFunc\\(\\)** is executed outside of its lexical scope. And what’s important. **innerFunc\\(\\)** still has access to **outerVar** from its **lexical scope**, _even being executed outside of its lexical scope_.\n\nIn other words, **innerFunc\\(\\) **closes over \\(a.k.a. captures, remembers\\) the variable outerVar from its lexical scope.\n\n**Refference:**\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)\n* https://javascript.info/closure#lexical\\-environment\n\n"
         }
       ]
     },
@@ -1389,7 +1406,7 @@
         },
         {
           "type": "DESC",
-          "data": "* **Scope chain** \\- When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.\n\n\nIf it’s still could not find the variable, it will either implicitly declare the variable in the global scope \\(if not in strict mode\\) or return an error.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  const message = 'Run, Forrest, Run!';\n\n  if (true) {\n    // \"if\" code block scope\n    const friend = 'Bubba';\n    console.log(message); //=> 'Run, Forrest, Run!'\n  }\n\n  console.log(friend); //=> throws ReferenceError\n}\n\nrun();\n\n```\n\nThe scope contained within another scope is named _inner scope_. In the example, if code block scope is an inner scope of run\\(\\) function scope. The scope that wraps another scope is named _outer scope_. In the example, run\\(\\) function scope is an outer scope to if code block scope.\n\n**example 2:**\n```\n// global scope\nvar e = 10;\nfunction sum(a){\n  return function sum2(b){\n    return function sum3(c){\n      // outer functions scope\n      return function sum4(d){\n        // local scope\n        return a + b + c + d + e;\n      }\n    }\n  }\n}\n\nvar sum2 = sum(1);\nvar sum3 = sum2(2);\nvar sum4 = sum3(3);\nvar result = sum4(4);\nconsole.log(result) //=> 20\n\n```\n\n**example 3: \\(without strict mode\\)**\n* cheating lexical scope using **eval** , usage of eval is not recommended as it tends to slow down the execution\n\n```\nvar bar = 'bar';\n\nfunction foo(str) {\n    eval(str);\n    console.log(bar); //=> 42\n}\n\nfoo(\"var bar=42;\");\n\n```\n"
+          "data": "Lexical scope means every inner level can access its outer levels. And the scope is determined when the code is compiled.\n\n* **Scope chain** \\- When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.\n\n\nIf it’s still could not find the variable, it will either implicitly declare the variable in the global scope \\(if not in strict mode\\) or return an error.\n\n**Example 1:**\n```\nfunction run() {\n  // \"run\" function scope\n  const message = 'Run, Forrest, Run!';\n\n  if (true) {\n    // \"if\" code block scope\n    const friend = 'Bubba';\n    console.log(message); //=> 'Run, Forrest, Run!'\n  }\n\n  console.log(friend); //=> throws ReferenceError\n}\n\nrun();\n\n```\n\nThe scope contained within another scope is named _inner scope_. In the example, if code block scope is an inner scope of run\\(\\) function scope. The scope that wraps another scope is named _outer scope_. In the example, run\\(\\) function scope is an outer scope to if code block scope.\n\n**example 2:**\n```\n// global scope\nvar e = 10;\nfunction sum(a){\n  return function sum2(b){\n    return function sum3(c){\n      // outer functions scope\n      return function sum4(d){\n        // local scope\n        return a + b + c + d + e;\n      }\n    }\n  }\n}\n\nvar sum2 = sum(1);\nvar sum3 = sum2(2);\nvar sum4 = sum3(3);\nvar result = sum4(4);\nconsole.log(result) //=> 20\n\n```\n\n**example 3: \\(without strict mode\\)**\n* cheating lexical scope using **eval** , usage of eval is not recommended as it tends to slow down the execution\n\n```\nvar bar = 'bar';\n\nfunction foo(str) {\n    eval(str);\n    console.log(bar); //=> 42\n}\n\nfoo(\"var bar=42;\");\n\n```\n"
         }
       ]
     },
@@ -1434,7 +1451,8 @@
         "ddfd37cf-11f2-4176-9d67-f494b6ea0263",
         "48db7a4d-51df-43d6-bbdc-5ee3889f5eba",
         "36a2fcb8-8f7a-4b25-adbc-3be25f6f534a",
-        "c18b4495-0355-48f2-ab94-741434d7409b"
+        "c18b4495-0355-48f2-ab94-741434d7409b",
+        "4e7eeab5-6321-43c0-9350-31a523a94d8d"
       ],
       "collapse": false,
       "style": null,
@@ -1999,7 +2017,7 @@
         },
         {
           "type": "DESC",
-          "data": "When a function is invoked with _**new**_ in front of it, otherwise known as a constructor call, the following things are done automatically:\n* a brand new object is created \\(aka, constructed\\) out of thin air\n* the newly constructed object is \\[\\[Prototype\\]\\]\\-linked to the function that constructed it\n* the newly constructed object is set as the this binding for that function call\n* unless the function returns its own alternate object, the new\\-invoked function call will automatically return the newly constructed object.\n\n\n```\nfunction foo(a) {\n    this.a = a;\n}\n\nvar bar = new foo(2);\nconsole.log(bar) //=> foo { a: 2 }\nconsole.log(bar.a); // 2\n\n```\n"
+          "data": "When a function is invoked with **new** in front of it, otherwise known as a constructor call, the following things are done automatically:\n* a brand new object is created \\(aka, constructed\\) out of thin air\n* the newly constructed object is \\[\\[Prototype\\]\\]\\-linked to the function that constructed it\n* the newly constructed object is set as the this binding for that function call\n* unless the function returns its own alternate object, the new\\-invoked function call will automatically return the newly constructed object.\n\n\n```\nfunction foo(a) {\n    this.a = a;\n}\n\nvar bar = new foo(2);\nconsole.log(bar) //=> foo { a: 2 }\nconsole.log(bar.a); // 2\n\n```\n"
         }
       ]
     },
