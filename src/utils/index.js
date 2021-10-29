@@ -12,7 +12,7 @@ export function generateSimpleModel() {
     return Model.create({
         "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
         "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-        "focusKey": "a44085f3-06c0-4910-9787-af5b20c0709b",
+        "focusKey": "c18b4495-0355-48f2-ab94-741434d7409b",
         "extData": {
             "TOPIC_REFERENCE": {
                 "reference": {}
@@ -41,7 +41,7 @@ export function generateSimpleModel() {
             },
             {
                 "key": "f8959855-b412-49cf-b308-d4b014a6fc59",
-                "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
+                "parentKey": "183f002c-a1ac-4ef6-bd23-2495e98fefaa",
                 "subKeys": [],
                 "collapse": false,
                 "style": null,
@@ -187,7 +187,7 @@ export function generateSimpleModel() {
             },
             {
                 "key": "31aa7d3d-f836-4d0f-8704-6606fb0a1577",
-                "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
+                "parentKey": "183f002c-a1ac-4ef6-bd23-2495e98fefaa",
                 "subKeys": [],
                 "collapse": false,
                 "style": null,
@@ -359,7 +359,7 @@ export function generateSimpleModel() {
             },
             {
                 "key": "ef12f21d-9fc6-4b69-9034-dfe4162cf6e7",
-                "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
+                "parentKey": "183f002c-a1ac-4ef6-bd23-2495e98fefaa",
                 "subKeys": [],
                 "collapse": false,
                 "style": null,
@@ -778,7 +778,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "In JavaScript, objects have a special hidden property **\\[\\[Prototype\\]\\]**, that is either null or references another object. That object is called “a prototype”.\n\nThe property \\[\\[Prototype\\]\\] is internal and hidden, but there are many ways to set it. One of them is to use the special name \\_\\_proto\\_\\_\n```\nlet animal = {\n  eats: true\n};\nlet rabbit = {\n  jumps: true\n};\n\nrabbit.__proto__ = animal; // sets rabbit.[[Prototype]] = animal\n\n```\n\n* **\\_\\_proto\\_\\_** is an internal property of an object, pointing to its prototype. And it is used in the lookup chain to resolve methods \\(usage of \\_\\_proto\\_\\_ is deprecated**\\)**\n* **prototype** is a property of a Function object. It is the prototype of objects constructed by that function.\n\n\n**example:**\n```\nfunction Person(name) {\n    this.name = name;\n}\n\nPerson.prototype.age = 25;\n\nlet william = new Person('William');\nwilliam.age = 35;\n\n// the __proto__ property on the instance refers to the prototype of the constructor\nconsole.log(william.__proto__ === Person.prototype); //=> true\n\nconsole.log(william.age); //=> 35\n\n// now we are directly accessing the prototype of the Person function\nconsole.log(william.__proto__.age); //=> 25\n\n// william.__proto points to \"Person\" prototype \n// william.__proto.__proto__ points to \"Object\" prototype\nwilliam.__proto__.__proto__.toString = function () {\n    console.log(\"built-in object modified\");\n}\n\nconst obj = {};\nobj.toString(); //=> built-in object modified\n\n```\n\nFor more refference,\n* [https://javascript.info/prototypes](https://javascript.info/prototypes)\n\n"
+                        "data": "In JavaScript, objects have a special hidden property **\\[\\[Prototype\\]\\]**, that is either null or references another object. That object is called “a prototype”.\n\nThe property \\[\\[Prototype\\]\\] is internal and hidden, but there are many ways to set it. One of them is to use the special name \\_\\_proto\\_\\_\n```\nlet animal = {\n  eats: true\n};\nlet rabbit = {\n  jumps: true\n};\n\nrabbit.__proto__ = animal; // sets rabbit.[[Prototype]] = animal\n\n```\n\n* **\\_\\_proto\\_\\_** is an internal property of an object, pointing to its prototype. And it is used in the lookup chain to resolve methods \\(usage of \\_\\_proto\\_\\_ is deprecated**\\)**\n* **prototype** is a property of a Function object. It is the prototype of objects constructed by that function.\n\n\n**example 1:**\n```\nfunction Person(name) {\n    this.name = name;\n}\n\nPerson.prototype.age = 25;\n\nlet william = new Person('William');\nwilliam.age = 35;\n\n// the __proto__ property on the instance refers to the prototype of the constructor\nconsole.log(william.__proto__ === Person.prototype); //=> true\n\nconsole.log(william.age); //=> 35\n\n// now we are directly accessing the prototype of the Person function\nconsole.log(william.__proto__.age); //=> 25\n\n// william.__proto points to \"Person\" prototype \n// william.__proto.__proto__ points to \"Object\" prototype\nwilliam.__proto__.__proto__.toString = function () {\n    console.log(\"built-in object modified\");\n}\n\nconst obj = {};\nobj.toString(); //=> built-in object modified\n\n```\n\n**example 2:**\n```\nfunction Employee(id, name) {\n\n    // instance members goes into objects\n    this.id = id;\n    this.name = name;\n\n    // function object members goes into Employee\n    Employee.count = 0;\n\n    // prototype members goes into shared prototype\n    Employee.prototype.baseSalary = 5000;\n\n    // instance function goes into every instance (wasting resource)\n    this.print = function () {\n        console.log(`id=${this.id}, name=${this.name}`);\n    }\n\n    // prototype functions goes into shared prototype, added only once\n    Employee.prototype.printDetails = function () {\n        console.log(`id=${this.id}, name=${this.name}`);\n    }\n\n}\n\nlet emp1 = new Employee(1, \"Alice\")\nemp1.print(); //=> id=1, name=Alice\nemp1.printDetails(); //=> id=1, name=Alice\nemp1.baseSalary = 1000;\nconsole.log(emp1.baseSalary); //=> 1000\n\nlet emp2 = new Employee(2, \"Bob\")\nemp2.print(); //=> id=1, name=Alice\nemp2.printDetails(); //=> id=1, name=Alice\nconsole.log(emp2.baseSalary); //=> 5000\n\nconsole.log(emp1.constructor.count); //=> 0\nconsole.log(emp2.constructor.count); //=> 0\n\n```\n\n**prototype \\- object linkage:**\n```\n                 ┌──┬────────────┬─────┐            ┌──┬────────────┬─────┐                 \n                 │F │     key    │value│            │  │     key    │value│                 \n                 │u ├────────────┼─────┤            │O ├────────────┼─────┤                 \n                 │n │  __proto__ │     │            │b │  __proto__ │     │                 \n                 │c ├────────────┼─────┤            │j ├────────────┼─────┤                 \n                 │t │   call()   │     │            │e │ toString() │     │                 \n                 │i ├────────────┼─────┤            │c ├────────────┼─────┤                 \n                 │o │  apply()   │     │            │t │ valueOf()  │     │                 \n                 │n ├────────────┼─────┤            │  ├────────────┼─────┤                 \n                 │  │   bind()   │     │            │  │   ...      │     │                 \n                 └──┴───────▲────┴─────┘            └──┴───────▲────┴─────┘                 \n┌──┬────────────┬─────┐     │     ┌──┬────────────┬─────┐      │                            \n│  │     key    │value│     │     │p │     key    │value│      │                            \n│E ├────────────┼─────┤     │     │r ├────────────┼─────┤      │                            \n│m │  __proto__ │   ●─┼─────┘     │o │  __proto__ │    ●┼──────┘                            \n│p ├────────────┼─────┤           │t ├────────────┼─────┤                                   \n│l │  prototype │   ●─┼───────────▶o │ constructor│     │                                   \n│o │            │     │◁──────────●t │            │     │                                   \n│y ├────────────┼─────┤           │y ├────────────┼─────┤                                   \n│e │   count    │     │           │p │ baseSalary │     │           ┌──────────────────────┐\n│e ├────────────┼─────┤           │e ├────────────┼─────┤           │function printDetails{│\n│  │            │     │           │  │printDetails│   ●─┼──────────▶│          }           │\n└──┴────────────┴─────┘           └──┴────────────┴─────┘           └──────────────────────┘\n                                             ▲                                              \n                                             │                                              \n                                             │                                              \n             ┌──┬────────────┬─────┐         │                                              \n             │  │     key    │value│         │                                              \n             │  ├────────────┼─────┤         │                                              \n             │e │  __proto__ │  ●──┼─────────┘                                              \n             │m ├────────────┼─────┤                                                        \n             │p │     id     │     │                                                        \n             │1 ├────────────┼─────┤                                                        \n             │  │    name    │     │          ┌───────────────┐                             \n             │  ├────────────┼─────┤          │function print{│                             \n             │  │    print   │  ●──┼─────────▶│       }       │                             \n             └──┴────────────┴─────┘          └───────────────┘\n\n```\n\nFor more refference,\n* [https://javascript.info/prototypes](https://javascript.info/prototypes)\n\n"
                     }
                 ]
             },
@@ -904,7 +904,7 @@ export function generateSimpleModel() {
             },
             {
                 "key": "092ca5f2-7268-4e31-b7bd-d9aa2c3fd8d0",
-                "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
+                "parentKey": "183f002c-a1ac-4ef6-bd23-2495e98fefaa",
                 "subKeys": [],
                 "collapse": false,
                 "style": null,
@@ -1197,10 +1197,7 @@ export function generateSimpleModel() {
                 "parentKey": "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
                 "subKeys": [
                     "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
-                    "ef12f21d-9fc6-4b69-9034-dfe4162cf6e7",
-                    "092ca5f2-7268-4e31-b7bd-d9aa2c3fd8d0",
-                    "31aa7d3d-f836-4d0f-8704-6606fb0a1577",
-                    "f8959855-b412-49cf-b308-d4b014a6fc59"
+                    "183f002c-a1ac-4ef6-bd23-2495e98fefaa"
                 ],
                 "collapse": false,
                 "style": "{\"contentStyle\":{\"background\":\"#f1919f\",\"borderStyle\":\"none\"},\"linkStyle\":{\"lineType\":\"curve\"}}",
@@ -1211,7 +1208,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "**Object\\-oriented programming** \\(OOP\\) is a programming paradigm based on the concept of \"**objects**\", which can contain **_data_** and _**code**_: \n* **data,** in the form of fields \\(often known as attributes or properties\\), and \n* **code**, in the form of procedures \\(often known as methods\\).\n\n"
+                        "data": "**Object\\-oriented programming** \\(OOP\\) is a programming paradigm based on the concept of \"**objects**\", which can contain _data_ and **code**: \n* **data,** in the form of fields \\(often known as attributes or properties\\), and \n* **code**, in the form of procedures \\(often known as methods\\).\n\n\nJS is _Prototype\\-based programming_ is a style of object\\-oriented programming in which classes are not explicitly defined, but rather derived by adding _properties_ and _methods_ to an instance of another class or, less frequently, adding them to an empty object. In simple words, this type of style allows the creation of an object without first defining its class.\n* Every single 'object' is built by a constructor call.\n* A constructor makes an object linked to its own prototype.\n\n\nFor more details, refer to **\\_\\_proto\\_\\_ and prototype** of Functions"
                     }
                 ]
             },
@@ -1470,7 +1467,7 @@ export function generateSimpleModel() {
                 "blocks": [
                     {
                         "type": "CONTENT",
-                        "data": "`this`"
+                        "data": "`this`\nkeyword"
                     },
                     {
                         "type": "DESC",
@@ -1725,6 +1722,24 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": "Array &\nmethods"
+                    }
+                ]
+            },
+            {
+                "key": "183f002c-a1ac-4ef6-bd23-2495e98fefaa",
+                "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
+                "subKeys": [
+                    "f8959855-b412-49cf-b308-d4b014a6fc59",
+                    "31aa7d3d-f836-4d0f-8704-6606fb0a1577",
+                    "092ca5f2-7268-4e31-b7bd-d9aa2c3fd8d0",
+                    "ef12f21d-9fc6-4b69-9034-dfe4162cf6e7"
+                ],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Four pillars"
                     }
                 ]
             },
@@ -2028,7 +2043,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "When a function is invoked with **new** in front of it, otherwise known as a constructor call, the following things are done automatically:\n* a brand new object is created \\(aka, constructed\\) out of thin air\n* the newly constructed object is \\[\\[Prototype\\]\\]\\-linked to the function that constructed it\n* the newly constructed object is set as the this binding for that function call\n* unless the function returns its own alternate object, the new\\-invoked function call will automatically return the newly constructed object.\n\n\n```\nfunction foo(a) {\n    this.a = a;\n}\n\nvar bar = new foo(2);\nconsole.log(bar) //=> foo { a: 2 }\nconsole.log(bar.a); // 2\n\n```\n"
+                        "data": "When a function is invoked with **new** in front of it, otherwise known as a constructor call, the following things are done automatically:\n* a brand new object is created \\(aka, constructed\\)\n* the newly constructed object is \\[\\[Prototype\\]\\]\\-linked to the function that constructed it\n* the newly constructed object is set as the this binding for that function call\n* unless the function returns its own alternate object, the new\\-invoked function call will automatically return the newly constructed object.\n\n\n```\nfunction foo(a) {\n    this.a = a;\n}\n\nvar bar = new foo(2);\nconsole.log(bar) //=> foo { a: 2 }\nconsole.log(bar.a); // 2\n\n```\n"
                     }
                 ]
             },
