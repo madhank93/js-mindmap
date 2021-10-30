@@ -2,7 +2,7 @@
 
 🚧🚧🚧 It is under development 🚧🚧🚧
 
-This JS mind map projects uses [React mind map](https://github.com/awehook/react-mindmap). All of the contents used in this project are collected from the internet over the time period.
+This JS mind map projects uses [Awehook - mind map](https://github.com/awehook/react-mindmap). All of the contents used in this project are collected from the internet over the time period.
 
 ### References
 
@@ -13,3 +13,5 @@ This JS mind map projects uses [React mind map](https://github.com/awehook/react
 - https://github.com/getify/You-Dont-Know-JS
 
 - [Namaste javascript](https://www.youtube.com/playlist?list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP)
+
+- [JS concept visualization workshop by Sanjay vyas](https://conceptvisuals.in/)
