@@ -12,7 +12,7 @@ export function generateSimpleModel() {
     return Model.create({
         "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
         "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-        "focusKey": "49780f87-17f7-4f90-a761-6ddf6ce8e1ca",
+        "focusKey": "aea8f33e-b4a3-4139-a406-d5fa77431698",
         "extData": {
             "TOPIC_REFERENCE": {
                 "reference": {
@@ -118,22 +118,6 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "The boolean type has only two values: **true** and **false**\n\n```\nconsole.log(typeof(true)); //=> \"boolean\"\nconsole.log(typeof(false)); //=> \"boolean\"\n\n```\n\n```\nlet nameFieldChecked = true;\nlet ageFieldChecked = false;\n\nconsole.log(\"Name field checked: \", nameFieldChecked, \" and \" , \"Age field checked: \", ageFieldChecked);\n//=> Name field checked:  true  and  Age field checked:  false\n\n```\n"
-                    }
-                ]
-            },
-            {
-                "key": "0c75d436-726a-4103-94ee-9f8fc326c243",
-                "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-                "subKeys": [
-                    "49780f87-17f7-4f90-a761-6ddf6ce8e1ca",
-                    "aea8f33e-b4a3-4139-a406-d5fa77431698"
-                ],
-                "collapse": false,
-                "style": null,
-                "blocks": [
-                    {
-                        "type": "CONTENT",
-                        "data": "Callback &\nPromises"
                     }
                 ]
             },
@@ -429,7 +413,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "_**Explicit Binding**_ will force a function call to use a particular object for the _**this**_ binding\\. And it can be achieved using **call\\(\\)** and **apply\\(\\)**.\n\n* example 1\n\n```\nfunction foo() {\n    console.log(this.bar);\n}\n\nlet obj1 = { bar: 'bar 1' };\nlet obj2 = { bar: 'bar 2' };\n\nfoo.call(obj1); //=> bar 1\nfoo.apply(obj2) //=> bar 2\n\n```\n\n* example 2\n\n```\nfunction foo() {\n    console.log(this.bar);\n}\n\nlet obj1 = { bar: 'bar 1' };\nlet obj2 = { bar: 'bar 2' };\n\nlet orig = foo;\n\nfoo = function () { orig.call(obj1) };\n\nfoo(); //=> bar 1\nfoo.call(obj2); //=> bar 1 'it is explicitly bound to obj1'\n\n```\n"
+                        "data": "**Explicit Binding** will force a function call to use a particular object for the **this** binding\\. And it can be achieved using **call\\(\\)** and **apply\\(\\)**.\n\n* example 1\n\n```\nfunction foo() {\n    console.log(this.bar);\n}\n\nlet obj1 = { bar: 'bar 1' };\nlet obj2 = { bar: 'bar 2' };\n\nfoo.call(obj1); //=> bar 1\nfoo.apply(obj2) //=> bar 2\n\n```\n\n* example 2\n\n```\nfunction foo() {\n    console.log(this.bar);\n}\n\nlet obj1 = { bar: 'bar 1' };\nlet obj2 = { bar: 'bar 2' };\n\nlet orig = foo;\n\nfoo = function () { orig.call(obj1) };\n\nfoo(); //=> bar 1\nfoo.call(obj2); //=> bar 1 'it is explicitly bound to obj1'\n\n```\n"
                     }
                 ]
             },
@@ -540,8 +524,7 @@ export function generateSimpleModel() {
                     "c0743415-e5c5-48da-a6ec-a2d0571da863",
                     "1340cde2-dcef-48de-a00e-1ce996ecf377",
                     "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
-                    "e1994f06-f679-4c5f-9197-90f6f2a551e7",
-                    "0c75d436-726a-4103-94ee-9f8fc326c243"
+                    "e1994f06-f679-4c5f-9197-90f6f2a551e7"
                 ],
                 "collapse": false,
                 "style": "{\"contentStyle\":{\"background\":\"#f8e71c\"}}",
@@ -1078,14 +1061,18 @@ export function generateSimpleModel() {
             },
             {
                 "key": "aea8f33e-b4a3-4139-a406-d5fa77431698",
-                "parentKey": "0c75d436-726a-4103-94ee-9f8fc326c243",
+                "parentKey": "e1994f06-f679-4c5f-9197-90f6f2a551e7",
                 "subKeys": [],
                 "collapse": false,
                 "style": null,
                 "blocks": [
                     {
                         "type": "CONTENT",
-                        "data": "callback\nhell"
+                        "data": "callback hell"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "Callback hell is also reffered as pyramid of doom. And callback hell is almost nothing to do with the nesting/indentation, if you look at example 1 and example 2, both suffers callback hell problem. **Inversion of Control \\- ** it is the notion of having code under your control in one part of the program, then handing control over to a callback in another part of the program\n\n* **example 1:**\n\n```\nsetTimeout(function () {\n    console.log('1');\n    setTimeout(function () {\n        console.log('2');\n        setTimeout(function () {\n            console.log('3');\n        }, 1000)\n    }, 1000)\n}, 1000)\n\n//=> 1\n//=> 2\n//=> 3\n\n```\n\n* **example 2:**\n\n```\nfunction one(callback) {\n    console.log('1');\n    setTimeout(callback, 1000);\n}\n\nfunction two(callback) {\n    console.log('2');\n    setTimeout(callback, 1000);\n}\n\nfunction three() {\n    console.log('3');\n}\n\none(function () {\n    two(three);\n});\n\n//=> 1\n//=> 2\n//=> 3\n\n```\n"
                     }
                 ]
             },
@@ -1236,17 +1223,20 @@ export function generateSimpleModel() {
             {
                 "key": "e1994f06-f679-4c5f-9197-90f6f2a551e7",
                 "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-                "subKeys": [],
+                "subKeys": [
+                    "49780f87-17f7-4f90-a761-6ddf6ce8e1ca",
+                    "aea8f33e-b4a3-4139-a406-d5fa77431698"
+                ],
                 "collapse": false,
                 "style": null,
                 "blocks": [
                     {
                         "type": "CONTENT",
-                        "data": "async &\nawait"
+                        "data": "callback &\npromises &\nasync"
                     },
                     {
                         "type": "DESC",
-                        "data": ""
+                        "data": "### Concurrency vs Parallelism:\n\n* Concurrency is the task of running and managing the multiple computations at the same time.\n*  Parallelism is the task of running multiple computations simultaneously.\n\n\n_**JavaScript has a concurrency model based on an event loop.**_\n\nFor more details, \n* [http://tutorials.jenkov.com/java\\-concurrency/concurrency\\-vs\\-parallelism.html](http://tutorials.jenkov.com/java-concurrency/concurrency-vs-parallelism.html)\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/EventLoop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)\n\n\nJS is a **single\\-threaded programming language** with a **synchronous** **execution** model that processes one operation after another, it can only process one statement at a time. However, an action like requesting data from an API can take an indeterminate amount of time, depending on the size of data being requested, the speed of the network connection, and other factors. If API calls were performed in a synchronous manner, the browser would not be able to handle any user input, like scrolling or clicking a button, until that operation completes. This is known as _blocking_.\n\nIn order to prevent blocking behavior, the browser environment has many Web APIs that JavaScript can access that are asynchronous, meaning they can run in parallel with other operations instead of sequentially. This is useful because it allows the user to continue using the browser normally while the asynchronous operations are being processed.\n\nOne such function is **setTimeout** and it belongs to the Web API \\- [https://developer.mozilla.org/en\\-US/docs/Web/API](https://developer.mozilla.org/en-US/docs/Web/API)\n\n**Refference**:\n* Tania Rascia \\- [https://www.digitalocean.com/community/tutorials/understanding\\-the\\-event\\-loop\\-callbacks\\-promises\\-and\\-async\\-await\\-in\\-javascript](https://www.digitalocean.com/community/tutorials/understanding-the-event-loop-callbacks-promises-and-async-await-in-javascript)\n\n"
                     }
                 ]
             },
@@ -1496,7 +1486,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "A function of **this** keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between _strict mode_ and _non\\-strict mode_. _**this **__is a reference to the object for which the function was called._\n\nTo understand **this** binding, we have to understand the call\\-site: the location in code where a function is called \\(not where it's declared\\). We must inspect the call\\-site to answer the question: what's this **this** a reference to?\n\n```\nfunction baz() {\n    // call-stack is: `baz`\n    // so, our call-site is in the global scope\n\n    console.log( \"baz\" );\n    bar(); // <=== call-site for `bar`\n}\n\nfunction bar() {\n    // call-stack is: `baz` -> `bar`\n    // so, our call-site is in `baz`\n\n    console.log( \"bar\" );\n    foo(); // <=== call-site for `foo`\n}\n\nfunction foo() {\n    // call-stack is: `baz` -> `bar` -> `foo`\n    // so, our call-site is in `bar`\n\n    console.log( \"foo\" );\n}\n\nbaz(); // <=== call-site for `baz`\n\n```\n\nThe _call\\-site_ determines which of 4 rules applies. And the four types of bindings are,\n* Default Binding\n* Implicit Binding\n* Explicit Binding\n* new Binding\n\n"
+                        "data": "A function of **this** keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between _strict mode_ and _non\\-strict mode_. **this **_\\_\\_is a reference to the object for which the function was called._\n\nTo understand **this** binding, we have to understand the call\\-site: the location in code where a function is called \\(not where it's declared\\). We must inspect the call\\-site to answer the question: what's this **this** a reference to?\n\n```\nfunction baz() {\n    // call-stack is: `baz`\n    // so, our call-site is in the global scope\n\n    console.log( \"baz\" );\n    bar(); // <=== call-site for `bar`\n}\n\nfunction bar() {\n    // call-stack is: `baz` -> `bar`\n    // so, our call-site is in `baz`\n\n    console.log( \"bar\" );\n    foo(); // <=== call-site for `foo`\n}\n\nfunction foo() {\n    // call-stack is: `baz` -> `bar` -> `foo`\n    // so, our call-site is in `bar`\n\n    console.log( \"foo\" );\n}\n\nbaz(); // <=== call-site for `baz`\n\n```\n\nThe _call\\-site_ determines which of 4 rules applies. And the four types of bindings are,\n* Default Binding\n* Implicit Binding\n* Explicit Binding\n* new Binding\n\n"
                     }
                 ]
             },
@@ -1571,7 +1561,7 @@ export function generateSimpleModel() {
             },
             {
                 "key": "49780f87-17f7-4f90-a761-6ddf6ce8e1ca",
-                "parentKey": "0c75d436-726a-4103-94ee-9f8fc326c243",
+                "parentKey": "e1994f06-f679-4c5f-9197-90f6f2a551e7",
                 "subKeys": [],
                 "collapse": false,
                 "style": null,
@@ -1582,7 +1572,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "A _**callback**_ function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.\n\n```\n// a function\nfunction greeting(name) {\n    console.log('Hello, ' + name);\n}\n\n// a function that takes another function as an argument\nfunction processUserInput(callback) {\n    const name = 'Alice';\n    // When you call a function that is passed as an argument, it is referred to as a callback\n    callback(name);\n}\n\n// passing a function as an argument\nprocessUserInput(greeting);\n\n```\n\nRefference:\n* [https://www.digitalocean.com/community/tutorials/understanding\\-the\\-event\\-loop\\-callbacks\\-promises\\-and\\-async\\-await\\-in\\-javascript](https://www.digitalocean.com/community/tutorials/understanding-the-event-loop-callbacks-promises-and-async-await-in-javascript)\n\n"
+                        "data": "A **callback** function is a function passed into another function as an argument, which is then invoked later somepoint in the code.\n\n* **synchronous example**\n\n```\nconsole.log(\"Execution started\");\n\n// a function\nfunction greeting(name) {\n    console.log('Hello, ' + name);\n}\n\n// a function that takes another function as an argument\nfunction print(callback) {\n    const name = 'Alice';\n    // When you call a function that is passed as an argument, it is referred to as a callback\n    callback(name);\n}\n\n// passing a function as an argument\nprint(greeting);\n\nconsole.log(\"Execution completed\");\n\n//=> Execution started\n//=> Hello, Alice\n//=> Execution completed\n\n```\n\n* **asynchronous example**\n\n```\nconsole.log(\"Execution started\");\n\n// a function\nfunction greeting(name) {\n    console.log('Hello, ' + name);\n}\n\n// a function that takes another function as an argument\nfunction print(callback) {\n    const name = 'Alice';\n    // When you call a function that is passed as an argument, it is referred to as a callback\n    callback(name);\n}\n\n// passing a function as an argument\n// to the setTimeout async function which belongs to Web APIs\nsetTimeout(() => {\n    print(greeting);\n}, 5000);\n\nconsole.log(\"Execution completed\");\n\n//=> Execution started\n//=> Execution completed\n//=> Hello, Alice\n\n```\n"
                     }
                 ]
             },
