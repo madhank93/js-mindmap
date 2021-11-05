@@ -1,8 +1,8 @@
 ---
-name: 🐛 Bug report
-about: Help us fix a mistake in the code.
+name: 🐛 Typo/grammar error
+about: Help us correct a spelling or grammar error in the text.
 title: ""
-labels: "Type: Bug, Priority: Medium, Status: Pending"
+labels: "Type: Typo/grammar, Priority: Medium, Status: Pending"
 assignees: madhank93
 ---
 
@@ -10,7 +10,7 @@ assignees: madhank93
 
 A clear and concise description of what the bug is.
 
-### 🎯 Solution
+### 🎯 Expected behavior
 
 A clear and concise description of what you expected to happen.
 
