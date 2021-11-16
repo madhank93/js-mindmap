@@ -276,7 +276,10 @@ export function generateSimpleModel() {
             {
                 "key": "96d2f138-986b-4286-b6da-755624dba9c4",
                 "parentKey": "e1994f06-f679-4c5f-9197-90f6f2a551e7",
-                "subKeys": [],
+                "subKeys": [
+                    "e94db39f-5a03-4a4c-95ab-dec899802e63",
+                    "8800712b-3d36-41bf-a8d2-a4bdb3b520e5"
+                ],
                 "collapse": false,
                 "style": "{\"contentStyle\":{\"background\":\"#eb7bb2\"}}",
                 "blocks": [
@@ -286,7 +289,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "Promise is an object represents the eventual completion \\(or failure\\) of an asynchronous operation and its resulting value. And it address the callback hell problem, inversion of control.\n\nA _**Promise**_ is in one of these states:\n* pending: initial state, neither fulfilled nor rejected.\n* fulfilled: meaning that the operation was completed successfully.\n* rejected: meaning that the operation failed.\n\n\n```none\n                                            ┌───────────┐                                     \n                                            │   async   │                                     \n                                    ┌──────▶│  actions  │                                     \n                                    │       └───────────┘                                     \n                           settled  │                                                         \n                           ┌────────┴────────┐                                                \n                           │      .then      │                                                \n                     ┌─────▶ (onFulfillment) ├───┐                                            \n                     │     │                 │   │                                            \n                 fulfill   └─────────────────┘   │                                            \n    pending          │                           │                                            \n┌──────────────┐     │                        return      pending                             \n│              │     │                           │   ┌─────────────────┐        ┌────────────┐\n│   Promise    ├─────┤                           │   │                 │        │  .then()   │\n│              │     │                           ├───▶    Promise      ├────────▶  .catch()  │\n└──────────────┘     │                           │   │                 │        │            │\n                  reject                         │   └─────────────────┘        └────────────┘\n                     │     ┌─────────────────┐ return                                         \n                     │     │      .then      │   │                                            \n                     └─────▶  (onRejection)  ├───┘                                            \n                           │     .catch      │                                                \n                           │  (onRejection)  │                                                \n                           └────────┬────────┘                                                \n                                    │                                                         \n                                    │        ┌───────────┐                                    \n                                    │        │   error   │                                    \n                                    └───────▶│ handling  │                                    \n                                             └───────────┘                                    \n\n```\n"
+                        "data": "Promise is an object represents the eventual completion \\(or failure\\) of an asynchronous operation and its resulting value. And it address the callback hell problem, inversion of control.\n\nA **Promise** is in one of these states:\n* **pending**: initial state, neither fulfilled nor rejected.\n* **fulfilled**: meaning that the operation was completed successfully.\n* **rejected**: meaning that the operation failed.\n\n\n```none\n                                            ┌───────────┐                                     \n                                            │   async   │                                     \n                                    ┌──────▶│  actions  │                                     \n                                    │       └───────────┘                                     \n                           settled  │                                                         \n                           ┌────────┴────────┐                                                \n                           │      .then      │                                                \n                     ┌─────▶ (onFulfillment) ├───┐                                            \n                     │     │                 │   │                                            \n                 fulfill   └─────────────────┘   │                                            \n    pending          │                           │                                            \n┌──────────────┐     │                        return      pending                             \n│              │     │                           │   ┌─────────────────┐        ┌────────────┐\n│   Promise    ├─────┤                           │   │                 │        │  .then()   │\n│              │     │                           ├───▶    Promise      ├────────▶  .catch()  │ ... \n└──────────────┘     │                           │   │                 │        │            │\n                  reject                         │   └─────────────────┘        └────────────┘\n                     │     ┌─────────────────┐ return                                         \n                     │     │                 │   │                                            \n                     └─────▶                 ├───┘                                            \n                           │     .catch      │                                                \n                           │  (onRejection)  │                                                \n                           └────────┬────────┘                                                \n                                    │                                                         \n                                    │        ┌───────────┐                                    \n                                    │        │   error   │                                    \n                                    └───────▶│ handling  │                                    \n                                             └───────────┘\n\n```\n\nFor more info,\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Global\\_Objects/Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Guide/Using\\_promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)\n\n"
                     }
                 ]
             },
@@ -792,6 +795,23 @@ export function generateSimpleModel() {
                 ]
             },
             {
+                "key": "07fcbf3d-5e2d-4049-b16a-075a36dea9ec",
+                "parentKey": "49780f87-17f7-4f90-a761-6ddf6ce8e1ca",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Error handling"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "A common callback pattern is called \"error\\-first style\" \\(sometimes called \"Node style,\" as it's also the convention used across nearly all Node.js APIs\\), where the first argument of a single callback is reserved for an error object \\(if any\\). If success, this argument will be empty/falsy \\(and any subsequent arguments will be the success data\\), but if an error result is being signaled, the first argument is set/truthy \\(and usually nothing else is passed\\)\n\n```\n// Example asynchronous function\nfunction asynchronousRequest(args, callback) {\n  // Throw an error if no arguments are passed\n  if (!args) {\n    return callback(new Error('Whoa! Something went wrong.'))\n  } else {\n    return setTimeout(\n      // Just adding in a random number so it seems like the contrived asynchronous function\n      // returned different data\n      () => callback(null, {body: args + ' ' + Math.floor(Math.random() * 10)}),\n      500,\n    )\n  }\n}\n\n// Nested asynchronous requests\nfunction callbackHell() {\n  asynchronousRequest('First', function first(error, response) {\n    if (error) {\n      console.log(error)\n      return\n    }\n    console.log(response.body)\n    asynchronousRequest('Second', function second(error, response) {\n      if (error) {\n        console.log(error)\n        return\n      }\n      console.log(response.body)\n      asynchronousRequest(null, function third(error, response) {\n        if (error) {\n          console.log(error)\n          return\n        }\n        console.log(response.body)\n      })\n    })\n  })\n}\n\n// Execute\ncallbackHell()\n\n```\n"
+                    }
+                ]
+            },
+            {
                 "key": "5830091e-64ee-4015-aeff-f8779fa73582",
                 "parentKey": "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
                 "subKeys": [],
@@ -1079,7 +1099,7 @@ export function generateSimpleModel() {
             },
             {
                 "key": "aea8f33e-b4a3-4139-a406-d5fa77431698",
-                "parentKey": "e1994f06-f679-4c5f-9197-90f6f2a551e7",
+                "parentKey": "49780f87-17f7-4f90-a761-6ddf6ce8e1ca",
                 "subKeys": [],
                 "collapse": false,
                 "style": null,
@@ -1138,6 +1158,23 @@ export function generateSimpleModel() {
                     {
                         "type": "DESC",
                         "data": "1. Was the function called with 'new' ?\n1. Was the fucntion called with 'call' or 'apply' specifying an explicit this ?\n1. Was the function called via a containing/owing object \\(context\\) ?\n1. Default, global object \\(expect strict mode\\)\n\n"
+                    }
+                ]
+            },
+            {
+                "key": "e94db39f-5a03-4a4c-95ab-dec899802e63",
+                "parentKey": "96d2f138-986b-4286-b6da-755624dba9c4",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Creating & \nconsuming"
+                    },
+                    {
+                        "type": "DESC",
+                        "data": "### Creating a Promise\n\nInitialize a promise with the **new Promise** syntax, and you must initialize it with a function. The function that gets passed to a promise has resolve and reject parameters. The resolve and reject functions handle the success and failure of an operation, respectively.\n\nThe function that passed into the **Promise** constructor runs _**synchronously**_, but anything that depends on its resolution will be called _**asynchronously**_. Even if the promise resolves immediately, any handlers will execute asynchronously \\(similar to when you setTimeout\\(fn, 0\\)\\) \\- the main thread runs to the end first.\n\n* **Fulfilled flow**\n\n```\nconsole.log(\"Starting\");\n\nconst test = new Promise((resolve, reject) => {\n    console.log(\"Inside Promise\");\n    const exp = 2 < 4;\n    if (exp) {\n        resolve(\"Completed\");\n        console.log(\"resolve\");\n    } else {\n        reject(\"Failed\");\n        console.log(\"reject\");\n    }\n})\n\ntest.then(result => console.log({ result }))\n    .then(_ => console.log(\"second then\"))\n    .catch(err => console.log({ err }));\n\nconsole.log(\"End\");\n\n//=> Starting\n//=> Inside Promise\n//=> resolve\n//=> End\n//=> { result: 'Completed' }\n//=> second then\n\n```\n* **Rejected flow**\n\n```\nconsole.log(\"Starting\");\n\nconst test = new Promise((resolve, reject) => {\n    console.log(\"Inside Promise\");\n    const exp = 6 < 4;\n    if (exp) {\n        resolve(\"Completed\");\n        console.log(\"resolve\");\n    } else {\n        reject(\"Failed\");\n        console.log(\"reject\");\n    }\n})\n\ntest.then(result => console.log({ result }))\n    .then(_ => console.log(\"second then\"))\n    .catch(err => console.log({ err }));\n\nconsole.log(\"End\");\n\n//=> Starting\n//=> Inside Promise\n//=> reject\n//=> End\n//=> { err: 'Failed' }\n\n```\n\nFor more info,\n* [https://stackoverflow.com/a/49911346/5514320](https://stackoverflow.com/a/49911346/5514320)\n\n"
                     }
                 ]
             },
@@ -1243,7 +1280,6 @@ export function generateSimpleModel() {
                 "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
                 "subKeys": [
                     "49780f87-17f7-4f90-a761-6ddf6ce8e1ca",
-                    "aea8f33e-b4a3-4139-a406-d5fa77431698",
                     "96d2f138-986b-4286-b6da-755624dba9c4"
                 ],
                 "collapse": false,
@@ -1255,7 +1291,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "JS is a **single\\-threaded programming language** with a **synchronous** **execution** model that processes one operation after another, it can only process one statement at a time. However, an action like requesting data from an API can take an indeterminate amount of time, depending on the size of data being requested, the speed of the network connection, and other factors. If API calls were performed in a synchronous manner, the browser would not be able to handle any user input, like scrolling or clicking a button, until that operation completes. This is known as _blocking_.\n\nIn order to prevent blocking behavior, the browser environment has many Web APIs that JavaScript can access that are asynchronous, meaning they can run in parallel with other operations instead of sequentially. This is useful because it allows the user to continue using the browser normally while the asynchronous operations are being processed.\n\nOne such function is **setTimeout** and it belongs to the Web API \\- [https://developer.mozilla.org/en\\-US/docs/Web/API](https://developer.mozilla.org/en-US/docs/Web/API) and Node API \\- [https://nodejs.org/api/all.html](https://nodejs.org/api/all.html)\n\n**Refference**:\n* Tania Rascia \\- [https://www.digitalocean.com/community/tutorials/understanding\\-the\\-event\\-loop\\-callbacks\\-promises\\-and\\-async\\-await\\-in\\-javascript](https://www.digitalocean.com/community/tutorials/understanding-the-event-loop-callbacks-promises-and-async-await-in-javascript)\n\n\n### Concurrency vs Parallelism:\n\n* Concurrency is the task of running and managing the multiple computations at the same time.\n* Parallelism is the task of running multiple computations simultaneously.\n\n\n**JavaScript has a concurrency model based on an event loop.**\n\nFor more details, \n* [http://tutorials.jenkov.com/java\\-concurrency/concurrency\\-vs\\-parallelism.html](http://tutorials.jenkov.com/java-concurrency/concurrency-vs-parallelism.html)\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/EventLoop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)\n\n"
+                        "data": "JS is a **single\\-threaded programming language** with a **synchronous** **execution** model that processes one operation after another, it can only process one statement at a time. However, an action like requesting data from an API can take an indeterminate amount of time, depending on the size of data being requested, the speed of the network connection, and other factors. If API calls were performed in a synchronous manner, the browser would not be able to handle any user input, like scrolling or clicking a button, until that operation completes. This is known as _blocking_.\n\nIn order to prevent blocking behavior, the browser environment has many Web APIs \\(Node APIs\\) that JavaScript can access that are asynchronous, meaning they can run in parallel with other operations instead of sequentially. This is useful because it allows the user to continue using the browser normally while the asynchronous operations are being processed.\n\nOne such function is **setTimeout** and it belongs to the Web API \\- [https://developer.mozilla.org/en\\-US/docs/Web/API](https://developer.mozilla.org/en-US/docs/Web/API) and Node API \\- [https://nodejs.org/api/all.html](https://nodejs.org/api/all.html)\n\n**Refference**:\n* Tania Rascia \\- [https://www.digitalocean.com/community/tutorials/understanding\\-the\\-event\\-loop\\-callbacks\\-promises\\-and\\-async\\-await\\-in\\-javascript](https://www.digitalocean.com/community/tutorials/understanding-the-event-loop-callbacks-promises-and-async-await-in-javascript)\n\n\n### Concurrency vs Parallelism:\n\n* Concurrency is the task of running and managing the multiple computations at the same time.\n* Parallelism is the task of running multiple computations simultaneously.\n\n\n**JavaScript has a concurrency model based on an event loop.**\n\nFor more details, \n* [http://tutorials.jenkov.com/java\\-concurrency/concurrency\\-vs\\-parallelism.html](http://tutorials.jenkov.com/java-concurrency/concurrency-vs-parallelism.html)\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/EventLoop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)\n\n"
                     }
                 ]
             },
@@ -1598,7 +1634,10 @@ export function generateSimpleModel() {
             {
                 "key": "49780f87-17f7-4f90-a761-6ddf6ce8e1ca",
                 "parentKey": "e1994f06-f679-4c5f-9197-90f6f2a551e7",
-                "subKeys": [],
+                "subKeys": [
+                    "07fcbf3d-5e2d-4049-b16a-075a36dea9ec",
+                    "aea8f33e-b4a3-4139-a406-d5fa77431698"
+                ],
                 "collapse": false,
                 "style": null,
                 "blocks": [
@@ -1608,7 +1647,7 @@ export function generateSimpleModel() {
                     },
                     {
                         "type": "DESC",
-                        "data": "A **callback** function is a function passed into another function as an argument, which is then invoked later somepoint in the code.\n\n* **synchronous example**\n\n```\nconsole.log(\"Execution started\");\n\n// a function\nfunction greeting(name) {\n    console.log('Hello, ' + name);\n}\n\n// a function that takes another function as an argument\nfunction print(callback) {\n    const name = 'Alice';\n    // When you call a function that is passed as an argument, it is referred to as a callback\n    callback(name);\n}\n\n// passing a function as an argument\nprint(greeting);\n\nconsole.log(\"Execution completed\");\n\n//=> Execution started\n//=> Hello, Alice\n//=> Execution completed\n\n```\n\n* **asynchronous example**\n\n```\nconsole.log(\"Execution started\");\n\n// a function\nfunction greeting(name) {\n    console.log('Hello, ' + name);\n}\n\n// a function that takes another function as an argument\nfunction print(callback) {\n    const name = 'Alice';\n    // When you call a function that is passed as an argument, it is referred to as a callback\n    callback(name);\n}\n\n// passing a function as an argument\n// to the setTimeout async function which belongs to Web APIs\nsetTimeout(() => {\n    print(greeting);\n}, 5000);\n\nconsole.log(\"Execution completed\");\n\n//=> Execution started\n//=> Execution completed\n//=> Hello, Alice\n\n```\n"
+                        "data": "A **callback** function is a function passed into another function as an argument, which is then invoked later somepoint in the code. Callbacks are one of the way to handle asynchrony in JS.\n\n* **synchronous example**\n\n```\nconsole.log(\"Execution started\");\n\n// a function\nfunction greeting(name) {\n    console.log('Hello, ' + name);\n}\n\n// a function that takes another function as an argument\nfunction print(callback) {\n    const name = 'Alice';\n    // When you call a function that is passed as an argument, it is referred to as a callback\n    callback(name);\n}\n\n// passing a function as an argument\nprint(greeting);\n\nconsole.log(\"Execution completed\");\n\n//=> Execution started\n//=> Hello, Alice\n//=> Execution completed\n\n```\n\n* **asynchronous example**\n\n```\nconsole.log(\"Execution started\");\n\n// a function\nfunction greeting(name) {\n    console.log('Hello, ' + name);\n}\n\n// a function that takes another function as an argument\nfunction print(callback) {\n    const name = 'Alice';\n    // When you call a function that is passed as an argument, it is referred to as a callback\n    callback(name);\n}\n\n// passing a function as an argument\n// to the setTimeout async function which belongs to Web APIs\nsetTimeout(() => {\n    print(greeting);\n}, 5000);\n\nconsole.log(\"Execution completed\");\n\n//=> Execution started\n//=> Execution completed\n//=> Hello, Alice\n\n```\n"
                     }
                 ]
             },
@@ -1808,6 +1847,19 @@ export function generateSimpleModel() {
                     {
                         "type": "CONTENT",
                         "data": ""
+                    }
+                ]
+            },
+            {
+                "key": "8800712b-3d36-41bf-a8d2-a4bdb3b520e5",
+                "parentKey": "96d2f138-986b-4286-b6da-755624dba9c4",
+                "subKeys": [],
+                "collapse": false,
+                "style": null,
+                "blocks": [
+                    {
+                        "type": "CONTENT",
+                        "data": "Error handling"
                     }
                 ]
             },
