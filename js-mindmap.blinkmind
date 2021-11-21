@@ -1,13 +1,19 @@
 {
   "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
   "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-  "focusKey": "96d2f138-986b-4286-b6da-755624dba9c4",
+  "focusKey": "a3a421e7-3427-489e-892c-2342014a2235",
   "extData": {
     "TOPIC_REFERENCE": {
       "reference": {
         "131c9433-90a2-40b8-9e02-b774761c2456": {
           "keyList": [
             "33b684a7-f2aa-41a1-93fb-f5e1e621511d"
+          ],
+          "dataMap": {}
+        },
+        "e1994f06-f679-4c5f-9197-90f6f2a551e7": {
+          "keyList": [
+            "bae54fe2-5e3a-40ec-8f36-4d7df7fd5a33"
           ],
           "dataMap": {}
         }
@@ -267,6 +273,7 @@
       "parentKey": "e1994f06-f679-4c5f-9197-90f6f2a551e7",
       "subKeys": [
         "e94db39f-5a03-4a4c-95ab-dec899802e63",
+        "a3a421e7-3427-489e-892c-2342014a2235",
         "8800712b-3d36-41bf-a8d2-a4bdb3b520e5"
       ],
       "collapse": false,
@@ -1159,11 +1166,11 @@
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "Creating & \nconsuming"
+          "data": "Consuming"
         },
         {
           "type": "DESC",
-          "data": "### Creating a Promise\n\nInitialize a promise with the **new Promise** syntax, and you must initialize it with a function. The function that gets passed to a promise has resolve and reject parameters. The resolve and reject functions handle the success and failure of an operation, respectively.\n\nThe function that passed into the **Promise** constructor runs _**synchronously**_, but anything that depends on its resolution will be called _**asynchronously**_. Even if the promise resolves immediately, any handlers will execute asynchronously \\(similar to when you setTimeout\\(fn, 0\\)\\) \\- the main thread runs to the end first.\n\n* **Fulfilled flow**\n\n```\nconsole.log(\"Starting\");\n\nconst test = new Promise((resolve, reject) => {\n    console.log(\"Inside Promise\");\n    const exp = 2 < 4;\n    if (exp) {\n        resolve(\"Completed\");\n        console.log(\"resolve\");\n    } else {\n        reject(\"Failed\");\n        console.log(\"reject\");\n    }\n})\n\ntest.then(result => console.log({ result }))\n    .then(_ => console.log(\"second then\"))\n    .catch(err => console.log({ err }));\n\nconsole.log(\"End\");\n\n//=> Starting\n//=> Inside Promise\n//=> resolve\n//=> End\n//=> { result: 'Completed' }\n//=> second then\n\n```\n* **Rejected flow**\n\n```\nconsole.log(\"Starting\");\n\nconst test = new Promise((resolve, reject) => {\n    console.log(\"Inside Promise\");\n    const exp = 6 < 4;\n    if (exp) {\n        resolve(\"Completed\");\n        console.log(\"resolve\");\n    } else {\n        reject(\"Failed\");\n        console.log(\"reject\");\n    }\n})\n\ntest.then(result => console.log({ result }))\n    .then(_ => console.log(\"second then\"))\n    .catch(err => console.log({ err }));\n\nconsole.log(\"End\");\n\n//=> Starting\n//=> Inside Promise\n//=> reject\n//=> End\n//=> { err: 'Failed' }\n\n```\n\nFor more info,\n* [https://stackoverflow.com/a/49911346/5514320](https://stackoverflow.com/a/49911346/5514320)\n\n"
+          "data": "A promise is a JavaScript object that will return a value at some point in the future. A pending promise can either be fulfilled with a value or rejected with a reason \\(error\\).\n\nFetch API, a provides a standard way to make server requests with promises.\n\n* promise fulfilled flow\n\n```\nfetch('https://api.github.com/users/octocat')\n    .then((response) => {\n        return response.json()\n    })\n    .then((data) => {\n        console.log(data)\n    })\n    .catch((error) => {\n        console.error(error)\n    })\n\n```\n\n* promise error flow\n\n```\nfetch('https://api.github.com/users/!@#$%')\n    .then((response) => {\n        return response.json()\n    })\n    .then((data) => {\n        console.log(data)\n    })\n    .catch((error) => {\n        console.error(error)\n    })\n\n```\n"
         }
       ]
     },
@@ -2078,6 +2085,23 @@
         {
           "type": "DESC",
           "data": "An **IIFE** \\(Immediately Invoked Function Expression\\) is a JavaScript function that runs as soon as it is defined or as soon as it starts to executes.\n\n**Syntax:**\n```\n(function () {\n  statements\n})();\n\n```\n* The first is the anonymous function with lexical scope enclosed within the Grouping Operator \\(\\). This prevents accessing variables within the IIFE idiom as well as polluting the global scope.\n* The second part creates the immediately invoked function expression \\(\\) through which the JavaScript engine will directly interpret the function.\n\n\n**example 1:**\n```\n(function () {\n    console.log(\"Immediately invoked\") //=> Immediately invoked\n})();\n\n```\n\n**example 2: **Avoid polluting the global namespace\n* If we have some initiation code that we don't need to use again, we could use the IIFE pattern.\n\n```\n(function () {\n  // some initiation code\n  let firstVariable;\n  let secondVariable;\n})();\n\n// firstVariable and secondVariable will be discarded after the function is executed.\n\n```\n\n```\nvar foo = 'foo';\n\n(function () {\n    var foo = 'foo2';\n    console.log(foo); //=> foo2\n})();\n\nconsole.log(foo); //=> foo\n\n```\n\n**example 3: **stack trace\n```\n// Ex 1:\n(function () {\n    throw new Error(\"Exception has occurred\");\n})();\n\n// Error: Exception has occurred\n//     at /Users/git/other/js/test.js:2:11\n//     at Object.<anonymous> (/Users/git/other/js/test.js:3:3)\n//     at Module._compile (node:internal/modules/cjs/loader:1101:14)\n//     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n//     at Module.load (node:internal/modules/cjs/loader:981:32)\n//     at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n//     at node:internal/main/run_main_module:17:47\n\n// Ex 2:\n(function deposit() {\n    throw new Error(\"Exception has occurred\");\n})();\n\n// Error: Exception has occurred\n//     at deposit (/Users/git/other/js/test.js:6:11)\n//     at Object.<anonymous> (/Users/git/other/js/test.js:7:3)\n//     at Module._compile (node:internal/modules/cjs/loader:1101:14)\n//     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n//     at Module.load (node:internal/modules/cjs/loader:981:32)\n//     at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n//     at node:internal/main/run_main_module:17:47\n\n```\nOne of the benefits of creating a named function expression is that in case we encountered an error, the stack trace will contain the name of the function, making it easier to find the origin of the error.\n\nFor more info,\n* [http://benalman.com/news/2010/11/immediately\\-invoked\\-function\\-expression/](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)\n\n"
+        }
+      ]
+    },
+    {
+      "key": "a3a421e7-3427-489e-892c-2342014a2235",
+      "parentKey": "96d2f138-986b-4286-b6da-755624dba9c4",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Creating"
+        },
+        {
+          "type": "DESC",
+          "data": "### Creating a Promise\n\nInitialize a promise with the **new Promise** syntax, and you must initialize it with a function. The function that gets passed to a promise has resolve and reject parameters. The resolve and reject functions handle the success and failure of an operation, respectively.\n\nThe function that passed into the **Promise** constructor runs **synchronously**, but anything that depends on its resolution will be called **asynchronously**. Even if the promise resolves immediately, any handlers will execute asynchronously \\(similar to when you setTimeout\\(fn, 0\\)\\) \\- the main thread runs to the end first.\n\n* **Fulfilled flow**\n\n```\nconsole.log(\"Starting\");\n\nconst test = new Promise((resolve, reject) => {\n    console.log(\"Inside Promise\");\n    const exp = 2 < 4;\n    if (exp) {\n        resolve(\"Completed\");\n        console.log(\"resolve\");\n    } else {\n        reject(\"Failed\");\n        console.log(\"reject\");\n    }\n})\n\ntest.then(result => console.log({ result }))\n    .then(_ => console.log(\"second then\"))\n    .catch(err => console.log({ err }));\n\nconsole.log(\"End\");\n\n//=> Starting\n//=> Inside Promise\n//=> resolve\n//=> End\n//=> { result: 'Completed' }\n//=> second then\n\n```\n\n* **Rejected flow**\n\n```\nconsole.log(\"Starting\");\n\nconst test = new Promise((resolve, reject) => {\n    console.log(\"Inside Promise\");\n    const exp = 6 < 4;\n    if (exp) {\n        resolve(\"Completed\");\n        console.log(\"resolve\");\n    } else {\n        reject(\"Failed\");\n        console.log(\"reject\");\n    }\n})\n\ntest.then(result => console.log({ result }))\n    .then(_ => console.log(\"second then\"))\n    .catch(err => console.log({ err }));\n\nconsole.log(\"End\");\n\n//=> Starting\n//=> Inside Promise\n//=> reject\n//=> End\n//=> { err: 'Failed' }\n\n```\n\nFor more info,\n* [https://stackoverflow.com/a/49911346/5514320](https://stackoverflow.com/a/49911346/5514320)\n\n"
         }
       ]
     },
