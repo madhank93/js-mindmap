@@ -15,3 +15,5 @@ This JS mind map projects uses [Awehook - mind map](https://github.com/awehook/r
 - [Namaste javascript](https://www.youtube.com/playlist?list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP)
 
 - [JS concept visualization workshop by Sanjay vyas](https://conceptvisuals.in/)
+
+- [Tania Rascia](https://www.taniarascia.com/blog)
