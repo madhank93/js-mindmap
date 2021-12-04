@@ -17,3 +17,7 @@ This JS mind map projects uses [Awehook - mind map](https://github.com/awehook/r
 - [JS concept visualization workshop by Sanjay vyas](https://conceptvisuals.in/)
 
 - [Tania Rascia](https://www.taniarascia.com/blog)
+
+- [Lydia Hallie - JS Visualization](https://dev.to/lydiahallie)
+
+If you are someone good at React and would like to contribute to this project. Please help in migrating [Awehook mindmap](https://github.com/awehook/blink-mind), and [Awehook rich markdown editor](https://github.com/awehook/rich-markdown-editor) to latest version.
