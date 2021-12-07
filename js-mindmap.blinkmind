@@ -1,7 +1,7 @@
 {
   "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
   "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-  "focusKey": "a3a421e7-3427-489e-892c-2342014a2235",
+  "focusKey": "017fcdd7-8210-4141-b412-8c71c2f6e6a6",
   "extData": {
     "TOPIC_REFERENCE": {
       "reference": {
@@ -410,7 +410,7 @@
         },
         {
           "type": "DESC",
-          "data": "## Throw\n\n* The **throw** statement throws a user\\-defined exception. Execution of the current function will stop \\(the statements after throw won't be executed\\), and control will be passed to the first catch block in the call stack. If no catch block exists among caller functions, the program will terminate.\n\n\n**Syntax:**\n```\nthrow expression;\n\n```\n\n**example 1:**\n```\nthrow 'Error2'; // generates an exception with a string value\nthrow 42;       // generates an exception with the value 42\nthrow true;     // generates an exception with the value true\n\n```\n\n**example 2:**\n```\nfunction getRectArea(width, height) {\n    if (isNaN(width) || isNaN(height)) {\n        throw 'Parameter is not a number!';\n    }\n}\n\ntry {\n    getRectArea(3, 'A');\n} catch (e) {\n    console.error(e); //=> Parameter is not a number!\n}\n\n```\n\n## Error\n\n* **Error** objects are thrown when runtime errors occur. The Error object can also be used as a base object for user\\-defined exceptions.\n\n\n**example**\n* Throwing a generic error\n\n```\ntry {\n  throw new Error('Whoops!')\n} catch (e) {\n  console.error(e.name + ': ' + e.message) //=> Error: Whoops!\n}\n\n```\n\n* Handling a specific error type\n\n```\ntry {\n    foo.bar()\n} catch (e) {\n    if (e instanceof EvalError) {\n        console.error(e.name + ': ' + e.message)\n    } else if (e instanceof RangeError) {\n        console.error(e.name + ': ' + e.message)\n    }\n    else {\n        // If none of our cases matched leave the Error unhandled\n        throw e;\n    }\n}\n\nResult:\n\nfile:///Users/execption.js:2\nfoo.bar()\n^\n\nReferenceError: foo is not defined\nat file:///Users/execption.js:2:5\nat ModuleJob.run (node:internal/modules/esm/module_job:183:25)\nat async Loader.import (node:internal/modules/esm/loader:178:24)\nat async Object.loadESM (node:internal/process/esm_loader:68:5)\nat async handleMainPromise (node:internal/modules/run_main:63:12)\n\n\n```\n\n* Custom Error Class\n\n```\nclass CustomError extends Error {\n    constructor(foo = 'bar', ...params) {\n        // Pass remaining arguments (including vendor specific ones) to parent constructor\n        super(...params)\n\n        // Maintains proper stack trace for where our error was thrown (only available on V8)\n        if (Error.captureStackTrace) {\n            Error.captureStackTrace(this, CustomError)\n        }\n\n        this.name = 'CustomError'\n        // Custom debugging information\n        this.foo = foo\n        this.date = new Date()\n    }\n}\n\ntry {\n    throw new CustomError('baz', 'bazMessage')\n} catch (e) {\n    console.error(e.name)    //=> CustomError\n    console.error(e.foo)     //=> baz\n    console.error(e.message) //=> bazMessage\n    console.error(e.stack)   //=> stacktrace\n}\n\n```\n\nFor more info,\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Global\\_Objects/Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)\n\n"
+          "data": "## Throw\n\n* The **throw** statement throws a user\\-defined exception. Execution of the current function will stop \\(the statements after throw won't be executed\\), and control will be passed to the first catch block in the call stack. If no catch block exists among caller functions, the program will terminate.\n\n\n**Syntax:**\n```\nthrow expression;\n\n```\n\n**example 1:**\n```\nthrow 'Error2'; // generates an exception with a string value\nthrow 42;       // generates an exception with the value 42\nthrow true;     // generates an exception with the value true\n\n```\n\n**example 2:**\n```\nfunction getRectArea(width, height) {\n    if (isNaN(width) || isNaN(height)) {\n        throw 'Parameter is not a number!';\n    }\n}\n\ntry {\n    getRectArea(3, 'A');\n} catch (e) {\n    console.error(e); //=> Parameter is not a number!\n}\n\n```\n\n## Error\n\n* **Error** objects are thrown when runtime errors occur. The Error object can also be used as a base object for user\\-defined exceptions.\n\n\n**example**\n* Throwing a generic error\n\n```\ntry {\n  throw new Error('Whoops!')\n} catch (e) {\n  console.error(e.name + ': ' + e.message) //=> Error: Whoops!\n}\n\n```\n\n* Handling a specific error type\n\n```\ntry {\n    foo.bar()\n} catch (e) {\n    if (e instanceof EvalError) {\n        console.error(e.name + ': ' + e.message)\n    } else if (e instanceof RangeError) {\n        console.error(e.name + ': ' + e.message)\n    }\n    else {\n        // If none of our cases matched leave the Error unhandled\n        throw e;\n    }\n}\n\nResult:\n\nfile:///Users/execption.js:2\nfoo.bar()\n^\n\nReferenceError: foo is not defined\nat file:///Users/execption.js:2:5\nat ModuleJob.run (node:internal/modules/esm/module_job:183:25)\nat async Loader.import (node:internal/modules/esm/loader:178:24)\nat async Object.loadESM (node:internal/process/esm_loader:68:5)\nat async handleMainPromise (node:internal/modules/run_main:63:12)\n\n```\n\n* Custom Error Class\n\n```\nclass CustomError extends Error {\n    constructor(foo = 'bar', ...params) {\n        // Pass remaining arguments (including vendor specific ones) to parent constructor\n        super(...params)\n\n        // Maintains proper stack trace for where our error was thrown (only available on V8)\n        if (Error.captureStackTrace) {\n            Error.captureStackTrace(this, CustomError)\n        }\n\n        this.name = 'CustomError'\n        // Custom debugging information\n        this.foo = foo\n        this.date = new Date()\n    }\n}\n\ntry {\n    throw new CustomError('baz', 'bazMessage')\n} catch (e) {\n    console.error(e.name)    //=> CustomError\n    console.error(e.foo)     //=> baz\n    console.error(e.message) //=> bazMessage\n    console.error(e.stack)   //=> stacktrace\n}\n\n```\n\nFor more info,\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Global\\_Objects/Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)\n\n"
         }
       ]
     },
@@ -672,7 +672,7 @@
         },
         {
           "type": "DESC",
-          "data": "Another rule to consider is, if the call\\-site have a context object, also referred to as an owning or containing object, in other wrords if the function is attached to an object \\(its context\\) at the call site. Then the implicit binding rule says that it's _that_ object which should be used for the function call's _**this**_ binding\\.\n\n* example 1\n\n```\nfunction foo() {\n    console.log(this.bar);\n}\n\nvar obj1 = { bar: 'bar 1', foo: foo };\nvar obj2 = { bar: 'bar 2', foo: foo };\n\nobj1.foo(); //=> bar 1\nobj2.foo(); //=> bar 2\n\n```\n\n* example 2\n\n```\nvar obj1 = {\n    bar: 'bar 1',\n    foo: function () {\n        console.log(this.bar);\n    }\n}\n\nvar obj2 = { bar: 'bar 2', foo: obj1.foo };\nvar obj3 = { bar: 'bar 3', foo: obj2.foo };\nvar obj4 = { bar: 'bar 3', obj2: obj2 };\n\nobj1.foo(); //=> bar 1\nobj2.foo(); //=> bar 2\nobj3.foo(); //=> bar 3\nobj4.obj2.foo(); //=> bar 2 `top/last level of an object property reference chain matters to the call-site`\n\n```\n\n**_Note_**_: _One way to figure out which object _**this**_ is bound to is to look at which object is to the **_left_** of the dot operator \\(**.**\\)"
+          "data": "Another rule to consider is, if the call\\-site have a context object, also referred to as an owning or containing object, in other wrords if the function is attached to an object \\(its context\\) at the call site. Then the implicit binding rule says that it's _that_ object which should be used for the function call's **this** binding\\.\n\n* example 1\n\n```\nfunction foo() {\n    console.log(this.bar);\n}\n\nvar obj1 = { bar: 'bar 1', foo: foo };\nvar obj2 = { bar: 'bar 2', foo: foo };\n\nobj1.foo(); //=> bar 1\nobj2.foo(); //=> bar 2\n\n```\n\n* example 2\n\n```\nvar obj1 = {\n    bar: 'bar 1',\n    foo: function () {\n        console.log(this.bar);\n    }\n}\n\nvar obj2 = { bar: 'bar 2', foo: obj1.foo };\nvar obj3 = { bar: 'bar 3', foo: obj2.foo };\nvar obj4 = { bar: 'bar 3', obj2: obj2 };\n\nobj1.foo(); //=> bar 1\nobj2.foo(); //=> bar 2\nobj3.foo(); //=> bar 3\nobj4.obj2.foo(); //=> bar 2 `top/last level of an object property reference chain matters to the call-site`\n\n```\n\n_Note: \\_One way to figure out which object _**this**_ is bound to is to look at which object is to the \\*\\*\\_left_** of the dot operator \\(**.\\*\\*\\)"
         }
       ]
     },
@@ -1077,6 +1077,19 @@
       ]
     },
     {
+      "key": "a405dd09-5977-4ac7-9823-fbc6cc2a630f",
+      "parentKey": "e1994f06-f679-4c5f-9197-90f6f2a551e7",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "async /\nawait"
+        }
+      ]
+    },
+    {
       "key": "35cf3ece-a21e-4a8e-a8f8-d2b24a2b742d",
       "parentKey": "08aaf5bf-5222-4d4c-bd8d-2267d2f81433",
       "subKeys": [],
@@ -1276,14 +1289,15 @@
       "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
       "subKeys": [
         "49780f87-17f7-4f90-a761-6ddf6ce8e1ca",
-        "96d2f138-986b-4286-b6da-755624dba9c4"
+        "96d2f138-986b-4286-b6da-755624dba9c4",
+        "a405dd09-5977-4ac7-9823-fbc6cc2a630f"
       ],
       "collapse": false,
       "style": null,
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "callback &\npromises &\nasync"
+          "data": "callback &\npromises &\nasync/await"
         },
         {
           "type": "DESC",
@@ -1304,14 +1318,16 @@
         },
         {
           "type": "DESC",
-          "data": "* The _**try**_ statement consists of a _**try\\-block**_, which contains one or more statements. _\\{\\} _must always be used, even for single statements. \n\n\n* A _**catch\\-block**_ contains statements that specify what to do if an exception is thrown in the try\\-block. If any statement within the try\\-block \\(or in a function called from within the try\\-block\\) throws an exception, control is immediately shifted to the catch\\-block. If no exception is thrown in the try\\-block, the catch\\-block is skipped.\n\n\n* The _**finally\\-block**_ will always execute after the try\\-block and catch\\-block\\(s\\) have finished executing. It always executes, regardless of whether an exception was thrown or caught.\n\n\nAt least one catch\\-block, or a finally\\-block, must be present. This gives us three forms for the try statement:\n* try\\...catch\n* try\\...finally\n* try\\...catch...finally\n\n\n\n### try\\...catch\n\n* When a catch\\-block is used, the catch\\-block is executed when any exception is thrown from within the try\\-block.\n\n```\ntry {\n    throw new Error('myException'); // generates an exception\n} catch (e) {\n    console.error(e);\n}\n\n```\n\n### try\\...finally\n\n* the finally\\-block executes regardless of whether an exception is thrown\n\n```\ntry {\n    console.log(\"Opening a file and doing some operations\");\n} finally {\n    console.log(\"Closing all the files and used resources\");\n}\n\n```\n\n\n### try\\...catch...finally\n\n```\ntry {\n    console.log('try');\n    BAD_CODE();\n} catch (err) {\n    console.error('catch');\n} finally {\n    console.log('finally');\n}\n\n```\n\nFor more info,\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Statements/try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)\n\n"
+          "data": "* The **try** statement consists of a **try\\-block**, which contains one or more statements. \\_\\{\\} \\_must always be used, even for single statements. \n\n\n* A **catch\\-block** contains statements that specify what to do if an exception is thrown in the try\\-block. If any statement within the try\\-block \\(or in a function called from within the try\\-block\\) throws an exception, control is immediately shifted to the catch\\-block. If no exception is thrown in the try\\-block, the catch\\-block is skipped.\n\n\n* The **finally\\-block** will always execute after the try\\-block and catch\\-block\\(s\\) have finished executing. It always executes, regardless of whether an exception was thrown or caught.\n\n\nAt least one catch\\-block, or a finally\\-block, must be present. This gives us three forms for the try statement:\n* try\\...catch\n* try\\...finally\n* try\\...catch...finally\n\n\n\n### try\\...catch\n\n* When a catch\\-block is used, the catch\\-block is executed when any exception is thrown from within the try\\-block.\n\n```\ntry {\n    throw new Error('myException'); // generates an exception\n} catch (e) {\n    console.error(e);\n}\n\n```\n\n### try\\...finally\n\n* the finally\\-block executes regardless of whether an exception is thrown\n\n```\ntry {\n    console.log(\"Opening a file and doing some operations\");\n} finally {\n    console.log(\"Closing all the files and used resources\");\n}\n\n```\n\n\n### try\\...catch...finally\n\n```\ntry {\n    console.log('try');\n    BAD_CODE();\n} catch (err) {\n    console.error('catch');\n} finally {\n    console.log('finally');\n}\n\n```\n\nFor more info,\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Statements/try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)\n\n"
         }
       ]
     },
     {
       "key": "bae54fe2-5e3a-40ec-8f36-4d7df7fd5a33",
       "parentKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-      "subKeys": [],
+      "subKeys": [
+        "017fcdd7-8210-4141-b412-8c71c2f6e6a6"
+      ],
       "collapse": false,
       "style": null,
       "blocks": [
@@ -1321,7 +1337,7 @@
         },
         {
           "type": "DESC",
-          "data": "JS is a **single\\-threaded programming language** with a **synchronous** **execution** model that processes one operation after another, it can only process one statement at a time.\n\nThe event loop is what allows to perform non\\-blocking I/O operations — despite the fact that JavaScript is single\\-threaded.\n\nFor more info refer,\n* [https://www.youtube.com/watch?v=8aGhZQkoFbQ](https://www.youtube.com/watch?v=8aGhZQkoFbQ)\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/EventLoop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)\n* [https://nodejs.org/en/docs/guides/event\\-loop\\-timers\\-and\\-nexttick/](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/)\n\n"
+          "data": "JS is a **single\\-threaded programming language** with a **synchronous** **execution** model that processes one operation after another, it can only process one statement at a time.\n\nThe event loop is what allows to perform non\\-blocking I/O operations — despite the fact that JavaScript is single\\-threaded.\n\n* **Call Stack** \\- A call stack is a stack data structure that stores information about all the operations in line to be executed. \n   * When a script calls a function, the interpreter adds it to the call stack and then starts carrying out the function.\n   * Any functions that are called by that function are added to the call stack further up, and run where their calls are reached.\n   * When the current function is finished, the interpreter takes it off the stack and resumes execution where it left off in the last code listing.\n* **Heap \\- **it is a memory where the objects are located\n* **Queue \\- **Async code is added to the queue and waiting to be executed\n* **Event loop \\- **it constantly checks whether or not the _**call stack**_ is empty \\(all previously invoked functions have returned their values and have been popped off the stack\\). If it is empty, new functions are added from the  _**queue**_. In simple words, event loop job is to look at the stack and look at the queue. If the stack is empty, it takes the first thing on the queue and pushed it on to the stack.\n\n\n\nFor more info refer,\n* [https://www.youtube.com/watch?v=8aGhZQkoFbQ](https://www.youtube.com/watch?v=8aGhZQkoFbQ)\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/EventLoop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)\n* [https://nodejs.org/en/docs/guides/event\\-loop\\-timers\\-and\\-nexttick/](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/)\n* [https://dev.to/lydiahallie/javascript\\-visualized\\-event\\-loop\\-3dif](https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif)\n* [https://jakearchibald.com/2015/tasks\\-microtasks\\-queues\\-and\\-schedules/](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)\n\n"
         }
       ]
     },
@@ -1856,6 +1872,10 @@
         {
           "type": "CONTENT",
           "data": "Error handling"
+        },
+        {
+          "type": "DESC",
+          "data": "When a promise rejects, the control jumps to the closest rejection handler **catch\\(\\)**.\n\n* example 1\n\n```\nfetch('https://no-such-server.blabla')\n  .then(response => response.json())\n  .catch(err => console.log(err)) //=> TypeError: Failed to fetch\n\n```\n\n* implicit error handling \\- code of a promise executor and promise handlers has an \"invisible try..catch\"\n\n```\nconst result = new Promise(function (resolve, reject) {\n  throw new Error(\"Whoops!\");\n})\n  .then((sucess) => console.log(sucess))\n  .catch((val) => console.log(val.message)); //=> Whoops!\n\n```\n\nRe\\-written the above code using 'reject'\n```\nconst result = new Promise(function (resolve, reject) {\n  reject(new Error(\"Whoops!\"));\n})\n  .then((sucess) => console.log(sucess))\n  .catch((val) => console.log(val.message)); //=> Whoops!\n\n```\n\n* chaining the methods\n\n```\nlet p1 = new Promise(function (resolve, reject) {\n  resolve(\"Success\");\n});\n\np1.then(function (value) {\n  console.log(value);\n  throw new Error(\"oh, no!\");\n})\n  .catch(function (e) {\n    console.error(e.message);\n  })\n  .then(function () {\n    console.log(\"after a catch the chain is restored\");\n  });\n\n//=> Success\n//=> oh, no!\n//=> after a catch the chain is restored\n\n```\n\n\n### Gotchas when throwing errors\n\n* Errors thrown inside asynchronous functions will act like uncaught errors\n\n```\nlet p2 = new Promise(function (resolve, reject) {\n  setTimeout(function () {\n    throw new Error(\"Uncaught Exception!\");\n  }, 1000);\n});\n\np2.catch(function (e) {\n  console.error(\"Caught the error\"); // This is never called\n});\n\n```\n\n* Errors thrown after resolve is called will be silenced\n\n```\n// Errors thrown after resolve is called will be silenced\nlet p3 = new Promise(function (resolve, reject) {\n  resolve();\n  throw new Error(\"Silenced Exception!\");\n});\n\np3.catch(function (e) {\n  console.error(e); // This is never called\n});\n\n```\n"
         }
       ]
     },
@@ -2085,6 +2105,23 @@
         {
           "type": "DESC",
           "data": "An **IIFE** \\(Immediately Invoked Function Expression\\) is a JavaScript function that runs as soon as it is defined or as soon as it starts to executes.\n\n**Syntax:**\n```\n(function () {\n  statements\n})();\n\n```\n* The first is the anonymous function with lexical scope enclosed within the Grouping Operator \\(\\). This prevents accessing variables within the IIFE idiom as well as polluting the global scope.\n* The second part creates the immediately invoked function expression \\(\\) through which the JavaScript engine will directly interpret the function.\n\n\n**example 1:**\n```\n(function () {\n    console.log(\"Immediately invoked\") //=> Immediately invoked\n})();\n\n```\n\n**example 2: **Avoid polluting the global namespace\n* If we have some initiation code that we don't need to use again, we could use the IIFE pattern.\n\n```\n(function () {\n  // some initiation code\n  let firstVariable;\n  let secondVariable;\n})();\n\n// firstVariable and secondVariable will be discarded after the function is executed.\n\n```\n\n```\nvar foo = 'foo';\n\n(function () {\n    var foo = 'foo2';\n    console.log(foo); //=> foo2\n})();\n\nconsole.log(foo); //=> foo\n\n```\n\n**example 3: **stack trace\n```\n// Ex 1:\n(function () {\n    throw new Error(\"Exception has occurred\");\n})();\n\n// Error: Exception has occurred\n//     at /Users/git/other/js/test.js:2:11\n//     at Object.<anonymous> (/Users/git/other/js/test.js:3:3)\n//     at Module._compile (node:internal/modules/cjs/loader:1101:14)\n//     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n//     at Module.load (node:internal/modules/cjs/loader:981:32)\n//     at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n//     at node:internal/main/run_main_module:17:47\n\n// Ex 2:\n(function deposit() {\n    throw new Error(\"Exception has occurred\");\n})();\n\n// Error: Exception has occurred\n//     at deposit (/Users/git/other/js/test.js:6:11)\n//     at Object.<anonymous> (/Users/git/other/js/test.js:7:3)\n//     at Module._compile (node:internal/modules/cjs/loader:1101:14)\n//     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n//     at Module.load (node:internal/modules/cjs/loader:981:32)\n//     at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)\n//     at node:internal/main/run_main_module:17:47\n\n```\nOne of the benefits of creating a named function expression is that in case we encountered an error, the stack trace will contain the name of the function, making it easier to find the origin of the error.\n\nFor more info,\n* [http://benalman.com/news/2010/11/immediately\\-invoked\\-function\\-expression/](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)\n\n"
+        }
+      ]
+    },
+    {
+      "key": "017fcdd7-8210-4141-b412-8c71c2f6e6a6",
+      "parentKey": "bae54fe2-5e3a-40ec-8f36-4d7df7fd5a33",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Tasks (macro tasks) /\nMicro tasks"
+        },
+        {
+          "type": "DESC",
+          "data": "**\\(macro\\)Task queue:**\n\n\n**Microtasks:**\n\n| **\\(Macro\\)task** | setTimeout \\| setInterval \\| setImmediate |\n|:--- |:--- |\n| **Microtask** | process\\.nextTick \\| Promise callback \\| queueMicrotask |\n"
         }
       ]
     },
