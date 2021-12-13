@@ -11,7 +11,7 @@ export function generateSimpleModel() {
   return Model.create({
     rootTopicKey: "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
     editorRootTopicKey: "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-    focusKey: "017fcdd7-8210-4141-b412-8c71c2f6e6a6",
+    focusKey: "d051afcf-8e00-4760-8d65-783421039068",
     extData: {
       TOPIC_REFERENCE: {
         reference: {
@@ -283,6 +283,7 @@ export function generateSimpleModel() {
           "e94db39f-5a03-4a4c-95ab-dec899802e63",
           "a3a421e7-3427-489e-892c-2342014a2235",
           "8800712b-3d36-41bf-a8d2-a4bdb3b520e5",
+          "9a4cffea-7c9c-428d-8b2f-14e22805be6e",
         ],
         collapse: false,
         style: '{"contentStyle":{"background":"#eb7bb2"}}',
@@ -1114,6 +1115,11 @@ export function generateSimpleModel() {
             type: "CONTENT",
             data: "async /\nawait",
           },
+          {
+            type: "DESC",
+            data:
+              'The keywords aysnc and await makes working with promises easier.\n\n### async keyword\n\n* The keyword async before a function makes the function return a promise.\n\n```\nfunction myFunc() {\n  return Promise.resolve("Hello, world");\n}\n\n// rewriting the above method using async keyword\n\nasync function myFunc() {\n  return "Hello, world";\n}\n\nmyFunc().then((val) => console.log(val)); //=> "Hello, world"\n\n```\n\n* Using async keyword in arrow function\n\n```\nlet myFunc = async () => "Hello, world";\n\nmyFunc().then((val) => console.log(val)); //=> Hello, world\n\n```\n\n### await keyword\n\n* The** **keyword **await **can be put in front of any async promise\\-based function to pause your code on that line until the promise fulfills, then return the resulting value.\n\n```\nconst one = () => Promise.resolve("One");\n\nasync function myFunc() {\n  console.log("In function");\n  const res = await one();\n  console.log(res);\n}\n\nconsole.log("Before function");\nmyFunc();\nconsole.log("After function");\n\n//=> Before function\n//=> In function\n//=> After function\n//=> One\n\n```\n\n```\nfunction resolveAfter2Seconds() {\n  return new Promise((resolve) => {\n    setTimeout(() => {\n      resolve("resolved");\n    }, 2000);\n  });\n}\n\nasync function asyncCall() {\n  console.log("Start");\n  const result = await resolveAfter2Seconds();\n  console.log(result);\n  console.log("End");\n}\n\nasyncCall();\n\n//=> Start\n//=> resolved\n//=> End\n\n```\n* Usage of await keyword can only be used inside an async function. \n\n```\nconst one = () => Promise.resolve("One");\n\nconst res = await one();\nconsole.log(res);\n\n//=> SyntaxError: await is only valid in async functions and the top level bodies of modules\n\n```\n\n### Error handling\n\nFor more info,\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Statements/async\\_function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)\n\n',
+          },
         ],
       },
       {
@@ -1375,7 +1381,7 @@ export function generateSimpleModel() {
           {
             type: "DESC",
             data:
-              "JS is a **single\\-threaded programming language** with a **synchronous** **execution** model that processes one operation after another, it can only process one statement at a time.\n\nThe event loop is what allows to perform non\\-blocking I/O operations — despite the fact that JavaScript is single\\-threaded.\n\n* **Call Stack** \\- A call stack is a stack data structure that stores information about all the operations in line to be executed. \n   * When a script calls a function, the interpreter adds it to the call stack and then starts carrying out the function.\n   * Any functions that are called by that function are added to the call stack further up, and run where their calls are reached.\n   * When the current function is finished, the interpreter takes it off the stack and resumes execution where it left off in the last code listing.\n* **Heap \\- **it is a memory where the objects are located\n* **Queue \\- **Async code is added to the queue and waiting to be executed\n* **Event loop \\- **it constantly checks whether or not the _**call stack**_ is empty \\(all previously invoked functions have returned their values and have been popped off the stack\\). If it is empty, new functions are added from the  _**queue**_. In simple words, event loop job is to look at the stack and look at the queue. If the stack is empty, it takes the first thing on the queue and pushed it on to the stack.\n\n\n\nFor more info refer,\n* [https://www.youtube.com/watch?v=8aGhZQkoFbQ](https://www.youtube.com/watch?v=8aGhZQkoFbQ)\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/EventLoop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)\n* [https://nodejs.org/en/docs/guides/event\\-loop\\-timers\\-and\\-nexttick/](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/)\n* [https://dev.to/lydiahallie/javascript\\-visualized\\-event\\-loop\\-3dif](https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif)\n* [https://jakearchibald.com/2015/tasks\\-microtasks\\-queues\\-and\\-schedules/](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)\n\n",
+              "JS is a **single\\-threaded programming language** with a **synchronous** **execution** model that processes one operation after another, it can only process one statement at a time.\n\nThe event loop is what allows to perform non\\-blocking I/O operations — despite the fact that JavaScript is single\\-threaded.\n\n* **Call Stack** \\- A call stack is a stack data structure that stores information about all the operations in line to be executed. \n   * When a script calls a function, the interpreter adds it to the call stack and then starts carrying out the function.\n   * Any functions that are called by that function are added to the call stack further up, and run where their calls are reached.\n   * When the current function is finished, the interpreter takes it off the stack and resumes execution where it left off in the last code listing.\n* **Heap \\- **it is a memory where the objects are located\n* **Queue \\- **Async code is added to the queue and waiting to be executed\n* **Event loop \\- **it constantly checks whether or not the **call stack** is empty \\(all previously invoked functions have returned their values and have been popped off the stack\\). If it is empty, new functions are added from the  **queue**. In simple words, event loop job is to look at the stack and look at the queue. If the stack is empty, it takes the first thing on the queue and pushed it on to the stack.\n\n\n\nFor more info refer,\n* [https://www.youtube.com/watch?v=8aGhZQkoFbQ](https://www.youtube.com/watch?v=8aGhZQkoFbQ)\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/EventLoop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)\n* [https://nodejs.org/en/docs/guides/event\\-loop\\-timers\\-and\\-nexttick/](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/)\n* [https://dev.to/lydiahallie/javascript\\-visualized\\-event\\-loop\\-3dif](https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif)\n* [https://jakearchibald.com/2015/tasks\\-microtasks\\-queues\\-and\\-schedules/](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)\n\n",
           },
         ],
       },
@@ -1402,6 +1408,11 @@ export function generateSimpleModel() {
           {
             type: "CONTENT",
             data: "Classes",
+          },
+          {
+            type: "DESC",
+            data:
+              'Classes are a template for creating objects. They encapsulate state \\(variables or attributes\\), and implementations of behavior \\(functions or methods\\).\n\n* **Class declarations**\n\n```\nclass Dog {\n  constructor(name, breed) {\n    this.name = name;\n    this.breed = breed;\n  }\n\n  // public methods\n  bark() {\n    console.log("vov-vov");\n  }\n\n  myself() {\n    console.log(`My name is ${this.name} and I am ${this.breed}`);\n  }\n}\n\nlet snow = new Dog("Snow", "Samoyed");\nsnow.bark(); //=> vov-vov\nsnow.myself(); //=> My name is Snow and I am Samoyed\n\n```\n\n* **Class expression** \\- Just like functions, classes can be defined inside another expression, passed around, returned, assigned, etc.\n\n```\nlet User = class {\n  sayHi() {\n    console.log("Hello");\n  }\n};\n\n// named class expression\n// If a class expression has a name, it’s visible inside the class only.\nlet User1 = class MyClass{\n  sayHi() {\n    console.log("Hello");\n  }\n};\n\nnew User().sayHi(); //=> Hello\nnew User1().sayHi(); //=> Hello\n\n```\n\n* **Getters/Setters \\- **it is** **a mutator method used to control changes to a variable. , a getter method returns its value while a setter method sets or updates its value\n\n```\nclass User {\n  constructor(name) {\n    // invokes the setter\n    this.name = name;\n  }\n\n  get name() {\n    return this.userName;\n  }\n\n  set name(value) {\n    if (value.length < 4) {\n      console.log("Name is too short.");\n      return;\n    }\n    this.userName = value;\n  }\n}\n\nlet user = new User("John");\nconsole.log(user.name); //=> John\n\n```\n\n* **Static properties and methods \\- t**he static keyword defines a static method or property for a class. Static members \\(properties and methods\\) are called without instantiating their class and cannot be called through a class instance.\n\n```\nclass StaticClass {\n  static prop1 = "Property 1";\n  static sum(a, b) {\n    return a + b;\n  }\n}\n\nconsole.log(StaticClass.prop1); //=> Property 1\nconsole.log(StaticClass.sum(5, 10)); //=> 15\n\nlet obj = new StaticClass();\n\nconsole.log(obj.prop1); //=> undefined\nconsole.log(obj.sum(5, 5)); //=> TypeError: obj.sum is not a function\n\n```\n\n* **Static blocks \\- **static blocks** **allows initialization of static properties\n\n```\nclass StaticBlock {\n  static prop1 = "Property 1";\n  static prop2;\n  static {\n    this.prop2 = "Property 2";\n  }\n}\n\nconsole.log(StaticBlock.prop1); //=> Property 1\nconsole.log(StaticBlock.prop2); //=> Property 2\n\n```\n\n* **Private properties and methods \\- \\# **is a special sign that the field is private. We can’t access it from outside or from inheriting classes\n\n```\nclass CoffeeMachine {\n  #waterLimit = 200;\n\n  #fixWaterAmount(value) {\n    if (value < 0) return 0;\n    if (value > this.#waterLimit) return this.#waterLimit;\n  }\n\n  setWaterAmount(value) {\n    this.#waterLimit = this.#fixWaterAmount(value);\n  }\n}\n\nlet coffeeMachine = new CoffeeMachine();\n\n// can\'t access privates from outside of the class\ncoffeeMachine.#fixWaterAmount(123); // Error\ncoffeeMachine.#waterLimit = 1000; // Error\n\n```\n\nFor more info,\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)\n\n',
           },
         ],
       },
@@ -1628,6 +1639,19 @@ export function generateSimpleModel() {
         ],
       },
       {
+        key: "c0f4ceaf-ab29-436f-a206-b94b2ff0bc54",
+        parentKey: "9a4cffea-7c9c-428d-8b2f-14e22805be6e",
+        subKeys: [],
+        collapse: false,
+        style: null,
+        blocks: [
+          {
+            type: "CONTENT",
+            data: "",
+          },
+        ],
+      },
+      {
         key: "ebc9a270-2a40-4a5c-bf55-79f90cd5f8ce",
         parentKey: "dc0c93cb-0c05-40a0-9bd6-e6c1870c5613",
         subKeys: [],
@@ -1765,6 +1789,19 @@ export function generateSimpleModel() {
             type: "DESC",
             data:
               '**Object** is a collection of properties, and a property is an association between a name \\(or key\\) and a value. It is used to store keyed collections of various data and more complex entities.\n\nAn object can be created with figure brackets **\\{…\\}** with an optional list of properties. A property is a “key: value” pair, where **key** is a string \\(also called a “property name”\\), and **value** can be anything.\n\n**example**\n```\nlet user = {     // an object\n  name: "John",  // by key "name" store value "John"\n  age: 30        // by key "age" store value 30\n};\n\n```\n',
+          },
+        ],
+      },
+      {
+        key: "9a4cffea-7c9c-428d-8b2f-14e22805be6e",
+        parentKey: "96d2f138-986b-4286-b6da-755624dba9c4",
+        subKeys: ["c0f4ceaf-ab29-436f-a206-b94b2ff0bc54"],
+        collapse: true,
+        style: null,
+        blocks: [
+          {
+            type: "CONTENT",
+            data: "Promise\nAPI",
           },
         ],
       },
@@ -1964,6 +2001,10 @@ export function generateSimpleModel() {
           {
             type: "CONTENT",
             data: "Building\nblocks",
+          },
+          {
+            type: "DESC",
+            data: "",
           },
         ],
       },
@@ -2173,12 +2214,12 @@ export function generateSimpleModel() {
         blocks: [
           {
             type: "CONTENT",
-            data: "Tasks (macro tasks) /\nMicro tasks",
+            data: " Tasks (macro tasks) /\nMicro tasks",
           },
           {
             type: "DESC",
             data:
-              "**\\(macro\\)Task queue:**\n\n\n**Microtasks:**\n\n| **\\(Macro\\)task** | setTimeout \\| setInterval \\| setImmediate |\n|:--- |:--- |\n| **Microtask** | process\\.nextTick \\| Promise callback \\| queueMicrotask |\n",
+              '**\\(macro\\)Task queue:**\n All async operations with higher priorit\n\n**Microtasks:**\nAll async operations with lower prior\n| **\\(Macro\\)task** | setTimeout \\| setInterval \\| setImmediate |\n|:--- |:--- |\n| **Microtask** | process\\.nextTick \\| Promise callback \\| queueMicrotask |\n\n* Order of execution\n\n```\nconsole.log("Start");\nsetTimeout(() => console.log("Set timeout completed"), 0);\nPromise.resolve("Promise completed").then((val) => console.log(val));\nconsole.log("End");\n\n//=> Start\n//=> End\n//=> Promise completed\n//=> Set timeout completed\n\n```\n',
           },
         ],
       },
