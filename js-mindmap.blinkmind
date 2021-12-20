@@ -1,7 +1,7 @@
 {
   "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
   "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-  "focusKey": "d051afcf-8e00-4760-8d65-783421039068",
+  "focusKey": "31aa7d3d-f836-4d0f-8704-6606fb0a1577",
   "extData": {
     "TOPIC_REFERENCE": {
       "reference": {
@@ -51,6 +51,10 @@
         {
           "type": "CONTENT",
           "data": "Abstraction"
+        },
+        {
+          "type": "DESC",
+          "data": "**Abstraction** is a way to reduce complexity. It hides the technical complexity of systems behind simpler APIs. There are two types of abstraction.\n\n```\nclass CoffeeMachine {\n  #waterLimit = 200; // private member\n\n  // private method\n  #fixWaterAmount(value) {\n    if (value < 0) return 0;\n    if (value > this.#waterLimit) return this.#waterLimit;\n  }\n\n  setWaterAmount(value) {\n    this.#waterLimit = this.#fixWaterAmount(value);\n  }\n}\n\nlet coffeeMachine = new CoffeeMachine();\ncoffeeMachine.setWaterAmount(100);\n\n// can't access privates from outside of the class\ncoffeeMachine.#fixWaterAmount(123); // Error\ncoffeeMachine.#waterLimit = 1000; // Error\n\n```\n"
         }
       ]
     },
@@ -182,6 +186,10 @@
         {
           "type": "CONTENT",
           "data": "Polymorphism"
+        },
+        {
+          "type": "DESC",
+          "data": "**Polymorphism **\\- The word \"poly\" means many and \"morphs\" means forms. So polymorphism means many forms. Using inheritance, objects can override shared parent behaviors, with specific child behaviors. It is of two forms\n* Method Overriding, and\n* Method Overloading\n\n\n### Method Overriding\n\n* Method overriding uses _**Runtime polymorphism**_. In which, a child class can provide a different implementation of its parent class.\n\n```\nclass Parent {\n  display() {\n    console.log(\"Parent class method has been called\");\n  }\n}\nclass Child extends Parent {\n  display() {\n    console.log(\"Child class method has been called\");\n  }\n}\n\nconst henri = new Parent();\nhenri.display(); //=> Parent class method has been called\n\nconst bruce = new Child();\nbruce.display(); //=> Child class method has been called\n\n```\n\n### Method Overloading\n\n* Method overloading uses **_Compile time_** _**polymorphism\\. **_In which, methods have the same name, but a different number of parameters passed into the method call. JS does **NOT** support method overloading natively \\(because objects cannot have multiple properties with same name\\). If two methods are defined with same name then the last defined function will overwrite the previous methods.\n\n```\nclass Base {\n  display() {\n    console.log(\"No params\");\n  }\n  display(name) {\n    console.log(`Single params value - ${name}`);\n  }\n}\n\nconst obj = new Base();\nobj.display(); //=> Single params value - undefined\nobj.display(\"First\"); //=> Single params value - First\n\n```\n"
         }
       ]
     },
@@ -317,19 +325,6 @@
       ]
     },
     {
-      "key": "f319a1ab-dd84-45fa-b56f-023f85f0e1a9",
-      "parentKey": "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
-      "subKeys": [],
-      "collapse": false,
-      "style": null,
-      "blocks": [
-        {
-          "type": "CONTENT",
-          "data": "objects"
-        }
-      ]
-    },
-    {
       "key": "c1e621c4-ae65-40d0-ad48-650368d181d0",
       "parentKey": "29f23365-fcf6-4f8f-8060-811df84e4770",
       "subKeys": [],
@@ -376,6 +371,10 @@
         {
           "type": "CONTENT",
           "data": "Inheritance"
+        },
+        {
+          "type": "DESC",
+          "data": "**Inheritance** allows one class to inherits the attributes and methods of another class. In other words, parent classes extend attributes and behaviors to child classes.\n* **extends **keyword to make the **Person **class inheriting from the **Student** class\\.\n* to** **call the method of the parent class fom the child class **super **keyword is used\n\n\n```\n// Parent class\nclass Person {\n  constructor(firstName, lastName) {\n    console.log(\"Parent class has been called\");\n    this.firstName = firstName;\n    this.lastName = lastName;\n  }\n  greet() {\n    console.log(`Hello, I am ${this.firstName} ${this.lastName}`);\n  }\n}\n\n// Child class\nclass Student extends Person {\n  constructor(firstName, lastName) {\n    console.log(\"Child class has been called\");\n    // call the super class constructor and pass in the name parameter\n    super(firstName, lastName);\n  }\n  level() {\n    // This method specific to Student class not available in Person class\n    console.log(\"Apprentice\");\n  }\n}\n\nconst bruce = new Student(\"Bruce\", \"Wayne\");\nbruce.greet();\nbruce.level();\n\nconsole.log(\"\\n\");\n\nconst henri = new Person(\"Henri\", \"Ducard\");\nhenri.greet();\n\n//=> Child class has been called\n//=> Parent class has been called\n//=> Hello, I am Bruce Wayne\n//=> Apprentice\n//\n//\n//=> Parent class has been called\n//=> Hello, I am Henri Ducard\n\n```\n"
         }
       ]
     },
@@ -580,6 +579,10 @@
         {
           "type": "CONTENT",
           "data": "Higher-order\nfunction"
+        },
+        {
+          "type": "DESC",
+          "data": ""
         }
       ]
     },
@@ -809,19 +812,6 @@
       ]
     },
     {
-      "key": "5830091e-64ee-4015-aeff-f8779fa73582",
-      "parentKey": "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
-      "subKeys": [],
-      "collapse": false,
-      "style": null,
-      "blocks": [
-        {
-          "type": "CONTENT",
-          "data": "Attributes"
-        }
-      ]
-    },
-    {
       "key": "28bcdae2-e48d-47e3-bc28-5f6afecfef7d",
       "parentKey": "3dc1c815-02b4-4097-ae29-578920b3a065",
       "subKeys": [],
@@ -916,19 +906,6 @@
       ]
     },
     {
-      "key": "5a194e70-b4a3-49f9-8e9a-64f0b9456ede",
-      "parentKey": "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
-      "subKeys": [],
-      "collapse": false,
-      "style": null,
-      "blocks": [
-        {
-          "type": "CONTENT",
-          "data": "Methods"
-        }
-      ]
-    },
-    {
       "key": "092ca5f2-7268-4e31-b7bd-d9aa2c3fd8d0",
       "parentKey": "183f002c-a1ac-4ef6-bd23-2495e98fefaa",
       "subKeys": [],
@@ -938,6 +915,10 @@
         {
           "type": "CONTENT",
           "data": "Encapsulation"
+        },
+        {
+          "type": "DESC",
+          "data": "**Encapsulation **is bundling of data and methods into a single entity.\n\n```\nclass Counter {\n  #count = 0;\n\n  click() {\n    this.#count = this.#count + 1;\n  }\n  getCount() {\n    return this.#count;\n  }\n}\nconst myCounter = new Counter();\nmyCounter.click();\nmyCounter.click();\n\nconsole.log(myCounter.getCount()); //=> 2\n\n```\n"
         }
       ]
     },
@@ -1364,15 +1345,15 @@
       "parentKey": "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
       "subKeys": [],
       "collapse": false,
-      "style": null,
+      "style": "{\"contentStyle\":{\"background\":\"#f86179\"}}",
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "Classes"
+          "data": "Classes /\nObjects /\nAttributes\nMethods /"
         },
         {
           "type": "DESC",
-          "data": "Classes are a template for creating objects. They encapsulate state \\(variables or attributes\\), and implementations of behavior \\(functions or methods\\).\n\n* **Class declarations**\n\n```\nclass Dog {\n  constructor(name, breed) {\n    this.name = name;\n    this.breed = breed;\n  }\n\n  // public methods\n  bark() {\n    console.log(\"vov-vov\");\n  }\n\n  myself() {\n    console.log(`My name is ${this.name} and I am ${this.breed}`);\n  }\n}\n\nlet snow = new Dog(\"Snow\", \"Samoyed\");\nsnow.bark(); //=> vov-vov\nsnow.myself(); //=> My name is Snow and I am Samoyed\n\n```\n\n* **Class expression** \\- Just like functions, classes can be defined inside another expression, passed around, returned, assigned, etc.\n\n```\nlet User = class {\n  sayHi() {\n    console.log(\"Hello\");\n  }\n};\n\n// named class expression\n// If a class expression has a name, it’s visible inside the class only.\nlet User1 = class MyClass{\n  sayHi() {\n    console.log(\"Hello\");\n  }\n};\n\nnew User().sayHi(); //=> Hello\nnew User1().sayHi(); //=> Hello\n\n```\n\n* **Getters/Setters \\- **it is** **a mutator method used to control changes to a variable. , a getter method returns its value while a setter method sets or updates its value\n\n```\nclass User {\n  constructor(name) {\n    // invokes the setter\n    this.name = name;\n  }\n\n  get name() {\n    return this.userName;\n  }\n\n  set name(value) {\n    if (value.length < 4) {\n      console.log(\"Name is too short.\");\n      return;\n    }\n    this.userName = value;\n  }\n}\n\nlet user = new User(\"John\");\nconsole.log(user.name); //=> John\n\n```\n\n* **Static properties and methods \\- t**he static keyword defines a static method or property for a class. Static members \\(properties and methods\\) are called without instantiating their class and cannot be called through a class instance.\n\n```\nclass StaticClass {\n  static prop1 = \"Property 1\";\n  static sum(a, b) {\n    return a + b;\n  }\n}\n\nconsole.log(StaticClass.prop1); //=> Property 1\nconsole.log(StaticClass.sum(5, 10)); //=> 15\n\nlet obj = new StaticClass();\n\nconsole.log(obj.prop1); //=> undefined\nconsole.log(obj.sum(5, 5)); //=> TypeError: obj.sum is not a function\n\n```\n\n* **Static blocks \\- **static blocks** **allows initialization of static properties\n\n```\nclass StaticBlock {\n  static prop1 = \"Property 1\";\n  static prop2;\n  static {\n    this.prop2 = \"Property 2\";\n  }\n}\n\nconsole.log(StaticBlock.prop1); //=> Property 1\nconsole.log(StaticBlock.prop2); //=> Property 2\n\n```\n\n* **Private properties and methods \\- \\# **is a special sign that the field is private. We can’t access it from outside or from inheriting classes\n\n```\nclass CoffeeMachine {\n  #waterLimit = 200;\n\n  #fixWaterAmount(value) {\n    if (value < 0) return 0;\n    if (value > this.#waterLimit) return this.#waterLimit;\n  }\n\n  setWaterAmount(value) {\n    this.#waterLimit = this.#fixWaterAmount(value);\n  }\n}\n\nlet coffeeMachine = new CoffeeMachine();\n\n// can't access privates from outside of the class\ncoffeeMachine.#fixWaterAmount(123); // Error\ncoffeeMachine.#waterLimit = 1000; // Error\n\n```\n\nFor more info,\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)\n\n"
+          "data": "* **Classes **are a template for creating objects. They encapsulate state \\(variables or attributes\\), and implementations of behavior \\(functions or methods\\).\n* **Objects** are instances of classes. An object stores its state in fields \\(variables\\) and exposes its behavior through methods \\(functions\\).\n* Any variable that is bound in a class is a class **attribute\\. **\n* Any function defined within a class is a **method**.\n\n\n* **Class declarations**\n\n```\nclass Dog {\n\n  // attribute\n  tail = \"wiggle\";\n\n  constructor(name, breed) {\n    this.name = name;\n    this.breed = breed;\n  }\n\n  // public methods\n  bark() {\n    console.log(\"vov-vov\");\n  }\n\n  myself() {\n    console.log(`My name is ${this.name} and I am ${this.breed}`);\n  }\n}\n\n// Creating an object foe the above class\nlet snow = new Dog(\"Snow\", \"Samoyed\");\n\nsnow.bark(); //=> vov-vov\nconsole.log(snow.tail); //=> wiggle\nsnow.myself(); //=> My name is Snow and I am Samoyed\n\n```\n\n* **Class expression** \\- Just like functions, classes can be defined inside another expression, passed around, returned, assigned, etc.\n\n```\nlet User = class {\n  sayHi() {\n    console.log(\"Hello\");\n  }\n};\n\n// named class expression\n// If a class expression has a name, it’s visible inside the class only.\nlet User1 = class MyClass{\n  sayHi() {\n    console.log(\"Hello\");\n  }\n};\n\nnew User().sayHi(); //=> Hello\nnew User1().sayHi(); //=> Hello\n\n```\n\n* **Getters/Setters \\- **it is** **a mutator method used to control changes to a variable. , a getter method returns its value while a setter method sets or updates its value\n\n```\nclass User {\n  constructor(name) {\n    // invokes the setter\n    this.name = name;\n  }\n\n  get name() {\n    return this.userName;\n  }\n\n  set name(value) {\n    if (value.length < 4) {\n      console.log(\"Name is too short.\");\n      return;\n    }\n    this.userName = value;\n  }\n}\n\nlet user = new User(\"John\");\nconsole.log(user.name); //=> John\n\n```\n\n* **Static properties and methods \\- t**he static keyword defines a static method or property for a class. Static members \\(properties and methods\\) are called without instantiating their class and cannot be called through a class instance.\n\n```\nclass StaticClass {\n  static prop1 = \"Property 1\";\n  static sum(a, b) {\n    return a + b;\n  }\n}\n\nconsole.log(StaticClass.prop1); //=> Property 1\nconsole.log(StaticClass.sum(5, 10)); //=> 15\n\nlet obj = new StaticClass();\n\nconsole.log(obj.prop1); //=> undefined\nconsole.log(obj.sum(5, 5)); //=> TypeError: obj.sum is not a function\n\n```\n\n* **Static blocks \\- **static blocks** **allows initialization of static properties\n\n```\nclass StaticBlock {\n  static prop1 = \"Property 1\";\n  static prop2;\n  static {\n    this.prop2 = \"Property 2\";\n  }\n}\n\nconsole.log(StaticBlock.prop1); //=> Property 1\nconsole.log(StaticBlock.prop2); //=> Property 2\n\n```\n\n* **Private properties and methods \\- \\# **is a special sign that the field is private. We can’t access it from outside or from inheriting classes\n\n```\nclass CoffeeMachine {\n  #waterLimit = 200;\n\n  #fixWaterAmount(value) {\n    if (value < 0) return 0;\n    if (value > this.#waterLimit) return this.#waterLimit;\n  }\n\n  setWaterAmount(value) {\n    this.#waterLimit = this.#fixWaterAmount(value);\n  }\n}\n\nlet coffeeMachine = new CoffeeMachine();\n\n// can't access privates from outside of the class\ncoffeeMachine.#fixWaterAmount(123); // Error\ncoffeeMachine.#waterLimit = 1000; // Error\n\n```\n\nFor more info,\n* [https://developer.mozilla.org/en\\-US/docs/Web/JavaScript/Reference/Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)\n\n"
         }
       ]
     },
@@ -1872,10 +1853,10 @@
       "key": "183f002c-a1ac-4ef6-bd23-2495e98fefaa",
       "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
       "subKeys": [
-        "f8959855-b412-49cf-b308-d4b014a6fc59",
-        "31aa7d3d-f836-4d0f-8704-6606fb0a1577",
         "092ca5f2-7268-4e31-b7bd-d9aa2c3fd8d0",
-        "ef12f21d-9fc6-4b69-9034-dfe4162cf6e7"
+        "f8959855-b412-49cf-b308-d4b014a6fc59",
+        "ef12f21d-9fc6-4b69-9034-dfe4162cf6e7",
+        "31aa7d3d-f836-4d0f-8704-6606fb0a1577"
       ],
       "collapse": false,
       "style": null,
@@ -1941,10 +1922,7 @@
       "key": "862cc5cf-2295-40f3-8bfb-bf1832c716e0",
       "parentKey": "131c9433-90a2-40b8-9e02-b774761c2456",
       "subKeys": [
-        "d051afcf-8e00-4760-8d65-783421039068",
-        "f319a1ab-dd84-45fa-b56f-023f85f0e1a9",
-        "5a194e70-b4a3-49f9-8e9a-64f0b9456ede",
-        "5830091e-64ee-4015-aeff-f8779fa73582"
+        "d051afcf-8e00-4760-8d65-783421039068"
       ],
       "collapse": false,
       "style": null,
