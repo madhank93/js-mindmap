@@ -20,4 +20,8 @@ This JS mind map projects uses [Awehook - mind map](https://github.com/awehook/r
 
 - [Lydia Hallie - JS Visualization](https://dev.to/lydiahallie)
 
+- [Fireship.io](https://fireship.io/)
+
+- [Code with Ania Kubow](https://www.youtube.com/c/AniaKub%C3%B3w)
+
 If you are someone good at React and would like to contribute to this project. Please help in migrating [Awehook mindmap](https://github.com/awehook/blink-mind), and [Awehook rich markdown editor](https://github.com/awehook/rich-markdown-editor) to latest version.
