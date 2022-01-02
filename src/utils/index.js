@@ -11,7 +11,7 @@ export function generateSimpleModel() {
   return Model.create({
     rootTopicKey: "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
     editorRootTopicKey: "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-    focusKey: "31aa7d3d-f836-4d0f-8704-6606fb0a1577",
+    focusKey: "1f66701b-72a2-45be-abad-d14ba71a78e0",
     extData: {
       TOPIC_REFERENCE: {
         reference: {
@@ -44,6 +44,10 @@ export function generateSimpleModel() {
           {
             type: "CONTENT",
             data: "Functional\nProgramming",
+          },
+          {
+            type: "DESC",
+            data: "",
           },
         ],
       },
@@ -197,7 +201,7 @@ export function generateSimpleModel() {
           {
             type: "DESC",
             data:
-              '**Polymorphism **\\- The word "poly" means many and "morphs" means forms. So polymorphism means many forms. Using inheritance, objects can override shared parent behaviors, with specific child behaviors. It is of two forms\n* Method Overriding, and\n* Method Overloading\n\n\n### Method Overriding\n\n* Method overriding uses _**Runtime polymorphism**_. In which, a child class can provide a different implementation of its parent class.\n\n```\nclass Parent {\n  display() {\n    console.log("Parent class method has been called");\n  }\n}\nclass Child extends Parent {\n  display() {\n    console.log("Child class method has been called");\n  }\n}\n\nconst henri = new Parent();\nhenri.display(); //=> Parent class method has been called\n\nconst bruce = new Child();\nbruce.display(); //=> Child class method has been called\n\n```\n\n### Method Overloading\n\n* Method overloading uses **_Compile time_** _**polymorphism\\. **_In which, methods have the same name, but a different number of parameters passed into the method call. JS does **NOT** support method overloading natively \\(because objects cannot have multiple properties with same name\\). If two methods are defined with same name then the last defined function will overwrite the previous methods.\n\n```\nclass Base {\n  display() {\n    console.log("No params");\n  }\n  display(name) {\n    console.log(`Single params value - ${name}`);\n  }\n}\n\nconst obj = new Base();\nobj.display(); //=> Single params value - undefined\nobj.display("First"); //=> Single params value - First\n\n```\n',
+              '**Polymorphism **\\- The word "poly" means many and "morphs" means forms. So polymorphism means many forms. Using inheritance, objects can override shared parent behaviors, with specific child behaviors. It is of two forms\n* Method Overriding, and\n* Method Overloading\n\n\n### Method Overriding\n\n* Method overriding uses **Runtime polymorphism**. In which, a child class can provide a different implementation of its parent class.\n\n```\nclass Parent {\n  display() {\n    console.log("Parent class method has been called");\n  }\n}\nclass Child extends Parent {\n  display() {\n    console.log("Child class method has been called");\n  }\n}\n\nconst henri = new Parent();\nhenri.display(); //=> Parent class method has been called\n\nconst bruce = new Child();\nbruce.display(); //=> Child class method has been called\n\n```\n\n### Method Overloading\n\n* Method overloading uses **Compile time** **polymorphism\\. **In which, methods have the same name, but a different number of parameters passed into the method call. JS does **NOT** support method overloading natively \\(because objects cannot have multiple properties with same name\\). If two methods are defined with same name then the last defined function will overwrite the previous methods.\n\n```\nclass Base {\n  display() {\n    console.log("No params");\n  }\n  display(name) {\n    console.log(`Single params value - ${name}`);\n  }\n}\n\nconst obj = new Base();\nobj.display(); //=> Single params value - undefined\nobj.display("First"); //=> Single params value - First\n\n```\n',
           },
         ],
       },
