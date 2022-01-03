@@ -1,7 +1,7 @@
 {
   "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
   "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-  "focusKey": "1f66701b-72a2-45be-abad-d14ba71a78e0",
+  "focusKey": "95d6305b-3bf4-41da-9cdd-b2bcdb6b76e5",
   "extData": {
     "TOPIC_REFERENCE": {
       "reference": {
@@ -25,8 +25,8 @@
       "key": "1f66701b-72a2-45be-abad-d14ba71a78e0",
       "parentKey": "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
       "subKeys": [
-        "a2462a85-2447-4110-b244-6d399bcdcd36",
         "16bb2549-ee9b-4d13-bf1f-ee0ba86872b5",
+        "95d6305b-3bf4-41da-9cdd-b2bcdb6b76e5",
         "ea213084-3b9f-4c99-8f2b-903c00394708",
         "e6406abc-7710-4f4d-9b0d-3b40d9b2d0a7",
         "6a995fff-008c-4e66-a127-590b13b99ffd",
@@ -41,7 +41,7 @@
         },
         {
           "type": "DESC",
-          "data": ""
+          "data": "Functional programming \\(FP\\) it is a declarative programming paradigm. It is the process of building software by composing pure functions, avoiding shared state, mutable data, global variables and side\\-effects. \n\nFor more info,\n\n* [https://mostly\\-adequate.gitbook.io/mostly\\-adequate\\-guide/](https://mostly-adequate.gitbook.io/mostly-adequate-guide/)\n* \n\n"
         }
       ]
     },
@@ -81,14 +81,15 @@
       "subKeys": [
         "dc0c93cb-0c05-40a0-9bd6-e6c1870c5613",
         "3dc1c815-02b4-4097-ae29-578920b3a065",
-        "5c0d4a18-5da2-4f3f-9752-4912ae3df225"
+        "5c0d4a18-5da2-4f3f-9752-4912ae3df225",
+        "2e5fc4c7-d9b2-4911-8b4f-220f5a0fb0e1"
       ],
       "collapse": false,
       "style": null,
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "Data\nStructures"
+          "data": "Data\nManipulation"
         }
       ]
     },
@@ -206,7 +207,7 @@
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "First-class \nfunctions"
+          "data": "Pure functions"
         }
       ]
     },
@@ -574,23 +575,6 @@
       ]
     },
     {
-      "key": "a2462a85-2447-4110-b244-6d399bcdcd36",
-      "parentKey": "1f66701b-72a2-45be-abad-d14ba71a78e0",
-      "subKeys": [],
-      "collapse": false,
-      "style": null,
-      "blocks": [
-        {
-          "type": "CONTENT",
-          "data": "Higher-order\nfunction"
-        },
-        {
-          "type": "DESC",
-          "data": ""
-        }
-      ]
-    },
-    {
       "key": "a37aef6c-b62c-423c-8124-c18edc14142b",
       "parentKey": "f8750599-32db-4fb3-829e-0673887df2c2",
       "subKeys": [
@@ -760,7 +744,7 @@
         },
         {
           "type": "DESC",
-          "data": "A _programming paradigm_ is a _**style**_, or _**way**_, of programming.\n\n### Some common programming paradigms\n\n* **Imperative** in which the programmer instructs the machine how to change its state,\n   * _**Procedural**_ which groups instructions into procedures,\n   * _**Object\\-oriented**_ which groups instructions with the part of the state they operate on,\n* **Declarative** in which the programmer merely declares properties of the desired result, but not how to compute it\n   * _**Functional**_ in which the desired result is declared as the value of a series of function applications,\n   * _**Logical**_ in which the desired result is declared as the answer to a question about a system of facts and rules,\n   * _**Reactive**_ in which the desired result is declared with data streams and the propagation of change\n\n"
+          "data": "A _programming paradigm_ is a **style**, or **way**, of programming.\n\n### Some common programming paradigms\n\n* **Imperative** in which the programmer instructs the machine how to change its state,\n   * **Procedural** which groups instructions into procedures,\n   * **Object\\-oriented** which groups instructions with the part of the state they operate on,\n* **Declarative** in which the programmer merely declares properties of the desired result, but not how to compute it\n   * **Functional** in which the desired result is declared as the value of a series of function applications,\n   * **Logical** in which the desired result is declared as the answer to a question about a system of facts and rules,\n   * **Reactive** in which the desired result is declared with data streams and the propagation of change\n\n"
         }
       ]
     },
@@ -1270,7 +1254,7 @@
         },
         {
           "type": "DESC",
-          "data": "**Object\\-oriented programming** \\(OOP\\) is a programming paradigm based on the concept of \"**objects**\", which can contain _data_ and **code**: \n* **data,** in the form of fields \\(often known as attributes or properties\\), and \n* **code**, in the form of procedures \\(often known as methods\\).\n\n\nJS is _Prototype\\-based programming_ is a style of object\\-oriented programming in which classes are not explicitly defined, but rather derived by adding _properties_ and _methods_ to an instance of another class or, less frequently, adding them to an empty object. In simple words, this type of style allows the creation of an object without first defining its class.\n* Every single 'object' is built by a constructor call.\n* A constructor makes an object linked to its own prototype.\n\n\nFor more details, refer to **\\_\\_proto\\_\\_ and prototype** of Functions"
+          "data": "**Object\\-oriented programming** \\(OOP\\) is a programming paradigm based on the concept of \"**objects**\", which can contain **data** and **code**: \n* **data,** in the form of fields \\(often known as attributes or properties\\), and \n* **code**, in the form of procedures \\(often known as methods\\).\n\n\nJS is _Prototype\\-based programming_ is a style of object\\-oriented programming in which classes are not explicitly defined, but rather derived by adding _properties_ and _methods_ to an instance of another class or, less frequently, adding them to an empty object. In simple words, this type of style allows the creation of an object without first defining its class.\n* Every single 'object' is built by a constructor call.\n* A constructor makes an object linked to its own prototype.\n\n\nFor more details, refer to **\\_\\_proto\\_\\_ and prototype** of Functions"
         }
       ]
     },
@@ -1569,6 +1553,23 @@
       ]
     },
     {
+      "key": "95d6305b-3bf4-41da-9cdd-b2bcdb6b76e5",
+      "parentKey": "1f66701b-72a2-45be-abad-d14ba71a78e0",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Higher-order\nfunctions"
+        },
+        {
+          "type": "DESC",
+          "data": "A **Higher\\-order functions** can accept other functions as parameter or returns a function or both.\n\n"
+        }
+      ]
+    },
+    {
       "key": "6608af00-8cd4-4fe1-bd0b-e18e12f4a684",
       "parentKey": "5c0d4a18-5da2-4f3f-9752-4912ae3df225",
       "subKeys": [],
@@ -1616,7 +1617,11 @@
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "Pure functions"
+          "data": "First class\nfunction"
+        },
+        {
+          "type": "DESC",
+          "data": "JS has **first class functions** support which allows us to treat functions as data — assign them to variables, pass them to other functions, return them from functions, etc ... In other words, First\\-class functions are treated like any other variable\n\n* **Assign a function to a variable**\n\n```\nconst foo = function() {\n   console.log(\"foobar\");\n}\n// Invoke it using the variable\nfoo(); //=> foobar\n\n```\n\n* **Pass a function as an Argument**\n\n```\nfunction sayHello() {\n   return \"Hello, \";\n}\nfunction greeting(helloMessage, name) {\n  console.log(helloMessage() + name);\n}\n// Pass `sayHello` as an argument to `greeting` function\ngreeting(sayHello, \"JavaScript!\"); //=> Hello, JavaScript!\n\n```\n\n* **Return a function**\n\n```\nfunction sayHello() {\n   return function() {\n      console.log(\"Hello!\");\n   }\n}\nsayHello()(); //=> Hello!\n\n```\n"
         }
       ]
     },
@@ -2254,6 +2259,19 @@
         {
           "type": "CONTENT",
           "data": "clear"
+        }
+      ]
+    },
+    {
+      "key": "2e5fc4c7-d9b2-4911-8b4f-220f5a0fb0e1",
+      "parentKey": "9b52509a-42df-4ba8-9200-29ec192e314a",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "String &\nmethods"
         }
       ]
     },
