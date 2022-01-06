@@ -1,8 +1,8 @@
 {
   "files": {
     "chunk-blinkmind.css": "/js-mindmap/static/css/chunk-blinkmind.988c6418.chunk.css",
-    "chunk-blinkmind.js": "/js-mindmap/static/js/chunk-blinkmind.b409ea15.chunk.js",
-    "chunk-blinkmind.js.map": "/js-mindmap/static/js/chunk-blinkmind.b409ea15.chunk.js.map",
+    "chunk-blinkmind.js": "/js-mindmap/static/js/chunk-blinkmind.b8b5a337.chunk.js",
+    "chunk-blinkmind.js.map": "/js-mindmap/static/js/chunk-blinkmind.b8b5a337.chunk.js.map",
     "chunk-blueprint.css": "/js-mindmap/static/css/chunk-blueprint.c45059aa.chunk.css",
     "chunk-blueprint.js": "/js-mindmap/static/js/chunk-blueprint.4bff9a8f.chunk.js",
     "chunk-blueprint.js.map": "/js-mindmap/static/js/chunk-blueprint.4bff9a8f.chunk.js.map",
@@ -15,7 +15,7 @@
     "runtime~main.js": "/js-mindmap/static/js/runtime~main.d2760ab9.js",
     "runtime~main.js.map": "/js-mindmap/static/js/runtime~main.d2760ab9.js.map",
     "index.html": "/js-mindmap/index.html",
-    "precache-manifest.13557278edb2623e50bc1ed299e20a84.js": "/js-mindmap/precache-manifest.13557278edb2623e50bc1ed299e20a84.js",
+    "precache-manifest.a73c89c46334e532b32d73efce4aa505.js": "/js-mindmap/precache-manifest.a73c89c46334e532b32d73efce4aa505.js",
     "service-worker.js": "/js-mindmap/service-worker.js",
     "static/css/chunk-blinkmind.988c6418.chunk.css.map": "/js-mindmap/static/css/chunk-blinkmind.988c6418.chunk.css.map",
     "static/css/chunk-blueprint.c45059aa.chunk.css.map": "/js-mindmap/static/css/chunk-blueprint.c45059aa.chunk.css.map",
