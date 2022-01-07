@@ -11,7 +11,7 @@ export function generateSimpleModel() {
   return Model.create({
     rootTopicKey: "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
     editorRootTopicKey: "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-    focusKey: "1f66701b-72a2-45be-abad-d14ba71a78e0",
+    focusKey: "ea213084-3b9f-4c99-8f2b-903c00394708",
     extData: {
       TOPIC_REFERENCE: {
         reference: {
@@ -31,7 +31,6 @@ export function generateSimpleModel() {
         key: "1f66701b-72a2-45be-abad-d14ba71a78e0",
         parentKey: "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
         subKeys: [
-          "a2462a85-2447-4110-b244-6d399bcdcd36",
           "16bb2549-ee9b-4d13-bf1f-ee0ba86872b5",
           "ea213084-3b9f-4c99-8f2b-903c00394708",
           "e6406abc-7710-4f4d-9b0d-3b40d9b2d0a7",
@@ -47,7 +46,8 @@ export function generateSimpleModel() {
           },
           {
             type: "DESC",
-            data: "",
+            data:
+              "Functional programming \\(FP\\) it is a declarative programming paradigm. It is the process of building software by composing pure functions, avoiding shared state, mutable data, global variables and side\\-effects. \n\nFor more info,\n\n* [https://mostly\\-adequate.gitbook.io/mostly\\-adequate\\-guide/](https://mostly-adequate.gitbook.io/mostly-adequate-guide/)\n* [https://github.com/hemanth/functional\\-programming\\-jargon](https://github.com/hemanth/functional-programming-jargon)\n\n",
           },
         ],
       },
@@ -89,13 +89,14 @@ export function generateSimpleModel() {
           "dc0c93cb-0c05-40a0-9bd6-e6c1870c5613",
           "3dc1c815-02b4-4097-ae29-578920b3a065",
           "5c0d4a18-5da2-4f3f-9752-4912ae3df225",
+          "2e5fc4c7-d9b2-4911-8b4f-220f5a0fb0e1",
         ],
         collapse: false,
         style: null,
         blocks: [
           {
             type: "CONTENT",
-            data: "Data\nStructures",
+            data: "Data\nManipulation",
           },
         ],
       },
@@ -214,7 +215,12 @@ export function generateSimpleModel() {
         blocks: [
           {
             type: "CONTENT",
-            data: "First-class \nfunctions",
+            data: "Pure functions",
+          },
+          {
+            type: "DESC",
+            data:
+              "A pure function is a function that, \n* given the same input, will always return the same output \n* does not have any side effect \\(e.g. like updating a local or global state\\)\n\n\n* example 1\n\n```\n// impure function\nlet minimum = 21;\nconst checkAgeImpureFunc = (age) => age >= minimum;\n\n// pure function\nconst checkAgePureFunc = (age) => {\n  const minimum = 21;\n  return age >= minimum;\n};\n\n// before changing the state\nconsole.log(checkAgeImpureFunc(18)); //=> false\nconsole.log(checkAgePureFunc(18)); //=> false\n\nminimum = 10;\n\n// after changing the state\nconsole.log(checkAgeImpureFunc(18)); //=> true\nconsole.log(checkAgePureFunc(18)); //=> false\n\n```\n\n* Built\\-in example\n\n**splice\\(\\) \\-** method changes the contents of an array by removing or replacing existing elements\n**slice\\(\\)** \\- method returns a shallow copy of a portion of an array\n```\nconst xs = [1, 2, 3, 4, 5];\n\n// pure function\nconsole.log(xs.slice(0, 3)); //=> [1,2,3]\nconsole.log(xs.slice(0, 3)); //=> [1,2,3]\nconsole.log(xs.slice(0, 3)); //=> [1,2,3]\n\n// impure function\nconsole.log(xs.splice(0, 3)); //=> [1,2,3]\nconsole.log(xs.splice(0, 3)); //=> [4,5]\nconsole.log(xs.splice(0, 3)); //=> []\n\n```\n",
           },
         ],
       },
@@ -588,23 +594,6 @@ export function generateSimpleModel() {
         ],
       },
       {
-        key: "a2462a85-2447-4110-b244-6d399bcdcd36",
-        parentKey: "1f66701b-72a2-45be-abad-d14ba71a78e0",
-        subKeys: [],
-        collapse: false,
-        style: null,
-        blocks: [
-          {
-            type: "CONTENT",
-            data: "Higher-order\nfunction",
-          },
-          {
-            type: "DESC",
-            data: "",
-          },
-        ],
-      },
-      {
         key: "a37aef6c-b62c-423c-8124-c18edc14142b",
         parentKey: "f8750599-32db-4fb3-829e-0673887df2c2",
         subKeys: ["24a0e9fa-2a33-4e0d-8736-ec434151a6d0"],
@@ -777,7 +766,7 @@ export function generateSimpleModel() {
           {
             type: "DESC",
             data:
-              "A _programming paradigm_ is a _**style**_, or _**way**_, of programming.\n\n### Some common programming paradigms\n\n* **Imperative** in which the programmer instructs the machine how to change its state,\n   * _**Procedural**_ which groups instructions into procedures,\n   * _**Object\\-oriented**_ which groups instructions with the part of the state they operate on,\n* **Declarative** in which the programmer merely declares properties of the desired result, but not how to compute it\n   * _**Functional**_ in which the desired result is declared as the value of a series of function applications,\n   * _**Logical**_ in which the desired result is declared as the answer to a question about a system of facts and rules,\n   * _**Reactive**_ in which the desired result is declared with data streams and the propagation of change\n\n",
+              "A _programming paradigm_ is a **style**, or **way**, of programming.\n\n### Some common programming paradigms\n\n* **Imperative** in which the programmer instructs the machine how to change its state,\n   * **Procedural** which groups instructions into procedures,\n   * **Object\\-oriented** which groups instructions with the part of the state they operate on,\n* **Declarative** in which the programmer merely declares properties of the desired result, but not how to compute it\n   * **Functional** in which the desired result is declared as the value of a series of function applications,\n   * **Logical** in which the desired result is declared as the answer to a question about a system of facts and rules,\n   * **Reactive** in which the desired result is declared with data streams and the propagation of change\n\n",
           },
         ],
       },
@@ -1312,7 +1301,7 @@ export function generateSimpleModel() {
           {
             type: "DESC",
             data:
-              "**Object\\-oriented programming** \\(OOP\\) is a programming paradigm based on the concept of \"**objects**\", which can contain _data_ and **code**: \n* **data,** in the form of fields \\(often known as attributes or properties\\), and \n* **code**, in the form of procedures \\(often known as methods\\).\n\n\nJS is _Prototype\\-based programming_ is a style of object\\-oriented programming in which classes are not explicitly defined, but rather derived by adding _properties_ and _methods_ to an instance of another class or, less frequently, adding them to an empty object. In simple words, this type of style allows the creation of an object without first defining its class.\n* Every single 'object' is built by a constructor call.\n* A constructor makes an object linked to its own prototype.\n\n\nFor more details, refer to **\\_\\_proto\\_\\_ and prototype** of Functions",
+              "**Object\\-oriented programming** \\(OOP\\) is a programming paradigm based on the concept of \"**objects**\", which can contain **data** and **code**: \n* **data,** in the form of fields \\(often known as attributes or properties\\), and \n* **code**, in the form of procedures \\(often known as methods\\).\n\n\nJS is _Prototype\\-based programming_ is a style of object\\-oriented programming in which classes are not explicitly defined, but rather derived by adding _properties_ and _methods_ to an instance of another class or, less frequently, adding them to an empty object. In simple words, this type of style allows the creation of an object without first defining its class.\n* Every single 'object' is built by a constructor call.\n* A constructor makes an object linked to its own prototype.\n\n\nFor more details, refer to **\\_\\_proto\\_\\_ and prototype** of Functions",
           },
         ],
       },
@@ -1610,7 +1599,7 @@ export function generateSimpleModel() {
           {
             type: "DESC",
             data:
-              'A function of **this** keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between _strict mode_ and _non\\-strict mode_. **this **_\\_\\_is a reference to the object for which the function was called._\n\nTo understand **this** binding, we have to understand the call\\-site: the location in code where a function is called \\(not where it\'s declared\\). We must inspect the call\\-site to answer the question: what\'s this **this** a reference to?\n\n```\nfunction baz() {\n    // call-stack is: `baz`\n    // so, our call-site is in the global scope\n\n    console.log( "baz" );\n    bar(); // <=== call-site for `bar`\n}\n\nfunction bar() {\n    // call-stack is: `baz` -> `bar`\n    // so, our call-site is in `baz`\n\n    console.log( "bar" );\n    foo(); // <=== call-site for `foo`\n}\n\nfunction foo() {\n    // call-stack is: `baz` -> `bar` -> `foo`\n    // so, our call-site is in `bar`\n\n    console.log( "foo" );\n}\n\nbaz(); // <=== call-site for `baz`\n\n```\n\nThe _call\\-site_ determines which of 4 rules applies. And the four types of bindings are,\n* Default Binding\n* Implicit Binding\n* Explicit Binding\n* new Binding\n\n',
+              'A function of **this** keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between _strict mode_ and _non\\-strict mode_. **this **_\\\\_\\_is a reference to the object for which the function was called.\\_\n\nTo understand **this** binding, we have to understand the call\\-site: the location in code where a function is called \\(not where it\'s declared\\). We must inspect the call\\-site to answer the question: what\'s this **this** a reference to?\n\n```\nfunction baz() {\n    // call-stack is: `baz`\n    // so, our call-site is in the global scope\n\n    console.log( "baz" );\n    bar(); // <=== call-site for `bar`\n}\n\nfunction bar() {\n    // call-stack is: `baz` -> `bar`\n    // so, our call-site is in `baz`\n\n    console.log( "bar" );\n    foo(); // <=== call-site for `foo`\n}\n\nfunction foo() {\n    // call-stack is: `baz` -> `bar` -> `foo`\n    // so, our call-site is in `bar`\n\n    console.log( "foo" );\n}\n\nbaz(); // <=== call-site for `baz`\n\n```\n\nThe _call\\-site_ determines which of 4 rules applies. And the four types of bindings are,\n* Default Binding\n* Implicit Binding\n* Explicit Binding\n* new Binding\n\n',
           },
         ],
       },
@@ -1662,7 +1651,12 @@ export function generateSimpleModel() {
         blocks: [
           {
             type: "CONTENT",
-            data: "Pure functions",
+            data: "Higher order\nfunctions",
+          },
+          {
+            type: "DESC",
+            data:
+              'F**irst class functions** support which allows us to treat functions as data — assign them to variables, pass them to other functions, return them from functions, etc ... In other words, First\\-class functions are treated like any other variable.\n\n**Higher\\-order functions** can accept other functions as parameter or returns a function or both. This is possible becuase functions are first\\-class values in JS. \n\n* **Assign a function to a variable**\n\n```\nconst foo = function() {\n   console.log("foobar");\n}\n// Invoke it using the variable\nfoo(); //=> foobar\n\n```\n\n\n### Below code snippets are valid examples of first class functions and Higher\\-order functions\n\n* **Pass a function as an Argument**\n\n```\nfunction sayHello() {\n   return "Hello, ";\n}\nfunction greeting(helloMessage, name) {\n  console.log(helloMessage() + name);\n}\n// Pass `sayHello` as an argument to `greeting` function\ngreeting(sayHello, "JavaScript!"); //=> Hello, JavaScript!\n\n```\n\n* **Return a function**\n\n```\nfunction sayHello() {\n   return function() {\n      console.log("Hello!");\n   }\n}\nsayHello()(); //=> Hello!\n\n```\n\n\n### Some of the built\\-in higher\\-order functions are sort, foreach, map, filter and reduce.\n\n* **map\\(\\)** \\- creates a new array populated with the results of calling a provided function on every element in the calling array. \n\n```\nconst square = (arr) => arr.map((element) => element * element);\nconsole.log(square([2, 3, 4])); // [ 4, 9, 16 ]\n\n```\n\n* **filter\\(\\)** \\- creates a new array with all elements that passes the condition\n\n```\nconst words = [\n  "spray",\n  "limit",\n  "elite",\n  "exuberant",\n  "destruction",\n  "present",\n];\n\nconst result = words.filter((word) => word.length > 6);\nconsole.log(result); //=> [\'exuberant\', \'destruction\', \'present\']\n\n```\n\nFor more info,\n* [https://www.cs.iusb.edu/~danav/teach/c311/c311\\_2\\_firstclass.html](https://www.cs.iusb.edu/~danav/teach/c311/c311_2_firstclass.html)\n* [https://medium.com/javascript\\-scene/master\\-the\\-javascript\\-interview\\-what\\-is\\-functional\\-programming\\-7f218c68b3a0](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)\n\n',
           },
         ],
       },
@@ -2315,6 +2309,19 @@ export function generateSimpleModel() {
           {
             type: "CONTENT",
             data: "clear",
+          },
+        ],
+      },
+      {
+        key: "2e5fc4c7-d9b2-4911-8b4f-220f5a0fb0e1",
+        parentKey: "9b52509a-42df-4ba8-9200-29ec192e314a",
+        subKeys: [],
+        collapse: false,
+        style: null,
+        blocks: [
+          {
+            type: "CONTENT",
+            data: "String &\nmethods",
           },
         ],
       },

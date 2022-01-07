@@ -1,7 +1,7 @@
 {
   "rootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
   "editorRootTopicKey": "7b11654a-e9d3-45ba-a1aa-afca29ff5f18",
-  "focusKey": "95d6305b-3bf4-41da-9cdd-b2bcdb6b76e5",
+  "focusKey": "ea213084-3b9f-4c99-8f2b-903c00394708",
   "extData": {
     "TOPIC_REFERENCE": {
       "reference": {
@@ -26,7 +26,6 @@
       "parentKey": "ccf815c4-e6ad-4cbb-9427-cca701828c6c",
       "subKeys": [
         "16bb2549-ee9b-4d13-bf1f-ee0ba86872b5",
-        "95d6305b-3bf4-41da-9cdd-b2bcdb6b76e5",
         "ea213084-3b9f-4c99-8f2b-903c00394708",
         "e6406abc-7710-4f4d-9b0d-3b40d9b2d0a7",
         "6a995fff-008c-4e66-a127-590b13b99ffd",
@@ -41,7 +40,7 @@
         },
         {
           "type": "DESC",
-          "data": "Functional programming \\(FP\\) it is a declarative programming paradigm. It is the process of building software by composing pure functions, avoiding shared state, mutable data, global variables and side\\-effects. \n\nFor more info,\n\n* [https://mostly\\-adequate.gitbook.io/mostly\\-adequate\\-guide/](https://mostly-adequate.gitbook.io/mostly-adequate-guide/)\n* \n\n"
+          "data": "Functional programming \\(FP\\) it is a declarative programming paradigm. It is the process of building software by composing pure functions, avoiding shared state, mutable data, global variables and side\\-effects. \n\nFor more info,\n\n* [https://mostly\\-adequate.gitbook.io/mostly\\-adequate\\-guide/](https://mostly-adequate.gitbook.io/mostly-adequate-guide/)\n* [https://github.com/hemanth/functional\\-programming\\-jargon](https://github.com/hemanth/functional-programming-jargon)\n\n"
         }
       ]
     },
@@ -208,6 +207,10 @@
         {
           "type": "CONTENT",
           "data": "Pure functions"
+        },
+        {
+          "type": "DESC",
+          "data": "A pure function is a function that, \n* given the same input, will always return the same output \n* does not have any side effect \\(e.g. like updating a local or global state\\)\n\n\n* example 1\n\n```\n// impure function\nlet minimum = 21;\nconst checkAgeImpureFunc = (age) => age >= minimum;\n\n// pure function\nconst checkAgePureFunc = (age) => {\n  const minimum = 21;\n  return age >= minimum;\n};\n\n// before changing the state\nconsole.log(checkAgeImpureFunc(18)); //=> false\nconsole.log(checkAgePureFunc(18)); //=> false\n\nminimum = 10;\n\n// after changing the state\nconsole.log(checkAgeImpureFunc(18)); //=> true\nconsole.log(checkAgePureFunc(18)); //=> false\n\n```\n\n* Built\\-in example\n\n**splice\\(\\) \\-** method changes the contents of an array by removing or replacing existing elements\n**slice\\(\\)** \\- method returns a shallow copy of a portion of an array\n```\nconst xs = [1, 2, 3, 4, 5];\n\n// pure function\nconsole.log(xs.slice(0, 3)); //=> [1,2,3]\nconsole.log(xs.slice(0, 3)); //=> [1,2,3]\nconsole.log(xs.slice(0, 3)); //=> [1,2,3]\n\n// impure function\nconsole.log(xs.splice(0, 3)); //=> [1,2,3]\nconsole.log(xs.splice(0, 3)); //=> [4,5]\nconsole.log(xs.splice(0, 3)); //=> []\n\n```\n"
         }
       ]
     },
@@ -1548,24 +1551,7 @@
         },
         {
           "type": "DESC",
-          "data": "A function of **this** keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between _strict mode_ and _non\\-strict mode_. **this **_\\_\\_is a reference to the object for which the function was called._\n\nTo understand **this** binding, we have to understand the call\\-site: the location in code where a function is called \\(not where it's declared\\). We must inspect the call\\-site to answer the question: what's this **this** a reference to?\n\n```\nfunction baz() {\n    // call-stack is: `baz`\n    // so, our call-site is in the global scope\n\n    console.log( \"baz\" );\n    bar(); // <=== call-site for `bar`\n}\n\nfunction bar() {\n    // call-stack is: `baz` -> `bar`\n    // so, our call-site is in `baz`\n\n    console.log( \"bar\" );\n    foo(); // <=== call-site for `foo`\n}\n\nfunction foo() {\n    // call-stack is: `baz` -> `bar` -> `foo`\n    // so, our call-site is in `bar`\n\n    console.log( \"foo\" );\n}\n\nbaz(); // <=== call-site for `baz`\n\n```\n\nThe _call\\-site_ determines which of 4 rules applies. And the four types of bindings are,\n* Default Binding\n* Implicit Binding\n* Explicit Binding\n* new Binding\n\n"
-        }
-      ]
-    },
-    {
-      "key": "95d6305b-3bf4-41da-9cdd-b2bcdb6b76e5",
-      "parentKey": "1f66701b-72a2-45be-abad-d14ba71a78e0",
-      "subKeys": [],
-      "collapse": false,
-      "style": null,
-      "blocks": [
-        {
-          "type": "CONTENT",
-          "data": "Higher-order\nfunctions"
-        },
-        {
-          "type": "DESC",
-          "data": "A **Higher\\-order functions** can accept other functions as parameter or returns a function or both.\n\n"
+          "data": "A function of **this** keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between _strict mode_ and _non\\-strict mode_. **this **_\\\\_\\_is a reference to the object for which the function was called.\\_\n\nTo understand **this** binding, we have to understand the call\\-site: the location in code where a function is called \\(not where it's declared\\). We must inspect the call\\-site to answer the question: what's this **this** a reference to?\n\n```\nfunction baz() {\n    // call-stack is: `baz`\n    // so, our call-site is in the global scope\n\n    console.log( \"baz\" );\n    bar(); // <=== call-site for `bar`\n}\n\nfunction bar() {\n    // call-stack is: `baz` -> `bar`\n    // so, our call-site is in `baz`\n\n    console.log( \"bar\" );\n    foo(); // <=== call-site for `foo`\n}\n\nfunction foo() {\n    // call-stack is: `baz` -> `bar` -> `foo`\n    // so, our call-site is in `bar`\n\n    console.log( \"foo\" );\n}\n\nbaz(); // <=== call-site for `baz`\n\n```\n\nThe _call\\-site_ determines which of 4 rules applies. And the four types of bindings are,\n* Default Binding\n* Implicit Binding\n* Explicit Binding\n* new Binding\n\n"
         }
       ]
     },
@@ -1617,11 +1603,11 @@
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "First class\nfunction"
+          "data": "Higher order\nfunctions"
         },
         {
           "type": "DESC",
-          "data": "JS has **first class functions** support which allows us to treat functions as data — assign them to variables, pass them to other functions, return them from functions, etc ... In other words, First\\-class functions are treated like any other variable\n\n* **Assign a function to a variable**\n\n```\nconst foo = function() {\n   console.log(\"foobar\");\n}\n// Invoke it using the variable\nfoo(); //=> foobar\n\n```\n\n* **Pass a function as an Argument**\n\n```\nfunction sayHello() {\n   return \"Hello, \";\n}\nfunction greeting(helloMessage, name) {\n  console.log(helloMessage() + name);\n}\n// Pass `sayHello` as an argument to `greeting` function\ngreeting(sayHello, \"JavaScript!\"); //=> Hello, JavaScript!\n\n```\n\n* **Return a function**\n\n```\nfunction sayHello() {\n   return function() {\n      console.log(\"Hello!\");\n   }\n}\nsayHello()(); //=> Hello!\n\n```\n"
+          "data": "F**irst class functions** support which allows us to treat functions as data — assign them to variables, pass them to other functions, return them from functions, etc ... In other words, First\\-class functions are treated like any other variable.\n\n**Higher\\-order functions** can accept other functions as parameter or returns a function or both. This is possible becuase functions are first\\-class values in JS. \n\n* **Assign a function to a variable**\n\n```\nconst foo = function() {\n   console.log(\"foobar\");\n}\n// Invoke it using the variable\nfoo(); //=> foobar\n\n```\n\n\n### Below code snippets are valid examples of first class functions and Higher\\-order functions\n\n* **Pass a function as an Argument**\n\n```\nfunction sayHello() {\n   return \"Hello, \";\n}\nfunction greeting(helloMessage, name) {\n  console.log(helloMessage() + name);\n}\n// Pass `sayHello` as an argument to `greeting` function\ngreeting(sayHello, \"JavaScript!\"); //=> Hello, JavaScript!\n\n```\n\n* **Return a function**\n\n```\nfunction sayHello() {\n   return function() {\n      console.log(\"Hello!\");\n   }\n}\nsayHello()(); //=> Hello!\n\n```\n\n\n### Some of the built\\-in higher\\-order functions are sort, foreach, map, filter and reduce.\n\n* **map\\(\\)** \\- creates a new array populated with the results of calling a provided function on every element in the calling array. \n\n```\nconst square = (arr) => arr.map((element) => element * element);\nconsole.log(square([2, 3, 4])); // [ 4, 9, 16 ]\n\n```\n\n* **filter\\(\\)** \\- creates a new array with all elements that passes the condition\n\n```\nconst words = [\n  \"spray\",\n  \"limit\",\n  \"elite\",\n  \"exuberant\",\n  \"destruction\",\n  \"present\",\n];\n\nconst result = words.filter((word) => word.length > 6);\nconsole.log(result); //=> ['exuberant', 'destruction', 'present']\n\n```\n\nFor more info,\n* [https://www.cs.iusb.edu/~danav/teach/c311/c311\\_2\\_firstclass.html](https://www.cs.iusb.edu/~danav/teach/c311/c311_2_firstclass.html)\n* [https://medium.com/javascript\\-scene/master\\-the\\-javascript\\-interview\\-what\\-is\\-functional\\-programming\\-7f218c68b3a0](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)\n\n"
         }
       ]
     },
